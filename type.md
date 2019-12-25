@@ -402,6 +402,39 @@ or
 you can visit on snowdreams1006.tech
 ```
 
+连续字符串不仅可以用于处理换行字符串还可以用作注释,比如 `python` 文件内容如下:
+
+```python
+'''
+my wechat is snowdreams1006 
+'''
+
+"""
+my wechat is snowdreams1006 
+"""
+
+print('''
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+''')
+
+# python is the best language in the world
+```
+
+> `test.py` 文件中,以 `#` 开头的字符串不会执行,表示单行注释,以 `'''` 开头并且以 `'''` 结尾的表示多行注释.
+
+当我们处于正常的命令行模式下直接运行该脚本文件,我们会发现多行注释和单行注释均不会执行输出!
+
+```python
+$ python test.py 
+
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+```
+
+> 注意: 这里执行 `python` 脚本文件的命令行不是 `python` 交互式命令行环境而是普通的正常模式,请注意命令行提示符的区别!
 
 ### 相互转换
 
