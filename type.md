@@ -297,7 +297,76 @@ $
  
 ### 字符串
 
-不论是现实生活中还是计算机的编程世界里,字符串才是使用最频繁的一种数据类型,`python` 中的字符串和数字类型在一起会发生什么样的关联呢?
+不论是现实生活中还是计算机的编程世界里,字符串才是使用最频繁的一种数据类型,`python` 中的字符串和数字类型在一起会发生什么样的关系呢?
+
+- 左右单引号和双引号均可,但不支持混用
+
+> 左边包裹的是双引号 `"` ,则右边也必须是双引号 `"`,如果左边是单引号 `'` 则右边也需要是单引号 `'`.
+
+```python
+>>> print("hello python!")
+hello python!
+>>> print('hello python!')
+hello python!
+```
+
+> 正确示例: `print("hello python!")` 或 `print('hello python!')`
+
+```python
+>>> print("hello python!')
+  File "<stdin>", line 1
+    print("hello python!')
+                         ^
+SyntaxError: EOL while scanning string literal
+>>> print('hello python!")
+  File "<stdin>", line 1
+    print('hello python!")
+                         ^
+SyntaxError: EOL while scanning string literal
+```
+
+> 错误示例: `print("hello python!')` 或 `print('hello python!")`
+
+- 内部单引号和双引号可配合,特殊字符要转义
+
+> 如果用单引号包裹字符串而该字符串本身也有单引号,则需要使用 `\'` 进行转义(`'welcome to \'snowdreams1006.cn\''`),如果该字符串是双引号,那么可以直接使用(`'welcome to "snowdreams1006.cn"'`).
+> 如果用双引号包裹的字符串也是类似情况,分别是 `"welcome to \"snowdreams1006.cn\""` 和 `"welcome to 'snowdreams1006.cn'"` .
+
+```python
+>>> print("welcome to snowdreams1006.cn")
+>>> print('welcome to snowdreams1006.cn')
+>>> print("welcome to 'snowdreams1006.cn'")
+welcome to 'snowdreams1006.cn'
+>>> print('welcome to "snowdreams1006.cn"')
+welcome to "snowdreams1006.cn"
+>>> print('welcome to \'snowdreams1006.cn\'')
+welcome to 'snowdreams1006.cn'
+>>> print("welcome to \"snowdreams1006.cn\"")
+welcome to "snowdreams1006.cn"
+```
+
+> 正确示例: `print("welcome to 'snowdreams1006.cn'")` 或 `print('welcome to "snowdreams1006.cn"')` 或 `print('welcome to \'snowdreams1006.cn\'')` 或 `print("welcome to \"snowdreams1006.cn\"")`
+
+```python
+>>> print("welcome to "snowdreams1006.cn"")
+  File "<stdin>", line 1
+    print("welcome to "snowdreams1006.cn"")
+                                    ^
+SyntaxError: invalid syntax
+>>> print('welcome to 'snowdreams1006.cn'')
+  File "<stdin>", line 1
+    print('welcome to 'snowdreams1006.cn'')
+                                    ^
+SyntaxError: invalid syntax
+```
+
+> 错误示例: `print("welcome to "snowdreams1006.cn"")` 或 `print('welcome to 'snowdreams1006.cn'')`
+
+
+
+
+
+
 
 ### 相互转换
 
