@@ -527,6 +527,44 @@ ValueError: invalid literal for int() with base 10: '1.9'
 1
 ```
 
+## 学习总结
+
+本文主要介绍了 `python` 环境安装完毕后如何进入命令行交互式环境以及运行 `Hello World`,然后学习了 `python` 的基本数据类型以及相互转换.
+
+- `str()` 其他类型转字符串,**放心使用**,无论是整数还是小数或者原本就是字符串都能转成字符串.
+
+```python
+>>> print(str('welcome to "snowdreams')+str(1006)+str(".cn\""))
+welcome to "snowdreams1006.cn"
+```
+
+- `float()` 其他类型转小数,**正常使用**,无论是整数还是小数或者类小数字符串或类整数字符串都能转成小数.
+
+```python
+>>> print(float('1006')+float('10.06')+float(10)+float(.06))
+1026.12
+```
+
+- `int()` 其他类型转整数,**小心使用**,整数和小数以及类整数字符串可以转成整数,其中小数部分会直接舍弃,不支持类小数字符串!
+
+```python
+>>> print(int('1006')+int(float('10.06'))+int(10)+int(.06))
+1026
+```
+
+当然还有一种显而易见的情况,不是数字类型的字符串任 `float()` 还是 `int()` 怎么折腾也是无能为力的,奇技淫巧除外!
+
+```python
+>>> print(float('welcome to "snowdreams1006.cn"'))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: could not convert string to float: welcome to "snowdreams1006.cn"
+>>> print(int('welcome to "snowdreams1006.cn"'))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'welcome to "snowdreams1006.cn"'
+```
+
 ## 阅读更多
 
 - [字符串、整数、浮点数](https://mp.weixin.qq.com/s/shTf5mQAwqJHuiNCwRJ0-g)
