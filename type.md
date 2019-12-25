@@ -362,10 +362,45 @@ SyntaxError: invalid syntax
 
 > 错误示例: `print("welcome to "snowdreams1006.cn"")` 或 `print('welcome to 'snowdreams1006.cn'')`
 
+- 多行字符串可换行可注释
 
+如果你是在 `python` 交互式命令行环境中输入多行字符串,可以先输入 `print('''` 然后按下回车出现`...` 等待继续输入 `welcome to snowdreams1006.cn` ,输入完成后再次**回车换行**接着输入 `or` ,再次回车换行直到输入 `''')` 回车完成!
 
+```python
+>>> print('''
+... welcome to snowdreams1006.cn
+... or
+... you can visit on snowdreams1006.tech
+... ''')
 
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+```
 
+如果是直接复制多行命令的话,可以使用三个连续单引号或双引号分割多行字符串,复制到 `python` 交互式命令行中直接体验.
+
+```bash
+print('''
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+''')
+
+print("""
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+""")
+```
+
+最终输出结果就是多行字符串原样展示,支持换行!
+
+```bash
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+```
 
 
 ### 相互转换
