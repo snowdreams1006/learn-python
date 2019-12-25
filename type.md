@@ -436,6 +436,32 @@ you can visit on snowdreams1006.tech
 
 > 注意: 这里执行 `python` 脚本文件的命令行不是 `python` 交互式命令行环境而是普通的正常模式,请注意命令行提示符的区别!
 
+- 数字遇到字符串会报错
+
+```python
+>>> 1+1
+2
+>>> '1'+'1'
+'11'
+```
+
+> 正确示例: 数字和数字之间 `+` 表示数学意义上的加法即 `1+1` 结果是 `2` ,而字符串之间的 `+` 表示连接符即 `'1'+'1'` 的结果是 `'11'` .
+
+```python
+>>> 1+'1'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> '1'+1
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: cannot concatenate 'str' and 'int' objects
+>>> 
+
+```
+
+> 错误示例: 数字和字符串直接使用 `+` 会报错,不论是 `1+'1'` 还是 `'1'+1` 均不支持!
+
 ### 相互转换
 
 ## 阅读更多
