@@ -457,12 +457,30 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: cannot concatenate 'str' and 'int' objects
 >>> 
-
 ```
 
 > 错误示例: 数字和字符串直接使用 `+` 会报错,不论是 `1+'1'` 还是 `'1'+1` 均不支持!
 
 ### 相互转换
+
+- 数字转字符串
+
+> `str()` 函数可以将数字转成字符串,如果本身是字符串的话也不会报错,所以使用 `str()` 可以确保结果是字符串类型.
+
+```python
+>>> str("10")
+'10'
+>>> str('1')
+'1'
+>>> str(1)
+'1'
+>>> str(1.0)
+'1.0'
+>>> str('1')
+'1'
+```
+
+
 
 ## 阅读更多
 
