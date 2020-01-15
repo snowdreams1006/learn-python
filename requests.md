@@ -217,12 +217,156 @@ DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Ple
 
 ## requests 类库
 
+### 安装
 
+```bash
+pip install requests
+```
+
+> 上述命令默认安装的是最新版本,安装成功后可以运行 `pip freeze | grep requests` 查看已安装版本.
+
+### 验证
+
+```bash
+(.env) $ pip freeze | grep requests
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+requests==2.22.0
+```
+
+> 具体版本号可能并不一致,过去的最新版很大可能不是现在的最新版,因为 `pip install requests` 默认安装的是当时的最新版而不是指定版本.
+
+现在我们继续在终端命令行进行操作,输入 `python` 进入 `python` 解释器交互环境中,不用任何 IDE 而是纯粹的终端命令行足以教学演示 `requests` 类库的基本用法,加深学习印象.
+
+```bash
+(.env) $ python
+
+WARNING: Python 2.7 is not recommended. 
+This version is included in macOS for compatibility with legacy software. 
+Future versions of macOS will not include Python 2.7. 
+Instead, it is recommended that you transition to using 'python3' from within Terminal.
+
+Python 2.7.16 (default, Nov  9 2019, 05:55:08) 
+[GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc-s on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+```
+
+> 请注意刚才我们在终端命令行直接输入 `python` 命令并回车确认后就已经进入到 `python` 解释器交互环境,最左侧的命令提示符也由`$`(也有可能你的提示符是`#`)变成了 `>>>` ,这就是已经进入 `python` 解释器交互环境的重要标志,一定要仔细区分命令行提示符的差异,知道自己身处何处才能做到游刃有余.
+
+现在已经进入 `python` 解释器交互环境中而不是普通的终端命令行 `shell` 环境,因此我们可以使用刚才下载安装的 `requests` 类库.
+
+在 `python` 中使用第三方类型是需要先 `import <module>` 进行引入后才能使用的,所以使用的第一步就是先导入 `import` .
+
+```python
+>>> import requests
+```
+
+同样地,导入 `requests` 类库没有任何提示信息,还记得之前激活虚拟环境使用的 `source .en/bin/activate` 命令吗?
+
+没有消息就是好消息!
+
+如果你不信的话,故意导入 import 一个不存在的第三方包,看一下是否依然没有消息吧,比如: import snowdreams1006
+
+```python
+>>> import snowdreams1006
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named snowdreams1006
+```
+
+上述命令出现 `ImportError: No module named snowdreams1006` 导入错误,现在总该相信"没有消息就是好消息"这句至理名言了吧!
+
+导入成功后,当然是查看关于命令的帮助信息了,师傅领进门修行在个人,学习还是要多看官方文档,少看乱七八糟的博客教程!
+
+```python
+>>> help("requests")
+```
+
+继续输入 `help("requests")` 命令可以查看关于第三方包的帮助文档,同时也离开了 `python` 解释器交互环境,最明显的差别在于命令提示符 `>>>` 不见了!
+
+ 
+```bash
+Help on package requests:
+
+NAME
+    requests
+
+FILE
+    /Users/snowdreams1006/Documents/workspace/snowdreams1006.github.io/python/requests/.env/lib/python2.7/site-packages/requests/__init__.py
+
+MODULE DOCS
+    https://docs.python.org/library/requests
+
+DESCRIPTION
+    Requests HTTP Library
+    ~~~~~~~~~~~~~~~~~~~~~
+    
+    Requests is an HTTP library, written in Python, for human beings. Basic GET
+    usage:
+    
+       >>> import requests
+       >>> r = requests.get('https://www.python.org')
+       >>> r.status_code
+       200
+```
+
+不断点击回车键可以一直查看帮助文档直到尽头,想要退出帮助文档返回到上一层环境,只需要敲入 `q`(英文单词 `quit` 的首字母,表示"退出"的意思.)即可返回到熟悉的 `>>>` 环境.
+
+如果想要返回到普通的终端命令行 `shell` 环境应该继续往上返回,那么是不是继续敲入 `q` 就可以了呢?
+
+```bash
+>>> q
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'q' is not defined
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+(.env) $ 
+```
+
+虽然不能直接返回到普通终端命令行 `shell` 环境,但是根据一步一步的提示,确实可以返回,只不过没有做缩写的映射罢了!
+
+## httpbin
+
+现在我们已经安装了 `requests` 类库,还需要服务端供我们学习测试接收 `http` 请求,这里推荐 `httpbin` 类库.
+
+### 安装
+
+```bash
+pip install gunicorn httpbin
+```
+
+> 一次性安装多个第三方类库,包括 `gunicorn` 和 `httpbin`
+
+### 使用
+
+```bash
+gunicorn htpbin:app
+```
+
+> 启动本地服务器后,默认端口是 `8000`,可以在浏览器地址栏输入并访问: `http://127.0.0.1:8000`
+
+## http
+
+> HyperText Transfer Protocal : 超文本传输协议
+
+[http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/)
+
+```bash
+curl -v http://httpbin.snowdreams1006.cn/
+```
+
+## urllib
+
+- urllib 和 urllib2 是相互独立的模块
+- requests 库使用了 urllib3(多次请求重复使用同一个 socket)
 
 ## 参考文档
 
 - [mac 下 python2 、python3和pip、pip3](https://www.jianshu.com/p/2e4851df72fb)
 - [python3.7如何与python2.7共存？快速切换python版本方案](https://newsn.net/say/python-switch/)
+- [https://github.com/jian-en/imooc-requests](https://github.com/jian-en/imooc-requests)
 - [https://pypi.org/project/requests/](https://pypi.org/project/requests/)
 - [https://requests.readthedocs.io/en/master/](https://requests.readthedocs.io/en/master/)
 - [https://github.com/psf/requests](https://github.com/psf/requests)
