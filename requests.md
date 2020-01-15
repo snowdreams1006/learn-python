@@ -359,8 +359,96 @@ curl -v http://httpbin.snowdreams1006.cn/
 
 ## urllib
 
+问题来啦! `urllib`,`urllib2`,`urllib3` 是进化关系吗?
+
 - urllib 和 urllib2 是相互独立的模块
 - requests 库使用了 urllib3(多次请求重复使用同一个 socket)
+
+### 激活环境
+
+```bash
+source .env/bin/activate
+```
+
+### 核心代码
+
+- `GET` 请求无参数直接发送: 获取发送方 `ip`
+
+> [http://httpbin.snowdreams1006.cn/ip](http://httpbin.snowdreams1006.cn/ip)
+
+```bash
+curl -X GET "http://httpbin.snowdreams1006.cn/ip" -H "accept: application/json"
+```
+
+> `curl`
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+get_ip_url = 'http://httpbin.snowdreams1006.cn/ip'
+
+def use_simple_urllib2_get_ip():
+    response = urllib2.urlopen(get_ip_url)
+    print '>>>>Response Headers:'
+    print response.info()
+    print '>>>>Response body:'
+    print ''.join([line for line in response.readlines()])
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+- `GET` 请求无参数直接发送: 获取发送方 `header`
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+
+URL_IP = 'http://httpbin.snowdreams1006.cn/ip'
+URL_GET = 'http://httpbin.snowdreams1006.cn/get'
+
+def use_simple_urllib2():
+    response = urllib2.urlopen(URL_IP)
+    print '>>>>Response Headers:'
+    print response.info()
+    print '>>>>Response body:'
+    print ''.join([line for line in response.readlines()])
+
+def use_params_urllib2():
+    params = urllib.urlencode({'param1': 'hello', 'param2': 'world'})
+    response = urllib2.urlopen('?'.join([URL_GET, '%s']) % params)
+    print '>>>>Response Headers:'
+    print response.info()
+    print '>>>>Status Code:'
+    print response.getcode()
+    print '>>>>Request body:'
+    print ''.join([line for line in response.readlines()])
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+    print ''
+    print '>>>Use params urllib2:'
+    use_params_urllib2()
+```
+
+> `urllib_demo.py`
+
+### 使用
+
+```bash
+python urllib_demo.py
+```
+
+### 参考文档
+
+- [什么是HTTP协议?](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- [RFC7230](https://tools.ietf.org/html/rfc7230#page-19)
+- [urllib和urllib2区别](http://ver007.com/2015/09/22/276.html)
+
 
 ## 参考文档
 
