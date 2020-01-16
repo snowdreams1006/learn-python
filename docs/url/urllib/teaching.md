@@ -53,6 +53,8 @@ source .env/bin/activate
 
 如果读者亲测运行时发现网络无法正常请求,可以将[http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/)替换成[http://httpbin.org/](http://httpbin.org/)或者自行搭建本地测试环境.
 
+下面提供两种搭建本地测试环境的安装方式,当然也可以访问[http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/)或者[http://httpbin.org/](http://httpbin.org/)在线环境.
+
 - `docker` 安装方式
 
 ```bash
@@ -326,6 +328,25 @@ if __name__ == '__main__':
     use_simple_urllib2()
 ```
 
+`response.read()` 返回的是字符串,因此可以很方便用变量接收作后续处理,例如 `result = response.read()` :
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    result = response.read()
+    print result
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
 - 响应对象的响应体(方法)
 
 > `response.readline()` : 逐行读取响应体,适用于数据体比较大的情况,循环读取直到最终无数据可读取为止.
@@ -349,6 +370,32 @@ if __name__ == '__main__':
     use_simple_urllib2()
 ```
 
+`response.readline()` 只能逐行读取,因此想要获取完成的响应体需要进行手动拼接,例如:
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    result = ''
+    line = response.readline()
+    result = result + str(line)
+    while line:
+        line = response.readline()
+        result = result + str(line)
+    print result
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+> `str(line)` 是为了保证响应体字符串一定是字符串类型,其实应该不必如此,`response.readline()` 本身已经是字符串类型了.
+
 - 响应对象的响应体(方法)
 
 > `response.readlines()` : 遍历读取响应体,循环读取且保存到列表对象中,适合需要逐行处理情况.
@@ -369,6 +416,29 @@ if __name__ == '__main__':
     print '>>>Use simple urllib2:'
     use_simple_urllib2()
 ```
+
+同样地,如果需要针对 `response.readlines()` 方式获取完整响应体结果,可以如下进行拼接,示例如下:
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    result = ''
+    for line in response.readlines():
+        result = result + str(line)
+    print result
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+> 上述多行代码还可以进一步转换成一行代码: `result = ''.join([line for line in response.readlines()])`
 
 ## POST 请求
 

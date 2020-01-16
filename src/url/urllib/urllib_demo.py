@@ -8,7 +8,7 @@ def use_simple_urllib2():
     '''
     response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
     # print type(response)
-    print dir(response)
+    # print dir(response)
     # print response.headers.dict
     # print response.info()
     # print response.readline()
@@ -26,8 +26,31 @@ def use_simple_urllib2():
     # for line in response: 
     #     print line.readline()
 
-    for line in response.readlines():
-        print line
+    # result = response.read()
+    # print result
+
+    # response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    # result = ''
+    # line = response.readline()
+    # result = result + str(line)
+    # while line:
+    #     line = response.readline()
+    #     result = result + str(line)
+    # print result
+
+    # result = ''
+    # for line in response.readlines():
+    #     result = result + str(line)
+    # print result
+
+    result = ''.join([line for line in response.readlines()])
+    print result
+
+
+    # print(''.join([line for line in response.readlines()]))
+
+    # for line in response.readlines():
+    #     print line
 
 
 
