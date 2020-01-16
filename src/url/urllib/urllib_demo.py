@@ -7,9 +7,21 @@ def use_simple_urllib2():
     获取请求方信息
     '''
     response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
-    print type(response)
+    # print type(response)
     print dir(response)
-    print response.read()
+    # # print response.read()
+    # print type(response.getcode)
+    # print response.msg
+
+    # response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/status/200')
+    # print response.code
+    # print response.msg
+
+    # response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/status/500')
+    # print response.code
+    # print response.msg
+
+
 
     # print('>>>Response Headers:')
     # print(response.info())

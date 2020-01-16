@@ -109,27 +109,160 @@ if __name__ == '__main__':
 
 - 响应对象的状态码(属性)
 
-> `response.code`
+> `response.code` : 获取响应对象的状态码,正常情况下是 `200` 表示请求成功,而 `500` 是典型的系统错误.
+
+通过 `dir(response)` 获取属性枚举值,结合 `type(response)` 不难发现 `response.code` 是用来获取响应状态码的,具体调用方式是 `response.code` 还是 `response.code()` 可运行 `print type(response.code)` 大致推断.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print type(response.read)
+    print type(response.code)
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+> 这里不妨结合 `print type(response.read)` 是方法来验证输出结果到底是属性还是方法,可以看出 `response.read` 是 `<type 'instancemethod'>` 方法类型,而 `response.code` 是 `<type 'int'>` 基本类型,因此 `response.code` 是属性调用方式.
+
+`type(response.code)` 的输出结果是 `<type 'int'>` 并不是 `<type 'instancemethod'>`,因此获取状态码的方式是属性调用.
+
+详细代码如下:
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print response.code
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
 
 - 响应对象的状态码(方法)
 
-> `response.getcode()`
+> `response.getcode()` : 获取响应对象的状态码,正常情况下是 `200` 表示请求成功,而 `500` 是典型的系统错误.
 
-- 响应对象的访问链接(属性)
+同样地,从 `print dir(response)` 可知 `getcode` 字段可供调用,但不知道是属性调用还是方法调用?再次使用 `
+print type(response.getcode)` 得到 `<type 'instancemethod'>` 因而判定为方法调用形式.
+
+详情代码如下:
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print response.getcode()
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
 
 - 响应对象的状态码信息(属性)
 
-> `response.msg`
+> `response.msg` : 获取响应对象的状态描述信息,例如状态码 `200` 对于 `OK`,而 `500` 对于 `INTERNAL SERVER ERROR`.
 
-> `response.url`
+```python
+# -*- coding: utf-8 -*-
+import urllib2
 
-- 响应对象的访问链接(方法)
+def use_simple_urllib2():
+    '''
+    获取响应状态码
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/status/200')
+    print response.code
+    print response.msg
 
-> `response.geturl()`
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/status/500')
+    print response.code
+    print response.msg
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+> 正常请求状态是 `200 OK`,而请求发生异常很可能是 `500 INTERNAL SERVER ERROR` ,一旦出现异常如若异常处理则会报错,程序终止运行.
 
 - 响应对象的访问链接(属性)
 
-> `response.headers.dict`
+> `response.url` : 获取请求链接
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print response.url
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+- 响应对象的访问链接(方法)
+
+> `response.geturl()` : 获取请求链接
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print response.geturl()
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+- 响应对象的访问链接(属性)
+
+> `response.headers.dict` : 获取请求头信息并以字典形式显示.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print response.headers.dict
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
 
 - 响应对象的请求头信息(方法)
 
