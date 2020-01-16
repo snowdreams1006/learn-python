@@ -467,7 +467,7 @@ if __name__ == '__main__':
     use_simple_urllib2()
 ```
 
-假如上述代码文件名为 `urllib_demo.py `,在终端命令行内运行 `python urllib_demo.py` 文件,输出结果如下所示:
+假如上述代码文件名为 `urllib_demo.py`,在终端命令行内运行 `python urllib_demo.py` 文件,输出结果如下所示:
 
 ```bash
 (.env) $ python urllib_demo.py 
@@ -495,9 +495,167 @@ Access-Control-Allow-Credentials: true
 }
 ```
 
-其中响应头 `Connection: close` 表明连接是自动关闭的,意味着多次发送请求时不会复用之前的链接,会造成一定的浪费.
+其中响应头 `Connection: close` 表明连接是自动关闭的,而响应体 `args` 是空字典表明没有查询参数.
 
 - 有参数转码发送
+
+实际开发过程中,很少有 `GET` 请求不需要携带参数的,对于有参数查询的 `GET` 请求,原生 `urllib` 也是支持的,最简单的做法是将查询参数拼接到目标 `URL` 上得到带有查询参数的 `URL`.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_params_urllib2():
+    '''
+    获取响应头和响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get?param1=hello&param2=world')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Use params urllib2<<<'
+    use_params_urllib2()
+```
+
+同样地,假如上述代码文件名为 `urllib_demo.py`,在终端命令行内运行 `python urllib_demo.py` 文件,输出结果如下所示:
+
+```bash
+(.env) $ python urllib_demo.py 
+>>>Use params urllib2<<<
+>>>Response Headers:
+Server: nginx/1.17.6
+Date: Thu, 16 Jan 2020 13:59:23 GMT
+Content-Type: application/json
+Content-Length: 338
+Connection: close
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+>>>Response Body:
+{
+  "args": {
+    "param1": "hello", 
+    "param2": "world"
+  }, 
+  "headers": {
+    "Accept-Encoding": "identity", 
+    "Connection": "close", 
+    "Host": "httpbin.snowdreams1006.cn", 
+    "User-Agent": "Python-urllib/2.7"
+  }, 
+  "origin": "218.205.55.192", 
+  "url": "http://httpbin.snowdreams1006.cn/get?param1=hello&param2=world"
+}
+```
+
+其中响应头 `Connection: close` 表明连接是自动关闭的,而响应体 `args` 不再是空字典而是刚才传递的查询参数表明服务端确实接收到发送的查询参数了,所以这种方式也是可行的.
+
+如果查询参数非常多,直接在请求链接 `URL` 基础上拼接形成新的 `URL` 将会显示非常繁琐,而且必须遵守 `?param1=hello&param2=world` 这种格式,所以这种繁琐的拼接工作就交给程序去完成吧!
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_params_urllib2():
+    '''
+    获取响应头和响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get?param1=hello&param2=world&author=snowdreams1006&website=http://blog.snowdreams1006.cn&url=snowdreams1006.github.io/learn-python/url/urllib/teaching.html&wechat=snowdreams1006&email=snowdreams1006@163.com&github=https://github.com/snowdreams1006/')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Use params urllib2<<<'
+    use_params_urllib2()
+```
+
+上述繁琐不仅体现在拼接成新的 `URL` 时长度过长容器出错,还会遇到动态查询参数替换的问题,所以自动拼接查询参数功能真的是及时雨!
+
+```python
+params = urllib.urlencode({
+    'param1': 'hello', 
+    'param2': 'world',
+    'author':'snowdreams1006',
+    'website':'http://blog.snowdreams1006.cn',
+    'url':'https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html',
+    'wechat':'snowdreams1006',
+    'email':'snowdreams1006@163.com',
+    'github':'https://github.com/snowdreams1006/'
+})
+print params
+```
+
+`urllib.urlencode()` 可以将字典类型的查询参数转码拼接成 `&` 连接的查询参数,之后再手动拼接到请求 `URL?params` 即可得到带参数的 `URL`.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_params_urllib2():
+    params = urllib.urlencode({
+        'param1': 'hello', 
+        'param2': 'world',
+        'author':'snowdreams1006',
+        'website':'http://blog.snowdreams1006.cn',
+        'url':'https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html',
+        'wechat':'snowdreams1006',
+        'email':'snowdreams1006@163.com',
+        'github':'https://github.com/snowdreams1006/'
+    })
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get?%s' % params)
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Use params urllib2<<<'
+    use_params_urllib2()
+```
+
+假如上述代码文件名为 `urllib_demo.py`,在终端命令行内运行 `python urllib_demo.py` 文件,输出结果如下所示:
+
+```bash
+$ python urllib_demo.py 
+>>>Use params urllib2<<<
+>>>Response Headers:
+Server: nginx/1.17.6
+Date: Thu, 16 Jan 2020 14:27:21 GMT
+Content-Type: application/json
+Content-Length: 892
+Connection: close
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+>>>Response Body:
+{
+  "args": {
+    "author": "snowdreams1006", 
+    "email": "snowdreams1006@163.com", 
+    "github": "https://github.com/snowdreams1006/", 
+    "param1": "hello", 
+    "param2": "world", 
+    "url": "https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html",
+    "website": "http://blog.snowdreams1006.cn", 
+    "wechat": "snowdreams1006"
+  }, 
+  "headers": {
+    "Accept-Encoding": "identity", 
+    "Connection": "close", 
+    "Host": "httpbin.snowdreams1006.cn", 
+    "User-Agent": "Python-urllib/2.7"
+  }, 
+  "origin": "218.205.55.192", 
+  "url": "http://httpbin.snowdreams1006.cn/get?website=http%3A%2F%2Fblog.snowdreams1006.cn&github=https%3A%2F%2Fgithub.com%2Fsnowdreams1006%2F&wechat=snowdreams1006&param2=world&param1=hello&author=snowdreams1006&url=https%3A%2F%2Fsnowdreams1006.github.io%2Flearn-python%2Furl%2Furllib%2Fteaching.html&email=snowdreams1006%40163.com"
+}
+```
+
+由此可见,不论是直接手动拼接查询参数还是使用 `urllib.urlencode(query)` 半手动拼接查询参数,本质上都是一样的,依然是使用 `urllib2.urlopen(url)` 发送 `GET` 请求.
 
 ### `POST` 请求
 
