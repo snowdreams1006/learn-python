@@ -49,9 +49,27 @@ source .env/bin/activate
 
 > 演示环境已开启虚拟环境,因此 `python` 和 `pip` 文件位置正是当前目录 `.env` 而不是系统默认环境,如果未开启虚拟环境则显示的是系统目录.
 
-## GET 请求
+## 认识原生请求 urllib
 
-### 怎么发送最简单的 GET 请求
+如果读者亲测运行时发现网络无法正常请求,可以将[http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/)替换成[http://httpbin.org/](http://httpbin.org/)或者自行搭建本地测试环境.
+
+- `docker` 安装方式
+
+```bash
+docker run -p 8000:80 kennethreitz/httpbin
+```
+
+> 首次运行会先将镜像下载到本地再启动容器,非首次运行会直接启动容器,访问地址: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+- `python` 安装方式
+
+```bash
+pip install gunicorn httpbin && gunicorn httpbin:app
+```
+
+> 默认监听端口是 `8000`,如果遇到端口冲突提示已被占用,可运行 `gunicorn httpbin:app -b :9898` 指定端口.
+
+### 怎么发送最简单的网络请求
 
 > `urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')`
 
@@ -353,4 +371,10 @@ if __name__ == '__main__':
 ```
 
 ## POST 请求
+
+
+## 参考文档
+
+- [Python中read()、readline()和readlines()三者间的区别和用法](https://www.cnblogs.com/yun1108/p/8967334.html)
+- [Python核心模块——urllib模块](https://www.cnblogs.com/sysu-blackbear/p/3629420.html )
 
