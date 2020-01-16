@@ -8,7 +8,7 @@
     * [原生请求](url/urllib/about.md)
         * [范例教学](url/urllib/teaching.md)
         * [实例练习](url/urllib/exercise.md)
-    * [第三方请求](url/request/about.md)
-        * [范例教学](url/urllib/teaching.md)
-        * [实例练习](url/urllib/exercise.md)
+    * [第三方请求](url/requests/about.md)
+        * [范例教学](url/requests/teaching.md)
+        * [实例练习](url/requests/exercise.md)
 
