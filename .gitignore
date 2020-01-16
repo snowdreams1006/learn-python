@@ -10,11 +10,8 @@
 ## Commenting this out is preferred by some people, see
 ## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
 node_modules
-
-# Book build output
 _book
-
-# eBook build output
+gitbook
 *.epub
 *.mobi
 *.pdf
@@ -22,24 +19,18 @@ _book
 # package-lock.json
 package-lock.json
 
-## Dependency directory
+## docs dependency directory
 docs/node_modules
-
-# Book build output
 docs/_book
-
-# eBook build output
+docs/gitbook
 docs/*.epub
 docs/*.mobi
 docs/*.pdf
 
-## Dependency directory
+## example dependency directory
 example/node_modules
-
-# Book build output
 example/_book
-
-# eBook build output
+example/gitbook
 example/*.epub
 example/*.mobi
 example/*.pdf
