@@ -440,11 +440,70 @@ if __name__ == '__main__':
 
 > 上述多行代码还可以进一步转换成一行代码: `result = ''.join([line for line in response.readlines()])`
 
-## POST 请求
+### `GET` 请求
 
+- 无参数直接发送
+
+> [urllib2.urlopen(url)](urllib2.urlopen(url)) : 只需要一个目标 `URL` 即可发送 `GET` 请求.
+
+最简单的请求方式也就是 `GET` 方式,不设置其他参数的情况下,只需要填写 `URL` 即可发送请求,例如 `urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')`,示例代码如下:
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取响应头和响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2<<<'
+    use_simple_urllib2()
+```
+
+假如上述代码文件名为 `urllib_demo.py `,在终端命令行内运行 `python urllib_demo.py` 文件,输出结果如下所示:
+
+```bash
+(.env) $ python urllib_demo.py 
+>>>Use simple urllib2<<<
+>>>Response Headers:
+Server: nginx/1.17.6
+Date: Thu, 16 Jan 2020 13:38:27 GMT
+Content-Type: application/json
+Content-Length: 263
+Connection: close
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+>>>Response Body:
+{
+  "args": {}, 
+  "headers": {
+    "Accept-Encoding": "identity", 
+    "Connection": "close", 
+    "Host": "httpbin.snowdreams1006.cn", 
+    "User-Agent": "Python-urllib/2.7"
+  }, 
+  "origin": "218.205.55.192", 
+  "url": "http://httpbin.snowdreams1006.cn/get"
+}
+```
+
+其中响应头 `Connection: close` 表明连接是自动关闭的,意味着多次发送请求时不会复用之前的链接,会造成一定的浪费.
+
+- 有参数转码发送
+
+### `POST` 请求
 
 ## 参考文档
 
 - [Python中read()、readline()和readlines()三者间的区别和用法](https://www.cnblogs.com/yun1108/p/8967334.html)
 - [Python核心模块——urllib模块](https://www.cnblogs.com/sysu-blackbear/p/3629420.html )
-
+- [Gunicorn运行与配置](https://www.jianshu.com/p/260f18aa5462)
+- [Gunicorn常用配置](https://blog.csdn.net/momoyaoquaoaoao/article/details/93863115)
