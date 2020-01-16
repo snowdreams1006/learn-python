@@ -1,6 +1,6 @@
 # 范例教学
 
-> [https://docs.python.org/2/library/urllib.html](https://docs.python.org/2/library/urllib.html)
+> `urllib.urlopen(url[,data[,proxies]])` : [https://docs.python.org/2/library/urllib.html](https://docs.python.org/2/library/urllib.html)
 
 ## 环境准备
 
@@ -83,6 +83,7 @@ pip install gunicorn httpbin && gunicorn httpbin:app
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -112,6 +113,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -137,6 +139,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -160,6 +163,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -185,6 +189,7 @@ print type(response.getcode)` 得到 `<type 'instancemethod'>` 因而判定为�
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -205,6 +210,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -232,6 +238,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -252,6 +259,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -274,6 +282,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -296,6 +305,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -316,6 +326,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -334,6 +345,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -355,6 +367,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -376,6 +389,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -404,6 +418,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -423,6 +438,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -452,6 +468,7 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -505,6 +522,7 @@ Access-Control-Allow-Credentials: true
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_params_urllib2():
@@ -559,6 +577,7 @@ Access-Control-Allow-Credentials: true
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_params_urllib2():
@@ -596,6 +615,7 @@ print params
 
 ```python
 # -*- coding: utf-8 -*-
+import urllib
 import urllib2
 
 def use_params_urllib2():
@@ -720,7 +740,7 @@ Access-Control-Allow-Credentials: true
     "github": "https://github.com/snowdreams1006/", 
     "param1": "hello", 
     "param2": "world", 
-    "url": "https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html", 
+    "url": "https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html",
     "website": "http://blog.snowdreams1006.cn", 
     "wechat": "snowdreams1006"
   }, 
@@ -739,6 +759,68 @@ Access-Control-Allow-Credentials: true
 ```
 
 值得注意的是,上述 `POST` 请求提交的参数存放在 `form` 属性而不是 `GET` 请求时的 `args` 属性.
+
+## 高级进阶
+
+### 代理访问
+
+- 获取代理ip
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+import json
+
+def get_proxy():
+    '''
+    获取随机代理
+    '''
+    response = urllib2.urlopen('http://proxyip.snowdreams1006.cn/get/')
+    result = response.read()
+    return json.loads(result)
+
+if __name__ == '__main__':
+    print '>>>Get proxy urllib<<<'
+    get_proxy_urllib()
+```
+
+- 设置代理访问
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+import json
+
+def get_proxy():
+    '''
+    获取随机代理
+    '''
+    response = urllib2.urlopen('http://proxyip.snowdreams1006.cn/get/')
+    result = response.read()
+    return json.loads(result)
+
+def get_proxy_urllib():
+    '''
+    通过代理发送请求
+    '''
+    # 随机代理 ip
+    ip = get_proxy().get('proxy')
+    print('>>>Get Proxy:')
+    print(ip)
+    proxy = {
+        'http': 'http://{}'.format(ip),
+        'https': 'https://{}'.format(ip)
+    }
+    opener = urllib.FancyURLopener(proxy)
+    response = opener.open("http://httpbin.snowdreams1006.cn/ip")
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+```
+
 
 ## 参考文档
 
