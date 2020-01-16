@@ -4,6 +4,17 @@
 
 ### 环境准备
 
+演示环境版本信息如下:
+
+```bash
+(.env)$ python --version
+Python 2.7.16
+(.env) $ pip --version
+pip 19.3.1 from ~/python/src/url/urllib/.env/lib/python2.7/site-packages/pip (python 2.7)
+```
+
+> 以下代码在该环境运行正常,不保证其他环境与演示结果一致,一切以实际运行结果为准.
+
 - 步骤1. [可选] 安装虚拟环境 `virtualenv` 
 
 ```bash
@@ -32,14 +43,14 @@ source .env/bin/activate
 - 步骤4. [可选] 查看当前正在使用的 `python` 与 `pip` 版本
 
 ```bash
-(.env) snowdreams1006s-MacBook-Pro:urllib snowdreams1006$ which python
-/Users/snowdreams1006/Documents/workspace/snowdreams1006.github.io/python/src/url/urllib/.env/bin/python
+(.env) $ which python
+~/python/src/url/urllib/.env/bin/python
 (.env) snowdreams1006s-MacBook-Pro:urllib snowdreams1006$ which pip
-/Users/snowdreams1006/Documents/workspace/snowdreams1006.github.io/python/src/url/urllib/.env/bin/pip
-(.env) snowdreams1006s-MacBook-Pro:urllib snowdreams1006$ 
+~/python/src/url/urllib/.env/bin/pip
 ```
 
 > 演示环境已开启虚拟环境,因此 `python` 和 `pip` 文件位置正是当前目录 `.env` 而不是系统默认环境,如果未开启虚拟环境则显示的是系统目录.
+
 
 ## POST 请求
 
