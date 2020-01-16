@@ -1,5 +1,7 @@
 # 范例教学
 
+> [https://docs.python.org/2/library/urllib.html](https://docs.python.org/2/library/urllib.html)
+
 ## 环境准备
 
 演示环境版本信息如下:
@@ -658,6 +660,85 @@ Access-Control-Allow-Credentials: true
 由此可见,不论是直接手动拼接查询参数还是使用 `urllib.urlencode(query)` 半手动拼接查询参数,本质上都是一样的,依然是使用 `urllib2.urlopen(url)` 发送 `GET` 请求.
 
 ### `POST` 请求
+
+如果请求链接 `URL` 仅仅支持 `POST` 请求,这时上述拼接地址实现的 `GET` 请求就不再满足要求,有意思的是,竟然只需要一步就可以将 `GET` 请求转换成 `POST` 请求.
+
+如果是 `GET` 请求,发送请求时是这样: `urllib2.urlopen('http://httpbin.snowdreams1006.cn/post?%s' % params)`;
+
+如果是 `POST` 请求,发送请求时是这样: `urllib2.urlopen('http://httpbin.snowdreams1006.cn/post',params)`;
+
+```python
+def post_params_urllib2():
+    '''
+    获取响应头和响应体信息
+    '''
+    params = urllib.urlencode({
+        'param1': 'hello', 
+        'param2': 'world',
+        'author':'snowdreams1006',
+        'website':'http://blog.snowdreams1006.cn',
+        'url':'https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html',
+        'wechat':'snowdreams1006',
+        'email':'snowdreams1006@163.com',
+        'github':'https://github.com/snowdreams1006/'
+    })
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/post',params)
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Post params urllib2<<<'
+    post_params_urllib2()
+```
+
+由于 `GET` 请求和 `POST` 请求方式实在太像了,因此需要留意发送请求时 `urllib2.urlopen(url)` 中链接 `URL` 到底是怎么拼接的?
+
+不过更加直观的方法就是发送请求,直接验证:
+
+```bash
+(.env) $ python urllib_demo.py 
+>>>Post params urllib2<<<
+>>>Response Headers:
+Server: nginx/1.17.6
+Date: Thu, 16 Jan 2020 14:45:43 GMT
+Content-Type: application/json
+Content-Length: 758
+Connection: close
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+>>>Response Body:
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "author": "snowdreams1006", 
+    "email": "snowdreams1006@163.com", 
+    "github": "https://github.com/snowdreams1006/", 
+    "param1": "hello", 
+    "param2": "world", 
+    "url": "https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html", 
+    "website": "http://blog.snowdreams1006.cn", 
+    "wechat": "snowdreams1006"
+  }, 
+  "headers": {
+    "Accept-Encoding": "identity", 
+    "Connection": "close", 
+    "Content-Length": "285", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.snowdreams1006.cn", 
+    "User-Agent": "Python-urllib/2.7"
+  }, 
+  "json": null, 
+  "origin": "218.205.55.192", 
+  "url": "http://httpbin.snowdreams1006.cn/post"
+}
+```
+
+值得注意的是,上述 `POST` 请求提交的参数存放在 `form` 属性而不是 `GET` 请求时的 `args` 属性.
 
 ## 参考文档
 
