@@ -63,7 +63,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../urllib/teaching.html" />
+    <link rel="next" href="teaching.html" />
     
     
     <link rel="prev" href="../urllib/exercise.html" />
@@ -77,7 +77,7 @@
     }
     </style>
     <script>
-        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"snowdreams1006","repo":"gitbook-plugin-readmore","type":"star","size":"small"}]};
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"snowdreams1006","repo":"learn-python","type":"star","size":"small"}]};
     </script>
 
     
@@ -273,9 +273,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.2.1" data-path="../urllib/teaching.html">
+        <li class="chapter " data-level="1.3.2.1" data-path="teaching.html">
             
-                <a href="../urllib/teaching.html">
+                <a href="teaching.html">
             
                     
                     范例教学
@@ -286,9 +286,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.2" data-path="../urllib/exercise.html">
+        <li class="chapter " data-level="1.3.2.2" data-path="exercise.html">
             
-                <a href="../urllib/exercise.html">
+                <a href="exercise.html">
             
                     
                     实例练习
@@ -365,8 +365,424 @@
                                 
                 <div id="vip-container">
                     <h1 id="&#x7B2C;&#x4E09;&#x65B9;&#x8BF7;&#x6C42;">&#x7B2C;&#x4E09;&#x65B9;&#x8BF7;&#x6C42;</h1>
+<h2 id="&#x5B9E;&#x9A8C;&#x73AF;&#x5883;">&#x5B9E;&#x9A8C;&#x73AF;&#x5883;</h2>
+<ul>
+<li><code>python</code> &#x7248;&#x672C;</li>
+</ul>
+<pre><code class="lang-bash">python --version
+</code></pre>
+<blockquote>
+<p>&#x7B80;&#x5316;&#x5199;&#x6CD5;: <code>python -V</code>,&#x7B14;&#x8005;&#x5B9E;&#x9A8C;&#x73AF;&#x5883;: <code>Python 2.7.16</code></p>
+</blockquote>
+<ul>
+<li><code>pip</code> &#x7248;&#x672C;</li>
+</ul>
+<pre><code class="lang-bash">pip --version
+</code></pre>
+<blockquote>
+<p>&#x7B80;&#x5316;&#x5199;&#x6CD5;: <code>pip -V</code>,&#x7B14;&#x8005;&#x5B9E;&#x9A8C;&#x73AF;&#x5883;: <code>pip 19.3.1</code></p>
+</blockquote>
+<ul>
+<li><code>python</code> vs <code>python3</code></li>
+</ul>
+<pre><code class="lang-bash">python3 -V
+
+python -V
+</code></pre>
+<blockquote>
+<p><code>python3 -V</code> : <code>Python 3.7.5</code>
+<code>python -V</code> : <code>Python 2.7.16</code></p>
+</blockquote>
+<ul>
+<li><code>pip</code> vs <code>pip3</code></li>
+</ul>
+<pre><code class="lang-bash">pip3 -V
+
+pip -V
+</code></pre>
+<blockquote>
+<p><code>pip3 -V</code> : <code>pip 19.3.1 from /usr/local/lib/python3.7/site-packages/pip (python 3.7)</code>
+<code>pip -V</code> : <code>pip 19.3.1 from /Library/Python/2.7/site-packages/pip (python 2.7)</code></p>
+</blockquote>
+<h2 id="pip-&#x57FA;&#x7840;&#x547D;&#x4EE4;">pip &#x57FA;&#x7840;&#x547D;&#x4EE4;</h2>
+<ul>
+<li>&#x683C;&#x5F0F;&#x5316;&#x663E;&#x793A;&#x5DF2;&#x5B89;&#x88C5;&#x5305;&#x5217;&#x8868;</li>
+</ul>
+<pre><code class="lang-bash">pip freeze
+</code></pre>
+<ul>
+<li>&#x9ED8;&#x8BA4;&#x663E;&#x793A;&#x5DF2;&#x5B89;&#x88C5;&#x5305;&#x5217;&#x8868;</li>
+</ul>
+<pre><code class="lang-bash">pip list
+</code></pre>
+<h2 id="&#x865A;&#x62DF;&#x73AF;&#x5883;-virtualenv">&#x865A;&#x62DF;&#x73AF;&#x5883; <code>virtualenv</code></h2>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<p>&#x5982;&#x679C;&#x672C;&#x5730;&#x73AF;&#x5883;&#x6CA1;&#x6709;&#x5B89;&#x88C5;&#x8FC7; <code>virtualenv</code>,&#x5219;&#x76F4;&#x63A5;&#x5728;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8FD0;&#x884C; <code>virtualenv</code> &#x4F1A;&#x62A5;&#x9519;,&#x547D;&#x4EE4;&#x65E0;&#x6CD5;&#x627E;&#x5230;,&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;:</p>
+<pre><code class="lang-bash">$ virtualenv
+-bash: virtualenv: <span class="hljs-built_in">command</span> not found
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>pip</code> &#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x5B89;&#x88C5;&#x7B2C;&#x4E09;&#x65B9;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DE5;&#x5177; <code>virtualenv</code> ,&#x65B9;&#x4FBF;&#x9694;&#x79BB;&#x4E0D;&#x540C;&#x73AF;&#x5883;,&#x907F;&#x514D;&#x4E0D;&#x540C;&#x73AF;&#x5883;&#x76F4;&#x63A5;&#x76F8;&#x4E92;&#x5F71;&#x54CD;.</p>
+<pre><code class="lang-bash">sudo pip install virtualenv
+</code></pre>
+<blockquote>
+<p>&#x666E;&#x901A;&#x7528;&#x6237;&#x8BF7;&#x8FD0;&#x884C; <code>pip install virtualenv --user</code> &#x672C;&#x5730;&#x5316;&#x5B89;&#x88C5;,&#x8D85;&#x7EA7;&#x7528;&#x6237;&#x8BF7;&#x8FD0;&#x884C; <code>sudo pip install virtualenv</code> &#x5168;&#x5C40;&#x5B89;&#x88C5;.</p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x62A5;&#x9519;&#x4FE1;&#x606F;,&#x5219;&#x8868;&#x793A;&#x5B89;&#x88C5;&#x6210;&#x529F;,&#x518D;&#x6B21;&#x8FD0;&#x884C; <code>virtualenv</code> &#x4F1A;&#x663E;&#x793A;&#x4E00;&#x5927;&#x5806;&#x76F8;&#x5173;&#x547D;&#x4EE4;&#x8BF4;&#x660E;&#x6587;&#x6863;,&#x5982;&#x679C;&#x5931;&#x8D25;&#x4F9D;&#x7136;&#x4F1A;&#x63D0;&#x793A; <code>virtualenv: command not found</code> .</p>
+<p>&#x73B0;&#x5728;&#x518D;&#x6B21;&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x5305;&#x5217;&#x8868;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#x591A;&#x4E86; <code>virtualenv</code> &#x5305;&#x7684;&#x7248;&#x672C;&#x4FE1;&#x606F;,&#x5982;&#x679C;&#x672C;&#x5730;&#x5B89;&#x88C5;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x8FC7;&#x591A;&#x7684;&#x8BDD;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>| grep virtualenv</code> &#x7BA1;&#x9053;&#x7B26;&#x8FC7;&#x6EE4;&#x51FA;&#x5173;&#x952E;&#x8BCD; <code>virtualenv</code>.</p>
+<pre><code class="lang-bash">pip freeze | grep virtualenv
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<p><code>virtualenv</code> &#x547D;&#x4EE4;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;,&#x53EF;&#x4EE5;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x76F4;&#x63A5;&#x8F93;&#x5165; <code>virtualenv --help</code> &#x67E5;&#x770B; <code>virtualenv</code> &#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;,&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;:</p>
+<pre><code class="lang-bash">$ virtualenv --help
+Usage: virtualenv [OPTIONS] DEST_DIR
+
+Options:
+  --version             show program<span class="hljs-string">&apos;s version number and exit
+  -h, --help            show this help message and exit
+  -v, --verbose         Increase verbosity.
+  -q, --quiet           Decrease verbosity.
+  -p PYTHON_EXE, --python=PYTHON_EXE
+                        The Python interpreter to use, e.g.,
+                        --python=python3.5 will use the python3.5 interpreter
+                        to create the new environment.  The default is the
+                        interpreter that virtualenv was installed with (/Syste
+                        m/Library/Frameworks/Python.framework/Versions/2.7/Res
+                        ources/Python.app/Contents/MacOS/Python)
+  --clear               Clear out the non-root install and start from scratch.
+  --no-site-packages    DEPRECATED. Retained only for backward compatibility.
+                        Not having access to global site-packages is now the
+                        default behavior.
+  --system-site-packages
+                        Give the virtual environment access to the global
+                        site-packages.
+  --always-copy         Always copy files rather than symlinking.
+  --relocatable         Make an EXISTING virtualenv environment relocatable.
+                        This fixes up scripts and makes all .pth files
+                        relative.
+  --no-setuptools       Do not install setuptools in the new virtualenv.
+  --no-pip              Do not install pip in the new virtualenv.
+  --no-wheel            Do not install wheel in the new virtualenv.
+  --extra-search-dir=DIR
+                        Directory to look for setuptools/pip distributions in.
+                        This option can be used multiple times.
+  --download            Download pre-installed packages from PyPI.
+  --no-download, --never-download
+                        Do not download pre-installed packages from PyPI.
+  --prompt=PROMPT       Provides an alternative prompt prefix for this
+                        environment.
+  --setuptools          DEPRECATED. Retained only for backward compatibility.
+                        This option has no effect.
+  --distribute          DEPRECATED. Retained only for backward compatibility.
+                        This option has no effect.
+  --unzip-setuptools    DEPRECATED.  Retained only for backward compatibility.
+                        This option has no effect.
+</span></code></pre>
+<p>&#x6839;&#x636E;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x63D0;&#x793A;, <code>virtualenv</code> &#x7684;&#x7528;&#x6CD5;&#x662F; <code>virtualenv [OPTIONS] DEST_DIR</code>,&#x5176;&#x4E2D;&#x9009;&#x9879;(<code>OPTIONS</code>) &#x662F;&#x53EF;&#x9009;&#x7684;,&#x76EE;&#x6807;&#x76EE;&#x5F55;(<code>DEST_DIR</code>)&#x662F;&#x5FC5;&#x9009;&#x7684;.</p>
+<p>&#x56E0;&#x6B64;,&#x5047;&#x5982;&#x5C06;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;&#x76EE;&#x6807;&#x76EE;&#x5F55;,&#x56E0;&#x6B64;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5219;&#x662F;&#x8FD9;&#x6837;&#x7684;:</p>
+<pre><code class="lang-bash">virtualenv .env
+</code></pre>
+<blockquote>
+<p>&#x7531;&#x4E8E;&#x76EE;&#x6807;&#x76EE;&#x5F55;&#x4E3B;&#x8981;&#x662F;&#x5B58;&#x50A8;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;,&#x5E73;&#x65F6;&#x5E76;&#x4E0D;&#x592A;&#x5173;&#x5FC3;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x800C;&#x662F;&#x4EA4;&#x7531; <code>virtualenv</code> &#x81EA;&#x52A8;&#x7BA1;&#x7406;,&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x4F7F;&#x7528; <code>virtualenv</code> &#x76F8;&#x5173;&#x547D;&#x4EE4;&#x5373;&#x53EF;,&#x56E0;&#x6B64;&#x5C06;&#x76EE;&#x6807;&#x76EE;&#x5F55;(<code>DEST_DIR</code>) &#x8BBE;&#x7F6E;&#x6210;&#x9690;&#x85CF;&#x76EE;&#x5F55;.</p>
+</blockquote>
+<p>&#x5047;&#x5982;&#x76EE;&#x6807;&#x76EE;&#x5F55;(<code>DEST_DIR</code>)&#x662F;&#x9690;&#x85CF;&#x76EE;&#x5F55;,&#x60F3;&#x8981;&#x67E5;&#x770B;&#x76EE;&#x5F55;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x8FD0;&#x884C; <code>ls -al</code> &#x8FDB;&#x884C;&#x67E5;&#x770B;,&#x5982;&#x679C;&#x662F;&#x53EF;&#x89C1;&#x76EE;&#x5F55;,&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>ls</code> &#x5373;&#x53EF;&#x67E5;&#x770B;&#x521A;&#x521A;&#x521B;&#x5EFA;&#x7684;&#x76EE;&#x6807;&#x76EE;&#x5F55;.</p>
+<pre><code class="lang-bash">$ ls -al
+total 0
+drwxr-xr-x   3 snowdreams1006  staff   96  1 12 20:51 .
+drwxr-xr-x  17 snowdreams1006  staff  544  1 12 13:57 ..
+drwxr-xr-x   6 snowdreams1006  staff  192  1 12 20:51 .env
+</code></pre>
+<p>&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x76EE;&#x6807;&#x76EE;&#x5F55;(<code>DEST_DIR</code>)&#x7684;&#x786E;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x6210;&#x529F;,&#x65E2;&#x7136;&#x4F5C;&#x4E3A;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7684;&#x5B58;&#x50A8;&#x76EE;&#x5F55;,&#x80AF;&#x5B9A;&#x4E0D;&#x80FD;&#x662F;&#x7A7A;&#x76EE;&#x5F55;,&#x4F7F;&#x7528; <code>tree .env -L 2</code> &#x9650;&#x5236;&#x4E8C;&#x5C42;&#x663E;&#x793A;&#x76EE;&#x5F55;&#x7ED3;&#x679C;&#x5E76;&#x4EE5;&#x6811;&#x72B6;&#x5C55;&#x793A;.</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x63D0;&#x793A; <code>command not found</code> &#x5219;&#x8BF4;&#x660E;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x5E76;&#x672A;&#x5B89;&#x88C5;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>brew install tree</code> &#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x4E5F;&#x53EF;&#x4EE5;&#x653E;&#x5F03;&#x7EC8;&#x7AEF;&#x4F7F;&#x7528;&#x53EF;&#x89C6;&#x5316;&#x6587;&#x4EF6;&#x67E5;&#x770B;&#x5668;&#x6D4F;&#x89C8;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x6216;&#x8005;&#x81EA;&#x884C;&#x767E;&#x5EA6;&#x5B89;&#x88C5; <code>tree</code> &#x547D;&#x4EE4;.</p>
+</blockquote>
+<pre><code class="lang-bash">$ tree .env -L 2
+.env
+&#x251C;&#x2500;&#x2500; bin
+&#x2502;   &#x251C;&#x2500;&#x2500; activate
+&#x2502;   &#x251C;&#x2500;&#x2500; activate.csh
+&#x2502;   &#x251C;&#x2500;&#x2500; activate.fish
+&#x2502;   &#x251C;&#x2500;&#x2500; activate.ps1
+&#x2502;   &#x251C;&#x2500;&#x2500; activate_this.py
+&#x2502;   &#x251C;&#x2500;&#x2500; easy_install
+&#x2502;   &#x251C;&#x2500;&#x2500; easy_install-2.7
+&#x2502;   &#x251C;&#x2500;&#x2500; pip
+&#x2502;   &#x251C;&#x2500;&#x2500; pip2
+&#x2502;   &#x251C;&#x2500;&#x2500; pip2.7
+&#x2502;   &#x251C;&#x2500;&#x2500; python
+&#x2502;   &#x251C;&#x2500;&#x2500; python-config
+&#x2502;   &#x251C;&#x2500;&#x2500; python2 -&gt; python
+&#x2502;   &#x251C;&#x2500;&#x2500; python2.7 -&gt; python
+&#x2502;   &#x2514;&#x2500;&#x2500; wheel
+&#x251C;&#x2500;&#x2500; include
+&#x2502;   &#x2514;&#x2500;&#x2500; python2.7 -&gt; /System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7
+&#x2514;&#x2500;&#x2500; lib
+    &#x2514;&#x2500;&#x2500; python2.7
+
+5 directories, 15 files
+</code></pre>
+<p>&#x867D;&#x7136;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x4E86;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x76F8;&#x5173;&#x76EE;&#x5F55;,&#x4F46;&#x8FD8;&#x6CA1;&#x6709;&#x6FC0;&#x6D3B;&#x8BE5;&#x73AF;&#x5883;,&#x6BD4;&#x5982;&#x73B0;&#x5728;&#x8FD0;&#x884C; <code>pip freeze</code> &#x4F9D;&#x7136;&#x8C03;&#x7528;&#x7684;&#x662F;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x73AF;&#x5883;.</p>
+<pre><code class="lang-bash">$ pip freeze
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won<span class="hljs-string">&apos;t be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+altgraph==0.10.2
+asn1crypto==0.24.0
+</span></code></pre>
+<p>&#x6240;&#x4EE5;&#x60F3;&#x8981;&#x5F00;&#x542F;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x8FD8;&#x5DEE;&#x4E00;&#x6B65;,&#x8FD9;&#x5C31;&#x662F;&#x8FD0;&#x884C; <code>source .env/bin/activate</code> &#x8FDB;&#x884C;&#x6FC0;&#x6D3B;&#x8BE5;&#x865A;&#x62DF;&#x73AF;&#x5883;.</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">source</span> .env/bin/activate
+</code></pre>
+<blockquote>
+<p>&#x6FC0;&#x6D3B;&#x547D;&#x4EE4;&#x65E0;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;&#x63D0;&#x793A;&#x5E76;&#x4E0D;&#x8868;&#x793A;&#x65E0;&#x53CD;&#x5E94;&#x800C;&#x662F;&#x65E0;&#x8BDD;&#x53EF;&#x8BF4;,&#x6CA1;&#x6709;&#x6D88;&#x606F;&#x5C31;&#x662F;&#x597D;&#x6D88;&#x606F;,&#x6709;&#x6D88;&#x606F;&#x7684;&#x60C5;&#x51B5;&#x5927;&#x6982;&#x7387;&#x662F;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x6216;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;.</p>
+</blockquote>
+<pre><code class="lang-bash">(.env) $ python --version
+Python 2.7.16
+
+(.env) $ pip --version
+pip 19.3.1 from .env/lib/python2.7/site-packages/pip (python 2.7)
+
+(.env) $ pip freeze
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won<span class="hljs-string">&apos;t be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+</span></code></pre>
+<blockquote>
+<p>&#x518D;&#x6B21;&#x8FD0;&#x884C; <code>python --version</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5F53;&#x524D; <code>python</code> &#x7248;&#x672C;&#x4FE1;&#x606F;,&#x5982;&#x679C;&#x8FD8;&#x4E0D;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x865A;&#x62DF;&#x73AF;&#x5883;,&#x4E0D;&#x59A8;&#x8FD0;&#x884C; <code>pip freeze</code> &#x5BF9;&#x6BD4;&#x5206;&#x6790;&#x548C;&#x672A;&#x8FD0;&#x884C; <code>source .env/bin/activate</code> &#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x4E00;&#x81F4;.</p>
+</blockquote>
+<p>&#x4E00;&#x65E6;&#x8FDB;&#x5165;&#x5230;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x540E;,&#x8FD9;&#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x73AF;&#x5883;,&#x4E0D;&#x4F1A;&#x53D7;&#x5230;&#x5BBF;&#x4E3B;&#x673A;&#x73AF;&#x5883;&#x7684;&#x5F71;&#x54CD;,&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x505A;&#x5B66;&#x4E60;&#x6D4B;&#x8BD5;&#x4E4B;&#x7528;,&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x5F00;&#x59CB;&#x6B63;&#x5F0F;&#x5B66;&#x4E60; <code>requests</code> &#x7C7B;&#x5E93;!</p>
+<h2 id="requests-&#x7C7B;&#x5E93;">requests &#x7C7B;&#x5E93;</h2>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<pre><code class="lang-bash">pip install requests
+</code></pre>
+<blockquote>
+<p>&#x4E0A;&#x8FF0;&#x547D;&#x4EE4;&#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x7684;&#x662F;&#x6700;&#x65B0;&#x7248;&#x672C;,&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#x53EF;&#x4EE5;&#x8FD0;&#x884C; <code>pip freeze | grep requests</code> &#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7248;&#x672C;.</p>
+</blockquote>
+<h3 id="&#x9A8C;&#x8BC1;">&#x9A8C;&#x8BC1;</h3>
+<pre><code class="lang-bash">(.env) $ pip freeze | grep requests
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won<span class="hljs-string">&apos;t be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+requests==2.22.0
+</span></code></pre>
+<blockquote>
+<p>&#x5177;&#x4F53;&#x7248;&#x672C;&#x53F7;&#x53EF;&#x80FD;&#x5E76;&#x4E0D;&#x4E00;&#x81F4;,&#x8FC7;&#x53BB;&#x7684;&#x6700;&#x65B0;&#x7248;&#x5F88;&#x5927;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#x73B0;&#x5728;&#x7684;&#x6700;&#x65B0;&#x7248;,&#x56E0;&#x4E3A; <code>pip install requests</code> &#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x7684;&#x662F;&#x5F53;&#x65F6;&#x7684;&#x6700;&#x65B0;&#x7248;&#x800C;&#x4E0D;&#x662F;&#x6307;&#x5B9A;&#x7248;&#x672C;.</p>
+</blockquote>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5728;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;,&#x8F93;&#x5165; <code>python</code> &#x8FDB;&#x5165; <code>python</code> &#x89E3;&#x91CA;&#x5668;&#x4EA4;&#x4E92;&#x73AF;&#x5883;&#x4E2D;,&#x4E0D;&#x7528;&#x4EFB;&#x4F55; IDE &#x800C;&#x662F;&#x7EAF;&#x7CB9;&#x7684;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C;&#x8DB3;&#x4EE5;&#x6559;&#x5B66;&#x6F14;&#x793A; <code>requests</code> &#x7C7B;&#x5E93;&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;,&#x52A0;&#x6DF1;&#x5B66;&#x4E60;&#x5370;&#x8C61;.</p>
+<pre><code class="lang-bash">(.env) $ python
+
+WARNING: Python 2.7 is not recommended. 
+This version is included <span class="hljs-keyword">in</span> macOS <span class="hljs-keyword">for</span> compatibility with legacy software. 
+Future versions of macOS will not include Python 2.7. 
+Instead, it is recommended that you transition to using <span class="hljs-string">&apos;python3&apos;</span> from within Terminal.
+
+Python 2.7.16 (default, Nov  9 2019, 05:55:08) 
+[GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc<span class="hljs-_">-s</span> on darwin
+Type <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string">&quot;copyright&quot;</span>, <span class="hljs-string">&quot;credits&quot;</span> or <span class="hljs-string">&quot;license&quot;</span> <span class="hljs-keyword">for</span> more information.
+&gt;&gt;&gt;
+</code></pre>
+<blockquote>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#x521A;&#x624D;&#x6211;&#x4EEC;&#x5728;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C;&#x76F4;&#x63A5;&#x8F93;&#x5165; <code>python</code> &#x547D;&#x4EE4;&#x5E76;&#x56DE;&#x8F66;&#x786E;&#x8BA4;&#x540E;&#x5C31;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x5230; <code>python</code> &#x89E3;&#x91CA;&#x5668;&#x4EA4;&#x4E92;&#x73AF;&#x5883;,&#x6700;&#x5DE6;&#x4FA7;&#x7684;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x4E5F;&#x7531;<code>$</code>(&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x4F60;&#x7684;&#x63D0;&#x793A;&#x7B26;&#x662F;<code>#</code>)&#x53D8;&#x6210;&#x4E86; <code>&gt;&gt;&gt;</code> ,&#x8FD9;&#x5C31;&#x662F;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165; <code>python</code> &#x89E3;&#x91CA;&#x5668;&#x4EA4;&#x4E92;&#x73AF;&#x5883;&#x7684;&#x91CD;&#x8981;&#x6807;&#x5FD7;,&#x4E00;&#x5B9A;&#x8981;&#x4ED4;&#x7EC6;&#x533A;&#x5206;&#x547D;&#x4EE4;&#x884C;&#x63D0;&#x793A;&#x7B26;&#x7684;&#x5DEE;&#x5F02;,&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x8EAB;&#x5904;&#x4F55;&#x5904;&#x624D;&#x80FD;&#x505A;&#x5230;&#x6E38;&#x5203;&#x6709;&#x4F59;.</p>
+</blockquote>
+<p>&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165; <code>python</code> &#x89E3;&#x91CA;&#x5668;&#x4EA4;&#x4E92;&#x73AF;&#x5883;&#x4E2D;&#x800C;&#x4E0D;&#x662F;&#x666E;&#x901A;&#x7684;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C; <code>shell</code> &#x73AF;&#x5883;,&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x521A;&#x624D;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x7684; <code>requests</code> &#x7C7B;&#x5E93;.</p>
+<p>&#x5728; <code>python</code> &#x4E2D;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x578B;&#x662F;&#x9700;&#x8981;&#x5148; <code>import &lt;module&gt;</code> &#x8FDB;&#x884C;&#x5F15;&#x5165;&#x540E;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x7684;,&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#x5C31;&#x662F;&#x5148;&#x5BFC;&#x5165; <code>import</code> .</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> requests
+</code></pre>
+<p>&#x540C;&#x6837;&#x5730;,&#x5BFC;&#x5165; <code>requests</code> &#x7C7B;&#x5E93;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x63D0;&#x793A;&#x4FE1;&#x606F;,&#x8FD8;&#x8BB0;&#x5F97;&#x4E4B;&#x524D;&#x6FC0;&#x6D3B;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4F7F;&#x7528;&#x7684; <code>source .en/bin/activate</code> &#x547D;&#x4EE4;&#x5417;?</p>
+<p>&#x6CA1;&#x6709;&#x6D88;&#x606F;&#x5C31;&#x662F;&#x597D;&#x6D88;&#x606F;!</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x4FE1;&#x7684;&#x8BDD;,&#x6545;&#x610F;&#x5BFC;&#x5165; import &#x4E00;&#x4E2A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;,&#x770B;&#x4E00;&#x4E0B;&#x662F;&#x5426;&#x4F9D;&#x7136;&#x6CA1;&#x6709;&#x6D88;&#x606F;&#x5427;,&#x6BD4;&#x5982;: import snowdreams1006</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> snowdreams1006
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+ImportError: No module named snowdreams1006
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x547D;&#x4EE4;&#x51FA;&#x73B0; <code>ImportError: No module named snowdreams1006</code> &#x5BFC;&#x5165;&#x9519;&#x8BEF;,&#x73B0;&#x5728;&#x603B;&#x8BE5;&#x76F8;&#x4FE1;&quot;&#x6CA1;&#x6709;&#x6D88;&#x606F;&#x5C31;&#x662F;&#x597D;&#x6D88;&#x606F;&quot;&#x8FD9;&#x53E5;&#x81F3;&#x7406;&#x540D;&#x8A00;&#x4E86;&#x5427;!</p>
+<p>&#x5BFC;&#x5165;&#x6210;&#x529F;&#x540E;,&#x5F53;&#x7136;&#x662F;&#x67E5;&#x770B;&#x5173;&#x4E8E;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x4E86;,&#x5E08;&#x5085;&#x9886;&#x8FDB;&#x95E8;&#x4FEE;&#x884C;&#x5728;&#x4E2A;&#x4EBA;,&#x5B66;&#x4E60;&#x8FD8;&#x662F;&#x8981;&#x591A;&#x770B;&#x5B98;&#x65B9;&#x6587;&#x6863;,&#x5C11;&#x770B;&#x4E71;&#x4E03;&#x516B;&#x7CDF;&#x7684;&#x535A;&#x5BA2;&#x6559;&#x7A0B;!</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>help(<span class="hljs-string">&quot;requests&quot;</span>)
+</code></pre>
+<p>&#x7EE7;&#x7EED;&#x8F93;&#x5165; <code>help(&quot;requests&quot;)</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5173;&#x4E8E;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x7684;&#x5E2E;&#x52A9;&#x6587;&#x6863;,&#x540C;&#x65F6;&#x4E5F;&#x79BB;&#x5F00;&#x4E86; <code>python</code> &#x89E3;&#x91CA;&#x5668;&#x4EA4;&#x4E92;&#x73AF;&#x5883;,&#x6700;&#x660E;&#x663E;&#x7684;&#x5DEE;&#x522B;&#x5728;&#x4E8E;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26; <code>&gt;&gt;&gt;</code> &#x4E0D;&#x89C1;&#x4E86;!</p>
+<pre><code class="lang-bash">Help on package requests:
+
+NAME
+    requests
+
+FILE
+    /Users/snowdreams1006/Documents/workspace/snowdreams1006.github.io/python/requests/.env/lib/python2.7/site-packages/requests/__init__.py
+
+MODULE DOCS
+    https://docs.python.org/library/requests
+
+DESCRIPTION
+    Requests HTTP Library
+    ~~~~~~~~~~~~~~~~~~~~~
+
+    Requests is an HTTP library, written <span class="hljs-keyword">in</span> Python, <span class="hljs-keyword">for</span> human beings. Basic GET
+    usage:
+
+       &gt;&gt;&gt; import requests
+       &gt;&gt;&gt; r = requests.get(<span class="hljs-string">&apos;https://www.python.org&apos;</span>)
+       &gt;&gt;&gt; r.status_code
+       200
+</code></pre>
+<p>&#x4E0D;&#x65AD;&#x70B9;&#x51FB;&#x56DE;&#x8F66;&#x952E;&#x53EF;&#x4EE5;&#x4E00;&#x76F4;&#x67E5;&#x770B;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x76F4;&#x5230;&#x5C3D;&#x5934;,&#x60F3;&#x8981;&#x9000;&#x51FA;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x8FD4;&#x56DE;&#x5230;&#x4E0A;&#x4E00;&#x5C42;&#x73AF;&#x5883;,&#x53EA;&#x9700;&#x8981;&#x6572;&#x5165; <code>q</code>(&#x82F1;&#x6587;&#x5355;&#x8BCD; <code>quit</code> &#x7684;&#x9996;&#x5B57;&#x6BCD;,&#x8868;&#x793A;&quot;&#x9000;&#x51FA;&quot;&#x7684;&#x610F;&#x601D;.)&#x5373;&#x53EF;&#x8FD4;&#x56DE;&#x5230;&#x719F;&#x6089;&#x7684; <code>&gt;&gt;&gt;</code> &#x73AF;&#x5883;.</p>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x8FD4;&#x56DE;&#x5230;&#x666E;&#x901A;&#x7684;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C; <code>shell</code> &#x73AF;&#x5883;&#x5E94;&#x8BE5;&#x7EE7;&#x7EED;&#x5F80;&#x4E0A;&#x8FD4;&#x56DE;,&#x90A3;&#x4E48;&#x662F;&#x4E0D;&#x662F;&#x7EE7;&#x7EED;&#x6572;&#x5165; <code>q</code> &#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x5462;?</p>
+<pre><code class="lang-bash">&gt;&gt;&gt; q
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line 1, <span class="hljs-keyword">in</span> &lt;module&gt;
+NameError: name <span class="hljs-string">&apos;q&apos;</span> is not defined
+&gt;&gt;&gt; quit
+Use quit() or Ctrl-D (i.e. EOF) to <span class="hljs-built_in">exit</span>
+&gt;&gt;&gt; quit()
+(.env) $
+</code></pre>
+<p>&#x867D;&#x7136;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x5230;&#x666E;&#x901A;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C; <code>shell</code> &#x73AF;&#x5883;,&#x4F46;&#x662F;&#x6839;&#x636E;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x7684;&#x63D0;&#x793A;,&#x786E;&#x5B9E;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;,&#x53EA;&#x4E0D;&#x8FC7;&#x6CA1;&#x6709;&#x505A;&#x7F29;&#x5199;&#x7684;&#x6620;&#x5C04;&#x7F62;&#x4E86;!</p>
+<h2 id="httpbin">httpbin</h2>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x4E86; <code>requests</code> &#x7C7B;&#x5E93;,&#x8FD8;&#x9700;&#x8981;&#x670D;&#x52A1;&#x7AEF;&#x4F9B;&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x6D4B;&#x8BD5;&#x63A5;&#x6536; <code>http</code> &#x8BF7;&#x6C42;,&#x8FD9;&#x91CC;&#x63A8;&#x8350; <code>httpbin</code> &#x7C7B;&#x5E93;.</p>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<pre><code class="lang-bash">pip install gunicorn httpbin
+</code></pre>
+<blockquote>
+<p>&#x4E00;&#x6B21;&#x6027;&#x5B89;&#x88C5;&#x591A;&#x4E2A;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;,&#x5305;&#x62EC; <code>gunicorn</code> &#x548C; <code>httpbin</code></p>
+</blockquote>
+<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<pre><code class="lang-bash">gunicorn htpbin:app
+</code></pre>
+<blockquote>
+<p>&#x542F;&#x52A8;&#x672C;&#x5730;&#x670D;&#x52A1;&#x5668;&#x540E;,&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x662F; <code>8000</code>,&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5730;&#x5740;&#x680F;&#x8F93;&#x5165;&#x5E76;&#x8BBF;&#x95EE;: <code>http://127.0.0.1:8000</code></p>
+</blockquote>
+<h2 id="http">http</h2>
+<blockquote>
+<p>HyperText Transfer Protocal : &#x8D85;&#x6587;&#x672C;&#x4F20;&#x8F93;&#x534F;&#x8BAE;</p>
+</blockquote>
+<p><a href="http://httpbin.snowdreams1006.cn/" target="_blank">http://httpbin.snowdreams1006.cn/</a></p>
+<pre><code class="lang-bash">curl -v http://httpbin.snowdreams1006.cn/
+</code></pre>
+<h2 id="urllib">urllib</h2>
+<p>&#x95EE;&#x9898;&#x6765;&#x5566;! <code>urllib</code>,<code>urllib2</code>,<code>urllib3</code> &#x662F;&#x8FDB;&#x5316;&#x5173;&#x7CFB;&#x5417;?</p>
+<ul>
+<li>urllib &#x548C; urllib2 &#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;</li>
+<li>requests &#x5E93;&#x4F7F;&#x7528;&#x4E86; urllib3(&#x591A;&#x6B21;&#x8BF7;&#x6C42;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A; socket)</li>
+</ul>
+<h3 id="&#x6FC0;&#x6D3B;&#x73AF;&#x5883;">&#x6FC0;&#x6D3B;&#x73AF;&#x5883;</h3>
+<pre><code class="lang-bash"><span class="hljs-built_in">source</span> .env/bin/activate
+</code></pre>
+<h3 id="&#x6838;&#x5FC3;&#x4EE3;&#x7801;">&#x6838;&#x5FC3;&#x4EE3;&#x7801;</h3>
+<ul>
+<li><code>GET</code> &#x8BF7;&#x6C42;&#x65E0;&#x53C2;&#x6570;&#x76F4;&#x63A5;&#x53D1;&#x9001;: &#x83B7;&#x53D6;&#x53D1;&#x9001;&#x65B9; <code>ip</code></li>
+</ul>
+<blockquote>
+<p><a href="http://httpbin.snowdreams1006.cn/ip" target="_blank">http://httpbin.snowdreams1006.cn/ip</a></p>
+</blockquote>
+<pre><code class="lang-bash">curl -X GET <span class="hljs-string">&quot;http://httpbin.snowdreams1006.cn/ip&quot;</span> -H <span class="hljs-string">&quot;accept: application/json&quot;</span>
+</code></pre>
+<blockquote>
+<p><code>curl</code></p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+<span class="hljs-keyword">import</span> urllib2
+
+get_ip_url = <span class="hljs-string">&apos;http://httpbin.snowdreams1006.cn/ip&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">use_simple_urllib2_get_ip</span><span class="hljs-params">()</span>:</span>
+  response = urllib2.urlopen(get_ip_url)
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;&gt;Response Headers:&apos;</span>
+  <span class="hljs-keyword">print</span> response.info()
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;&gt;Response body:&apos;</span>
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&apos;</span>.join([line <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> response.readlines()])
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;Use simple urllib2:&apos;</span>
+    use_simple_urllib2()
+</code></pre>
+<blockquote>
+<p><code>python</code></p>
+</blockquote>
+<ul>
+<li><code>GET</code> &#x8BF7;&#x6C42;&#x65E0;&#x53C2;&#x6570;&#x76F4;&#x63A5;&#x53D1;&#x9001;: &#x83B7;&#x53D6;&#x53D1;&#x9001;&#x65B9; <code>user-agent</code></li>
+</ul>
+<blockquote>
+<p><a href="http://httpbin.snowdreams1006.cn/user-agent" target="_blank">http://httpbin.snowdreams1006.cn/user-agent</a></p>
+</blockquote>
+<pre><code class="lang-bash">curl -X GET <span class="hljs-string">&quot;http://httpbin.snowdreams1006.cn/user-agent&quot;</span> -H <span class="hljs-string">&quot;accept: application/json&quot;</span>
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">## -*- coding: utf-8 -*-</span>
+<span class="hljs-keyword">import</span> urllib2
+
+get_user_agent_url = <span class="hljs-string">&apos;http://httpbin.snowdreams1006.cn/user-agent&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">use_simple_urllib2_get_user_agent</span><span class="hljs-params">()</span>:</span>
+  response = urllib2.urlopen(get_user_agent_url)
+  print(<span class="hljs-string">&apos;&gt;&gt;&gt;Response Headers:&apos;</span>)
+  print(response.info())
+  print(<span class="hljs-string">&apos;&gt;&gt;&gt;Resonse Body:&apos;</span>)
+  print(<span class="hljs-string">&apos;&apos;</span>.join([line <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> response.readlines()]))
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+  print(<span class="hljs-string">&apos;&gt;&gt;&gt;Use simple1 urllib2 to get user-agent:&apos;</span>)
+  use_simple_urllib2_get_user_agent()
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+<span class="hljs-keyword">import</span> urllib
+<span class="hljs-keyword">import</span> urllib2
+
+URL_IP = <span class="hljs-string">&apos;http://httpbin.snowdreams1006.cn/ip&apos;</span>
+URL_GET = <span class="hljs-string">&apos;http://httpbin.snowdreams1006.cn/get&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">use_simple_urllib2</span><span class="hljs-params">()</span>:</span>
+    response = urllib2.urlopen(URL_IP)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;&gt;Response Headers:&apos;</span>
+    <span class="hljs-keyword">print</span> response.info()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;&gt;Response body:&apos;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&apos;</span>.join([line <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> response.readlines()])
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">use_params_urllib2</span><span class="hljs-params">()</span>:</span>
+    params = urllib.urlencode({<span class="hljs-string">&apos;param1&apos;</span>: <span class="hljs-string">&apos;hello&apos;</span>, <span class="hljs-string">&apos;param2&apos;</span>: <span class="hljs-string">&apos;world&apos;</span>})
+    response = urllib2.urlopen(<span class="hljs-string">&apos;?&apos;</span>.join([URL_GET, <span class="hljs-string">&apos;%s&apos;</span>]) % params)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;&gt;Response Headers:&apos;</span>
+    <span class="hljs-keyword">print</span> response.info()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;&gt;Status Code:&apos;</span>
+    <span class="hljs-keyword">print</span> response.getcode()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;&gt;Request body:&apos;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&apos;</span>.join([line <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> response.readlines()])
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;Use simple urllib2:&apos;</span>
+    use_simple_urllib2()
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;&gt;&gt;&gt;Use params urllib2:&apos;</span>
+    use_params_urllib2()
+</code></pre>
+<blockquote>
+<p><code>urllib_demo.py</code></p>
+</blockquote>
+<h3 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h3>
+<pre><code class="lang-bash">python urllib_demo.py
+</code></pre>
+<h2 id="get">get</h2>
+<h2 id="post">post</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> urllib
+<span class="hljs-keyword">import</span> urllib2
+
+url = <span class="hljs-string">&apos;http://www.someserver.com/cgi-bin/register.cgi&apos;</span>
+values = {<span class="hljs-string">&apos;name&apos;</span> : <span class="hljs-string">&apos;Michael Foord&apos;</span>,
+          <span class="hljs-string">&apos;location&apos;</span> : <span class="hljs-string">&apos;Northampton&apos;</span>,
+          <span class="hljs-string">&apos;language&apos;</span> : <span class="hljs-string">&apos;Python&apos;</span> }
+
+data = urllib.urlencode(values)
+req = urllib2.Request(url, data)
+response = urllib2.urlopen(req)
+the_page = response.read()
+</code></pre>
+<h3 id="&#x53C2;&#x8003;&#x6587;&#x6863;">&#x53C2;&#x8003;&#x6587;&#x6863;</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">&#x4EC0;&#x4E48;&#x662F;HTTP&#x534F;&#x8BAE;?</a></li>
+<li><a href="https://tools.ietf.org/html/rfc7230#page-19" target="_blank">RFC7230</a></li>
+<li><a href="http://ver007.com/2015/09/22/276.html" target="_blank">urllib&#x548C;urllib2&#x533A;&#x522B;</a></li>
+</ul>
+<h2 id="&#x53C2;&#x8003;&#x6587;&#x6863;">&#x53C2;&#x8003;&#x6587;&#x6863;</h2>
+<ul>
+<li><a href="https://www.jianshu.com/p/2e4851df72fb" target="_blank">mac &#x4E0B; python2 &#x3001;python3&#x548C;pip&#x3001;pip3</a></li>
+<li><a href="https://newsn.net/say/python-switch/" target="_blank">python3.7&#x5982;&#x4F55;&#x4E0E;python2.7&#x5171;&#x5B58;&#xFF1F;&#x5FEB;&#x901F;&#x5207;&#x6362;python&#x7248;&#x672C;&#x65B9;&#x6848;</a></li>
+<li><a href="https://github.com/jian-en/imooc-requests" target="_blank">https://github.com/jian-en/imooc-requests</a></li>
+<li><a href="https://pypi.org/project/requests/" target="_blank">https://pypi.org/project/requests/</a></li>
+<li><a href="https://requests.readthedocs.io/en/master/" target="_blank">https://requests.readthedocs.io/en/master/</a></li>
+<li><a href="https://github.com/psf/requests" target="_blank">https://github.com/psf/requests</a></li>
+<li><a href="https://www.kennethreitz.org/" target="_blank">https://www.kennethreitz.org/</a></li>
+</ul>
 <pre><code class="lang-html">&#x4F5C;&#x8005;: &#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;
-&#x94FE;&#x63A5;: https://snowdreams1006.github.io/learn-python/url/request/about.html
+&#x94FE;&#x63A5;: https://snowdreams1006.github.io/learn-python/url/requests/about.html
 &#x6765;&#x6E90;: &#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;
 &#x672C;&#x6587;&#x539F;&#x521B;&#x53D1;&#x5E03;&#x4E8E;&#x300C;&#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;&#x300D;,&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;,&#x8C22;&#x8C22;&#x5408;&#x4F5C;!
 </code></pre>
@@ -434,7 +850,7 @@
                 </a>
                 
                 
-                <a href="../urllib/teaching.html" class="navigation navigation-next " aria-label="Next page: 范例教学">
+                <a href="teaching.html" class="navigation navigation-next " aria-label="Next page: 范例教学">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -445,7 +861,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三方请求","level":"1.3.2","depth":2,"next":{"title":"范例教学","level":"1.3.2.1","depth":3,"path":"url/urllib/teaching.md","ref":"url/urllib/teaching.md","articles":[]},"previous":{"title":"实例练习","level":"1.3.1.2","depth":3,"path":"url/urllib/exercise.md","ref":"url/urllib/exercise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["favicon-absolute","github-buttons","edit-link-plus","readmore","copyright","mygitalk","icp"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"copyright":{"site":"https://snowdreams1006.github.io/learn-python","author":"雪之梦技术驿站","website":"雪之梦技术驿站","image":"https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"},"search":{},"edit-link-plus":{"label":"Edit This Page","base":{"snowdreams1006.github.io":"https://github.com/snowdreams1006/learn-python/edit/master/docs","snowdreams1006.gitlab.io":"https://gitlab.com/snowdreams1006/learn-python/edit/master/docs","snowdreams1006.gitee.io":"https://gitee.com/snowdreams1006/learn-python/edit/master/docs"},"defaultBase":"https://github.com/snowdreams1006/learn-python/edit/master/docs"},"readmore":{"allowDomain":"localhost","blogId":"15702-1569305559839-744","name":"雪之梦技术驿站","qrcode":"https://snowdreams1006.github.io/snowdreams1006-wechat-public.jpeg","keyword":"vip"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{"120x120":"/apple-touch-icon-120.png","180x180":"/apple-touch-icon-180.png"},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{"120x120":"/apple-touch-icon-precomposed-120.png","180x180":"/apple-touch-icon-precomposed-180.png"},"favicon":"/favicon.ico","bookmark":"/bookmark.ico","appleTouchIcon152":"/apple-touch-icon-152.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"icp":{"link":"http://www.beian.miit.gov.cn/","number":"浙ICP备18042346号"},"github-buttons":{"buttons":[{"user":"snowdreams1006","repo":"gitbook-plugin-readmore","type":"star","size":"small"}]},"mygitalk":{"flipMoveOptions":{},"clientID":"3f62415a283d19cbd696","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["snowdreams1006"],"createIssueManually":false,"distractionFreeMode":false,"repo":"learn-python","owner":"snowdreams1006","enableHotKey":true,"clientSecret":"aed0e1db0620bf5d0e3a3f0225f801997ad74e58","pagerDirection":"last","labels":["Gitalk"]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"snowdreams1006","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python 学习笔记","language":"zh-hans","links":{"sidebar":{"blog":"https://snowdreams1006.tech/"}},"gitbook":"3.2.3","description":"python 学习笔记,python 入门教程"},"file":{"path":"url/request/about.md","mtime":"2020-01-16T04:57:25.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-16T04:59:29.158Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三方请求","level":"1.3.2","depth":2,"next":{"title":"范例教学","level":"1.3.2.1","depth":3,"path":"url/requests/teaching.md","ref":"url/requests/teaching.md","articles":[]},"previous":{"title":"实例练习","level":"1.3.1.2","depth":3,"path":"url/urllib/exercise.md","ref":"url/urllib/exercise.md","articles":[]},"dir":"ltr"},"config":{"plugins":["favicon-absolute","github-buttons","edit-link-plus","readmore","copyright","mygitalk","icp"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"copyright":{"site":"https://snowdreams1006.github.io/learn-python","author":"雪之梦技术驿站","website":"雪之梦技术驿站","image":"https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"},"search":{},"edit-link-plus":{"label":"Edit This Page","base":{"snowdreams1006.github.io":"https://github.com/snowdreams1006/learn-python/edit/master/docs","snowdreams1006.gitlab.io":"https://gitlab.com/snowdreams1006/learn-python/edit/master/docs","snowdreams1006.gitee.io":"https://gitee.com/snowdreams1006/learn-python/edit/master/docs"},"defaultBase":"https://github.com/snowdreams1006/learn-python/edit/master/docs"},"readmore":{"allowDomain":"localhost","blogId":"15702-1569305559839-744","name":"雪之梦技术驿站","qrcode":"https://snowdreams1006.github.io/snowdreams1006-wechat-public.jpeg","keyword":"vip"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{"120x120":"/apple-touch-icon-120.png","180x180":"/apple-touch-icon-180.png"},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{"120x120":"/apple-touch-icon-precomposed-120.png","180x180":"/apple-touch-icon-precomposed-180.png"},"favicon":"/favicon.ico","bookmark":"/bookmark.ico","appleTouchIcon152":"/apple-touch-icon-152.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"icp":{"link":"http://www.beian.miit.gov.cn/","number":"浙ICP备18042346号"},"github-buttons":{"buttons":[{"user":"snowdreams1006","repo":"learn-python","type":"star","size":"small"}]},"mygitalk":{"flipMoveOptions":{},"clientID":"3f62415a283d19cbd696","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["snowdreams1006"],"createIssueManually":false,"distractionFreeMode":false,"repo":"learn-python","owner":"snowdreams1006","enableHotKey":true,"clientSecret":"aed0e1db0620bf5d0e3a3f0225f801997ad74e58","pagerDirection":"last","labels":["Gitalk"]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"snowdreams1006","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python 学习笔记","language":"zh-hans","links":{"sidebar":{"blog":"https://snowdreams1006.tech/"}},"gitbook":"3.2.3","description":"python 学习笔记,python 入门教程"},"file":{"path":"url/requests/about.md","mtime":"2020-01-16T05:04:22.984Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-16T05:17:28.040Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
