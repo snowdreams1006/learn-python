@@ -695,7 +695,7 @@ if __name__ == '__main__':
 
 由于 `GET` 请求和 `POST` 请求方式实在太像了,因此需要留意发送请求时 `urllib2.urlopen(url)` 中链接 `URL` 到底是怎么拼接的?
 
-不过更加直观的方法就是发送请求,直接验证:
+不过更加直观的方法就是发送请求直接验证,示例如下:
 
 ```bash
 (.env) $ python urllib_demo.py 
