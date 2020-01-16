@@ -206,7 +206,7 @@ if __name__ == '__main__':
 
 - 响应对象的访问链接(属性)
 
-> `response.url` : 获取请求链接
+> `response.url` : 获取请求链接.
 
 ```python
 # -*- coding: utf-8 -*-
@@ -226,7 +226,7 @@ if __name__ == '__main__':
 
 - 响应对象的访问链接(方法)
 
-> `response.geturl()` : 获取请求链接
+> `response.geturl()` : 获取请求链接.
 
 ```python
 # -*- coding: utf-8 -*-
@@ -248,6 +248,8 @@ if __name__ == '__main__':
 
 > `response.headers.dict` : 获取请求头信息并以字典形式显示.
 
+在某些情况下发送请求时必须携带特定的请求头方可成功,因此需要清楚默认不设置请求头时服务端接收到的请求头是什么样子的,同样地,可使用 `print type(response.headers)` 结合 `print dir(response.headers)` 自行探索可供调用的属性和方法.
+
 ```python
 # -*- coding: utf-8 -*-
 import urllib2
@@ -266,19 +268,9 @@ if __name__ == '__main__':
 
 - 响应对象的请求头信息(方法)
 
-> `response.info()`
+> `response.info()` : 获取请求头信息并以逐行显示
 
-- 响应对象的响应体(方法)
-
-> `response.read()`
-
-- 响应对象的响应体(方法)
-
-> `response.readline()`
-
-- 响应对象的响应体(方法)
-
-> `response.readlines()`
+和上一个 `response.headers.dict` 获取请求头信息类似,只不过 `response.info()` 适合肉眼显示而非程序使用.
 
 ```python
 # -*- coding: utf-8 -*-
@@ -289,10 +281,71 @@ def use_simple_urllib2():
     获取请求方信息
     '''
     response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
-    print('>>>Response Headers:')
-    print(response.info())
-    print('>>>Response Body:')
-    print(''.join([line for line in response.readlines()]))
+    print response.info()
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+- 响应对象的响应体(方法)
+
+> `response.read()` : 一次性读取响应体,适合响应体数据量比较小的情况,一次性全部读取到内存方便操作.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print response.read()
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+- 响应对象的响应体(方法)
+
+> `response.readline()` : 逐行读取响应体,适用于数据体比较大的情况,循环读取直到最终无数据可读取为止.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    line = response.readline()
+    while line:
+        print line
+        line = response.readline()
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+- 响应对象的响应体(方法)
+
+> `response.readlines()` : 遍历读取响应体,循环读取且保存到列表对象中,适合需要逐行处理情况.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    for line in response.readlines():
+        print line
 
 if __name__ == '__main__':
     print '>>>Use simple urllib2:'

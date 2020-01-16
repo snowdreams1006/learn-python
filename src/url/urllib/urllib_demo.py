@@ -9,6 +9,28 @@ def use_simple_urllib2():
     response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
     # print type(response)
     print dir(response)
+    # print response.headers.dict
+    # print response.info()
+    # print response.readline()
+
+
+    # print type(response.next)
+    # print response.next
+    # print response.next()
+    # while response.next():
+    #     print response.readline()
+    # print response.readline()
+    # print response.readline()
+    # print response.readline()
+
+    # for line in response: 
+    #     print line.readline()
+
+    for line in response.readlines():
+        print line
+
+
+
     # # print response.read()
     # print type(response.getcode)
     # print response.msg
