@@ -389,18 +389,44 @@ import urllib2
 get_ip_url = 'http://httpbin.snowdreams1006.cn/ip'
 
 def use_simple_urllib2_get_ip():
-    response = urllib2.urlopen(get_ip_url)
-    print '>>>>Response Headers:'
-    print response.info()
-    print '>>>>Response body:'
-    print ''.join([line for line in response.readlines()])
+  response = urllib2.urlopen(get_ip_url)
+  print '>>>>Response Headers:'
+  print response.info()
+  print '>>>>Response body:'
+  print ''.join([line for line in response.readlines()])
 
 if __name__ == '__main__':
     print '>>>Use simple urllib2:'
     use_simple_urllib2()
 ```
 
-- `GET` 请求无参数直接发送: 获取发送方 `header`
+> `python`
+
+- `GET` 请求无参数直接发送: 获取发送方 `user-agent`
+
+> [http://httpbin.snowdreams1006.cn/user-agent](http://httpbin.snowdreams1006.cn/user-agent)
+
+```bash
+curl -X GET "http://httpbin.snowdreams1006.cn/user-agent" -H "accept: application/json"
+```
+
+```python
+## -*- coding: utf-8 -*-
+import urllib2
+
+get_user_agent_url = 'http://httpbin.snowdreams1006.cn/user-agent'
+
+def use_simple_urllib2_get_user_agent():
+  response = urllib2.urlopen(get_user_agent_url)
+  print('>>>Response Headers:')
+  print(response.info())
+  print('>>>Resonse Body:')
+  print(''.join([line for line in response.readlines()]))
+
+if __name__ == '__main__':
+  print('>>>Use simple1 urllib2 to get user-agent:')
+  use_simple_urllib2_get_user_agent()
+```
 
 ```python
 # -*- coding: utf-8 -*-
@@ -441,6 +467,25 @@ if __name__ == '__main__':
 
 ```bash
 python urllib_demo.py
+```
+
+## get
+
+## post
+
+```python
+import urllib
+import urllib2
+
+url = 'http://www.someserver.com/cgi-bin/register.cgi'
+values = {'name' : 'Michael Foord',
+          'location' : 'Northampton',
+          'language' : 'Python' }
+
+data = urllib.urlencode(values)
+req = urllib2.Request(url, data)
+response = urllib2.urlopen(req)
+the_page = response.read()
 ```
 
 ### 参考文档
