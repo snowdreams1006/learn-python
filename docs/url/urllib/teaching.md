@@ -1,8 +1,6 @@
 # 范例教学
 
-## GET 请求
-
-### 环境准备
+## 环境准备
 
 演示环境版本信息如下:
 
@@ -51,6 +49,122 @@ source .env/bin/activate
 
 > 演示环境已开启虚拟环境,因此 `python` 和 `pip` 文件位置正是当前目录 `.env` 而不是系统默认环境,如果未开启虚拟环境则显示的是系统目录.
 
+## GET 请求
+
+### 怎么发送最简单的 GET 请求
+
+> `urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')`
+
+新建 `python` 文件名为 `urllib_demo.py`,代码主要是先导入 `urllib2` 包后,然后使用 `urllib2.urlopen()` 即可发送最简单的 `GET` 请求,最后利用 `response.read()` 可一次性读取响应体内容.
+
+详情代码如下:
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print response.read()
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+> 假如该文件名为 `urllib_demo.py` ,则在终端命令行内运行 `python urllib_demo.py` 即可查看输出结果.
+
+### 怎么知道响应对象有哪些属性和方法
+
+> `print type(response)` : 获取对象类型,配合基本类型可大致猜测出有哪些方法和属性可供外部调用.
+> `print dir(response)` : 获取对象方法和属性枚举值,无文档猜测方法和属性.
+
+无论是 `GET` 请求还是 `POST` 请求,获取请求后的响应体无疑是非常重要的,但实际开发中同样不可忽略的是其他方法和属性.
+
+因此,除了掌握 `response.read()` 一次性全部读取响应体内容之外,还需要知道 `response` 有哪些属性和方法.
+
+通过 `type(response)` 获取对象类型再配合 `dir(response)` 获取属性枚举值即可无文档大致猜测对象有哪些可供调用的属性和方法.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print type(response)
+    print dir(response)
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
+
+> 假如该文件名为 `urllib_demo.py` ,则在终端命令行内运行 `python urllib_demo.py` 即可查看输出结果.
+
+- 响应对象的状态码(属性)
+
+> `response.code`
+
+- 响应对象的状态码(方法)
+
+> `response.getcode()`
+
+- 响应对象的访问链接(属性)
+
+- 响应对象的状态码信息(属性)
+
+> `response.msg`
+
+> `response.url`
+
+- 响应对象的访问链接(方法)
+
+> `response.geturl()`
+
+- 响应对象的访问链接(属性)
+
+> `response.headers.dict`
+
+- 响应对象的请求头信息(方法)
+
+> `response.info()`
+
+- 响应对象的响应体(方法)
+
+> `response.read()`
+
+- 响应对象的响应体(方法)
+
+> `response.readline()`
+
+- 响应对象的响应体(方法)
+
+> `response.readlines()`
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取请求方信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(''.join([line for line in response.readlines()]))
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2:'
+    use_simple_urllib2()
+```
 
 ## POST 请求
 
