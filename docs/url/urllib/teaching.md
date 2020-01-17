@@ -28,7 +28,7 @@ pip 19.3.1 from ~/python/src/url/urllib/.env/lib/python2.7/site-packages/pip (py
 
 > 以下代码在该环境运行正常,但是并不保证其他环境与演示结果一致,所以一切还是以实际运行结果为准.
 
-### 环境安装
+### 环境搭建
 
 如果不需要虚拟环境的话,可以忽略环境安装这一部分内容,直接使用默认环境即可,只需要保证测试时使用的 `python` 版本是 `python2` 而非 `python3`!
 
@@ -68,7 +68,7 @@ source .env/bin/activate
 
 > 激活虚拟环境后会自动下载相关的 `python` 依赖,因此 `python` 和 `pip` 文件位置正是当前目录 `.env` 而不是系统默认环境,如果未开启虚拟环境则显示的是系统目录.
 
-## 认识原生请求 urllib
+## 原生请求 urllib 库
 
 如果读者亲测运行时发现网络无法正常请求,可以将[http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/)替换成[http://httpbin.org/](http://httpbin.org/)或者自行搭建本地测试环境.
 
@@ -117,7 +117,7 @@ if __name__ == '__main__':
 
 > 假如该文件名为 `urllib_demo.py` ,则在终端命令行内运行 `python urllib_demo.py` 即可查看输出结果.
 
-### 怎么知道响应对象有哪些属性和方法
+### 怎么知道有哪些属性和方法
 
 > `print type(response)` : 获取对象类型,配合基本类型可大致猜测出有哪些方法和属性可供外部调用.
 > `print dir(response)` : 获取对象方法和属性枚举值,无文档猜测方法和属性.
@@ -475,7 +475,7 @@ if __name__ == '__main__':
 
 > 上述多行代码还可以进一步转换成一行代码: `result = ''.join([line for line in response.readlines()])`
 
-### `GET` 请求
+### 如何发送简单 `GET` 请求
 
 - 无参数直接发送
 
@@ -696,7 +696,7 @@ Access-Control-Allow-Credentials: true
 
 由此可见,不论是直接手动拼接查询参数还是使用 `urllib.urlencode(query)` 半手动拼接查询参数,本质上都是一样的,依然是使用 `urllib2.urlopen(url)` 发送 `GET` 请求.
 
-### `POST` 请求
+### 如何发送简单 `POST` 请求
 
 如果请求链接 `URL` 仅仅支持 `POST` 请求,这时上述拼接地址实现的 `GET` 请求就不再满足要求,有意思的是,竟然只需要一步就可以将 `GET` 请求转换成 `POST` 请求.
 
@@ -777,15 +777,17 @@ Access-Control-Allow-Credentials: true
 
 值得注意的是,上述 `POST` 请求提交的参数存放在 `form` 属性而不是 `GET` 请求时的 `args` 属性.
 
-## 高级进阶
+## 更高级的网络请求
 
 ### 代理访问
+
+#### 环境搭建
 
 如果 [http://proxyip.snowdreams1006.cn/](http://proxyip.snowdreams1006.cn/) 无法访问,可以访问[https://github.com/jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)项目自行构建代理池.
 
 [jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)项目提供两种安装方式,分为 `docker` 安装方式和源码安装方式.
 
-#### `docker` 方式安装代理池
+##### `docker` 方式安装
 
 ```bash
 docker run --env db_type=REDIS --env db_host=127.0.0.1 --env db_port=6379 --env db_password='' -p 5010:5010 jhao104/proxy_pool
@@ -793,7 +795,7 @@ docker run --env db_type=REDIS --env db_host=127.0.0.1 --env db_port=6379 --env 
 
 > 当然也可以提前下载镜像: `docker pull jhao104/proxy_pool`,然后再运行上述命令启动容器.
 
-#### 源码方式安装代理池
+##### 源码方式安装
 
 - 步骤 1 : 下载源码
 
@@ -867,11 +869,11 @@ $ curl https://proxyip.snowdreams1006.cn/
 
 > 单机勿压,恶意访问会关小黑屋哟,推荐大家自行搭建本地环境,谢谢支持.
 
-### 利用 `python` 的 `urllib` 获取代理 ip
+#### 设置代理
 
 建议首先利用浏览器直接访问[http://proxyip.snowdreams1006.cn/get/](http://proxyip.snowdreams1006.cn/get/)查看是否能获取随机代理 ip,然后再利用 `python` 程序获取,保证代码运行正确,方便后续开发测试.
 
-- 获取随机代理 ip
+##### 获取随机代理 ip
 
 ```python
 # -*- coding: utf-8 -*-
@@ -894,7 +896,7 @@ if __name__ == '__main__':
 
 > 如果有浏览器环境,可以直接访问[http://proxyip.snowdreams1006.cn/get/](http://proxyip.snowdreams1006.cn/get/)验证是否能获取随机代理 ip,或者在终端命令行运行 `curl http://proxyip.snowdreams1006.cn/get/` 命令查看结果.
 
-- 设置代理ip访问
+##### 设置代理ip访问
 
 > `urllib.FancyURLopener(proxy)` : 设置代理 ip 信息实现间接访问
 
@@ -1054,7 +1056,7 @@ Proxy Success
 
 > 免费代理 ip 质量一般般,不要抱有太大幻想,实际开发过程中还是应该选择付费代理 ip.
 
-- 清除代理 ip 直连
+##### 清除代理 ip 直连
 
 > `urllib.FancyURLopener({})` : 清除代理 ip 信息实现直接访问
 
