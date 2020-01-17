@@ -4,9 +4,12 @@
 
 > `urllib.urlopen(url[,data[,proxies]])` : [https://docs.python.org/2/library/urllib.html](https://docs.python.org/2/library/urllib.html)
 
-## 环境准备
+- `Github` 源码地址: [https://github.com/snowdreams1006/learn-python/edit/master/docs/url/urllib/teaching.md](https://github.com/snowdreams1006/learn-python/edit/master/docs/url/urllib/teaching.md)
+- `Github` 在线地址: [https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html](https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html)
 
-演示环境版本信息如下:
+## `python` 环境搭建
+
+演示环境相关信息如下:
 
 ```bash
 (.env)$ python --version
@@ -15,7 +18,7 @@ Python 2.7.16
 pip 19.3.1 from ~/python/src/url/urllib/.env/lib/python2.7/site-packages/pip (python 2.7)
 ```
 
-> 以下代码在该环境运行正常,不保证其他环境与演示结果一致,一切以实际运行结果为准.
+> 以下代码在该环境运行正常,但是并不保证其他环境与演示结果一致,所以一切还是以实际运行结果为准.
 
 - 步骤1. [可选] 安装虚拟环境 `virtualenv` 
 
@@ -1099,6 +1102,32 @@ if __name__ == '__main__':
     print '>>>Get proxy urllib<<<'
     get_proxy_urllib()
 ```
+
+除了上述方法使用 `urllib.FancyURLopener()` 设置或清除代理 ip,其实也可以使用 `urllib.urlopen()` 实现类似需求.
+
+```python
+# Use http://www.someproxy.com:3128 for HTTP proxying
+proxies = {'http': 'http://www.someproxy.com:3128'}
+filehandle = urllib.urlopen(some_url, proxies=proxies)
+
+# Don't use any proxies
+filehandle = urllib.urlopen(some_url, proxies={})
+
+# Use proxies from environment - both versions are equivalent
+filehandle = urllib.urlopen(some_url, proxies=None)
+filehandle = urllib.urlopen(some_url)
+```
+
+其中关于环境变量的设置示例,如下:
+
+```bash
+% http_proxy="http://www.someproxy.com:3128"
+% export http_proxy
+% python
+...
+```
+
+## 学习总结
 
 ## 参考文档
 
