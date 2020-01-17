@@ -1145,7 +1145,7 @@ filehandle = urllib.urlopen(some_url)
 
 本文主要介绍了 `python` 中原生的 `urllib` 如何发送网络请求以及一些基本环境的搭建过程,其中附带大量可直接操作的现成代码,文档和源码均已开源,感兴趣的小伙伴可自行翻阅浏览.
 
-现在简要回顾一下本文主要涉及到的知识点,以供快速翻阅查询.
+简要回顾一下本文主要涉及到的重要知识点,以供后来学习时快速翻阅查询.
 
 ### 虚拟环境 `virtualenv`
 
@@ -1184,6 +1184,34 @@ source .env/bin/activate
 ```
 
 ### 服务端后台 `httpbin` 
+
+> 默认本地访问地址: [http://127.0.0.1:8000/](http://127.0.0.1:8000/),线上访问地址: [http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/) 或者 [http://httpbin.org/](http://httpbin.org/)
+
+如果采用 `docker` 安装 `httpbin` 运行成功后,访问接口地址,实际预览如下:
+
+![url-urllib-httpbin-docker-preview.png](./images/url-urllib-httpbin-docker-preview.png)
+
+如果使用 `python` 启动 `httpbin` 库,运行成功后效果和 `docker` 方式有所不同,效果如下:
+
+![url-urllib-httpbin-pip-preview.png](./images/url-urllib-httpbin-pip-preview.png)
+
+如需自行搭建本地服务,请读者根据自身需要自行决定安装方式,下面提供两种方式开启 `httpbin` 服务.
+
+- `docker` 安装方式
+
+```bash
+docker run -p 8000:80 kennethreitz/httpbin
+```
+
+> 首次运行会先将镜像下载到本地再启动容器,非首次运行会直接启动容器,访问地址: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+- `python` 安装方式
+
+```bash
+pip install gunicorn httpbin && gunicorn httpbin:app
+```
+
+> 默认监听端口是 `8000`,如果遇到端口冲突提示已被占用,可运行 `gunicorn httpbin:app -b :9898` 指定端口.
 
 ### 免费ip代理池 `proxyip`
 
