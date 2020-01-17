@@ -1215,6 +1215,88 @@ pip install gunicorn httpbin && gunicorn httpbin:app
 
 ### 免费ip代理池 `proxyip`
 
+> 默认本地访问地址: [http://127.0.0.1:5010/](http://127.0.0.1:5010/),线上访问地址: [http://proxyip.snowdreams1006.cn/](http://proxyip.snowdreams1006.cn/) 或者 [http://118.24.52.95/](http://118.24.52.95/)
+
+```bash
+$ curl https://proxyip.snowdreams1006.cn/
+{
+  "delete?proxy=127.0.0.1:8080": "delete an unable proxy", 
+  "get": "get an useful proxy", 
+  "get_all": "get all proxy from proxy pool", 
+  "get_status": "proxy number"
+}
+```
+
+如需自行搭建本地服务,请读者根据自身需要自行决定安装方式,下面提供两种方式开启 `proxyip` 服务.
+
+- `docker` 安装方式
+
+```bash
+docker run --env db_type=REDIS --env db_host=127.0.0.1 --env db_port=6379 --env db_password='' -p 5010:5010 jhao104/proxy_pool
+```
+
+> 当然也可以提前下载镜像: `docker pull jhao104/proxy_pool`,然后再运行上述命令启动容器.
+
+- 源码安装方式
+
+    - 步骤 1 : 下载源码
+
+    ```bash
+    git clone https://github.com/jhao104/proxy_pool.git
+    ```
+
+    > 当然也可以直接下载安装包: [https://github.com/jhao104/proxy_pool/releases](https://github.com/jhao104/proxy_pool/releases) 
+
+    - 步骤 2 : 安装依赖
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    > 注意: 安装项目依赖时需要提前切换到项目根目录(`cd proxy_pool`),如果嫌弃下载速度慢可以使用清华大学镜像 `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt` 加速下载安装过程.
+
+    - 步骤 3 : 配置 `Config/setting.py`
+
+    ```python
+    # Config/setting.py 为项目配置文件
+
+    # 配置DB     
+    DATABASES = {
+        "default": {
+            "TYPE": "REDIS",        # 目前支持SSDB或REDIS数据库
+            "HOST": "127.0.0.1",   # db host
+            "PORT": 6379,          # db port，例如SSDB通常使用8888，REDIS通常默认使用6379
+            "NAME": "proxy",       # 默认配置
+            "PASSWORD": ""         # db password
+        }
+    }
+
+    # 配置 API服务
+    SERVER_API = {
+        "HOST": "0.0.0.0",  # 监听ip, 0.0.0.0 监听所有IP
+        "PORT": 5010        # 监听端口
+    }
+           
+    # 上面配置启动后，代理池访问地址为 http://127.0.0.1:5010
+    ```
+
+    > 关于配置更多详情,请直接参考项目官方介绍,以上配置信息基本够用了.
+
+    - 步骤 5 : 启动项目
+
+    ``` bash
+    # 如果你的依赖已经安装完成并且具备运行条件,可以在cli目录下通过ProxyPool.py启动.
+    # 程序分为: schedule 调度程序 和 webserver Api服务
+
+    # 首先启动调度程序
+    python proxyPool.py schedule
+
+    # 然后启动webApi服务
+    python proxyPool.py webserver
+    ```
+
+    > 该命令要求当前环境处于 `cli` 目录,如果是其他目录请自行调整 `proxyPool.py` 的路径(`cd cli`)
+
 ### 原生网络请求 `urllib`
 
 ## 参考文档
