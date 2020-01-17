@@ -1,5 +1,7 @@
 # 范例教学
 
+<!-- toc -->
+
 > `urllib.urlopen(url[,data[,proxies]])` : [https://docs.python.org/2/library/urllib.html](https://docs.python.org/2/library/urllib.html)
 
 ## 环境准备

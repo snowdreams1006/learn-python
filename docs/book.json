@@ -10,6 +10,9 @@
         }
     },
     "plugins": [
+        "toc",
+        "anchor-navigation-ex",
+        "copy-code-button",
         "favicon-absolute",
         "github-buttons",
         "edit-link-plus",
@@ -19,6 +22,10 @@
         "icp"
     ],
     "pluginsConfig": {
+        "toc": {
+            "addClass": true,
+            "className": "toc"
+        },
         "favicon-absolute": {
             "favicon": "/favicon.ico",
             "bookmark": "/bookmark.ico",
