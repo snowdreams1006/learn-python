@@ -1,13 +1,21 @@
 # 范例教学
 
-<!-- toc -->
-
 > `urllib.urlopen(url[,data[,proxies]])` : [https://docs.python.org/2/library/urllib.html](https://docs.python.org/2/library/urllib.html)
 
 - `Github` 源码地址: [https://github.com/snowdreams1006/learn-python/edit/master/docs/url/urllib/teaching.md](https://github.com/snowdreams1006/learn-python/edit/master/docs/url/urllib/teaching.md)
 - `Github` 在线地址: [https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html](https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html)
 
+## 文章目录
+
+<!-- toc -->
+
 ## `python` 环境搭建
+
+本文使用的 `python` 环境是基于 `virtualenv` 实现的虚拟环境,只是为了方便隔离不同环境,更好模拟真实用户环境.
+
+实际开发中,可以跟着本文一步一步操作练习搭建开发环境,也可以直接使用系统默认环境.
+
+### 环境演示
 
 演示环境相关信息如下:
 
@@ -20,32 +28,36 @@ pip 19.3.1 from ~/python/src/url/urllib/.env/lib/python2.7/site-packages/pip (py
 
 > 以下代码在该环境运行正常,但是并不保证其他环境与演示结果一致,所以一切还是以实际运行结果为准.
 
-- 步骤1. [可选] 安装虚拟环境 `virtualenv` 
+### 环境安装
+
+如果不需要虚拟环境的话,可以忽略环境安装这一部分内容,直接使用默认环境即可,只需要保证测试时使用的 `python` 版本是 `python2` 而非 `python3`!
+
+- 步骤1. 安装虚拟环境 `virtualenv` 
 
 ```bash
 sudo pip install virtualenv
 ```
 
-> 安装虚拟环境方便隔离不同 python 环境,也可以使用系统默认环境,所以这一步是可选的.
+> 安装虚拟环境方便隔离不同 python 环境,也可以使用**系统默认环境**,所以这一步是可选的,同理下面的步骤也都是可选的.
 
 
-- 步骤2. [可选] 准备虚拟环境目录 `.env`
+- 步骤2. 准备虚拟环境目录 `.env`
 
 ```bash
 virtualenv .env
 ```
 
-> 如果已安装虚拟环境 `virtualenv`,需要运行该命令,否则请忽略.
+> 虚拟环境目录设置成隐藏目录的目的是防止误操作,当然也可以设置成普通目录那样显示出来.
 
-- 步骤3. [可选] 激活虚拟环境 `.env`
+- 步骤3. 激活虚拟环境 `.env`
 
 ```bash
 source .env/bin/activate
 ```
 
-> 如果已安装虚拟环境 `virtualenv`,需要运行该命令,否则请忽略.
+> 一旦准备好虚拟环境目录后就需要激活该虚拟环境,这一步可以重复操作,不会报错!
 
-- 步骤4. [可选] 查看当前正在使用的 `python` 与 `pip` 版本
+- 步骤4. 查看当前正在使用的 `python` 与 `pip` 版本
 
 ```bash
 (.env) $ which python
@@ -54,7 +66,7 @@ source .env/bin/activate
 ~/python/src/url/urllib/.env/bin/pip
 ```
 
-> 演示环境已开启虚拟环境,因此 `python` 和 `pip` 文件位置正是当前目录 `.env` 而不是系统默认环境,如果未开启虚拟环境则显示的是系统目录.
+> 激活虚拟环境后会自动下载相关的 `python` 依赖,因此 `python` 和 `pip` 文件位置正是当前目录 `.env` 而不是系统默认环境,如果未开启虚拟环境则显示的是系统目录.
 
 ## 认识原生请求 urllib
 
