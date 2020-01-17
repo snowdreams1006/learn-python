@@ -1,0 +1,1024 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>数据类型 · python 学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="snowdreams1006">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../url/about.html" />
+    
+    
+    <link rel="prev" href="about.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"snowdreams1006","repo":"learn-python","type":"star","size":"small"}]};
+    </script>
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="/bookmark.ico" type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152.png">
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-precomposed-152.png">
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png">
+        
+    
+    
+        
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-precomposed-120.png">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-precomposed-180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://snowdreams1006.tech/" target="_blank" class="custom-link">blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../env/about.html">
+            
+                <a href="../env/about.html">
+            
+                    
+                    环境准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../env/download.html">
+            
+                <a href="../env/download.html">
+            
+                    
+                    下载安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../env/ide.html">
+            
+                <a href="../env/ide.html">
+            
+                    
+                    开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="type.html">
+            
+                <a href="type.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../url/about.html">
+            
+                <a href="../url/about.html">
+            
+                    
+                    网络请求
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../url/urllib/about.html">
+            
+                <a href="../url/urllib/about.html">
+            
+                    
+                    原生请求
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../url/urllib/teaching.html">
+            
+                <a href="../url/urllib/teaching.html">
+            
+                    
+                    范例教学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../url/urllib/exercise.html">
+            
+                <a href="../url/urllib/exercise.html">
+            
+                    
+                    实例练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../url/requests/about.html">
+            
+                <a href="../url/requests/about.html">
+            
+                    
+                    第三方请求
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../url/requests/teaching.html">
+            
+                <a href="../url/requests/teaching.html">
+            
+                    
+                    范例教学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../url/requests/exercise.html">
+            
+                <a href="../url/requests/exercise.html">
+            
+                    
+                    实例练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+
+    
+    <li>
+        
+        <a href="http://www.beian.miit.gov.cn/" target="blank" class="gitbook-link" style="color:#f72b07">
+        浙ICP备18042346号
+        </a>
+    </li>
+    
+</ul>
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >数据类型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                
+                <div id="vip-container">
+                    <h1 id="&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x6570;&#x636E;&#x7C7B;&#x578B;</h1>
+<h1 id="&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;</h1>
+<h2 id="&#x524D;&#x63D0;&#x6761;&#x4EF6;">&#x524D;&#x63D0;&#x6761;&#x4EF6;</h2>
+<p><code>python</code> &#x57FA;&#x672C;&#x73AF;&#x5883;&#x5DF2;&#x7ECF;<strong>&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;</strong>&#x6210;&#x529F;,&#x53EF;&#x4EE5;&#x5728;<strong>&#x4EFB;&#x610F;&#x76EE;&#x5F55;</strong>&#x4E2D;&#x8FD0;&#x884C; <code>python</code> &#x811A;&#x672C;&#x547D;&#x4EE4;.</p>
+<pre><code class="lang-python">$ python
+
+WARNING: Python <span class="hljs-number">2.7</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> recommended. 
+This version <span class="hljs-keyword">is</span> included <span class="hljs-keyword">in</span> macOS <span class="hljs-keyword">for</span> compatibility <span class="hljs-keyword">with</span> legacy software. 
+Future versions of macOS will <span class="hljs-keyword">not</span> include Python <span class="hljs-number">2.7</span>. 
+Instead, it <span class="hljs-keyword">is</span> recommended that you transition to using <span class="hljs-string">&apos;python3&apos;</span> <span class="hljs-keyword">from</span> within Terminal.
+
+Python <span class="hljs-number">2.7</span><span class="hljs-number">.16</span> (default, Nov  <span class="hljs-number">9</span> <span class="hljs-number">2019</span>, <span class="hljs-number">05</span>:<span class="hljs-number">55</span>:<span class="hljs-number">08</span>) 
+[GCC <span class="hljs-number">4.2</span><span class="hljs-number">.1</span> Compatible Apple LLVM <span class="hljs-number">11.0</span><span class="hljs-number">.0</span> (clang<span class="hljs-number">-1100.0</span><span class="hljs-number">.32</span><span class="hljs-number">.4</span>) (-macos10<span class="hljs-number">.15</span>-objc-s on darwin
+Type <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string">&quot;copyright&quot;</span>, <span class="hljs-string">&quot;credits&quot;</span> <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;license&quot;</span> <span class="hljs-keyword">for</span> more information.
+&gt;&gt;&gt;
+</code></pre>
+<blockquote>
+<p><code>macOS</code> &#x7CFB;&#x7EDF;<strong>&#x9ED8;&#x8BA4;&#x81EA;&#x5E26;</strong> <code>python</code> &#x73AF;&#x5883;,&#x7136;&#x800C;&#x7248;&#x672C;&#x8F83;&#x4F4E;,&#x4E00;&#x822C;&#x90FD;&#x662F; <code>python2</code> ,&#x76EE;&#x524D;&#x4E3B;&#x6D41;&#x8F6F;&#x4EF6;&#x4E00;&#x822C;&#x4F7F;&#x7528; <code>python3</code>,&#x6240;&#x4EE5;&#x9700;&#x8981;<strong>&#x81EA;&#x884C;&#x5B89;&#x88C5;</strong> <code>python3</code> .</p>
+</blockquote>
+<p>&#x6839;&#x636E;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x63D0;&#x793A; <code>python</code> &#x547D;&#x4EE4;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7684;&#x662F; <code>python2.7</code> &#x7248;&#x672C;,&#x63A8;&#x8350;&#x4F7F;&#x7528; <code>python3</code> &#x547D;&#x4EE4;,&#x8FD9;&#x91CC;&#x9ED8;&#x8BA4;&#x8BFB;&#x8005;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;&#x597D; <code>python3</code> &#x7684;&#x76F8;&#x5173;&#x73AF;&#x5883;.</p>
+<p>&#x4E0D;&#x8BBA;&#x8F93;&#x5165; <code>python</code> &#x8FD8;&#x662F; <code>python3</code> &#x547D;&#x4EE4;,&#x53EA;&#x8981;&#x51FA;&#x73B0; <code>&gt;&gt;&gt;</code> &#x63D0;&#x793A;&#x7B26;&#x5373;&#x8868;&#x793A;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165; <code>python</code> &#x73AF;&#x5883;,&#x4E0B;&#x9762;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD0;&#x884C; <code>python</code> &#x811A;&#x672C;.</p>
+<pre><code class="lang-bash">Python 2.7.16 (default, Nov  9 2019, 05:55:08) 
+[GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc<span class="hljs-_">-s</span> on darwin
+Type <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string">&quot;copyright&quot;</span>, <span class="hljs-string">&quot;credits&quot;</span> or <span class="hljs-string">&quot;license&quot;</span> <span class="hljs-keyword">for</span> more information.
+</code></pre>
+<ul>
+<li>&#x5E2E;&#x52A9;&#x547D;&#x4EE4;</li>
+</ul>
+<p>&#x5728; <code>python</code> &#x547D;&#x4EE4;&#x884C;&#x73AF;&#x5883;&#x4E2D;,&#x6839;&#x636E;&#x4E0A;&#x4E00;&#x6B65;&#x7684;&#x63D0;&#x793A;&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</code> &#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;,&#x6309;&#x7167;&#x63D0;&#x793A;&#x8F93;&#x5165; <code>help</code> &#x547D;&#x4EE4;&#x5F97;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x8F93;&#x51FA;&#x5185;&#x5BB9;:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>help
+Type help() <span class="hljs-keyword">for</span> interactive help, <span class="hljs-keyword">or</span> help(object) <span class="hljs-keyword">for</span> help about object.
+</code></pre>
+<p>&#x6839;&#x636E;&#x63D0;&#x793A;&#x5E94;&#x8BE5;&#x8F93;&#x5165; <code>help()</code> &#x83B7;&#x53D6;&#x4EA4;&#x4E92;&#x6027;&#x5E2E;&#x52A9;&#x6216;&#x8005;&#x8F93;&#x5165; <code>help(object)</code> &#x83B7;&#x53D6;&#x5173;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;.</p>
+<p>&#x5982;&#x4F60;&#x63D0;&#x793A;,&#x8BA9;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5C1D;&#x8BD5;,&#x770B;&#x4E00;&#x4E0B;&#x4F1A;&#x8F93;&#x51FA;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>help()
+
+Welcome to Python <span class="hljs-number">2.7</span>!  This <span class="hljs-keyword">is</span> the online help utility.
+
+If this <span class="hljs-keyword">is</span> your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/<span class="hljs-number">2.7</span>/tutorial/.
+
+Enter the name of any module, keyword, <span class="hljs-keyword">or</span> topic to get help on writing
+Python programs <span class="hljs-keyword">and</span> using Python modules.  To quit this help utility <span class="hljs-keyword">and</span>
+<span class="hljs-keyword">return</span> to the interpreter, just type <span class="hljs-string">&quot;quit&quot;</span>.
+
+To get a list of available modules, keywords, <span class="hljs-keyword">or</span> topics, type <span class="hljs-string">&quot;modules&quot;</span>,
+<span class="hljs-string">&quot;keywords&quot;</span>, <span class="hljs-keyword">or</span> <span class="hljs-string">&quot;topics&quot;</span>.  Each module also comes <span class="hljs-keyword">with</span> a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;spam&quot;</span>, type <span class="hljs-string">&quot;modules spam&quot;</span>.
+
+help&gt;
+</code></pre>
+<p>&#x7531;&#x6B64;&#x53EF;&#x89C1;,&#x786E;&#x5B9E;&#x8F93;&#x51FA;&#x4E86;&#x4E00;&#x5927;&#x5806;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;,&#x8FD9;&#x662F;&#x5728;&#x7EBF;&#x5E2E;&#x52A9;&#x5DE5;&#x5177;,&#x5982;&#x679C;&#x662F;&#x65B0;&#x624B;,&#x63A8;&#x8350;&#x9605;&#x8BFB;<a href="http://docs.python.org/2.7/tutorial/" target="_blank">&#x5728;&#x7EBF;&#x6559;&#x7A0B;</a></p>
+<p>&#x5728;&#x4F7F;&#x7528;&#x4E2D;&#x9047;&#x5230;&#x4E0D;&#x61C2;&#x7684;&#x5730;&#x65B9;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5E2E;&#x52A9;&#x6587;&#x6863;,&#x5982;&#x9700;&#x9000;&#x51FA;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>quit</code> &#x547D;&#x4EE4;.</p>
+<p>&#x6BD4;&#x5982;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x53EF;&#x7528;&#x6A21;&#x5757;,&#x5173;&#x952E;&#x5B57;,&#x4E3B;&#x9898;&#x7B49;,&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>modules</code> ,<code>keywords</code> ,<code>topics</code> ,&#x540C;&#x65F6;&#x8FD8;&#x4F1A;&#x7EE7;&#x7EED;&#x7ED9;&#x51FA;&#x8BE6;&#x7EC6;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;,&#x6BD4;&#x5982;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>modules spam</code> &#x67E5;&#x770B;&#x5173;&#x4E8E; <code>spam</code> &#x6A21;&#x5757;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;.</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;: &#x4ECE;&#x6700;&#x521D;&#x7684; <code>python</code> &#x4EA4;&#x4E92;&#x5F0F;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8F93;&#x5165; <code>help()</code> &#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x4E86;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x7684;&#x4EA4;&#x4E92;&#x5F0F;&#x547D;&#x4EE4;&#x73AF;&#x5883;,&#x6700;&#x5DE6;&#x8FB9;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x63D0;&#x793A;&#x7B26;&#x4E5F;&#x7531; <code>&gt;&gt;&gt;</code> &#x53D8;&#x6210;&#x4E86;&#x73B0;&#x5728;&#x7684; <code>help&gt;</code>,&#x8868;&#x660E;&#x4E24;&#x8005;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x73AF;&#x5883;!</p>
+</blockquote>
+<pre><code class="lang-python">help&gt; modules spam
+
+Here <span class="hljs-keyword">is</span> a list of matching modules.  Enter any module name to get more help.
+</code></pre>
+<blockquote>
+<p>&#x5728;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x4EA4;&#x4E92;&#x73AF;&#x5883;&#x4E2D;&#x8F93;&#x5165; <code>modules spam</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x76F8;&#x5173;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;,&#x5177;&#x4F53;&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x56E0;&#x547D;&#x4EE4;&#x4E0D;&#x540C;&#x800C;&#x4E0D;&#x540C;,&#x4E0D;&#x518D;&#x6DF1;&#x7A76;.</p>
+</blockquote>
+<p>&#x73B0;&#x5728;&#x5982;&#x679C;&#x60F3;&#x8981;&#x9000;&#x56DE;<strong>&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;</strong>&#x8FD4;&#x56DE;&#x5230; <code>python</code> &#x547D;&#x4EE4;&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;&#x7684;&#x8BDD;,&#x53EA;&#x9700;&#x8981;&#x6309;&#x7167;&#x8F93;&#x5165; <code>help()</code> &#x547D;&#x4EE4;&#x7ED9;&#x51FA;&#x7684;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#x8F93;&#x5165; <code>quit</code> &#x5373;&#x53EF;&#x8FD4;&#x56DE;&#x7EE7;&#x7EED;&#x8F93;&#x5165;&#x5176;&#x4F59;&#x7684; &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; &#x7B49;&#x547D;&#x4EE4;.</p>
+<pre><code class="lang-python">help&gt; quit
+
+You are now leaving help <span class="hljs-keyword">and</span> returning to the Python interpreter.
+If you want to ask <span class="hljs-keyword">for</span> help on a particular object directly <span class="hljs-keyword">from</span> the
+interpreter, you can type <span class="hljs-string">&quot;help(object)&quot;</span>.  Executing <span class="hljs-string">&quot;help(&apos;string&apos;)&quot;</span>
+has the same effect <span class="hljs-keyword">as</span> typing a particular string at the help&gt; prompt.
+&gt;&gt;&gt;
+</code></pre>
+<p>&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x5DF2;&#x7ECF;&#x4ECE; <code>help&gt;</code> &#x53D8;&#x56DE;&#x4E86; <code>&gt;&gt;&gt;</code> ,&#x8868;&#x660E;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x79BB;&#x5F00;&#x4E86;&#x5E2E;&#x52A9;&#x73AF;&#x5883;&#x5E76;&#x8FDB;&#x5165; <code>python</code> &#x73AF;&#x5883;.</p>
+<ul>
+<li>&#x7248;&#x6743;&#x547D;&#x4EE4;</li>
+</ul>
+<p>&#x5C1D;&#x8BD5;&#x8FC7; <code>help()</code> &#x547D;&#x4EE4;&#x540E;,&#x7EE7;&#x7EED;&#x4E00;&#x6B21;&#x5C1D;&#x8BD5;&#x5176;&#x4F59;&#x7684;&#x51E0;&#x4E2A;&#x547D;&#x4EE4;: Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>copyright
+Copyright (c) <span class="hljs-number">2001</span><span class="hljs-number">-2019</span> Python Software Foundation.
+All Rights Reserved.
+
+Copyright (c) <span class="hljs-number">2000</span> BeOpen.com.
+All Rights Reserved.
+
+Copyright (c) <span class="hljs-number">1995</span><span class="hljs-number">-2001</span> Corporation <span class="hljs-keyword">for</span> National Research Initiatives.
+All Rights Reserved.
+
+Copyright (c) <span class="hljs-number">1991</span><span class="hljs-number">-1995</span> Stichting Mathematisch Centrum, Amsterdam.
+All Rights Reserved.
+&gt;&gt;&gt;
+</code></pre>
+<blockquote>
+<p><code>copyright</code> &#x547D;&#x4EE4;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x4E86;&#x7248;&#x6743;&#x4FE1;&#x606F;,&#x6700;&#x5DE6;&#x8FB9;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x63D0;&#x793A;&#x7B26;&#x5E76;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x6539;&#x53D8;,&#x8868;&#x660E;&#x73B0;&#x5728;&#x4F9D;&#x7136;&#x662F;&#x5904;&#x4E8E; <code>python</code> &#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;.</p>
+</blockquote>
+<ul>
+<li>&#x81F4;&#x8C22;&#x4EBA;&#x5458;</li>
+</ul>
+<p>&#x4F9D;&#x7136;&#x5904;&#x4E8E; <code>python</code> &#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;&#x4E2D;&#x8F93;&#x5165; <code>credits</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x67E5;&#x770B; <code>python</code> &#x7684;&#x5E55;&#x540E;&#x5DE5;&#x4F5C;&#x4EBA;&#x5458;,&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;<a href="www.python.org">www.python.org</a> &#x67E5;&#x770B;&#x66F4;&#x591A;&#x4FE1;&#x606F;.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>credits
+    Thanks to CWI, CNRI, BeOpen.com, Zope Corporation <span class="hljs-keyword">and</span> a cast of thousands
+    <span class="hljs-keyword">for</span> supporting Python development.  See www.python.org <span class="hljs-keyword">for</span> more information.
+&gt;&gt;&gt;
+</code></pre>
+<blockquote>
+<p><code>Python</code> &#x7684;&#x53D1;&#x5C55;&#x58EE;&#x5927;&#x79BB;&#x4E0D;&#x5F00;&#x8D21;&#x732E;&#x8005;&#x7684;&#x8F9B;&#x82E6;&#x4ED8;&#x51FA;,&#x611F;&#x8C22;&#x5927;&#x4F6C;&#x4EEC;&#x7684;&#x667A;&#x6167;.</p>
+</blockquote>
+<ul>
+<li>&#x7248;&#x6743;&#x547D;&#x4EE4;</li>
+</ul>
+<p>&#x73B0;&#x5728;&#x53EA;&#x5269;&#x4E0B;&#x6700;&#x540E;&#x4E00;&#x4E2A; <code>license</code> &#x547D;&#x4EE4;,&#x5DF2;&#x7ECF;&#x8FEB;&#x4E0D;&#x53CA;&#x5F85;&#x60F3;&#x8981;&#x5FEB;&#x70B9;&#x7ED3;&#x675F;&#x4E86;!</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>license
+Type license() to see the full license text
+</code></pre>
+<p>&#x770B;&#x6837;&#x5B50;&#x548C; <code>help</code> &#x547D;&#x4EE4;&#x4E00;&#x6837;,&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x8F93;&#x5165; <code>license</code> &#x800C;&#x662F;&#x9700;&#x8981;&#x8F93;&#x5165; <code>license()</code> &#x547D;&#x4EE4;&#x624D;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x7248;&#x6743;&#x4FE1;&#x606F;,&#x96BE;&#x4E0D;&#x6210;&#x8FD8;&#x4F1A;&#x79BB;&#x5F00; <code>&gt;&gt;&gt;</code> &#x63D0;&#x793A;&#x7B26;&#x7684; <code>python</code> &#x73AF;&#x5883;&#x5417;?</p>
+<pre><code class="lang-bash">&gt;&gt;&gt; license()
+A. HISTORY OF THE SOFTWARE
+==========================
+
+Python was created <span class="hljs-keyword">in</span> the early 1990s by Guido van Rossum at Stichting
+Mathematisch Centrum (CWI, see http://www.cwi.nl) <span class="hljs-keyword">in</span> the Netherlands
+as a successor of a language called ABC.  Guido remains Python<span class="hljs-string">&apos;s
+principal author, although it includes many contributions from others.
+
+In 1995, Guido continued his work on Python at the Corporation for
+National Research Initiatives (CNRI, see http://www.cnri.reston.va.us)
+in Reston, Virginia where he released several versions of the
+software.
+
+In May 2000, Guido and the Python core development team moved to
+BeOpen.com to form the BeOpen PythonLabs team.  In October of the same
+year, the PythonLabs team moved to Digital Creations, which became
+Zope Corporation.  In 2001, the Python Software Foundation (PSF, see
+https://www.python.org/psf/) was formed, a non-profit organization
+created specifically to own Python-related Intellectual Property.
+Zope Corporation was a sponsoring member of the PSF.
+
+All Python releases are Open Source (see http://www.opensource.org for
+the Open Source Definition).  Historically, most, but not all, Python
+Hit Return for more, or q (and Return) to quit:
+</span></code></pre>
+<p>&#x547D;&#x4EE4;&#x884C;&#x63D0;&#x793A;&#x7B26;&#x597D;&#x50CF;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x53D8;&#x5316;,&#x6700;&#x540E;&#x4E00;&#x53E5;&#x8BDD;&#x8BF4;&#x60F3;&#x8981;&#x67E5;&#x770B;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x6572;&#x5165; <code>&#x56DE;&#x8F66;</code> &#x952E;&#x6216;&#x8005;&#x8F93;&#x5165; <code>q</code> (&#x7136;&#x540E; <code>&#x56DE;&#x8F66;</code>) &#x9000;&#x51FA;.</p>
+<pre><code class="lang-python">releases have also been GPL-compatible; the table below summarizes
+the various releases.
+
+    Release         Derived     Year        Owner       GPL-
+                    from                                compatible? (1)
+
+    0.9.0 thru 1.2              1991-1995   CWI         yes
+    1.3 thru 1.5.2  1.2         1995-1999   CNRI        yes
+    1.6             1.5.2       2000        CNRI        no
+    2.0             1.6         2000        BeOpen.com  no
+    1.6.1           1.6         2001        CNRI        yes (2)
+    2.1             2.0+1.6.1   2001        PSF         no
+    2.0.1           2.0+1.6.1   2001        PSF         yes
+    2.1.1           2.1+2.0.1   2001        PSF         yes
+    2.1.2           2.1.1       2002        PSF         yes
+    2.1.3           2.1.2       2002        PSF         yes
+    2.2 and above   2.1.1       2001-now    PSF         yes
+
+Footnotes:
+
+(1) GPL-compatible doesn&apos;t mean that we&apos;re distributing Python under
+    the GPL.  All Python licenses, unlike the GPL, let you distribute
+    a modified version without making your changes open source.  The
+Hit Return for more, or q (and Return) to quit:
+</code></pre>
+<p>&#x663E;&#x793A;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x4FE1;&#x606F;,&#x6700;&#x540E;&#x4E00;&#x53E5;&#x8BDD;&#x4F9D;&#x7136;&#x662F; &quot;Hit Return for more, or q (and Return) to quit: &quot; ,&#x8FD9;&#x4E00;&#x6B21;&#x5F53;&#x7136;&#x662F; <code>q</code> &#x5E76;&#x56DE;&#x8F66;&#x4E86;&#x554A;!</p>
+<pre><code class="lang-python">Hit Return <span class="hljs-keyword">for</span> more, <span class="hljs-keyword">or</span> q (<span class="hljs-keyword">and</span> Return) to quit: q
+&gt;&gt;&gt;
+</code></pre>
+<p>&#x518D;&#x4E00;&#x6B21;&#x51FA;&#x73B0; <code>&gt;&gt;&gt;</code> &#x63D0;&#x793A;&#x7B26;,&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x6109;&#x5FEB;&#x5730;&#x73A9;&#x800D; <code>python</code> &#x811A;&#x672C;&#x4E86;&#x5462;!</p>
+<h2 id="&#x4F60;&#x597D;python">&#x4F60;&#x597D;,python</h2>
+<p>&#x5982;&#x679C;&#x8FD8;&#x6CA1;&#x6709;&#x8FDB;&#x5165; <code>python</code> &#x73AF;&#x5883;,&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>python</code> &#x6216;&#x8005; <code>python3</code> &#x8FDB;&#x5165;&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;.</p>
+<pre><code class="lang-bash">$ python
+
+WARNING: Python 2.7 is not recommended. 
+This version is included <span class="hljs-keyword">in</span> macOS <span class="hljs-keyword">for</span> compatibility with legacy software. 
+Future versions of macOS will not include Python 2.7. 
+Instead, it is recommended that you transition to using <span class="hljs-string">&apos;python3&apos;</span> from within Terminal.
+
+Python 2.7.16 (default, Nov  9 2019, 05:55:08) 
+[GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc<span class="hljs-_">-s</span> on darwin
+Type <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string">&quot;copyright&quot;</span>, <span class="hljs-string">&quot;credits&quot;</span> or <span class="hljs-string">&quot;license&quot;</span> <span class="hljs-keyword">for</span> more information.
+&gt;&gt;&gt;
+</code></pre>
+<blockquote>
+<p>&#x5982;&#x679C;&#x662F; <code>python2</code> &#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>python</code> &#x8FDB;&#x5165;&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;.</p>
+</blockquote>
+<pre><code class="lang-bash">$ python3
+Python 3.7.5 (default, Nov  1 2019, 02:16:23) 
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string">&quot;copyright&quot;</span>, <span class="hljs-string">&quot;credits&quot;</span> or <span class="hljs-string">&quot;license&quot;</span> <span class="hljs-keyword">for</span> more information.
+&gt;&gt;&gt;
+</code></pre>
+<blockquote>
+<p>&#x5982;&#x679C;&#x662F; <code>python3</code> &#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>python3</code> &#x8FDB;&#x5165;&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;.</p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x6B63;&#x5728;&#x5904;&#x4E8E; <code>python</code> &#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;,&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>print(&apos;hello python!&apos;)</code> &#x6765;&#x8868;&#x660E;&#x6B63;&#x5F0F;&#x5165;&#x95E8;&#x5F00;&#x59CB;&#x5B66;&#x4E60; <code>python</code> .</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;hello python!&apos;</span>)
+hello python!
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x9000;&#x51FA; <code>python</code> &#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>exit()</code> &#x547D;&#x4EE4;&#x6216;&#x8005; <code>Ctrl-D</code> &#x6765;&#x9000;&#x51FA;.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>exit
+Use exit() <span class="hljs-keyword">or</span> Ctrl-D (i.e. EOF) to exit
+<span class="hljs-meta">&gt;&gt;&gt; </span>exit()
+$
+</code></pre>
+<blockquote>
+<p>&#x6309;&#x7167;&#x5DF2;&#x6709;&#x7684;&#x5F00;&#x53D1;&#x7ECF;&#x9A8C;&#x63A8;&#x65AD;,&#x9000;&#x51FA;&#x547D;&#x4EE4;&#x884C;&#x53EF;&#x4EE5;&#x8F93;&#x5165; <code>quit</code> &#x6216; <code>exit</code> &#x6216;&#x8005; <code>Ctrl-D</code> ,&#x8BD5;&#x9519;&#x5B66;&#x4E60;&#x540E;&#x77E5;&#x9053;&#x4E86;&#x60F3;&#x8981;&#x9000;&#x51FA; <code>python</code> &#x73AF;&#x5883;&#x652F;&#x6301; <code>exit() or Ctrl-D</code> &#x4E24;&#x79CD;&#x65B9;&#x5F0F;.</p>
+</blockquote>
+<h2 id="&#x626B;&#x76F2;&#x57FA;&#x672C;&#x7C7B;&#x578B;">&#x626B;&#x76F2;&#x57FA;&#x672C;&#x7C7B;&#x578B;</h2>
+<h3 id="&#x6574;&#x6570;">&#x6574;&#x6570;</h3>
+<p>&#x548C;&#x5176;&#x4ED6;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E00;&#x6837;,&#x6574;&#x6570;&#x548C;&#x6570;&#x5B66;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x6982;&#x5FF5;&#x4E00;&#x6837;,&#x5728; <code>python</code> &#x4EA4;&#x4E92;&#x5F0F;&#x547D;&#x4EE4;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x652F;&#x6301;&#x56DB;&#x5219;&#x8FD0;&#x7B97;,&#x8BF7;&#x4E0D;&#x8981;&#x95EE; <code>5/2</code> &#x4E3A;&#x4EC0;&#x4E48;&#x7B49;&#x4E8E; <code>2</code> &#x800C;&#x4E0D;&#x662F; <code>2.5</code> &#x8FD9;&#x6837;&#x7684;&#x57FA;&#x7840;&#x95EE;&#x9898;.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span>
+<span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span>+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+</code></pre>
+<h3 id="&#x5C0F;&#x6570;">&#x5C0F;&#x6570;</h3>
+<p>&#x4E0D;&#x540C;&#x4E8E;&#x6574;&#x6570;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x6D6E;&#x70B9;&#x6570;&#x4FDD;&#x7559;&#x5C0F;&#x6570;,&#x6574;&#x6570;&#x8FD0;&#x7B97;&#x7684; <code>5/2=2</code> &#x800C;&#x6D6E;&#x70B9;&#x6570;&#x8FD0;&#x7B97;&#x7684; <code>5.0/2</code> &#x6216;&#x8005; <code>5/2.0</code> &#x5747;&#x7B49;&#x4E8E; <code>2.5</code> &#x800C;&#x4E0D;&#x662F; <code>2</code> .</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">3.1415926</span>*<span class="hljs-number">2</span>
+<span class="hljs-number">6.2831852</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">5</span>/<span class="hljs-number">2.0</span>
+<span class="hljs-number">2.5</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">5.0</span>/<span class="hljs-number">2</span>
+<span class="hljs-number">2.5</span>
+&gt;&gt;&gt;
+</code></pre>
+<p>&#x5F53;&#x6570;&#x636E;&#x975E;&#x5E38;&#x5927;&#x6216;&#x8005;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x65F6;&#x5019;,&#x6D6E;&#x70B9;&#x6570;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8868;&#x793A;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x6CD5;,&#x6BD4;&#x5982;&#x5148;&#x5B9A;&#x4E00;&#x4E2A;&#x5C0F;&#x76EE;&#x6807;,&#x4E00;&#x5E74;&#x6323;&#x4ED6;&#x4E00;&#x4E2A;&#x4EBF;?</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1.0e8</span>
+<span class="hljs-number">100000000.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1e8</span>
+<span class="hljs-number">100000000.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1e-2</span>
+<span class="hljs-number">0.01</span>
+</code></pre>
+<blockquote>
+<p>&#x4E0D;&#x8BBA;&#x662F; <code>1.0e8</code> &#x8FD8;&#x662F; <code>1e8</code> &#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x5747;&#x662F;&#x6D6E;&#x70B9;&#x6570;,&#x4E0D;&#x4FE1;&#x4F60;&#x81EA;&#x5DF1;&#x8BD5;&#x8BD5;&#x770B;!</p>
+</blockquote>
+<h3 id="&#x5B57;&#x7B26;&#x4E32;">&#x5B57;&#x7B26;&#x4E32;</h3>
+<p>&#x4E0D;&#x8BBA;&#x662F;&#x73B0;&#x5B9E;&#x751F;&#x6D3B;&#x4E2D;&#x8FD8;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x7F16;&#x7A0B;&#x4E16;&#x754C;&#x91CC;,&#x5B57;&#x7B26;&#x4E32;&#x624D;&#x662F;&#x4F7F;&#x7528;&#x6700;&#x9891;&#x7E41;&#x7684;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;,<code>python</code> &#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x5728;&#x4E00;&#x8D77;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5173;&#x7CFB;&#x5462;?</p>
+<ul>
+<li>&#x5DE6;&#x53F3;&#x5355;&#x5F15;&#x53F7;&#x548C;&#x53CC;&#x5F15;&#x53F7;&#x5747;&#x53EF;,&#x4F46;&#x4E0D;&#x652F;&#x6301;&#x6DF7;&#x7528;</li>
+</ul>
+<blockquote>
+<p>&#x5DE6;&#x8FB9;&#x5305;&#x88F9;&#x7684;&#x662F;&#x53CC;&#x5F15;&#x53F7; <code>&quot;</code> ,&#x5219;&#x53F3;&#x8FB9;&#x4E5F;&#x5FC5;&#x987B;&#x662F;&#x53CC;&#x5F15;&#x53F7; <code>&quot;</code>,&#x5982;&#x679C;&#x5DE6;&#x8FB9;&#x662F;&#x5355;&#x5F15;&#x53F7; <code>&apos;</code> &#x5219;&#x53F3;&#x8FB9;&#x4E5F;&#x9700;&#x8981;&#x662F;&#x5355;&#x5F15;&#x53F7; <code>&apos;</code>.</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&quot;hello python!&quot;</span>)
+hello python!
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;hello python!&apos;</span>)
+hello python!
+</code></pre>
+<blockquote>
+<p>&#x6B63;&#x786E;&#x793A;&#x4F8B;: <code>print(&quot;hello python!&quot;)</code> &#x6216; <code>print(&apos;hello python!&apos;)</code></p>
+</blockquote>
+<pre><code class="lang-python">&gt;&gt;&gt; print(&quot;hello python!&apos;)
+  File &quot;&lt;stdin&gt;&quot;, line 1
+    print(&quot;hello python!&apos;)
+                         ^
+SyntaxError: EOL while scanning string literal
+&gt;&gt;&gt; print(&apos;hello python!&quot;)
+  File &quot;&lt;stdin&gt;&quot;, line 1
+    print(&apos;hello python!&quot;)
+                         ^
+SyntaxError: EOL while scanning string literal
+</code></pre>
+<blockquote>
+<p>&#x9519;&#x8BEF;&#x793A;&#x4F8B;: <code>print(&quot;hello python!&apos;)</code> &#x6216; <code>print(&apos;hello python!&quot;)</code></p>
+</blockquote>
+<ul>
+<li>&#x5185;&#x90E8;&#x5355;&#x5F15;&#x53F7;&#x548C;&#x53CC;&#x5F15;&#x53F7;&#x53EF;&#x914D;&#x5408;,&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x8981;&#x8F6C;&#x4E49;</li>
+</ul>
+<blockquote>
+<p>&#x5982;&#x679C;&#x7528;&#x5355;&#x5F15;&#x53F7;&#x5305;&#x88F9;&#x5B57;&#x7B26;&#x4E32;&#x800C;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x672C;&#x8EAB;&#x4E5F;&#x6709;&#x5355;&#x5F15;&#x53F7;,&#x5219;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>\&apos;</code> &#x8FDB;&#x884C;&#x8F6C;&#x4E49;(<code>&apos;welcome to \&apos;snowdreams1006.cn\&apos;&apos;</code>),&#x5982;&#x679C;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x53CC;&#x5F15;&#x53F7;,&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;(<code>&apos;welcome to &quot;snowdreams1006.cn&quot;&apos;</code>).
+&#x5982;&#x679C;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x5305;&#x88F9;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E5F;&#x662F;&#x7C7B;&#x4F3C;&#x60C5;&#x51B5;,&#x5206;&#x522B;&#x662F; <code>&quot;welcome to \&quot;snowdreams1006.cn\&quot;&quot;</code> &#x548C; <code>&quot;welcome to &apos;snowdreams1006.cn&apos;&quot;</code> .</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&quot;welcome to snowdreams1006.cn&quot;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;welcome to snowdreams1006.cn&apos;</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&quot;welcome to &apos;snowdreams1006.cn&apos;&quot;</span>)
+welcome to <span class="hljs-string">&apos;snowdreams1006.cn&apos;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;welcome to &quot;snowdreams1006.cn&quot;&apos;</span>)
+welcome to <span class="hljs-string">&quot;snowdreams1006.cn&quot;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;welcome to \&apos;snowdreams1006.cn\&apos;&apos;</span>)
+welcome to <span class="hljs-string">&apos;snowdreams1006.cn&apos;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&quot;welcome to \&quot;snowdreams1006.cn\&quot;&quot;</span>)
+welcome to <span class="hljs-string">&quot;snowdreams1006.cn&quot;</span>
+</code></pre>
+<blockquote>
+<p>&#x6B63;&#x786E;&#x793A;&#x4F8B;: <code>print(&quot;welcome to &apos;snowdreams1006.cn&apos;&quot;)</code> &#x6216; <code>print(&apos;welcome to &quot;snowdreams1006.cn&quot;&apos;)</code> &#x6216; <code>print(&apos;welcome to \&apos;snowdreams1006.cn\&apos;&apos;)</code> &#x6216; <code>print(&quot;welcome to \&quot;snowdreams1006.cn\&quot;&quot;)</code></p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&quot;welcome to &quot;</span>snowdreams1006.cn<span class="hljs-string">&quot;&quot;</span>)
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>
+    print(<span class="hljs-string">&quot;welcome to &quot;</span>snowdreams1006.cn<span class="hljs-string">&quot;&quot;</span>)
+                                    ^
+SyntaxError: invalid syntax
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;welcome to &apos;</span>snowdreams1006.cn<span class="hljs-string">&apos;&apos;</span>)
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>
+    print(<span class="hljs-string">&apos;welcome to &apos;</span>snowdreams1006.cn<span class="hljs-string">&apos;&apos;</span>)
+                                    ^
+SyntaxError: invalid syntax
+</code></pre>
+<blockquote>
+<p>&#x9519;&#x8BEF;&#x793A;&#x4F8B;: <code>print(&quot;welcome to &quot;snowdreams1006.cn&quot;&quot;)</code> &#x6216; <code>print(&apos;welcome to &apos;snowdreams1006.cn&apos;&apos;)</code></p>
+</blockquote>
+<ul>
+<li>&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x6362;&#x884C;&#x53EF;&#x6CE8;&#x91CA;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x5728; <code>python</code> &#x4EA4;&#x4E92;&#x5F0F;&#x547D;&#x4EE4;&#x884C;&#x73AF;&#x5883;&#x4E2D;&#x8F93;&#x5165;&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;,&#x53EF;&#x4EE5;&#x5148;&#x8F93;&#x5165; <code>print(&apos;&apos;&apos;</code> &#x7136;&#x540E;&#x6309;&#x4E0B;&#x56DE;&#x8F66;&#x51FA;&#x73B0;<code>...</code> &#x7B49;&#x5F85;&#x7EE7;&#x7EED;&#x8F93;&#x5165; <code>welcome to snowdreams1006.cn</code> ,&#x8F93;&#x5165;&#x5B8C;&#x6210;&#x540E;&#x518D;&#x6B21;<strong>&#x56DE;&#x8F66;&#x6362;&#x884C;</strong>&#x63A5;&#x7740;&#x8F93;&#x5165; <code>or</code> ,&#x518D;&#x6B21;&#x56DE;&#x8F66;&#x6362;&#x884C;&#x76F4;&#x5230;&#x8F93;&#x5165; <code>&apos;&apos;&apos;)</code> &#x56DE;&#x8F66;&#x5B8C;&#x6210;!</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(<span class="hljs-string">&apos;&apos;&apos;
+<span class="hljs-meta">... </span>welcome to snowdreams1006.cn
+<span class="hljs-meta">... </span>or
+<span class="hljs-meta">... </span>you can visit on snowdreams1006.tech
+<span class="hljs-meta">... </span>&apos;&apos;&apos;</span>)
+
+welcome to snowdreams1006.cn
+<span class="hljs-keyword">or</span>
+you can visit on snowdreams1006.tech
+</code></pre>
+<p>&#x5982;&#x679C;&#x662F;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x591A;&#x884C;&#x547D;&#x4EE4;&#x7684;&#x8BDD;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E09;&#x4E2A;&#x8FDE;&#x7EED;&#x5355;&#x5F15;&#x53F7;&#x6216;&#x53CC;&#x5F15;&#x53F7;&#x5206;&#x5272;&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;,&#x590D;&#x5236;&#x5230; <code>python</code> &#x4EA4;&#x4E92;&#x5F0F;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x76F4;&#x63A5;&#x4F53;&#x9A8C;.</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">print</span>(<span class="hljs-string">&apos;&apos;</span><span class="hljs-string">&apos;
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+&apos;</span><span class="hljs-string">&apos;&apos;</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+&quot;</span><span class="hljs-string">&quot;&quot;</span>)
+</code></pre>
+<p>&#x6700;&#x7EC8;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x539F;&#x6837;&#x5C55;&#x793A;,&#x652F;&#x6301;&#x6362;&#x884C;!</p>
+<pre><code class="lang-bash">welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+</code></pre>
+<p>&#x8FDE;&#x7EED;&#x5B57;&#x7B26;&#x4E32;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x6362;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x6CE8;&#x91CA;,&#x6BD4;&#x5982; <code>python</code> &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-python"><span class="hljs-string">&apos;&apos;&apos;
+my wechat is snowdreams1006 
+&apos;&apos;&apos;</span>
+
+<span class="hljs-string">&quot;&quot;&quot;
+my wechat is snowdreams1006 
+&quot;&quot;&quot;</span>
+
+print(<span class="hljs-string">&apos;&apos;&apos;
+welcome to snowdreams1006.cn
+or
+you can visit on snowdreams1006.tech
+&apos;&apos;&apos;</span>)
+
+<span class="hljs-comment"># python is the best language in the world</span>
+</code></pre>
+<blockquote>
+<p><code>test.py</code> &#x6587;&#x4EF6;&#x4E2D;,&#x4EE5; <code>#</code> &#x5F00;&#x5934;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E0D;&#x4F1A;&#x6267;&#x884C;,&#x8868;&#x793A;&#x5355;&#x884C;&#x6CE8;&#x91CA;,&#x4EE5; <code>&apos;&apos;&apos;</code> &#x5F00;&#x5934;&#x5E76;&#x4E14;&#x4EE5; <code>&apos;&apos;&apos;</code> &#x7ED3;&#x5C3E;&#x7684;&#x8868;&#x793A;&#x591A;&#x884C;&#x6CE8;&#x91CA;.</p>
+</blockquote>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x5904;&#x4E8E;&#x6B63;&#x5E38;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x6A21;&#x5F0F;&#x4E0B;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x8BE5;&#x811A;&#x672C;&#x6587;&#x4EF6;,&#x6211;&#x4EEC;&#x4F1A;&#x53D1;&#x73B0;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x548C;&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x5747;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x8F93;&#x51FA;!</p>
+<pre><code class="lang-python">$ python test.py 
+
+welcome to snowdreams1006.cn
+<span class="hljs-keyword">or</span>
+you can visit on snowdreams1006.tech
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;: &#x8FD9;&#x91CC;&#x6267;&#x884C; <code>python</code> &#x811A;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x4E0D;&#x662F; <code>python</code> &#x4EA4;&#x4E92;&#x5F0F;&#x547D;&#x4EE4;&#x884C;&#x73AF;&#x5883;&#x800C;&#x662F;&#x666E;&#x901A;&#x7684;&#x6B63;&#x5E38;&#x6A21;&#x5F0F;,&#x8BF7;&#x6CE8;&#x610F;&#x547D;&#x4EE4;&#x884C;&#x63D0;&#x793A;&#x7B26;&#x7684;&#x533A;&#x522B;!</p>
+</blockquote>
+<ul>
+<li>&#x6570;&#x5B57;&#x9047;&#x5230;&#x5B57;&#x7B26;&#x4E32;&#x4F1A;&#x62A5;&#x9519;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span>+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&apos;1&apos;</span>+<span class="hljs-string">&apos;1&apos;</span>
+<span class="hljs-string">&apos;11&apos;</span>
+</code></pre>
+<blockquote>
+<p>&#x6B63;&#x786E;&#x793A;&#x4F8B;: &#x6570;&#x5B57;&#x548C;&#x6570;&#x5B57;&#x4E4B;&#x95F4; <code>+</code> &#x8868;&#x793A;&#x6570;&#x5B66;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x52A0;&#x6CD5;&#x5373; <code>1+1</code> &#x7ED3;&#x679C;&#x662F; <code>2</code> ,&#x800C;&#x5B57;&#x7B26;&#x4E32;&#x4E4B;&#x95F4;&#x7684; <code>+</code> &#x8868;&#x793A;&#x8FDE;&#x63A5;&#x7B26;&#x5373; <code>&apos;1&apos;+&apos;1&apos;</code> &#x7684;&#x7ED3;&#x679C;&#x662F; <code>&apos;11&apos;</code> .</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-number">1</span>+<span class="hljs-string">&apos;1&apos;</span>
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+TypeError: unsupported operand type(s) <span class="hljs-keyword">for</span> +: <span class="hljs-string">&apos;int&apos;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;str&apos;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-string">&apos;1&apos;</span>+<span class="hljs-number">1</span>
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+TypeError: cannot concatenate <span class="hljs-string">&apos;str&apos;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;int&apos;</span> objects
+&gt;&gt;&gt;
+</code></pre>
+<blockquote>
+<p>&#x9519;&#x8BEF;&#x793A;&#x4F8B;: &#x6570;&#x5B57;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>+</code> &#x4F1A;&#x62A5;&#x9519;,&#x4E0D;&#x8BBA;&#x662F; <code>1+&apos;1&apos;</code> &#x8FD8;&#x662F; <code>&apos;1&apos;+1</code> &#x5747;&#x4E0D;&#x652F;&#x6301;!</p>
+</blockquote>
+<h3 id="&#x76F8;&#x4E92;&#x8F6C;&#x6362;">&#x76F8;&#x4E92;&#x8F6C;&#x6362;</h3>
+<ul>
+<li>&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<blockquote>
+<p><code>str()</code> &#x51FD;&#x6570;&#x5C06;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;,&#x5305;&#x62EC;&#x7C7B;&#x6574;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;,&#x7C7B;&#x5C0F;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;,&#x6574;&#x6570;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x5C0F;&#x6570;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;.</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>str(<span class="hljs-string">&apos;1&apos;</span>)
+<span class="hljs-string">&apos;1&apos;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>str(<span class="hljs-string">&apos;1.9&apos;</span>)
+<span class="hljs-string">&apos;1.9&apos;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>str(<span class="hljs-number">1</span>)
+<span class="hljs-string">&apos;1&apos;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>str(<span class="hljs-number">1.9</span>)
+<span class="hljs-string">&apos;1.9&apos;</span>
+</code></pre>
+<p>&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>str()</code> &#x5B8C;&#x6210;&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;&#x7684;&#x9700;&#x6C42;,&#x4E0D;&#x7528;&#x518D;&#x62C5;&#x5FC3; <code>1+&apos;1&apos;</code> &#x4F1A;&#x62A5;&#x9519;&#x4E86;,&#x53EA;&#x9700;&#x8981;&#x8FD9;&#x4E48;&#x5904;&#x7406;:</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>str(<span class="hljs-number">1</span>) + str(<span class="hljs-string">&apos;1&apos;</span>)
+<span class="hljs-string">&apos;11&apos;</span>
+</code></pre>
+<ul>
+<li>&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x5C0F;&#x6570;</li>
+</ul>
+<blockquote>
+<p><code>float()</code> &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x5C0F;&#x6570;,&#x5305;&#x62EC;&#x5C0F;&#x6570;&#x8F6C;&#x5C0F;&#x6570;,&#x6574;&#x6570;&#x8F6C;&#x5C0F;&#x6570;,&#x7C7B;&#x5C0F;&#x6570;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5C0F;&#x6570;,&#x7C7B;&#x6574;&#x6570;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5C0F;&#x6570;.</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>float(<span class="hljs-number">1</span>)
+<span class="hljs-number">1.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>float(<span class="hljs-number">1.9</span>)
+<span class="hljs-number">1.9</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>float(<span class="hljs-string">&apos;1&apos;</span>)
+<span class="hljs-number">1.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>float(<span class="hljs-string">&apos;1.9&apos;</span>)
+<span class="hljs-number">1.9</span>
+</code></pre>
+<ul>
+<li>&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x6574;&#x6570;</li>
+</ul>
+<blockquote>
+<p><code>int()</code> &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x6574;&#x6570;,&#x5305;&#x62EC;&#x6574;&#x6570;&#x8F6C;&#x6574;&#x6570;,&#x5C0F;&#x6570;&#x8F6C;&#x6574;&#x6570;,&#x7C7B;&#x6574;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6574;&#x6570;,&#x4F46;<strong>&#x4E0D;&#x652F;&#x6301;&#x7C7B;&#x5C0F;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6574;&#x6570;</strong>!</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>int(<span class="hljs-number">1</span>)
+<span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>int(<span class="hljs-number">1.9</span>)
+<span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>int(<span class="hljs-number">10.9</span>)
+<span class="hljs-number">10</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>int(<span class="hljs-string">&apos;1&apos;</span>)
+<span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>int(<span class="hljs-string">&apos;1.9&apos;</span>)
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+ValueError: invalid literal <span class="hljs-keyword">for</span> int() <span class="hljs-keyword">with</span> base <span class="hljs-number">10</span>: <span class="hljs-string">&apos;1.9&apos;</span>
+&gt;&gt;&gt;
+</code></pre>
+<p>&#x7531;&#x4E8E; <code>int()</code> &#x51FD;&#x6570;&#x6709;&#x5751;,&#x56E0;&#x6B64;&#x9047;&#x5230;&#x7C7B;&#x5C0F;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;&#x6574;&#x6570;&#x65F6;&#x9700;&#x8981;&#x7279;&#x6B8A;&#x5904;&#x7406;,&#x53EF;&#x4EE5;&#x5148;&#x7528; <code>float()</code> &#x51FD;&#x6570;&#x5C06;&#x7C7B;&#x5C0F;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6210;&#x5C0F;&#x6570;,&#x518D;&#x7528; <code>int()</code> &#x51FD;&#x6570;&#x5C06;&#x521A;&#x624D;&#x7684;&#x5C0F;&#x6570;&#x8F6C;&#x6210;&#x6574;&#x6570;.</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>int(float(<span class="hljs-string">&apos;1.9&apos;</span>))
+<span class="hljs-number">1</span>
+</code></pre>
+<h2 id="&#x5B66;&#x4E60;&#x603B;&#x7ED3;">&#x5B66;&#x4E60;&#x603B;&#x7ED3;</h2>
+<p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86; <code>python</code> &#x73AF;&#x5883;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x540E;&#x5982;&#x4F55;&#x8FDB;&#x5165;&#x547D;&#x4EE4;&#x884C;&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;&#x4EE5;&#x53CA;&#x8FD0;&#x884C; <code>Hello World</code>,&#x7136;&#x540E;&#x5B66;&#x4E60;&#x4E86; <code>python</code> &#x7684;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4EE5;&#x53CA;&#x76F8;&#x4E92;&#x8F6C;&#x6362;.</p>
+<ul>
+<li><code>str()</code> &#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;,<strong>&#x653E;&#x5FC3;&#x4F7F;&#x7528;</strong>,&#x65E0;&#x8BBA;&#x662F;&#x6574;&#x6570;&#x8FD8;&#x662F;&#x5C0F;&#x6570;&#x6216;&#x8005;&#x539F;&#x672C;&#x5C31;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x80FD;&#x8F6C;&#x6210;&#x5B57;&#x7B26;&#x4E32;.</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(str(<span class="hljs-string">&apos;welcome to &quot;snowdreams&apos;</span>)+str(<span class="hljs-number">1006</span>)+str(<span class="hljs-string">&quot;.cn\&quot;&quot;</span>))
+welcome to <span class="hljs-string">&quot;snowdreams1006.cn&quot;</span>
+</code></pre>
+<ul>
+<li><code>float()</code> &#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x5C0F;&#x6570;,<strong>&#x6B63;&#x5E38;&#x4F7F;&#x7528;</strong>,&#x65E0;&#x8BBA;&#x662F;&#x6574;&#x6570;&#x8FD8;&#x662F;&#x5C0F;&#x6570;&#x6216;&#x8005;&#x7C7B;&#x5C0F;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x7C7B;&#x6574;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x90FD;&#x80FD;&#x8F6C;&#x6210;&#x5C0F;&#x6570;.</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(float(<span class="hljs-string">&apos;1006&apos;</span>)+float(<span class="hljs-string">&apos;10.06&apos;</span>)+float(<span class="hljs-number">10</span>)+float(<span class="hljs-number">.06</span>))
+<span class="hljs-number">1026.12</span>
+</code></pre>
+<ul>
+<li><code>int()</code> &#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x6574;&#x6570;,<strong>&#x5C0F;&#x5FC3;&#x4F7F;&#x7528;</strong>,&#x6574;&#x6570;&#x548C;&#x5C0F;&#x6570;&#x4EE5;&#x53CA;&#x7C7B;&#x6574;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x53EF;&#x4EE5;&#x8F6C;&#x6210;&#x6574;&#x6570;,&#x5176;&#x4E2D;&#x5C0F;&#x6570;&#x90E8;&#x5206;&#x4F1A;&#x76F4;&#x63A5;&#x820D;&#x5F03;,&#x4E0D;&#x652F;&#x6301;&#x7C7B;&#x5C0F;&#x6570;&#x5B57;&#x7B26;&#x4E32;!</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(int(<span class="hljs-string">&apos;1006&apos;</span>)+int(float(<span class="hljs-string">&apos;10.06&apos;</span>))+int(<span class="hljs-number">10</span>)+int(<span class="hljs-number">.06</span>))
+<span class="hljs-number">1026</span>
+</code></pre>
+<p>&#x5F53;&#x7136;&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x60C5;&#x51B5;,&#x4E0D;&#x662F;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4EFB; <code>float()</code> &#x8FD8;&#x662F; <code>int()</code> &#x600E;&#x4E48;&#x6298;&#x817E;&#x4E5F;&#x662F;&#x65E0;&#x80FD;&#x4E3A;&#x529B;&#x7684;,&#x5947;&#x6280;&#x6DEB;&#x5DE7;&#x9664;&#x5916;!</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>print(float(<span class="hljs-string">&apos;welcome to &quot;snowdreams1006.cn&quot;&apos;</span>))
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+ValueError: could <span class="hljs-keyword">not</span> convert string to float: welcome to <span class="hljs-string">&quot;snowdreams1006.cn&quot;</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>print(int(<span class="hljs-string">&apos;welcome to &quot;snowdreams1006.cn&quot;&apos;</span>))
+Traceback (most recent call last):
+  File <span class="hljs-string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+ValueError: invalid literal <span class="hljs-keyword">for</span> int() <span class="hljs-keyword">with</span> base <span class="hljs-number">10</span>: <span class="hljs-string">&apos;welcome to &quot;snowdreams1006.cn&quot;&apos;</span>
+</code></pre>
+<h2 id="&#x9605;&#x8BFB;&#x66F4;&#x591A;">&#x9605;&#x8BFB;&#x66F4;&#x591A;</h2>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/shTf5mQAwqJHuiNCwRJ0-g" target="_blank">&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6574;&#x6570;&#x3001;&#x6D6E;&#x70B9;&#x6570;</a></li>
+</ul>
+<pre><code class="lang-html">&#x4F5C;&#x8005;: &#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;
+&#x94FE;&#x63A5;: https://snowdreams1006.github.io/learn-python/quickstart/type.html
+&#x6765;&#x6E90;: &#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;
+&#x672C;&#x6587;&#x539F;&#x521B;&#x53D1;&#x5E03;&#x4E8E;&#x300C;&#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;&#x300D;,&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;,&#x8C22;&#x8C22;&#x5408;&#x4F5C;!
+</code></pre>
+<p><img src="https://snowdreams1006.github.io/snowdreams1006-wechat-open.png" alt="https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"></p>
+<div id="gitalk-container"></div>
+                </div>
+                <script src="https://my.openwrite.cn/js/readmore.js"></script>
+                <script>
+                    var enablePlugin = false;
+                    var allowDomain = "localhost";
+                    if(allowDomain){
+                        var currentDomain = location.hostname;
+                        if ($.isArray(allowDomain)) {
+                            $.each(allowDomain, function(index, item) {
+                                if (currentDomain == item) {
+                                    enablePlugin = true;
+                                    return false;
+                                }
+                            });
+                        }else{
+                           if (currentDomain == allowDomain) {
+                                enablePlugin = true;
+                            }
+                        }
+                    }else{
+                        enablePlugin = true;
+                    }
+                    
+                    if(enablePlugin){
+                        var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+                        if (!isMobile) {
+                            var btw = new BTWPlugin();
+                            btw.init({"allowDomain":"localhost","blogId":"15702-1569305559839-744","name":"雪之梦技术驿站","qrcode":"https://snowdreams1006.github.io/snowdreams1006-wechat-public.jpeg","keyword":"vip","id":"vip-container"});
+                        }
+                    }
+                </script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="about.html" class="navigation navigation-prev " aria-label="Previous page: 快速入门">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../url/about.html" class="navigation navigation-next " aria-label="Next page: 网络请求">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"数据类型","level":"1.3.1","depth":2,"next":{"title":"网络请求","level":"1.4","depth":1,"path":"url/about.md","ref":"url/about.md","articles":[{"title":"原生请求","level":"1.4.1","depth":2,"path":"url/urllib/about.md","ref":"url/urllib/about.md","articles":[{"title":"范例教学","level":"1.4.1.1","depth":3,"path":"url/urllib/teaching.md","ref":"url/urllib/teaching.md","articles":[]},{"title":"实例练习","level":"1.4.1.2","depth":3,"path":"url/urllib/exercise.md","ref":"url/urllib/exercise.md","articles":[]}]},{"title":"第三方请求","level":"1.4.2","depth":2,"path":"url/requests/about.md","ref":"url/requests/about.md","articles":[{"title":"范例教学","level":"1.4.2.1","depth":3,"path":"url/requests/teaching.md","ref":"url/requests/teaching.md","articles":[]},{"title":"实例练习","level":"1.4.2.2","depth":3,"path":"url/requests/exercise.md","ref":"url/requests/exercise.md","articles":[]}]}]},"previous":{"title":"快速入门","level":"1.3","depth":1,"path":"quickstart/about.md","ref":"quickstart/about.md","articles":[{"title":"数据类型","level":"1.3.1","depth":2,"path":"quickstart/type.md","ref":"quickstart/type.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["favicon-absolute","github-buttons","edit-link-plus","readmore","copyright","mygitalk","icp"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"copyright":{"site":"https://snowdreams1006.github.io/learn-python","author":"雪之梦技术驿站","website":"雪之梦技术驿站","image":"https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"},"search":{},"edit-link-plus":{"label":"Edit This Page","base":{"snowdreams1006.github.io":"https://github.com/snowdreams1006/learn-python/edit/master/docs","snowdreams1006.gitlab.io":"https://gitlab.com/snowdreams1006/learn-python/edit/master/docs","snowdreams1006.gitee.io":"https://gitee.com/snowdreams1006/learn-python/edit/master/docs"},"defaultBase":"https://github.com/snowdreams1006/learn-python/edit/master/docs"},"readmore":{"allowDomain":"localhost","blogId":"15702-1569305559839-744","name":"雪之梦技术驿站","qrcode":"https://snowdreams1006.github.io/snowdreams1006-wechat-public.jpeg","keyword":"vip"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{"120x120":"/apple-touch-icon-120.png","180x180":"/apple-touch-icon-180.png"},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{"120x120":"/apple-touch-icon-precomposed-120.png","180x180":"/apple-touch-icon-precomposed-180.png"},"favicon":"/favicon.ico","bookmark":"/bookmark.ico","appleTouchIcon152":"/apple-touch-icon-152.png"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"icp":{"link":"http://www.beian.miit.gov.cn/","number":"浙ICP备18042346号"},"github-buttons":{"buttons":[{"user":"snowdreams1006","repo":"learn-python","type":"star","size":"small"}]},"mygitalk":{"flipMoveOptions":{},"clientID":"3f62415a283d19cbd696","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["snowdreams1006"],"createIssueManually":false,"distractionFreeMode":false,"repo":"learn-python","owner":"snowdreams1006","enableHotKey":true,"clientSecret":"aed0e1db0620bf5d0e3a3f0225f801997ad74e58","pagerDirection":"last","labels":["Gitalk"]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"snowdreams1006","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python 学习笔记","language":"zh-hans","links":{"sidebar":{"blog":"https://snowdreams1006.tech/"}},"gitbook":"3.2.3","description":"python 学习笔记,python 入门教程"},"file":{"path":"quickstart/type.md","mtime":"2020-01-16T15:09:03.439Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-17T02:48:02.367Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link-plus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copyright/copyright.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
