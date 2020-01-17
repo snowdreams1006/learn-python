@@ -1143,6 +1143,52 @@ filehandle = urllib.urlopen(some_url)
 
 ## 学习总结
 
+本文主要介绍了 `python` 中原生的 `urllib` 如何发送网络请求以及一些基本环境的搭建过程,其中附带大量可直接操作的现成代码,文档和源码均已开源,感兴趣的小伙伴可自行翻阅浏览.
+
+现在简要回顾一下本文主要涉及到的知识点,以供快速翻阅查询.
+
+### 虚拟环境 `virtualenv`
+
+虚拟环境安装并激活成功后,`python` 和 `pip` 的版本信息如下:
+
+```bash
+(.env)$ python --version
+Python 2.7.16
+(.env) $ pip --version
+pip 19.3.1 from ~/python/src/url/urllib/.env/lib/python2.7/site-packages/pip (python 2.7)
+```
+
+如需自行搭建该虚拟环境,可参考以下几步开启虚拟环境:
+
+- 步骤1. 安装虚拟环境 `virtualenv` 
+
+```bash
+sudo pip install virtualenv
+```
+
+> 安装虚拟环境方便隔离不同 python 环境,也可以使用**系统默认环境**,所以这一步是可选的,同理下面的步骤也都是可选的.
+
+
+- 步骤2. 准备虚拟环境目录 `.env`
+
+```bash
+virtualenv .env
+```
+
+> 虚拟环境目录设置成隐藏目录的目的是防止误操作,当然也可以设置成普通目录那样显示出来.
+
+- 步骤3. 激活虚拟环境 `.env`
+
+```bash
+source .env/bin/activate
+```
+
+### 服务端后台 `httpbin` 
+
+### 免费ip代理池 `proxyip`
+
+### 原生网络请求 `urllib`
+
 ## 参考文档
 
 - [Python中read()、readline()和readlines()三者间的区别和用法](https://www.cnblogs.com/yun1108/p/8967334.html)
