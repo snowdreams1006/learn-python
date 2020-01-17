@@ -78,7 +78,15 @@ def get_proxy_urllib():
     print('>>>Response Headers:')
     print(response.info())
     print('>>>Response Body:')
-    print(response.read())
+    result = response.read()
+    print(result)
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Proxy Success'
+    else:
+        print 'Proxy Fail'
 
 if __name__ == '__main__':
     # print '>>>Get simple urllib2<<<'
@@ -90,5 +98,5 @@ if __name__ == '__main__':
     # print '>>>Post params urllib2<<<'
     # post_params_urllib2()
 
-    # print '>>>Get proxy urllib<<<'
-    # get_proxy_urllib()
+    print '>>>Get proxy urllib<<<'
+    get_proxy_urllib()

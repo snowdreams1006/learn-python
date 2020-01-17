@@ -764,7 +764,97 @@ Access-Control-Allow-Credentials: true
 
 ### 代理访问
 
-- 获取代理ip
+如果 [http://proxyip.snowdreams1006.cn/](http://proxyip.snowdreams1006.cn/) 无法访问,可以访问[https://github.com/jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)项目自行构建代理池.
+
+[jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)项目提供两种安装方式,分为 `docker` 安装方式和源码安装方式.
+
+#### `docker` 方式安装代理池
+
+```bash
+docker run --env db_type=REDIS --env db_host=127.0.0.1 --env db_port=6379 --env db_password='' -p 5010:5010 jhao104/proxy_pool
+```
+
+> 当然也可以提前下载镜像: `docker pull jhao104/proxy_pool`,然后再运行上述命令启动容器.
+
+#### 源码方式安装代理池
+
+- 步骤 1 : 下载源码
+
+```bash
+git clone https://github.com/jhao104/proxy_pool.git
+```
+
+> 也可以直接下载安装包: [https://github.com/jhao104/proxy_pool/releases](https://github.com/jhao104/proxy_pool/releases)
+
+- 步骤 2 : 安装依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+> 安装项目依赖时需要切换到项目根目录,例如 `cd proxy_pool`,然后会自动从默认安装源进行下载,也可以是使用 `pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt` 加速安装.
+
+- 步骤 3 : 配置 `Config/setting.py`
+
+```python
+# Config/setting.py 为项目配置文件
+
+# 配置DB     
+DATABASES = {
+    "default": {
+        "TYPE": "REDIS",        # 目前支持SSDB或REDIS数据库
+        "HOST": "127.0.0.1",   # db host
+        "PORT": 6379,          # db port，例如SSDB通常使用8888，REDIS通常默认使用6379
+        "NAME": "proxy",       # 默认配置
+        "PASSWORD": ""         # db password
+    }
+}
+
+# 配置 API服务
+SERVER_API = {
+    "HOST": "0.0.0.0",  # 监听ip, 0.0.0.0 监听所有IP
+    "PORT": 5010        # 监听端口
+}
+       
+# 上面配置启动后，代理池访问地址为 http://127.0.0.1:5010
+```
+
+- 步骤 5 : 启动项目
+
+``` bash
+# 如果你的依赖已经安装完成并且具备运行条件,可以在cli目录下通过ProxyPool.py启动.
+# 程序分为: schedule 调度程序 和 webserver Api服务
+
+# 首先启动调度程序
+python proxyPool.py schedule
+
+# 然后启动webApi服务
+python proxyPool.py webserver
+```
+
+> 该命令要求当前环境处于 `cli` 目录,如果是其他目录请自行调整 `proxyPool.py` 的路径(`cd cli` 即可切换到 `cli` 目录)
+
+如果以上步骤均正常,项目启动会后自动抓取互联网免费代理 ip,可以通过访问 [http://127.0.0.1:5010](http://127.0.0.1:5010) 查看.
+
+这里提供两个线上地址,项目官方体验地址: [http://118.24.52.95/](http://118.24.52.95/) 和 雪之梦技术驿站地址: [https://proxyip.snowdreams1006.cn/](https://proxyip.snowdreams1006.cn/)
+
+```bash
+$ curl https://proxyip.snowdreams1006.cn/
+{
+  "delete?proxy=127.0.0.1:8080": "delete an unable proxy", 
+  "get": "get an useful proxy", 
+  "get_all": "get all proxy from proxy pool", 
+  "get_status": "proxy number"
+}
+```
+
+> 单机勿压,恶意访问会关小黑屋哟,推荐大家自行搭建本地环境,谢谢支持.
+
+### 利用 `python` 的 `urllib` 获取代理 ip
+
+建议首先利用浏览器直接访问[http://proxyip.snowdreams1006.cn/get/](http://proxyip.snowdreams1006.cn/get/)查看是否能获取随机代理 ip,然后再利用 `python` 程序获取,保证代码运行正确,方便后续开发测试.
+
+- 获取随机代理 ip
 
 ```python
 # -*- coding: utf-8 -*-
@@ -785,7 +875,28 @@ if __name__ == '__main__':
     get_proxy_urllib()
 ```
 
-- 设置代理访问
+> 如果有浏览器环境,可以直接访问[http://proxyip.snowdreams1006.cn/get/](http://proxyip.snowdreams1006.cn/get/)验证是否能获取随机代理 ip,或者在终端命令行运行 `curl http://proxyip.snowdreams1006.cn/get/` 命令查看结果.
+
+- 设置代理ip访问
+
+通过 `urllib.FancyURLopener(proxy)` 可设置代理,用于向服务端隐藏客户端的真实信息,但是服务端到底能否区分代理请求和普通请求是和代理 ip 有关的.
+
+如果是高匿代理的话,是最为理想的一种情况,能够达到真正代理的作用.
+
+相反,如果是透明代理的话,是最没用的代理,服务端不仅知道你正在使用代理还知道你真实 ip,有一种掩耳盗铃的错觉.
+
+如何验证设置的代理 ip 是否能被服务端识别,可以访问[http://httpbin.snowdreams1006.cn/ip](http://httpbin.snowdreams1006.cn/ip)获取服务端读取到的客户端 ip.
+
+```bash
+$ curl http://httpbin.snowdreams1006.cn/ip
+{
+  "origin": "115.217.104.191"
+}
+```
+
+> 如果终端命令行没 `curl` 命令,可以百度一下自行安装或者直接打开浏览器访问[http://httpbin.snowdreams1006.cn/ip](http://httpbin.snowdreams1006.cn/ip)
+
+如果服务器读取到的请求 ip 和设置的代理 ip 一致,恭喜你,设置代理成功而且是高匿代理,否则的话,那就是掩耳盗铃了.
 
 ```python
 # -*- coding: utf-8 -*-
@@ -814,12 +925,120 @@ def get_proxy_urllib():
         'https': 'https://{}'.format(ip)
     }
     opener = urllib.FancyURLopener(proxy)
-    response = opener.open("http://httpbin.snowdreams1006.cn/ip")
+    response = opener.open()
     print('>>>Response Headers:')
     print(response.info())
     print('>>>Response Body:')
     print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Get proxy urllib<<<'
+    get_proxy_urllib()
 ```
+
+上述示例只是演示如何设置代理 ip 发送请求,并没有验证代理 ip 是否设置成功,即服务端读取到请求 ip 是否是刚刚设置的代理 ip,同时也没有考虑代理 ip 不可用或者连接超时等异常情况.
+
+下面提供一个简单示例判断代理 ip 是否设置成功:
+
+```json
+{
+    "proxy": "121.225.199.78:3128", 
+    "fail_count": 0, 
+    "region": "", 
+    "type": "", "source": 
+    "freeProxy09", 
+    "check_count": 15, 
+    "last_status": 1, 
+    "last_time": "2020-01-17 12:03:29"
+}
+```
+
+> 获取随机代理 ip 的一般格式,提取出随机 ip 的一般值为 `121.225.199.78:3128`
+
+针对随机获取代理ip 的一般格式是带有端口号,而访问 [http://httpbin.snowdreams1006.cn/ip](http://httpbin.snowdreams1006.cn/ip) 获取到来源 ip 并不包括端口号,因此最简单的思路是截取随机 ip 去掉其端口号,然后再和访问结果作比较.
+
+```python
+'121.225.199.78:3128'.split(':')[0]
+```
+
+> 首先以 `:` 分割成两部分,然后只取第一部分,即获取不带端口号的 ip 地址: `121.225.199.78`
+
+接下来由于 `response.read()` 获取到的响应体数据是字符串类型,不方便提取出其中 `origin` 对应的值,而响应体数据明显又是 `json` 格式,因此使用 `json.loads(result)` 可方便转换成 `python` 的字典类型.
+
+```python
+result = response.read()
+result = json.loads(result)
+proxyip = result.get('origin')
+```
+
+> 针对字典类型的取值方式不仅仅可以 `result.get('origin')` 也可以 `result['origin']` ,只不过当键名不存在时两者的表现不一致,建议使用方法取值.
+
+现在最简单验证代理 ip 是否设置成功的完整示例如下:
+
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+import json
+
+def get_proxy():
+    '''
+    获取随机代理
+    '''
+    response = urllib2.urlopen('http://proxyip.snowdreams1006.cn/get/')
+    result = response.read()
+    return json.loads(result)
+
+def get_proxy_urllib():
+    '''
+    通过代理发送请求
+    '''
+    # 随机代理 ip
+    ip = get_proxy().get('proxy')
+    print('>>>Get Proxy:')
+    print(ip)
+    proxy = {
+        'http': 'http://{}'.format(ip),
+        'https': 'https://{}'.format(ip)
+    }
+    opener = urllib.FancyURLopener(proxy)
+    response = opener.open()
+    result = response.read()
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Proxy Success'
+    else:
+        print 'Proxy Fail'
+
+if __name__ == '__main__':
+    print '>>>Get proxy urllib<<<'
+    get_proxy_urllib()
+```
+
+如果随机获取的代理 ip 正常的话,一般不会抛出异常,要么设置成功,要么设置失败.
+
+```bash
+(.env) $ python urllib_demo.py 
+>>>Get proxy urllib<<<
+>>>Get Proxy:
+52.80.58.248:3128
+Proxy Fail
+
+(.env) $ python urllib_demo.py 
+>>>Get proxy urllib<<<
+>>>Get Proxy:
+117.88.176.152:3000
+Proxy Success
+```
+
+> 免费代理 ip 质量一般般,不要抱有太大幻想,实际开发过程中还是应该选择付费代理 ip.
+
+- 清除代理 ip 直连
+
+
 
 
 ## 参考文档
