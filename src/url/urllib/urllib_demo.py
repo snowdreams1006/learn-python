@@ -131,17 +131,17 @@ def clear_proxy_urllib():
         print 'Clear proxy success'
 
 if __name__ == '__main__':
-    # print '>>>Get simple urllib2<<<'
-    # get_simple_urllib2()
+    print '>>>Get simple urllib2<<<'
+    get_simple_urllib2()
 
-    # print '>>>Get params urllib2<<<'
-    # get_params_urllib2()
+    print '>>>Get params urllib2<<<'
+    get_params_urllib2()
 
-    # print '>>>Post params urllib2<<<'
-    # post_params_urllib2()
+    print '>>>Post params urllib2<<<'
+    post_params_urllib2()
 
-    # print '>>>Get proxy urllib<<<'
-    # get_proxy_urllib()
+    print '>>>Get proxy urllib<<<'
+    get_proxy_urllib()
 
     print '>>>Clear proxy urllib<<<'
     clear_proxy_urllib()
