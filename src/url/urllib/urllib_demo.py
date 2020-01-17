@@ -84,9 +84,51 @@ def get_proxy_urllib():
     response_ip = result.get('origin')
     proxy_ip = ip.split(':')[0]
     if proxy_ip == response_ip:
-        print 'Proxy Success'
+        print 'Set proxy success'
     else:
-        print 'Proxy Fail'
+        print 'Set proxy fail'
+
+def clear_proxy_urllib():
+    '''
+    清除代理后发送请求
+    '''
+    # 随机代理 ip
+    ip = get_proxy().get('proxy')
+    print('>>>Get Proxy:')
+    print(ip)
+    proxy = {
+        'http': 'http://{}'.format(ip),
+        'https': 'https://{}'.format(ip)
+    }
+    opener = urllib.FancyURLopener(proxy)
+    response = opener.open("http://httpbin.snowdreams1006.cn/ip")
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    result = response.read()
+    print(result)
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Set proxy success'
+    else:
+        print 'Set proxy fail'
+
+    opener = urllib.FancyURLopener({})
+    response = opener.open("http://httpbin.snowdreams1006.cn/ip")
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    result = response.read()
+    print(result)
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Clear proxy fail'
+    else:
+        print 'Clear proxy success'
 
 if __name__ == '__main__':
     # print '>>>Get simple urllib2<<<'
@@ -98,5 +140,8 @@ if __name__ == '__main__':
     # print '>>>Post params urllib2<<<'
     # post_params_urllib2()
 
-    print '>>>Get proxy urllib<<<'
-    get_proxy_urllib()
+    # print '>>>Get proxy urllib<<<'
+    # get_proxy_urllib()
+
+    print '>>>Clear proxy urllib<<<'
+    clear_proxy_urllib()

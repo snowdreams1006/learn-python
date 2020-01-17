@@ -879,6 +879,8 @@ if __name__ == '__main__':
 
 - 设置代理ip访问
 
+> `urllib.FancyURLopener(proxy)` : 设置代理 ip 信息实现间接访问
+
 通过 `urllib.FancyURLopener(proxy)` 可设置代理,用于向服务端隐藏客户端的真实信息,但是服务端到底能否区分代理请求和普通请求是和代理 ip 有关的.
 
 如果是高匿代理的话,是最为理想的一种情况,能够达到真正代理的作用.
@@ -975,7 +977,6 @@ proxyip = result.get('origin')
 
 现在最简单验证代理 ip 是否设置成功的完整示例如下:
 
-
 ```python
 # -*- coding: utf-8 -*-
 import urllib
@@ -1038,8 +1039,64 @@ Proxy Success
 
 - 清除代理 ip 直连
 
+> `urllib.FancyURLopener({})` : 清除代理 ip 信息实现直接访问
 
+设置代理 ip 时需要传递给 `urllib.FancyURLopener(proxy)` 一个代理字典,清除代理信息时只需要将原来的代理字典设置成空对象即可.
 
+主要代码和设置代理 ip 相差无二,不再赘述,可参考以下代码:
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+import json
+
+def clear_proxy_urllib():
+    '''
+    清除代理后发送请求
+    '''
+    # 随机代理 ip
+    ip = get_proxy().get('proxy')
+    print('>>>Get Proxy:')
+    print(ip)
+    proxy = {
+        'http': 'http://{}'.format(ip),
+        'https': 'https://{}'.format(ip)
+    }
+    opener = urllib.FancyURLopener(proxy)
+    response = opener.open("http://httpbin.snowdreams1006.cn/ip")
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    result = response.read()
+    print(result)
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Set proxy success'
+    else:
+        print 'Set proxy fail'
+
+    opener = urllib.FancyURLopener({})
+    response = opener.open("http://httpbin.snowdreams1006.cn/ip")
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    result = response.read()
+    print(result)
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Clear proxy fail'
+    else:
+        print 'Clear proxy success'
+
+if __name__ == '__main__':
+    print '>>>Get proxy urllib<<<'
+    get_proxy_urllib()
+```
 
 ## 参考文档
 
