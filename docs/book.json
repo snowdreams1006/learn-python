@@ -10,7 +10,6 @@
         }
     },
     "plugins": [
-        "toc",
         "anchor-navigation-ex",
         "copy-code-button",
         "favicon-absolute",
@@ -22,10 +21,6 @@
         "icp"
     ],
     "pluginsConfig": {
-        "toc": {
-            "addClass": true,
-            "className": "toc"
-        },
         "favicon-absolute": {
             "favicon": "/favicon.ico",
             "bookmark": "/bookmark.ico",
