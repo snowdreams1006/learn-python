@@ -1143,9 +1143,9 @@ filehandle = urllib.urlopen(some_url)
 
 ## 学习总结
 
-本文主要介绍了 `python` 中原生的 `urllib` 如何发送网络请求以及一些基本环境的搭建过程,其中附带大量可直接操作的现成代码,文档和源码均已开源,感兴趣的小伙伴可自行翻阅浏览.
+本文主要介绍了 `python` 中原生的 `urllib` 如何**发送网络请求**以及一些基本环境的搭建过程,其中附带大量可直接操作的**现成代码**,文档和源码均已**开源**,感兴趣的小伙伴可自行[翻阅浏览](https://github.com/snowdreams1006/learn-python/tree/master/src/url/urllib).
 
-简要回顾一下本文主要涉及到的重要知识点,以供后来学习时快速翻阅查询.
+现在简要回顾一下本文主要涉及到的重要知识点,以供后来者学习时快速翻阅查询.
 
 ### 虚拟环境 `virtualenv`
 
@@ -1183,7 +1183,9 @@ virtualenv .env
 source .env/bin/activate
 ```
 
-### 服务端后台 `httpbin` 
+> 激活虚拟环境后可以运行 `pip --version` 查看当前版本信息,由此验证虚拟环境是否开启成功.
+
+### 服务端后台 `httpbin`
 
 > 默认本地访问地址: [http://127.0.0.1:8000/](http://127.0.0.1:8000/),线上访问地址: [http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/) 或者 [http://httpbin.org/](http://httpbin.org/)
 
@@ -1217,8 +1219,7 @@ pip install gunicorn httpbin && gunicorn httpbin:app
 
 > 默认本地访问地址: [http://127.0.0.1:5010/](http://127.0.0.1:5010/),线上访问地址: [http://proxyip.snowdreams1006.cn/](http://proxyip.snowdreams1006.cn/) 或者 [http://118.24.52.95/](http://118.24.52.95/)
 
-```bash
-$ curl https://proxyip.snowdreams1006.cn/
+```json
 {
   "delete?proxy=127.0.0.1:8080": "delete an unable proxy", 
   "get": "get an useful proxy", 
@@ -1304,7 +1305,7 @@ docker run --env db_type=REDIS --env db_host=127.0.0.1 --env db_port=6379 --env 
 - `GET` 请求
 
 > 如果查询参数比较简单的话,可以直接构建请求 `URL`,同时可以配合 `urllib.urlencode(dict)` 序列化查询参数字典.
- 
+
 当查询参数不太复杂时,尤其是不需要查询参数时,可以直接 `urllib2.urlopen(url)` 发送请求,如下:
 
 ```python
@@ -1388,7 +1389,7 @@ if __name__ == '__main__':
     post_params_urllib2()
 ```
 
-- 设置请求代理
+- 设置代理
 
 > 当代理对象有效时 `urllib.FancyURLopener(proxy)` 可发送代理请求,若代理对象是空字典时则是清除代理设置.
 
@@ -1485,6 +1486,12 @@ if __name__ == '__main__':
     print '>>>Get proxy urllib<<<'
     post_proxy_urllib()
 ```
+
+`python2` 的 `urllib.urlopen(url[,data[,proxies]])` 的相关演示基本上全部覆盖完毕,推荐读者实际练习一下.
+
+**下节预告**:
+
+访问[https://api.github.com/](https://api.github.com/)请求感兴趣的接口,亲测公开数据.
 
 ## 参考文档
 
