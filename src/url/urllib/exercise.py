@@ -13,11 +13,21 @@ def get_github_emojis_urllib2():
     print('>>>Response Body:')
     print(response.read())
 
-def get_github_events_urllib2():
+def list_github_public_events_urllib2():
     '''
     List public events
     '''
     response = urllib2.urlopen('https://api.github.com/events')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+def list_github_repository_events_urllib2():
+    '''
+    List repository events
+    '''
+    response = urllib2.urlopen('https://api.github.com/repos/snowdreams1006/learn-python/events')
     print('>>>Response Headers:')
     print(response.info())
     print('>>>Response Body:')
@@ -193,5 +203,8 @@ if __name__ == '__main__':
     # print '>>>Lists all the emojis available to use on GitHub.<<<'
     # get_github_emojis_urllib2()
 
-    print '>>>List public events<<<'
-    get_github_events_urllib2()
+    # print '>>>List public events<<<'
+    # list_github_public_events_urllib2()
+
+    print '>>List repository events<<<'
+    list_github_repository_events_urllib2()

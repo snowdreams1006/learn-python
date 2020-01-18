@@ -1487,6 +1487,8 @@ $ curl https://api.github.com/user/23238267/events?page=2
 
 #### List public events
 
+> GET /events
+
 - curl
 
 ```bash
@@ -1496,8 +1498,31 @@ $ curl https://api.github.com/events
 - python
 
 ```python
+# -*- coding: utf-8 -*-
+import urllib2
 
+def get_github_events_urllib2():
+    '''
+    List public events
+    '''
+    response = urllib2.urlopen('https://api.github.com/events')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List public events<<<'
+    get_github_events_urllib2()
 ```
+
+#### List repository events
+
+> GET /repos/:owner/:repo/events
+
+- curl
+- python
+
 
 - [https://api.github.com/feeds](https://api.github.com/feeds)
 - [https://api.github.com/gists/public](https://api.github.com/gists/public)
