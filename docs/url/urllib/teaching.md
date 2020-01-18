@@ -9,7 +9,7 @@
 
 <!-- toc -->
 
-## `python` 环境搭建
+## 演示环境搭建
 
 本文使用的 `python` 环境是基于 `virtualenv` 实现的虚拟环境,只是为了方便隔离不同环境,更好模拟真实用户环境.
 
@@ -68,13 +68,15 @@ source .env/bin/activate
 
 > 激活虚拟环境后会自动下载相关的 `python` 依赖,因此 `python` 和 `pip` 文件位置正是当前目录 `.env` 而不是系统默认环境,如果未开启虚拟环境则显示的是系统目录.
 
-## 原生请求 urllib 库
+## 原生网络请求 urllib 库
 
-如果读者亲测运行时发现网络无法正常请求,可以将[http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/)替换成[http://httpbin.org/](http://httpbin.org/)或者自行搭建本地测试环境.
+如果读者亲测运行时发现网络无法正常请求,可以将 [http://httpbin.snowdreams1006.cn/ ](http://httpbin.snowdreams1006.cn/) 替换成 [http://httpbin.org/](http://httpbin.org/) 或者自行搭建本地测试环境.
 
-下面提供两种搭建本地测试环境的安装方式,当然也可以访问[http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/)或者[http://httpbin.org/](http://httpbin.org/)在线环境.
+下面提供两种搭建本地测试环境的安装方式,当然也可以访问 [http://httpbin.snowdreams1006.cn/](http://httpbin.snowdreams1006.cn/) 或者 [http://httpbin.org/](http://httpbin.org/) 等在线环境.
 
 - `docker` 安装方式
+
+![url-urllib-httpbin-docker-preview.png](./images/url-urllib-httpbin-docker-preview.png)
 
 ```bash
 docker run -p 8000:80 kennethreitz/httpbin
@@ -84,6 +86,8 @@ docker run -p 8000:80 kennethreitz/httpbin
 
 - `python` 安装方式
 
+![url-urllib-httpbin-pip-preview.png](./images/url-urllib-httpbin-pip-preview.png)
+
 ```bash
 pip install gunicorn httpbin && gunicorn httpbin:app
 ```
@@ -92,11 +96,11 @@ pip install gunicorn httpbin && gunicorn httpbin:app
 
 ### 怎么发送最简单的网络请求
 
-> `urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')`
+> `urllib2.urlopen(url)` : 发送最简单的网络请求,直接返回响应体文本数据.
 
-新建 `python` 文件名为 `urllib_demo.py`,代码主要是先导入 `urllib2` 包后,然后使用 `urllib2.urlopen()` 即可发送最简单的 `GET` 请求,最后利用 `response.read()` 可一次性读取响应体内容.
+新建 `python` 文件名为 `urllib_demo.py`,核心代码包括先导入 `urllib2` 包,然后使用 `urllib2.urlopen()` 即可发送最简单的 `GET` 请求,最后利用 `response.read()` 可**一次性读取**响应体内容.
 
-详情代码如下:
+代码内容如下:
 
 ```python
 # -*- coding: utf-8 -*-
@@ -119,18 +123,17 @@ if __name__ == '__main__':
 
 ### 怎么知道有哪些属性和方法
 
-> `print type(response)` : 获取对象类型,配合基本类型可大致猜测出有哪些方法和属性可供外部调用.
-> `print dir(response)` : 获取对象方法和属性枚举值,无文档猜测方法和属性.
+> `print type(response)` : 获取对象**类型**,配合基本类型可大致猜测出有哪些方法和属性可供外部调用.
+> `print dir(response)` : 获取对象方法和属性**枚举值**,无文档猜测方法和属性.
 
-无论是 `GET` 请求还是 `POST` 请求,获取请求后的响应体无疑是非常重要的,但实际开发中同样不可忽略的是其他方法和属性.
+通过 `urllib2.urlopen(url)` 已经可以发送最简单的网络请求了, 无论是 `GET` 请求还是 `POST` 请求,获取请求后的响应体无疑是非常重要的,但实际开发中同样不可忽略的是还有其他方法和属性.
 
 因此,除了掌握 `response.read()` 一次性全部读取响应体内容之外,还需要知道 `response` 有哪些属性和方法.
 
-通过 `type(response)` 获取对象类型再配合 `dir(response)` 获取属性枚举值即可无文档大致猜测对象有哪些可供调用的属性和方法.
+通过 `type(response)` 获取对象类型再配合 `dir(response)` 获取属性枚举值即可**无文档大致猜测**对象有哪些可供调用的属性和方法.
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -146,7 +149,15 @@ if __name__ == '__main__':
     use_simple_urllib2()
 ```
 
-> 假如该文件名为 `urllib_demo.py` ,则在终端命令行内运行 `python urllib_demo.py` 即可查看输出结果.
+下面是 `print type(response)` 和 `print dir(response)` 的输出内容,接下来将挑选出常用的属性和方法慢慢讲解.
+
+```bash
+# print type(response)
+<type 'instance'>
+
+# print dir(response)
+['__doc__', '__init__', '__iter__', '__module__', '__repr__', 'close', 'code', 'fileno', 'fp', 'getcode', 'geturl', 'headers', 'info', 'msg', 'next', 'read', 'readline', 'readlines', 'url']
+```
 
 - 响应对象的状态码(属性)
 
@@ -156,7 +167,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -180,7 +190,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -206,7 +215,6 @@ print type(response.getcode)` 得到 `<type 'instancemethod'>` 因而判定为�
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -227,7 +235,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -255,7 +262,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -276,7 +282,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -299,7 +304,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -322,7 +326,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -343,7 +346,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -362,7 +364,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -384,7 +385,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -406,7 +406,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -435,7 +434,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -455,7 +453,6 @@ if __name__ == '__main__':
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 
 def use_simple_urllib2():
@@ -475,7 +472,7 @@ if __name__ == '__main__':
 
 > 上述多行代码还可以进一步转换成一行代码: `result = ''.join([line for line in response.readlines()])`
 
-### 如何发送简单 `GET` 请求
+### 如何发送普通 `GET` 请求
 
 - 无参数直接发送
 
@@ -696,7 +693,7 @@ Access-Control-Allow-Credentials: true
 
 由此可见,不论是直接手动拼接查询参数还是使用 `urllib.urlencode(query)` 半手动拼接查询参数,本质上都是一样的,依然是使用 `urllib2.urlopen(url)` 发送 `GET` 请求.
 
-### 如何发送简单 `POST` 请求
+### 如何发送普通 `POST` 请求
 
 如果请求链接 `URL` 仅仅支持 `POST` 请求,这时上述拼接地址实现的 `GET` 请求就不再满足要求,有意思的是,竟然只需要一步就可以将 `GET` 请求转换成 `POST` 请求.
 
@@ -777,11 +774,7 @@ Access-Control-Allow-Credentials: true
 
 值得注意的是,上述 `POST` 请求提交的参数存放在 `form` 属性而不是 `GET` 请求时的 `args` 属性.
 
-## 更高级的网络请求
-
-### 代理访问
-
-#### 环境搭建
+### 如何设置代理进行网络请求
 
 如果 [http://proxyip.snowdreams1006.cn/](http://proxyip.snowdreams1006.cn/) 无法访问,可以访问[https://github.com/jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)项目自行构建代理池.
 
