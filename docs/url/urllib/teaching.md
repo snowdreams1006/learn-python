@@ -776,9 +776,23 @@ Access-Control-Allow-Credentials: true
 
 ### 如何设置代理进行网络请求
 
+#### 环境搭建
+
 如果 [http://proxyip.snowdreams1006.cn/](http://proxyip.snowdreams1006.cn/) 无法访问,可以访问[https://github.com/jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)项目自行构建代理池.
 
-[jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)项目提供两种安装方式,分为 `docker` 安装方式和源码安装方式.
+
+```json
+{
+  "delete?proxy=127.0.0.1:8080": "delete an unable proxy", 
+  "get": "get an useful proxy", 
+  "get_all": "get all proxy from proxy pool", 
+  "get_status": "proxy number"
+}
+```
+
+> 单机勿压,恶意访问会关小黑屋哟,推荐大家自行搭建本地环境,谢谢支持.
+
+本代理池是基于 [jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)项目提供两种安装方式,分为 `docker` 安装方式和源码安装方式.
 
 ##### `docker` 方式安装
 
@@ -847,20 +861,6 @@ python proxyPool.py webserver
 > 该命令要求当前环境处于 `cli` 目录,如果是其他目录请自行调整 `proxyPool.py` 的路径(`cd cli` 即可切换到 `cli` 目录)
 
 如果以上步骤均正常,项目启动会后自动抓取互联网免费代理 ip,可以通过访问 [http://127.0.0.1:5010](http://127.0.0.1:5010) 查看.
-
-这里提供两个线上地址,项目官方体验地址: [http://118.24.52.95/](http://118.24.52.95/) 和 雪之梦技术驿站地址: [https://proxyip.snowdreams1006.cn/](https://proxyip.snowdreams1006.cn/)
-
-```bash
-$ curl https://proxyip.snowdreams1006.cn/
-{
-  "delete?proxy=127.0.0.1:8080": "delete an unable proxy", 
-  "get": "get an useful proxy", 
-  "get_all": "get all proxy from proxy pool", 
-  "get_status": "proxy number"
-}
-```
-
-> 单机勿压,恶意访问会关小黑屋哟,推荐大家自行搭建本地环境,谢谢支持.
 
 #### 设置代理
 
