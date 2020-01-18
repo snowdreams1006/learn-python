@@ -1299,6 +1299,193 @@ docker run --env db_type=REDIS --env db_host=127.0.0.1 --env db_port=6379 --env 
 
 ### 原生网络请求 `urllib`
 
+> `urllib.urlopen(url[,data[,proxies]])` : [https://docs.python.org/2/library/urllib.html](https://docs.python.org/2/library/urllib.html)
+
+- `GET` 请求
+
+> 如果查询参数比较简单的话,可以直接构建请求 `URL`,同时可以配合 `urllib.urlencode(dict)` 序列化查询参数字典.
+ 
+当查询参数不太复杂时,尤其是不需要查询参数时,可以直接 `urllib2.urlopen(url)` 发送请求,如下:
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+
+def use_simple_urllib2():
+    '''
+    获取响应头和响应体信息
+    '''
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Use simple urllib2<<<'
+    use_simple_urllib2()
+```
+
+当查询参数比较多或者需要动态拼接时,推荐使用 `urllib.urlencode(dict)` 序列化查询参数,然后再拼接到请求 `URL` 后,最终形成完成的请求 `URL`.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+
+def use_params_urllib2():
+    params = urllib.urlencode({
+        'param1': 'hello', 
+        'param2': 'world',
+        'author':'snowdreams1006',
+        'website':'http://blog.snowdreams1006.cn',
+        'url':'https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html',
+        'wechat':'snowdreams1006',
+        'email':'snowdreams1006@163.com',
+        'github':'https://github.com/snowdreams1006/'
+    })
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get?%s' % params)
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Use params urllib2<<<'
+    use_params_urllib2()
+```
+
+> `urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')`
+
+- `POST` 请求
+
+> 相比于默认的 `GET` 请求方式,只需要将查询参数不再拼接到请求链接 `URL` 而是作为可选参数传递给参数 `data`,形如 `urllib.urlopen(url,data)` 的请求方式是 `POST` 请求.
+
+```python
+def post_params_urllib2():
+    '''
+    获取响应头和响应体信息
+    '''
+    params = urllib.urlencode({
+        'param1': 'hello', 
+        'param2': 'world',
+        'author':'snowdreams1006',
+        'website':'http://blog.snowdreams1006.cn',
+        'url':'https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html',
+        'wechat':'snowdreams1006',
+        'email':'snowdreams1006@163.com',
+        'github':'https://github.com/snowdreams1006/'
+    })
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/post',params)
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Post params urllib2<<<'
+    post_params_urllib2()
+```
+
+- 设置请求代理
+
+> 当代理对象有效时 `urllib.FancyURLopener(proxy)` 可发送代理请求,若代理对象是空字典时则是清除代理设置.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+import json
+
+def get_proxy():
+    '''
+    获取随机代理
+    '''
+    response = urllib2.urlopen('http://proxyip.snowdreams1006.cn/get/')
+    result = response.read()
+    return json.loads(result)
+
+def get_proxy_urllib():
+    '''
+    通过代理发送请求
+    '''
+    # 随机代理 ip
+    ip = get_proxy().get('proxy')
+    print('>>>Get Proxy:')
+    print(ip)
+    proxy = {
+        'http': 'http://{}'.format(ip),
+        'https': 'https://{}'.format(ip)
+    }
+    opener = urllib.FancyURLopener(proxy)
+    response = opener.open('http://httpbin.snowdreams1006.cn/ip')
+    result = response.read()
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Proxy Success'
+    else:
+        print 'Proxy Fail'
+
+if __name__ == '__main__':
+    print '>>>Get proxy urllib<<<'
+    get_proxy_urllib()
+```
+
+除了使用 `urllib.FancyURLopener(proxy)` 设置代理请求外,还可以使用 `urllib2.urlopen(url,data,proxies)` 发送 `GET` 或 `POST` 请求的代理请求.
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+import json
+
+def get_proxy():
+    '''
+    获取随机代理
+    '''
+    response = urllib2.urlopen('http://proxyip.snowdreams1006.cn/get/')
+    result = response.read()
+    return json.loads(result)
+
+def post_proxy_urllib():
+    '''
+    通过代理获取响应头和响应体信息
+    '''
+    data = urllib.urlencode({
+        'param1': 'hello', 
+        'param2': 'world',
+        'author':'snowdreams1006',
+        'website':'http://blog.snowdreams1006.cn',
+        'url':'https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html',
+        'wechat':'snowdreams1006',
+        'email':'snowdreams1006@163.com',
+        'github':'https://github.com/snowdreams1006/'
+    })
+    ip = get_proxy().get('proxy')
+    print('>>>Get Proxy:')
+    print(ip)
+    proxies = {
+        'http': 'http://{}'.format(ip),
+        'https': 'https://{}'.format(ip)
+    }
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/post',data=data,proxies=proxies)
+    result = response.read()
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Proxy Success'
+    else:
+        print 'Proxy Fail'
+
+if __name__ == '__main__':
+    print '>>>Get proxy urllib<<<'
+    post_proxy_urllib()
+```
+
 ## 参考文档
 
 - [Python中read()、readline()和readlines()三者间的区别和用法](https://www.cnblogs.com/yun1108/p/8967334.html)

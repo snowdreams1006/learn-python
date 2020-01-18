@@ -130,6 +130,27 @@ def clear_proxy_urllib():
     else:
         print 'Clear proxy success'
 
+def send_proxy_urllib():
+    '''
+    通过代理获取响应头和响应体信息
+    '''
+    ip = get_proxy().get('proxy')
+    print('>>>Get Proxy:')
+    print(ip)
+    proxies = {
+        'http': 'http://{}'.format(ip),
+        'https': 'https://{}'.format(ip)
+    }
+    response = urllib.urlopen('http://httpbin.snowdreams1006.cn/ip',proxies=proxies)
+    result = response.read()
+    result = json.loads(result)
+    response_ip = result.get('origin')
+    proxy_ip = ip.split(':')[0]
+    if proxy_ip == response_ip:
+        print 'Proxy Success'
+    else:
+        print 'Proxy Fail'
+
 if __name__ == '__main__':
     print '>>>Get simple urllib2<<<'
     get_simple_urllib2()
@@ -145,3 +166,6 @@ if __name__ == '__main__':
 
     print '>>>Clear proxy urllib<<<'
     clear_proxy_urllib()
+
+    print '>>>Send proxy urllib<<<'
+    send_proxy_urllib()
