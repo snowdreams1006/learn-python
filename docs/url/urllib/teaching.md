@@ -2,14 +2,20 @@
 
 > `urllib.urlopen(url[,data[,proxies]])` : [https://docs.python.org/2/library/urllib.html](https://docs.python.org/2/library/urllib.html)
 
+`python` 中默认自带的网络请求的库就是 `urlllib` 系列了,包括 `urllib` `urllib2` 以及 `urllib3` ,大多数情况下三者都是互相配合一起合作.
+
+当然也有不少优秀的第三方库发送网络请求,最为大众熟知的应该包括 `requests` 库,不过本文打算从最基础的 `urllib` 开始讲起如何发送网络请求,下面请读者跟着[雪之梦技术驿站](https://snowdreams1006.github.io/learn-python/)的思路一起动手实践吧!
+
 - `Github` 源码地址: [https://github.com/snowdreams1006/learn-python/edit/master/docs/url/urllib/teaching.md](https://github.com/snowdreams1006/learn-python/edit/master/docs/url/urllib/teaching.md)
 - `Github` 在线地址: [https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html](https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html)
+
+> 「雪之梦技术驿站」提醒您: 由于文章具有一定的时效性,很有可能读者正在阅读时,部分链接已失效,请按照文章相关说明亲自实践验证,**尽信书不如无书**,不要直接复制粘贴代码,**一定要自己动手亲自敲一遍**!
 
 ## 文章目录
 
 <!-- toc -->
 
-## 演示环境搭建
+## 环境搭建
 
 本文使用的 `python` 环境是基于 `virtualenv` 实现的虚拟环境,只是为了方便隔离不同环境,更好模拟真实用户环境.
 
@@ -68,7 +74,7 @@ source .env/bin/activate
 
 > 激活虚拟环境后会自动下载相关的 `python` 依赖,因此 `python` 和 `pip` 文件位置正是当前目录 `.env` 而不是系统默认环境,如果未开启虚拟环境则显示的是系统目录.
 
-## 原生网络请求 urllib 库
+## 网络请求 urllib 库
 
 如果读者亲测运行时发现网络无法正常请求,可以将 [http://httpbin.snowdreams1006.cn/ ](http://httpbin.snowdreams1006.cn/) 替换成 [http://httpbin.org/](http://httpbin.org/) 或者自行搭建本地测试环境.
 
