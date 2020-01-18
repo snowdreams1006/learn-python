@@ -6,7 +6,7 @@
 
 当然也有不少优秀的第三方库发送网络请求,最为大众熟知的应该包括 `requests` 库,不过本文打算从最基础的 `urllib` 开始讲起如何发送网络请求,下面请读者跟着[雪之梦技术驿站](https://snowdreams1006.github.io/learn-python/)的思路一起动手实践吧!
 
-- `Github` 源码地址: [https://github.com/snowdreams1006/learn-python/blob/master/src/url/urllib/urllib_demo.py](https://github.com/snowdreams1006/learn-python/blob/master/src/url/urllib/urllib_demo.py)
+- `Github` 源码地址: [https://github.com/snowdreams1006/learn-python/blob/master/src/url/urllib/teaching.py](https://github.com/snowdreams1006/learn-python/blob/master/src/url/urllib/teaching.py)
 - `Github` 文档地址: [https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html](https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html)
 
 > 「雪之梦技术驿站」提醒您: 由于文章具有一定的时效性,很有可能读者正在阅读时,部分链接已失效,请按照文章相关说明亲自实践验证,**尽信书不如无书**,不要直接复制粘贴代码,**一定要自己动手亲自敲一遍**!
@@ -100,7 +100,7 @@ pip install gunicorn httpbin && gunicorn httpbin:app
 
 > `urllib2.urlopen(url)` : 发送最简单的网络请求,直接返回响应体文本数据.
 
-新建 `python` 文件名为 `urllib_demo.py`,核心代码包括先导入 `urllib2` 包,然后使用 `urllib2.urlopen()` 即可发送最简单的 `GET` 请求,最后利用 `response.read()` 可**一次性读取**响应体内容.
+新建 `python` 文件名为 `teaching.py`,核心代码包括先导入 `urllib2` 包,然后使用 `urllib2.urlopen()` 即可发送最简单的 `GET` 请求,最后利用 `response.read()` 可**一次性读取**响应体内容.
 
 代码内容如下:
 
@@ -121,7 +121,7 @@ if __name__ == '__main__':
     use_simple_urllib2()
 ```
 
-> 假如该文件名为 `urllib_demo.py` ,则在终端命令行内运行 `python urllib_demo.py` 即可查看输出结果.
+> 假如该文件名为 `teaching.py` ,则在终端命令行内运行 `python teaching.py` 即可查看输出结果.
 
 ### 怎么知道有哪些属性和方法
 
@@ -502,10 +502,10 @@ if __name__ == '__main__':
     use_simple_urllib2()
 ```
 
-假如上述代码文件名为 `urllib_demo.py`,在终端命令行内运行 `python urllib_demo.py` 文件,输出结果如下所示:
+假如上述代码文件名为 `teaching.py`,在终端命令行内运行 `python teaching.py` 文件,输出结果如下所示:
 
 ```bash
-(.env) $ python urllib_demo.py 
+(.env) $ python teaching.py 
 >>>Use simple urllib2<<<
 >>>Response Headers:
 Server: nginx/1.17.6
@@ -556,10 +556,10 @@ if __name__ == '__main__':
     use_params_urllib2()
 ```
 
-同样地,假如上述代码文件名为 `urllib_demo.py`,在终端命令行内运行 `python urllib_demo.py` 文件,输出结果如下所示:
+同样地,假如上述代码文件名为 `teaching.py`,在终端命令行内运行 `python teaching.py` 文件,输出结果如下所示:
 
 ```bash
-(.env) $ python urllib_demo.py 
+(.env) $ python teaching.py 
 >>>Use params urllib2<<<
 >>>Response Headers:
 Server: nginx/1.17.6
@@ -656,10 +656,10 @@ if __name__ == '__main__':
     use_params_urllib2()
 ```
 
-假如上述代码文件名为 `urllib_demo.py`,在终端命令行内运行 `python urllib_demo.py` 文件,输出结果如下所示:
+假如上述代码文件名为 `teaching.py`,在终端命令行内运行 `python teaching.py` 文件,输出结果如下所示:
 
 ```bash
-$ python urllib_demo.py 
+$ python teaching.py 
 >>>Use params urllib2<<<
 >>>Response Headers:
 Server: nginx/1.17.6
@@ -734,7 +734,7 @@ if __name__ == '__main__':
 不过更加直观的方法就是发送请求直接验证,示例如下:
 
 ```bash
-(.env) $ python urllib_demo.py 
+(.env) $ python teaching.py 
 >>>Post params urllib2<<<
 >>>Response Headers:
 Server: nginx/1.17.6
@@ -1050,13 +1050,13 @@ if __name__ == '__main__':
 如果随机获取的代理 ip 正常的话,一般不会抛出异常,要么设置成功,要么设置失败.
 
 ```bash
-(.env) $ python urllib_demo.py 
+(.env) $ python teaching.py 
 >>>Get proxy urllib<<<
 >>>Get Proxy:
 52.80.58.248:3128
 Proxy Fail
 
-(.env) $ python urllib_demo.py 
+(.env) $ python teaching.py 
 >>>Get proxy urllib<<<
 >>>Get Proxy:
 117.88.176.152:3000
