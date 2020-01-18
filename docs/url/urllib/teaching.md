@@ -6,8 +6,8 @@
 
 当然也有不少优秀的第三方库发送网络请求,最为大众熟知的应该包括 `requests` 库,不过本文打算从最基础的 `urllib` 开始讲起如何发送网络请求,下面请读者跟着[雪之梦技术驿站](https://snowdreams1006.github.io/learn-python/)的思路一起动手实践吧!
 
-- `Github` 源码地址: [https://github.com/snowdreams1006/learn-python/edit/master/docs/url/urllib/teaching.md](https://github.com/snowdreams1006/learn-python/edit/master/docs/url/urllib/teaching.md)
-- `Github` 在线地址: [https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html](https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html)
+- `Github` 源码地址: [https://github.com/snowdreams1006/learn-python/blob/master/src/url/urllib/urllib_demo.py](https://github.com/snowdreams1006/learn-python/blob/master/src/url/urllib/urllib_demo.py)
+- `Github` 文档地址: [https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html](https://snowdreams1006.github.io/learn-python/url/urllib/teaching.html)
 
 > 「雪之梦技术驿站」提醒您: 由于文章具有一定的时效性,很有可能读者正在阅读时,部分链接已失效,请按照文章相关说明亲自实践验证,**尽信书不如无书**,不要直接复制粘贴代码,**一定要自己动手亲自敲一遍**!
 
