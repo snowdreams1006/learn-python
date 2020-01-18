@@ -862,15 +862,29 @@ python proxyPool.py webserver
 
 如果以上步骤均正常,项目启动会后自动抓取互联网免费代理 ip,可以通过访问 [http://127.0.0.1:5010](http://127.0.0.1:5010) 查看.
 
-#### 设置代理
+#### 代理请求
 
 建议首先利用浏览器直接访问[http://proxyip.snowdreams1006.cn/get/](http://proxyip.snowdreams1006.cn/get/)查看是否能获取随机代理 ip,然后再利用 `python` 程序获取,保证代码运行正确,方便后续开发测试.
+
+```json
+{
+    "proxy": "183.91.33.41:8086", 
+    "fail_count": 0, 
+    "region": "", 
+    "type": "", 
+    "source": "freeProxy09", 
+    "check_count": 59, 
+    "last_status": 1, 
+    "last_time": "2020-01-18 13:14:32"
+}
+```
+
+> 上述是请求 `/get/` 获取的随机 ip 示例,完整请求地址: `http://proxyip.snowdreams1006.cn/get/`
 
 ##### 获取随机代理 ip
 
 ```python
 # -*- coding: utf-8 -*-
-import urllib
 import urllib2
 import json
 
@@ -910,7 +924,7 @@ $ curl http://httpbin.snowdreams1006.cn/ip
 
 > 如果终端命令行没 `curl` 命令,可以百度一下自行安装或者直接打开浏览器访问[http://httpbin.snowdreams1006.cn/ip](http://httpbin.snowdreams1006.cn/ip)
 
-如果服务器读取到的请求 ip 和设置的代理 ip 一致,恭喜你,设置代理成功而且是高匿代理,否则的话,那就是掩耳盗铃了.
+如果服务器读取到的请求 ip 和设置的代理 ip 一致,恭喜你,设置代理成功而且是高匿代理,否则的话,那就是**掩耳盗铃**罢了.
 
 ```python
 # -*- coding: utf-8 -*-
@@ -950,9 +964,9 @@ if __name__ == '__main__':
     get_proxy_urllib()
 ```
 
-上述示例只是演示如何设置代理 ip 发送请求,并没有验证代理 ip 是否设置成功,即服务端读取到请求 ip 是否是刚刚设置的代理 ip,同时也没有考虑代理 ip 不可用或者连接超时等异常情况.
+上述示例只是演示**如何设置代理 ip 发送请求**,并没有**验证代理 ip 是否设置成功**,即服务端读取到请求 ip 和刚刚设置的代理 ip是否相同,并且也没有考虑代理 ip 不可用或者连接超时等**异常情况**.
 
-下面提供一个简单示例判断代理 ip 是否设置成功:
+下面提供一个简单示例**判断代理 ip 是否设置成功**:
 
 ```json
 {
@@ -969,7 +983,7 @@ if __name__ == '__main__':
 
 > 获取随机代理 ip 的一般格式,提取出随机 ip 的一般值为 `121.225.199.78:3128`
 
-针对随机获取代理ip 的一般格式是带有端口号,而访问 [http://httpbin.snowdreams1006.cn/ip](http://httpbin.snowdreams1006.cn/ip) 获取到来源 ip 并不包括端口号,因此最简单的思路是截取随机 ip 去掉其端口号,然后再和访问结果作比较.
+针对随机获取代理ip 的一般格式是带有端口号,而访问 [http://httpbin.snowdreams1006.cn/ip](http://httpbin.snowdreams1006.cn/ip) 获取到来源 ip 并不包括端口号,因此最简单的思路是去掉随机 ip 的端口号,然后再和访问结果作比较.
 
 ```python
 '121.225.199.78:3128'.split(':')[0]
@@ -985,7 +999,7 @@ result = json.loads(result)
 proxyip = result.get('origin')
 ```
 
-> 针对字典类型的取值方式不仅仅可以 `result.get('origin')` 也可以 `result['origin']` ,只不过当键名不存在时两者的表现不一致,建议使用方法取值.
+> 针对字典类型的取值方式不仅仅可以 `result.get('origin')` 也可以 `result['origin']` ,只不过当键名不存在时两者的表现不一致,**建议使用方法取值**.
 
 现在最简单验证代理 ip 是否设置成功的完整示例如下:
 
@@ -1047,13 +1061,13 @@ Proxy Fail
 Proxy Success
 ```
 
-> 免费代理 ip 质量一般般,不要抱有太大幻想,实际开发过程中还是应该选择付费代理 ip.
+> 免费代理 ip 质量一般般而已,因此也不要抱有太高的心理预期,实际开发过程中还是应该选择**付费代理 ip**.
 
 ##### 清除代理 ip 直连
 
 > `urllib.FancyURLopener({})` : 清除代理 ip 信息实现直接访问
 
-设置代理 ip 时需要传递给 `urllib.FancyURLopener(proxy)` 一个代理字典,清除代理信息时只需要将原来的代理字典设置成空对象即可.
+设置代理 ip 时需要传递给 `urllib.FancyURLopener(proxy)` 一个代理字典,清除代理信息时只需要将原来的代理字典设置成**空对象**即可.
 
 主要代码和设置代理 ip 相差无二,不再赘述,可参考以下代码:
 
@@ -1110,7 +1124,7 @@ if __name__ == '__main__':
     get_proxy_urllib()
 ```
 
-除了上述方法使用 `urllib.FancyURLopener()` 设置或清除代理 ip,其实也可以使用 `urllib.urlopen()` 实现类似需求.
+除了上述方法使用 `urllib.FancyURLopener()` **设置或清除代理** ip,其实也可以使用 `urllib.urlopen()` 实现类似需求.
 
 ```python
 # Use http://www.someproxy.com:3128 for HTTP proxying
@@ -1137,6 +1151,8 @@ filehandle = urllib.urlopen(some_url)
 ## 学习总结
 
 本文主要介绍了 `python` 中原生的 `urllib` 如何**发送网络请求**以及一些基本环境的搭建过程,其中附带大量可直接操作的**现成代码**,文档和源码均已**开源**,感兴趣的小伙伴可自行[翻阅浏览](https://github.com/snowdreams1006/learn-python/tree/master/src/url/urllib).
+
+![url-urllib-summary-github-preview.png](./images/url-urllib-summary-github-preview.png)
 
 现在简要回顾一下本文主要涉及到的重要知识点,以供后来者学习时快速翻阅查询.
 
@@ -1485,6 +1501,43 @@ if __name__ == '__main__':
 **下节预告**:
 
 访问[https://api.github.com/](https://api.github.com/)请求感兴趣的接口,亲测公开数据.
+
+```json
+{
+  "current_user_url": "https://api.github.com/user",
+  "current_user_authorizations_html_url": "https://github.com/settings/connections/applications{/client_id}",
+  "authorizations_url": "https://api.github.com/authorizations",
+  "code_search_url": "https://api.github.com/search/code?q={query}{&page,per_page,sort,order}",
+  "commit_search_url": "https://api.github.com/search/commits?q={query}{&page,per_page,sort,order}",
+  "emails_url": "https://api.github.com/user/emails",
+  "emojis_url": "https://api.github.com/emojis",
+  "events_url": "https://api.github.com/events",
+  "feeds_url": "https://api.github.com/feeds",
+  "followers_url": "https://api.github.com/user/followers",
+  "following_url": "https://api.github.com/user/following{/target}",
+  "gists_url": "https://api.github.com/gists{/gist_id}",
+  "hub_url": "https://api.github.com/hub",
+  "issue_search_url": "https://api.github.com/search/issues?q={query}{&page,per_page,sort,order}",
+  "issues_url": "https://api.github.com/issues",
+  "keys_url": "https://api.github.com/user/keys",
+  "label_search_url": "https://api.github.com/search/labels?q={query}&repository_id={repository_id}{&page,per_page}",
+  "notifications_url": "https://api.github.com/notifications",
+  "organization_url": "https://api.github.com/orgs/{org}",
+  "organization_repositories_url": "https://api.github.com/orgs/{org}/repos{?type,page,per_page,sort}",
+  "organization_teams_url": "https://api.github.com/orgs/{org}/teams",
+  "public_gists_url": "https://api.github.com/gists/public",
+  "rate_limit_url": "https://api.github.com/rate_limit",
+  "repository_url": "https://api.github.com/repos/{owner}/{repo}",
+  "repository_search_url": "https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}",
+  "current_user_repositories_url": "https://api.github.com/user/repos{?type,page,per_page,sort}",
+  "starred_url": "https://api.github.com/user/starred{/owner}{/repo}",
+  "starred_gists_url": "https://api.github.com/gists/starred",
+  "user_url": "https://api.github.com/users/{user}",
+  "user_organizations_url": "https://api.github.com/user/orgs",
+  "user_repositories_url": "https://api.github.com/users/{user}/repos{?type,page,per_page,sort}",
+  "user_search_url": "https://api.github.com/search/users?q={query}{&page,per_page,sort,order}"
+}
+```
 
 ## 参考文档
 
