@@ -33,6 +33,36 @@ def list_github_repository_events_urllib2():
     print('>>>Response Body:')
     print(response.read())
 
+def list_github_repository_issue_events_urllib2():
+    '''
+    List issue events for a repository
+    '''
+    response = urllib2.urlopen('https://api.github.com/repos/snowdreams1006/learn-python/issues/events')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+def list_github_repository_networks_events_urllib2():
+    '''
+    List public events for a network of repositories
+    '''
+    response = urllib2.urlopen('https://api.github.com/networks/snowdreams1006/learn-python/events')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+def list_github_organization_events_urllib2():
+    '''
+    List public events for an organization
+    '''
+    response = urllib2.urlopen('https://api.github.com/orgs/python/events')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
 def get_simple_urllib2():
     '''
     获取响应头和响应体信息
@@ -206,5 +236,15 @@ if __name__ == '__main__':
     # print '>>>List public events<<<'
     # list_github_public_events_urllib2()
 
-    print '>>List repository events<<<'
-    list_github_repository_events_urllib2()
+    # print '>>List repository events<<<'
+    # list_github_repository_events_urllib2()
+
+    # print '>>>List issue events for a repositorys<<<'
+    # list_github_repository_issue_events_urllib2()
+
+    # print '>>>List public events for a network of repositories<<<'
+    # list_github_repository_networks_events_urllib2()
+
+    print '>>>List public events for an organization<<<'
+    list_github_organization_events_urllib2()
+    
