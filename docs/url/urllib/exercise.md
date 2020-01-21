@@ -1640,6 +1640,161 @@ if __name__ == '__main__':
     list_github_organization_events_urllib2()
 ```
 
+#### List events that a user has received
+
+> GET /users/:username/received_events
+
+- curl
+
+```bash
+$ curl https://api.github.com/users/snowdreams1006/received_events
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_received_events_urllib2():
+    '''
+    List events that a user has received
+    '''
+    response = urllib2.urlopen('https://api.github.com/users/snowdreams1006/received_events')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List events that a user has received<<<'
+    list_github_received_events_urllib2()
+```
+
+#### List public events that a user has received
+
+> GET /users/:username/received_events/public
+
+- curl
+
+```bash
+$ curl https://api.github.com/users/snowdreams1006/received_events/public
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_public_received_events_urllib2():
+    '''
+    List public events that a user has received
+    '''
+    response = urllib2.urlopen('https://api.github.com/users/snowdreams1006/received_events/public')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List public events that a user has received<<<'
+    list_github_public_received_events_urllib2()
+```
+
+#### List events performed by a user
+
+> GET /users/:username/events
+
+- curl
+
+```bash
+$ curl https://api.github.com/users/snowdreams1006/events
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_performed_events_urllib2():
+    '''
+    List events performed by a user
+    '''
+    response = urllib2.urlopen('https://api.github.com/users/snowdreams1006/events')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List events performed by a user<<<'
+    list_github_performed_events_urllib2()
+```
+
+#### List public events performed by a user
+
+> GET /users/:username/events/public
+
+- curl
+
+```bash
+$ curl https://api.github.com/users/snowdreams1006/events/public
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_public_performed_events_urllib2():
+    '''
+    List public events performed by a user
+    '''
+    response = urllib2.urlopen('https://api.github.com/users/snowdreams1006/events/public')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List public events performed by a user<<<'
+    list_github_public_performed_events_urllib2()
+```
+
+#### List events for an organization
+
+> GET /users/:username/events/orgs/:org
+
+- curl
+
+```bash
+$ curl https://api.github.com/users/snowdreams1006/events/orgs/python
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_user_organization_events_urllib2():
+    '''
+    List events for an organization
+    '''
+    response = urllib2.urlopen('https://api.github.com/users/snowdreams1006/events/orgs/python')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List events for an organization<<<'
+    list_github_user_organization_events_urllib2()
+```
+
 - [https://api.github.com/feeds](https://api.github.com/feeds)
 - [https://api.github.com/gists/public](https://api.github.com/gists/public)
 - [https://api.github.com/rate_limit](https://api.github.com/rate_limit)
