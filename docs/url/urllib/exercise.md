@@ -1795,9 +1795,53 @@ if __name__ == '__main__':
     list_github_user_organization_events_urllib2()
 ```
 
-- [https://api.github.com/feeds](https://api.github.com/feeds)
-- [https://api.github.com/gists/public](https://api.github.com/gists/public)
-- [https://api.github.com/rate_limit](https://api.github.com/rate_limit)
+### [https://api.github.com/feeds](https://api.github.com/feeds)
+
+> [https://developer.github.com/v3/activity/feeds/](https://developer.github.com/v3/activity/feeds/)
+
+- curl
+
+```bash
+$ curl https://api.github.com/feeds
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_feeds_urllib2():
+    '''
+    List feeds
+    '''
+    response = urllib2.urlopen('https://api.github.com/feeds')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List feeds<<<'
+    list_github_feeds_urllib2()
+```
+
+> Example of getting an Atom feed
+
+- curl
+
+```bash
+$ curl -H "Accept: application/atom+xml" https://github.com/security-advisories
+```
+
+- python
+
+```python
+none
+```
+
+### [https://api.github.com/gists/public](https://api.github.com/gists/public)
+### [https://api.github.com/rate_limit](https://api.github.com/rate_limit)
 
 ## 资源网站
 

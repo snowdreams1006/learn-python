@@ -113,6 +113,16 @@ def list_github_user_organization_events_urllib2():
     print('>>>Response Body:')
     print(response.read())
 
+def list_github_feeds_urllib2():
+    '''
+    List feeds
+    '''
+    response = urllib2.urlopen('https://api.github.com/feeds')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
 def get_simple_urllib2():
     '''
     获取响应头和响应体信息
@@ -312,3 +322,6 @@ if __name__ == '__main__':
 
     # print '>>>List events for an organization<<<'
     # list_github_user_organization_events_urllib2()
+
+    # print '>>>List feeds<<<'
+    # list_github_feeds_urllib2()
