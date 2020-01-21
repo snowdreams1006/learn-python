@@ -10,6 +10,7 @@
     * [原生请求](url/urllib/about.md)
         * [范例教学](url/urllib/teaching.md)
         * [实例练习](url/urllib/exercise.md)
+        * [实例练习之一键爬取 github 全部表情](url/urllib/exercise-github-emoji.md)
     * [第三方请求](url/requests/about.md)
         * [范例教学](url/requests/teaching.md)
         * [实例练习](url/requests/exercise.md)
