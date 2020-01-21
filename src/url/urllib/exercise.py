@@ -123,6 +123,56 @@ def list_github_feeds_urllib2():
     print('>>>Response Body:')
     print(response.read())
 
+def list_github_user_gists_urllib2():
+    '''
+    List a user's gists
+    '''
+    response = urllib2.urlopen('https://api.github.com/users/snowdreams1006/gists')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+def list_github_gists_urllib2():
+    '''
+    List a user's gists
+    '''
+    response = urllib2.urlopen('https://api.github.com/gists')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+def list_github_public_gists_urllib2():
+    '''
+    List all public gists
+    '''
+    response = urllib2.urlopen('https://api.github.com/gists/public')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+def list_github_starred_gists_urllib2():
+    '''
+    List starred gists
+    '''
+    response = urllib2.urlopen('https://api.github.com/gists/starred')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+def get_github_single_gists_urllib2():
+    '''
+    Get a single gist
+    '''
+    response = urllib2.urlopen('https://api.github.com/gists/aa5a315d61ae9438b18d')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
 def get_simple_urllib2():
     '''
     获取响应头和响应体信息
@@ -325,3 +375,18 @@ if __name__ == '__main__':
 
     # print '>>>List feeds<<<'
     # list_github_feeds_urllib2()
+
+    # print '>>>List a user gists<<<'
+    # list_github_user_gists_urllib2()
+
+    # print '>>>List a user gists<<<'
+    # list_github_gists_urllib2()
+
+    # print '>>>List all public gists<<<'
+    # list_github_public_gists_urllib2()
+
+    # print '>>>List starred gists<<<'
+    # list_github_starred_gists_urllib2()
+
+    # print '>>>Get a single gist<<<'
+    # get_github_single_gists_urllib2()

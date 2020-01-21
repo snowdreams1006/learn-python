@@ -1841,6 +1841,167 @@ none
 ```
 
 ### [https://api.github.com/gists/public](https://api.github.com/gists/public)
+
+> [https://developer.github.com/v3/gists/](https://developer.github.com/v3/gists/)
+
+
+#### List a user's gists
+
+> GET /users/:username/gists
+
+- curl
+
+```bash
+$ curl https://api.github.com/users/snowdreams1006/gists
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_user_gists_urllib2():
+    '''
+    List a user's gists
+    '''
+    response = urllib2.urlopen('https://api.github.com/users/snowdreams1006/gists')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List a user gists<<<'
+    list_github_user_gists_urllib2()
+```
+
+> GET /gists
+
+- curl
+
+```bash
+$ curl https://api.github.com/gists
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_gists_urllib2():
+    '''
+    List a user's gists
+    '''
+    response = urllib2.urlopen('https://api.github.com/gists')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List a user gists<<<'
+    list_github_gists_urllib2()
+```
+
+#### List all public gists
+
+- curl
+
+```bash
+$ curl https://api.github.com/gists/public
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_public_gists_urllib2():
+    '''
+    List all public gists
+    '''
+    response = urllib2.urlopen('https://api.github.com/gists/public')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List all public gists<<<'
+    list_github_public_gists_urllib2()
+```
+
+#### List starred gists
+
+> GET /gists/starred
+
+- curl
+
+```bash
+$ curl https://api.github.com/gists/starred
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def list_github_starred_gists_urllib2():
+    '''
+    List starred gists
+    '''
+    response = urllib2.urlopen('https://api.github.com/gists/starred')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>List starred gists<<<'
+    list_github_starred_gists_urllib2()
+```
+
+#### Get a single gist
+
+> GET /gists/:gist_id
+
+- curl
+
+```bash
+$ curl https://api.github.com/gists/aa5a315d61ae9438b18d
+```
+
+- python
+
+```python
+# -*- coding: utf-8 -*-
+import urllib2
+
+def get_github_single_gists_urllib2():
+    '''
+    Get a single gist
+    '''
+    response = urllib2.urlopen('https://api.github.com/gists/aa5a315d61ae9438b18d')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Body:')
+    print(response.read())
+
+if __name__ == '__main__':
+    print '>>>Get a single gist<<<'
+    get_github_single_gists_urllib2()
+```
+
+#### Get a specific revision of a gist
+
+> GET /gists/:gist_id/:sha
+
+
+
 ### [https://api.github.com/rate_limit](https://api.github.com/rate_limit)
 
 ## 资源网站
