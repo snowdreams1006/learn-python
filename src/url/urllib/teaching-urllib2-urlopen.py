@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import urllib
 import urllib2
+import cookielib
 import json
 
 def get_simple_urlopen_with_urllib2():
@@ -119,20 +120,36 @@ def post_proxy_urlopen_with_urllib():
     else:
         print 'Proxy Fail'
 
+def send_request_header_with_urllib2():
+    '''
+    自定义请求头
+    '''
+    request = urllib2.Request('http://httpbin.snowdreams1006.cn/headers')
+    request.add_header('user-agent','Mozilla/5.0')
+    response = urllib2.urlopen(request)
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Status Code:')
+    print(response.getcode())
+    print('>>>Response Body:')
+    print(response.read())
+
+def send_request_cookie_with_urllib2():
+    '''
+    自定义请求头
+    '''
+    cj = cookielib.CookieJar()
+    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+    urllib2.install_opener(opener)
+    response = urllib2.urlopen('http://www.baidu.com')
+    print('>>>Response Headers:')
+    print(response.info())
+    print('>>>Response Status Code:')
+    print(response.getcode())
+    print('>>>Response Body:')
+    print(response.read())
+    print(cj)
+
+
 if __name__ == '__main__':
-    # print '>>>Get simple urllib2<<<'
-    # use_simple_urlopen_with_urllib2()
-
-    # print '>>>Post params urllib2<<<'
-    # use_params_urlopen_with_urllib2()
-
-    # print '>>>Post params urllib2<<<'
-    # post_params_urllib2()
-
-    # print '>>>Get proxy urllib<<<'
-    # get_proxy_urllib()
-
-    # print '>>>Get proxy urllib<<<'
-    # get_proxy_urlopen_with_urllib2()
-
-    post_proxy_urlopen_with_urllib()
+    send_request_cookie_with_urllib2()
