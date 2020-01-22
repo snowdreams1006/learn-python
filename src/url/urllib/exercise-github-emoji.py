@@ -33,7 +33,7 @@ def compose_image():
     Compose multiple small images to one large image.
     '''
     # 已合并大图片的一行用多少个小图片填充,当行数大于列数时新图片是竖版,否则是横版
-    IMAGE_LARGE_ROW_COUNT = 3
+    IMAGE_LARGE_ROW_COUNT = 5
     # 已合并大图片的一列用多少个小图片填充,当行数大于列数时新图片是竖版,否则是横版
     IMAGE_LARGE_COLUMN_COUNT = 10
     # 已合并大图片路径
@@ -64,11 +64,11 @@ def compose_image():
     return to_image.save(IMAGE_LARGE_PATH)
 
 if __name__ == '__main__':
-    print '>>>Download all the emojis available to use on GitHub.<<<'
-    download_all_emojis_on_github_with_urllib() 
+    # print '>>>Download all the emojis available to use on GitHub.<<<'
+    # download_all_emojis_on_github_with_urllib() 
 
-    # print '>>>Compose multiple small images to one large image.<<<'
-    # compose_image()
+    print '>>>Compose multiple small images to one large image.<<<'
+    compose_image()
 
 
 
