@@ -20,11 +20,12 @@ def download_all_emojis_on_github_with_urllib():
         filename = './images/github-emoji-{filename}'.format(filename=filename)
         existFile = os.path.exists(filename)
         print '文件: {filename},是否存在: {existFile}'.format(filename=filename,existFile=existFile)
-        if os.path.exists(filename) is False:
+        if not os.path.exists(filename):
             urllib.urlretrieve(value,filename)
+            urllib.urlcleanup()
             print '正在下载{value}到{filename}'.format(value=value,filename=filename)
             time.sleep(random.randint(30, 300))
-
+    # compose to large image
     compose_image()
 
 def compose_image():
@@ -63,11 +64,11 @@ def compose_image():
     return to_image.save(IMAGE_LARGE_PATH)
 
 if __name__ == '__main__':
-    # print '>>>Download all the emojis available to use on GitHub.<<<'
-    # download_all_emojis_on_github_with_urllib() 
+    print '>>>Download all the emojis available to use on GitHub.<<<'
+    download_all_emojis_on_github_with_urllib() 
 
-    print '>>>Compose multiple small images to one large image.<<<'
-    compose_image()
+    # print '>>>Compose multiple small images to one large image.<<<'
+    # compose_image()
 
 
 

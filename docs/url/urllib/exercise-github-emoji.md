@@ -2,11 +2,6 @@
 
 > 接口地址: [https://api.github.com/emojis](https://api.github.com/emojis),文档地址: [https://developer.github.com/v3/emojis/](https://developer.github.com/v3/emojis/)
 
-
-https://github.githubassets.com/images/icons/emoji/unicode/1f4af.png?v8
-
-
-
 ## python
 
 ```python
@@ -30,5 +25,7 @@ if __name__ == '__main__':
 
 ## reference
 
+- [Python核心模块——urllib模块](https://www.cnblogs.com/sysu-blackbear/p/3629420.html)
 - [Python 如何将字符串转为字典](https://www.cnblogs.com/OnlyDreams/p/7850920.html)
-- [https://github.com/tenntenn/gopher-stickers](https://github.com/tenntenn/gopher-stickers)
+- [python实现图片拼接](https://blog.csdn.net/tellsummer/article/details/80815411)
+- [使用python将多张图片拼接成大图](https://blog.csdn.net/beyond9305/article/details/83413009)
