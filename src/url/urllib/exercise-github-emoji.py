@@ -64,11 +64,11 @@ def compose_image():
     return to_image.save(IMAGE_LARGE_PATH)
 
 if __name__ == '__main__':
-    # print '>>>Download all the emojis available to use on GitHub.<<<'
-    # download_all_emojis_on_github_with_urllib() 
+    print '>>>Download all the emojis available to use on GitHub.<<<'
+    download_all_emojis_on_github_with_urllib() 
 
-    print '>>>Compose multiple small images to one large image.<<<'
-    compose_image()
+    # print '>>>Compose multiple small images to one large image.<<<'
+    # compose_image()
 
 
 
