@@ -15,4 +15,7 @@
     * [第三方请求](url/requests/about.md)
         * [范例教学](url/requests/teaching.md)
         * [实例练习](url/requests/exercise.md)
+* [网页提取](htmlparse/about.md)
+    * [第三方网页解析神器](htmlparse/beautifulsoup/about.md)
+        * [快速上手](htmlparse/beautifulsoup/quickstart.md)
 
