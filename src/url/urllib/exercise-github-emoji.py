@@ -33,9 +33,9 @@ def compose_image():
     Compose multiple small images to one large image.
     '''
     # 已合并大图片的一行用多少个小图片填充,当行数大于列数时新图片是竖版,否则是横版
-    IMAGE_LARGE_ROW_COUNT = 5
+    IMAGE_LARGE_ROW_COUNT = 10
     # 已合并大图片的一列用多少个小图片填充,当行数大于列数时新图片是竖版,否则是横版
-    IMAGE_LARGE_COLUMN_COUNT = 10
+    IMAGE_LARGE_COLUMN_COUNT = 15
     # 已合并大图片路径
     IMAGE_LARGE_PATH = './images/emoji.png'
 
@@ -61,6 +61,7 @@ def compose_image():
                 if os.path.exists(from_image_name):
                     from_image = Image.open(from_image_name).resize((IMAGE_SMALL_ROW_SIZE, IMAGE_SMALL_COLUMN_SIZE),Image.ANTIALIAS)
                     to_image.paste(from_image, ((x - 1) * IMAGE_SMALL_ROW_SIZE, (y - 1) * IMAGE_SMALL_COLUMN_SIZE))
+    to_image.show()
     return to_image.save(IMAGE_LARGE_PATH)
 
 if __name__ == '__main__':
