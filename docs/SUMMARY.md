@@ -18,4 +18,6 @@
 * [网页提取](htmlparse/about.md)
     * [第三方网页解析神器](htmlparse/beautifulsoup/about.md)
         * [快速上手](htmlparse/beautifulsoup/quickstart.md)
+* [爬虫示例](crawler/about.md)
+    * [百度百科 python 词条](crawler/baike-python/about.md)
 
