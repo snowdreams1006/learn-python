@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import urllib
+import urllib2
 
 def urlencode_and_unquote_demo():
     encode_params = urllib.urlencode({
@@ -19,7 +20,16 @@ def urlencode_and_unquote_demo():
     print unquote_param
 
 def urlopen_without_params_demo():
-    encode_params = urllib.urlencode({
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print '>>>response.info<<<'
+    print response.info()
+    print '>>>response.info<<<'
+    print response.getcode()
+    print '>>>response.read<<<'
+    print response.read()
+
+def urlopen_with_params_demo():
+    params = urllib.urlencode({
         'param1': 'hello', 
         'param2': 'world',
         'author':'snowdreams1006',
@@ -29,15 +39,14 @@ def urlopen_without_params_demo():
         'email':'snowdreams1006@163.com',
         'github':'https://github.com/snowdreams1006/'
     })
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get?%s' % params)
+    print '>>>response.info<<<'
+    print response.info()
+    print '>>>response.info<<<'
+    print response.getcode()
+    print '>>>response.read<<<'
+    print response.read()
 
-    print '>>>urllib.urlencode<<<'
-    print encode_params
-
-    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
-
-    unquote_param =  urllib.unquote(encode_params)
-    print '>>>urllib.unquote<<<'
-    print unquote_param
 
 def main():
     urlopen_without_params_demo()
