@@ -76,8 +76,26 @@ def urlcleanup_after_urlretrieve_demo():
         urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/png',filename='./images/urlcleanup_after_urlretrieve_demo(%d).png' % i)
         urllib.urlcleanup()
 
+def quote_and_unquote_demo():
+    url = 'http://httpbin.snowdreams1006.cn/get'
+    print '>>>urllib.quote<<<'
+    quote_url = urllib.quote(url)
+    print quote_url
+    unquote_url =  urllib.unquote(quote_url)
+    print '>>>urllib.unquote<<<'
+    print unquote_url
+
+def quote_plus_and_unquote_plus_demo():
+    url = 'http://httpbin.snowdreams1006.cn/get'
+    print '>>>urllib.quote<<<'
+    quote_plus_url = urllib.quote_plus(url)
+    print quote_plus_url
+    unquote_plus_url =  urllib.unquote_plus(quote_plus_url)
+    print '>>>urllib.unquote<<<'
+    print quote_plus_url
+
 def main():
-    urlcleanup_after_urlretrieve_demo()
+    quote_plus_and_unquote_plus_demo()
 
 if __name__ == '__main__':
     main()

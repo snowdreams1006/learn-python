@@ -1,6 +1,6 @@
 # 网络请求
 
-## urllib.urlencode() VS urllib.unquote()
+## urllib.urlencode() 和 urllib.unquote()
 
 ```python
 # -*- coding: utf-8 -*-
@@ -86,6 +86,32 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## urllib.quote(string[, safe]) 和 urllib.unquote(string)
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+
+def quote_and_unquote_demo():
+    url = 'http://httpbin.snowdreams1006.cn/get'
+    print '>>>urllib.quote<<<'
+    quote_url = urllib.quote(url)
+    print quote_url
+    unquote_url =  urllib.unquote(quote_url)
+    print '>>>urllib.unquote<<<'
+    print unquote_url
+
+def main():
+    urlcleanup_after_urlretrieve_demo()
+
+if __name__ == '__main__':
+    main()
+```
+
+## urllib.quote_plus(string[, safe]) 和 urllib.unquote_plus(string)
+
+
 
 ## 参考文档
 
