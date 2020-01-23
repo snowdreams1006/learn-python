@@ -71,8 +71,13 @@ def urlretrieve_with_reporthook_demo():
 
     urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/svg',filename='./images/urlretrieve_with_reporthook_demo.svg',reporthook=reporthook)
 
+def urlcleanup_after_urlretrieve_demo():
+    for i in range(3):
+        urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/png',filename='./images/urlcleanup_after_urlretrieve_demo(%d).png' % i)
+        urllib.urlcleanup()
+
 def main():
-    urlretrieve_with_reporthook_demo()
+    urlcleanup_after_urlretrieve_demo()
 
 if __name__ == '__main__':
     main()

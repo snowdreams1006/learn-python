@@ -68,3 +68,25 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## urllib.urlcleanup()
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+
+def urlcleanup_after_urlretrieve_demo():
+    for i in range(3):
+        urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/png',filename='./images/urlcleanup_after_urlretrieve_demo(%d).png' % i)
+        urllib.urlcleanup()
+
+def main():
+    urlcleanup_after_urlretrieve_demo()
+
+if __name__ == '__main__':
+    main()
+```
+
+## 参考文档
+
+- [python之文件下载 （urllib模块urlretrieve方法）](https://www.cnblogs.com/wanghuixi/p/12116005.html)
