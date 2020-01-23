@@ -47,9 +47,18 @@ def urlopen_with_params_demo():
     print '>>>response.read<<<'
     print response.read()
 
+def urlretrieve_without_filename_demo():
+    response = urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/png')
+    temp_filename = response[0]
+    with open(temp_filename,'rb') as rbf:
+        with open('./images/urlretrieve_without_filename_demo.png','wb') as wbf:
+            wbf.write(rbf.read())
+
+def urlretrieve_with_filename_demo():
+    urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/png',filename='./images/urlretrieve_with_filename_demo.png')
 
 def main():
-    urlopen_without_params_demo()
+    urlretrieve_without_filename_demo()
 
 if __name__ == '__main__':
     main()
