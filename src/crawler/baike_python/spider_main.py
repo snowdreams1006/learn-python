@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from baike_python import url_manager,html_downloader,html_parser,html_outputer
+import url_manager,html_downloader,html_parser,html_outputer
 
 class SpiderMain(object):
     def __init__(self):
         '''
         构造函数初始化
         '''
-        self.urls = url_manager.UrlManger()
-        self.downloader = html_downloader.HtmlDownload()
+        self.urls = url_manager.UrlManager()
+        self.downloader = html_downloader.HtmlDownloader()
         self.parser = html_parser.HtmlParser()
         self.outputer = html_outputer.HtmlOutputer()
 
