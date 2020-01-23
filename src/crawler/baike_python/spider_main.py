@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from baike-python import url_manager,html_downloader,html_parser,html_outputer
+from baike_python import url_manager,html_downloader,html_parser,html_outputer
 
-class SpiderMain(object);
+class SpiderMain(object):
     def __init__(self):
         '''
         构造函数初始化
