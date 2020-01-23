@@ -87,15 +87,24 @@ def quote_and_unquote_demo():
 
 def quote_plus_and_unquote_plus_demo():
     url = 'http://httpbin.snowdreams1006.cn/get'
-    print '>>>urllib.quote<<<'
+    print '>>>urllib.quote_plus<<<'
     quote_plus_url = urllib.quote_plus(url)
     print quote_plus_url
     unquote_plus_url =  urllib.unquote_plus(quote_plus_url)
-    print '>>>urllib.unquote<<<'
+    print '>>>urllib.unquote_plus<<<'
     print quote_plus_url
 
+def pathname2url_and_url2pathname_demo():
+    url = '/Users/snowdreams1006/Documents/workspace/snowdreams1006.github.io/python/src/url/urllib'
+    print '>>>urllib.pathname2url<<<'
+    pathname2url_url = urllib.pathname2url(url)
+    print pathname2url_url
+    url2pathname_url =  urllib.url2pathname(pathname2url_url)
+    print '>>>urllib.url2pathname<<<'
+    print url2pathname_url
+
 def main():
-    quote_plus_and_unquote_plus_demo()
+    pathname2url_and_url2pathname_demo()
 
 if __name__ == '__main__':
     main()

@@ -111,7 +111,47 @@ if __name__ == '__main__':
 
 ## urllib.quote_plus(string[, safe]) 和 urllib.unquote_plus(string)
 
+```python
+# -*- coding: utf-8 -*-
+import urllib
 
+def quote_plus_and_unquote_plus_demo():
+    url = 'http://httpbin.snowdreams1006.cn/get'
+    print '>>>urllib.quote_plus<<<'
+    quote_plus_url = urllib.quote_plus(url)
+    print quote_plus_url
+    unquote_plus_url =  urllib.unquote_plus(quote_plus_url)
+    print '>>>urllib.unquote_plus<<<'
+    print quote_plus_url
+
+def main():
+    quote_plus_and_unquote_plus_demo()
+
+if __name__ == '__main__':
+    main()
+```
+
+## urllib.pathname2url(path) 和 urllib.url2pathname(path)
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+
+def pathname2url_and_url2pathname_demo():
+    url = '/Users/snowdreams1006/Documents/workspace/snowdreams1006.github.io/python/src/url/urllib'
+    print '>>>urllib.pathname2url<<<'
+    pathname2url_url = urllib.pathname2url(url)
+    print pathname2url_url
+    url2pathname_url =  urllib.url2pathname(pathname2url_url)
+    print '>>>urllib.url2pathname<<<'
+    print url2pathname_url
+
+def main():
+    pathname2url_and_url2pathname_demo()
+
+if __name__ == '__main__':
+    main()
+```
 
 ## 参考文档
 
