@@ -60,14 +60,14 @@ def urlretrieve_with_filename_demo():
 def urlretrieve_with_reporthook_demo():
     def reporthook(blocknum, blocksize, totalsize):  
         '''回调函数 
-        @blocknum: 已经下载的数据块 
-        @blocksize: 数据块的大小 
-        @totalsize: 远程文件的大小 
+        @blocknum: 已经下载的数据块数目
+        @blocksize: 每个数据块的大小(单位:字节byte)
+        @totalsize: 远程文件总大小(单位:字节byte)
         '''
-        percent = 100.0 * blocknum * blocksize / totalsize  
-        if percent > 100:  
-            percent = 100  
-        print "%.2f%%"% percent
+        percent = 100.0 * blocknum * blocksize / totalsize
+        if percent > 100:
+            percent = 100
+        print "正在下载 %.2f%%"% percent
 
     urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/svg',filename='./images/urlretrieve_with_reporthook_demo.svg',reporthook=reporthook)
 
