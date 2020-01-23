@@ -48,17 +48,31 @@ def urlopen_with_params_demo():
     print response.read()
 
 def urlretrieve_without_filename_demo():
-    response = urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/png')
+    response = urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/jpeg')
     temp_filename = response[0]
     with open(temp_filename,'rb') as rbf:
-        with open('./images/urlretrieve_without_filename_demo.png','wb') as wbf:
+        with open('./images/urlretrieve_without_filename_demo.jpeg','wb') as wbf:
             wbf.write(rbf.read())
 
 def urlretrieve_with_filename_demo():
     urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/png',filename='./images/urlretrieve_with_filename_demo.png')
 
+def urlretrieve_with_reporthook_demo():
+    def reporthook(blocknum, blocksize, totalsize):  
+        '''回调函数 
+        @blocknum: 已经下载的数据块 
+        @blocksize: 数据块的大小 
+        @totalsize: 远程文件的大小 
+        '''
+        percent = 100.0 * blocknum * blocksize / totalsize  
+        if percent > 100:  
+            percent = 100  
+        print "%.2f%%"% percent
+
+    urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/svg',filename='./images/urlretrieve_with_reporthook_demo.svg',reporthook=reporthook)
+
 def main():
-    urlretrieve_without_filename_demo()
+    urlretrieve_with_reporthook_demo()
 
 if __name__ == '__main__':
     main()

@@ -32,3 +32,39 @@ if __name__ == '__main__':
 
 ## urllib2.urlopen(url[,data[,proxies]])
 
+```python
+# -*- coding: utf-8 -*-
+import urllib
+import urllib2
+
+def urlopen_without_params_demo():
+    response = urllib2.urlopen('http://httpbin.snowdreams1006.cn/get')
+    print '>>>response.info<<<'
+    print response.info()
+    print '>>>response.info<<<'
+    print response.getcode()
+    print '>>>response.read<<<'
+    print response.read()
+
+def main():
+    urlopen_without_params_demo()
+
+if __name__ == '__main__':
+    main()
+```
+
+## urllib.urlretrieve(url[,filename[,reporthook[,data]]])
+
+```python
+# -*- coding: utf-8 -*-
+import urllib
+
+def urlretrieve_with_filename_demo():
+    urllib.urlretrieve('http://httpbin.snowdreams1006.cn/image/png',filename='./images/urlretrieve_with_filename_demo.png')
+
+def main():
+    urlretrieve_with_filename_demo()
+
+if __name__ == '__main__':
+    main()
+```
