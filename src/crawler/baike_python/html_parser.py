@@ -4,7 +4,7 @@ import re
 import urlparse
 
 class HtmlParser(object):
-    def _get_new_url(self,page_url,soup):
+    def _get_new_urls(self,page_url,soup):
         new_urls = set()
         # /view/123.htm
         links = soup.find_all('a',href=re.compile(r'/view/\d+\.htm'))
