@@ -9,7 +9,7 @@
 * [网络请求](url/about.md)
     * [原生请求](url/urllib/about.md)
         * [认识urlopen发送网络请求](url/urllib/teaching.md)
-        * [urlopen网络请求的最佳实践](url/urllib/teaching-urlopen.md)
+        * [urlopen网络请求的最佳实践](url/urllib/best-practice-urlopen.md)
         * [基于urlopen实现网页下载器](url/urllib/teaching-urllib2-urlopen.md)
         * [实例练习](url/urllib/exercise.md)
         * [实例练习之一键爬取 github 全部表情](url/urllib/exercise-github-emoji.md)
