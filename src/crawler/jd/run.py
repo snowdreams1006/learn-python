@@ -42,22 +42,26 @@ def search_item(keyword='充气娃娃',page=1,s=1):
         url = response.url
         parse_item(url,response_text)
     except Exception as e:
-        print('搜索商品异常',e)
+        print('获取商品列表异常',e)
 
-def parse_item(url,html):
+def parse_item(url,html_origin):
     '''
     解析商品列表页面结构
     '''
     try:
-        # 保存原始网页数据
-        parse_item_path = './html/parse_item.html'
-        if not os.path.exists(parse_item_path):
-          os.mkdir(os.path.dirname(parse_item_path))
-        with open(parse_item_path, "w", encoding="utf-8") as wf:
-            wf.write(html)
-
         # 解析商品列表页面结构
-        soup = bs4.BeautifulSoup(html, 'html.parser')
+        soup = bs4.BeautifulSoup(html_origin, 'html.parser')
+        html_prettify = soup.prettify('utf-8')
+
+        # 先提前创建 html 目录,再保存原始网页和美化后网页
+        parse_item_origin_path = './html/parse_item_origin.html'
+        parse_item_prettify_path = './html/parse_item_prettify.html'
+        if not os.path.exists(os.path.dirname(parse_item_origin_path)):
+          os.mkdir(os.path.dirname(parse_item_origin_path))
+        with open(parse_item_origin_path, 'w', encoding='utf-8') as wf:
+            wf.write(html_origin)
+        with open(parse_item_prettify_path, 'wb') as wbf:
+            wbf.write(html_prettify)
 
         # 解析商品列表
         for item_li in soup.find_all('li',class_='gl-item'):
@@ -74,14 +78,14 @@ def parse_item(url,html):
             item_title_text = item_title.get_text()
 
             # 下载图片
-            download_cover(item_detail_url,item_img_url)
+            download_image(item_detail_url,item_img_url)
 
             # 访问商品详情
-            visit_item_detail(item_detail_url)
+            # visit_item_detail(item_detail_url)
 
             print(f'标题: {item_title_text} 图片: {item_img_url} 详情: {item_detail_url}')
     except Exception as e:
-        print('解析商品异常',e)
+        print('解析商品列表异常',e)
 
 def visit_item_detail(url):
     '''
@@ -154,24 +158,28 @@ def get_comment(productId,page=0):
     except Exception as e:
         print('获取商品评价异常',e)
 
-def download_cover(item_detail_url,item_cover_url):
+def download_image(item_detail_url,item_img_url):
     '''
     下载商品封面图
     '''
     try:
-        # 下载图片
+        # 提前创建 image 目录
         detail_item_html_name = os.path.basename(item_detail_url)
         detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
-        img_name = os.path.basename(item_cover_url)
-        img_name = './cover/%s_%s' % (detail_item_product_id,img_name)
-        if not os.path.exists(img_name):
-          response = requests.get(item_cover_url)
+        detail_item_img_name = os.path.basename(item_img_url)
+        parse_item_origin_path = './image/download_image_%s_%s' % (detail_item_product_id,detail_item_img_name)
+        if not os.path.exists(os.path.dirname(parse_item_origin_path)):
+          os.mkdir(os.path.dirname(parse_item_origin_path))
+        
+        # 下载图片
+        if not os.path.exists(parse_item_origin_path):
+          response = requests.get(item_img_url)
           response.raise_for_status()
           response_content = response.content
-          with open(img_name, 'wb') as wbf:
+          with open(parse_item_origin_path, 'wb') as wbf:
               wbf.write(response_content)
     except Exception as e:
-        print('下载商品异常')
+        print('下载商品异常',e)
 
 def cut_word(productId):
     '''
