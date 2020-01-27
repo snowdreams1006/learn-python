@@ -10,6 +10,17 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
+def batch_search_item(keyword='充气娃娃'):
+    '''
+    批量分页搜索京东商品
+    '''
+    for pn in range(1, 4):
+        # page 是 2pn-1 
+        page = pn * 2 - 1
+        # 不固定请求参数 s,大概相差 60
+        s = pn * 60 - random.randint(50, 60)
+        search_item(keyword,page,s)
+
 def search_item(keyword='充气娃娃',page=1,s=1):
     '''
     根据关键字搜索京东商品
@@ -73,17 +84,13 @@ def parse_item(url,html_origin):
             item_img = item_li.find('img')
             item_img_url = 'https:%s' % item_img['source-data-lazy-img']
 
-            # 标题描述
-            item_title = item_li.find('div',class_='p-name p-name-type-2').find('em')
-            item_title_text = item_title.get_text()
+            print(f'图片: {item_img_url} 详情: {item_detail_url}')
 
             # 下载图片
             download_image(item_detail_url,item_img_url)
 
-            # 访问商品详情
-            # visit_item_detail(item_detail_url)
-
-            print(f'标题: {item_title_text} 图片: {item_img_url} 详情: {item_detail_url}')
+            # 批量读取商品评价
+            batch_get_comment(item_detail_url)
     except Exception as e:
         print('解析商品列表异常',e)
 
@@ -122,42 +129,6 @@ def parse_item_detail(url,html):
     except Exception as e:
         print('解析商品详情异常',e)
 
-def get_comment(productId,page=0):
-    '''
-    分页获取商品评论数据
-    '''
-    try:
-        # 评价商品
-        url = 'https://club.jd.com/comment/productPageComments.action'
-        params = {
-            'productId': productId,
-            'score': 0,
-            'sortType': 5,
-            'page':page,
-            'pageSize':10,
-            'isShadowSku':0,
-            'fold':1
-        }
-        headers = {
-            'referer': 'https://item.jd.com/%s.html' % productId,
-            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
-        }
-        response = requests.get(url=url, params=params, headers=headers)
-        response.raise_for_status()
-        response_json = response.json()
-
-        # 保留原始评论数据
-        with open('./comment/%s_%d.json' % (productId,page), 'w') as wf:
-            wf.write(json.dumps(response_json, indent=4, ensure_ascii=False))
-
-        # 遍历追加评论内容
-        comment_txt_name = './comment/%s.txt' % productId
-        for comments in response_json.get('comments'):
-            with open(comment_txt_name, 'a') as af:
-                af.write(comments.get('content') + '\n')
-    except Exception as e:
-        print('获取商品评价异常',e)
-
 def download_image(item_detail_url,item_img_url):
     '''
     下载商品封面图
@@ -180,6 +151,67 @@ def download_image(item_detail_url,item_img_url):
               wbf.write(response_content)
     except Exception as e:
         print('下载商品异常',e)
+
+def batch_get_comment(item_detail_url):
+    '''
+    批量分页搜索京东商品
+    '''
+    # 提前创建 comment 目录
+    detail_item_html_name = os.path.basename(item_detail_url)
+    detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
+    batch_get_comment_txt_path = './comment/batch_get_comment_%s.txt' % detail_item_product_id
+    if not os.path.exists(os.path.dirname(batch_get_comment_txt_path)):
+      os.mkdir(os.path.dirname(batch_get_comment_txt_path))
+    if os.path.exists(batch_get_comment_txt_path):
+      os.remove(batch_get_comment_txt_path)
+    # 批量获取评论数据
+    for i in range(3):
+        get_comment(item_detail_url,page=i)
+    # 生成词云
+    # create_word_cloud(productId)
+
+def get_comment(item_detail_url,page=0):
+    '''
+    分页获取商品评论数据
+    '''
+    try:
+        # 解析商品 id
+        detail_item_html_name = os.path.basename(item_detail_url)
+        detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
+        
+        #  获取商品评价数据
+        url = 'https://club.jd.com/comment/productPageComments.action'
+        params = {
+            'productId': detail_item_product_id,
+            'score': 0,
+            'sortType': 5,
+            'page':page,
+            'pageSize':10,
+            'isShadowSku':0,
+            'fold':1
+        }
+        headers = {
+            'referer': item_detail_url,
+            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+        }
+        response = requests.get(url=url, params=params, headers=headers)
+        response.raise_for_status()
+        response_json = response.json()
+
+        # 保存原始评论数据
+        get_comment_json_path = './comment/get_comment_%s_%d.json' % (detail_item_product_id,page)
+        if not os.path.exists(os.path.dirname(get_comment_json_path)):
+          os.mkdir(os.path.dirname(get_comment_json_path))
+        with open(get_comment_json_path, 'w') as wf:
+            wf.write(json.dumps(response_json, indent=4, ensure_ascii=False))
+
+        # 遍历追加评论内容
+        batch_get_comment_txt_path = './comment/batch_get_comment_%s.txt' % detail_item_product_id
+        for comments in response_json.get('comments'):
+            with open(batch_get_comment_txt_path, 'a') as af:
+                af.write(comments.get('content') + '\n')
+    except Exception as e:
+        print('获取商品评价异常',e)
 
 def cut_word(productId):
     '''
@@ -221,29 +253,6 @@ def create_word_cloud(productId):
 
           # 保存到文件
           wc.to_file('./wordcloud/%s.png' % productId)
-
-def batch_search_item(keyword='充气娃娃'):
-    '''
-    批量分页搜索京东商品
-    '''
-    for pn in range(1, 4):
-        # page 是 2pn-1 
-        page = pn * 2 - 1
-        # 不固定请求参数 s,大概相差 60
-        s = pn * 60 - random.randint(50, 60)
-        search_item(keyword,page,s)
-
-def batch_get_comment(productId):
-    '''
-    批量分页搜索京东商品
-    '''
-    comment_txt_name = './comment/%s.txt' % productId
-    if os.path.exists(comment_txt_name):
-        os.remove(comment_txt_name)
-    for i in range(3):
-        get_comment(productId,page=i)
-    # 生成词云
-    create_word_cloud(productId)
 
 def main():
     # batch_search_item('充气娃娃')
