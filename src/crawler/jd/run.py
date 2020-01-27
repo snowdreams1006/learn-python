@@ -138,16 +138,16 @@ def download_image(item_detail_url,item_img_url):
         detail_item_html_name = os.path.basename(item_detail_url)
         detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
         detail_item_img_name = os.path.basename(item_img_url)
-        parse_item_origin_path = './image/download_image_%s_%s' % (detail_item_product_id,detail_item_img_name)
-        if not os.path.exists(os.path.dirname(parse_item_origin_path)):
-          os.mkdir(os.path.dirname(parse_item_origin_path))
+        download_image_path = './image/download_image_%s_%s' % (detail_item_product_id,detail_item_img_name)
+        if not os.path.exists(os.path.dirname(download_image_path)):
+          os.mkdir(os.path.dirname(download_image_path))
         
         # 下载图片
-        if not os.path.exists(parse_item_origin_path):
+        if not os.path.exists(download_image_path):
           response = requests.get(item_img_url)
           response.raise_for_status()
           response_content = response.content
-          with open(parse_item_origin_path, 'wb') as wbf:
+          with open(download_image_path, 'wb') as wbf:
               wbf.write(response_content)
     except Exception as e:
         print('下载商品异常',e)
@@ -167,8 +167,19 @@ def batch_get_comment(item_detail_url):
     # 批量获取评论数据
     for i in range(3):
         get_comment(item_detail_url,page=i)
+
+    # 中文分词处理
+    if os.path.exists(batch_get_comment_txt_path):
+      with open(batch_get_comment_txt_path,'r') as rf:
+          comment_txt = rf.read()
+          cut_word(item_detail_url,comment_txt)
+
     # 生成词云
-    # create_word_cloud(productId)
+    cut_word_txt_path = './jieba/cut_word_txt_path_%s.txt' % detail_item_product_id
+    if os.path.exists(cut_word_txt_path):
+      with open(cut_word_txt_path,'r') as rf:
+          jieba_txt = rf.read()
+          create_wordcloud(item_detail_url,jieba_txt)
 
 def get_comment(item_detail_url,page=0):
     '''
@@ -178,7 +189,7 @@ def get_comment(item_detail_url,page=0):
         # 解析商品 id
         detail_item_html_name = os.path.basename(item_detail_url)
         detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
-        
+
         #  获取商品评价数据
         url = 'https://club.jd.com/comment/productPageComments.action'
         params = {
@@ -213,51 +224,54 @@ def get_comment(item_detail_url,page=0):
     except Exception as e:
         print('获取商品评价异常',e)
 
-def cut_word(productId):
+def cut_word(item_detail_url,word):
     '''
     对评论数据进行分词
     '''
-    comment_txt_name = './comment/%s.txt' % productId
-    if os.path.exists(comment_txt_name):
-      with open(comment_txt_name,'r') as rf:
-          comment_txt = rf.read()
-          wordlist = jieba.cut(comment_txt, cut_all=True)
-          wl = ' '.join(wordlist)
-          # 保存原始分词结果
-          jieba_txt_name = './jieba/%s.txt' % productId
-          if not os.path.exists(jieba_txt_name):
-            with open(jieba_txt_name, 'w') as wf:
-              wf.write(wl)
+    detail_item_html_name = os.path.basename(item_detail_url)
+    detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
+    cut_word_txt_path = './jieba/cut_word_%s.txt' % detail_item_product_id
+    if not os.path.exists(os.path.dirname(cut_word_txt_path)):
+      os.mkdir(os.path.dirname(cut_word_txt_path))
+    
+    # jieba 分词处理
+    wordlist = jieba.cut(word, cut_all=True)
+    wl = ' '.join(wordlist)
+    with open(cut_word_txt_path, 'w') as wf:
+      wf.write(wl)
 
-def create_word_cloud(productId):
+def create_wordcloud(item_detail_url,word):
     '''
     生成词云
     '''
-    # 设置词云形状图片
-    wc_mask = np.array(Image.open('./cover/3958b11408cc3e88.jpg'))
-    # 设置词云的一些配置，如：字体，背景色，词云形状，大小
-    wc = WordCloud(background_color="white", max_words=2000, mask=wc_mask, scale=4,
-                   max_font_size=50, random_state=42, font_path='/System/Library/Fonts/STHeiti Medium.ttc')
     # 生成词云
-    jieba_txt_name = './jieba/%s.txt' % productId
-    if os.path.exists(jieba_txt_name):
-      with open(jieba_txt_name,'r') as rf:
-          jieba_txt = rf.read()
-          wc.generate(text=jieba_txt)
+    detail_item_html_name = os.path.basename(item_detail_url)
+    detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
+    create_wordcloud_img_path = './wordcloud/create_wordcloud_%s.png' % detail_item_product_id
+    if not os.path.exists(os.path.dirname(create_wordcloud_img_path)):
+      os.mkdir(os.path.dirname(create_wordcloud_img_path))
 
-          # 在只设置mask的情况下,你将会得到一个拥有图片形状的词云
+    # 匹配搜索 image 目录下的封面图
+    if os.path.exists('./image'):
+      for name in os.listdir('./image'):
+        if os.path.splitext(name)[0].startswith('download_image_%s' % detail_item_product_id):
+          # 设置词云形状图片
+          wc_mask = np.array(Image.open('./image/%s' % name))
+          # 设置词云的一些配置，如：字体，背景色，词云形状，大小
+          wc = WordCloud(background_color="white", max_words=2000, mask=wc_mask, scale=4,
+                         max_font_size=50, random_state=42, font_path='/System/Library/Fonts/STHeiti Medium.ttc')
+          wc.generate(text=word)
           plt.imshow(wc, interpolation="bilinear")
           plt.axis("off")
-          plt.figure()
-          plt.show()
+          # plt.figure()
+          # plt.show()
 
           # 保存到文件
-          wc.to_file('./wordcloud/%s.png' % productId)
+          wc.to_file(create_wordcloud_img_path) 
+          break 
 
 def main():
-    # batch_search_item('充气娃娃')
     search_item('充气娃娃')
-
 
 if __name__ == '__main__':
     main()
