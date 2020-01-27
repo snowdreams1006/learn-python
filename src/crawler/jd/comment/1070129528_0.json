@@ -66,7 +66,7 @@
         {
             "id": "bb4c03cebcba890a",
             "name": "做工精湛",
-            "count": 135,
+            "count": 134,
             "type": 4,
             "canBeFiltered": true,
             "stand": 1,
@@ -76,7 +76,7 @@
         {
             "id": "2aa5d521db4d0cb6",
             "name": "超级好用",
-            "count": 92,
+            "count": 91,
             "type": 4,
             "canBeFiltered": true,
             "stand": 1,
@@ -94,19 +94,9 @@
             "ckeKeyWordBury": "eid=100^^tagid=cfceac32bbcbdd7e^^pid=20027^^sku=1070129528^^sversion=1000^^token=c7509a10e84de4b9"
         },
         {
-            "id": "80f0ec097db263e6",
-            "name": "精致美观",
-            "count": 51,
-            "type": 4,
-            "canBeFiltered": true,
-            "stand": 1,
-            "rid": "80f0ec097db263e6",
-            "ckeKeyWordBury": "eid=100^^tagid=80f0ec097db263e6^^pid=20027^^sku=1070129528^^sversion=1000^^token=1882554325e64d71"
-        },
-        {
             "id": "7ad4b7e72e23b40d",
             "name": "品相一流",
-            "count": 51,
+            "count": 53,
             "type": 4,
             "canBeFiltered": true,
             "stand": 1,
@@ -114,9 +104,19 @@
             "ckeKeyWordBury": "eid=100^^tagid=7ad4b7e72e23b40d^^pid=20027^^sku=1070129528^^sversion=1000^^token=65fd112288887cfa"
         },
         {
+            "id": "80f0ec097db263e6",
+            "name": "精致美观",
+            "count": 50,
+            "type": 4,
+            "canBeFiltered": true,
+            "stand": 1,
+            "rid": "80f0ec097db263e6",
+            "ckeKeyWordBury": "eid=100^^tagid=80f0ec097db263e6^^pid=20027^^sku=1070129528^^sversion=1000^^token=1882554325e64d71"
+        },
+        {
             "id": "be4c76ce01b83386",
             "name": "简单方便",
-            "count": 41,
+            "count": 42,
             "type": 4,
             "canBeFiltered": true,
             "stand": 1,

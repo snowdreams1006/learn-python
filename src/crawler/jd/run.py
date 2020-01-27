@@ -5,6 +5,17 @@ import os
 import random
 import json
 
+def batch_search_item(keyword='充气娃娃'):
+    '''
+    批量分页搜索京东商品
+    '''
+    for pn in range(1,101):
+        # page 是 2pn-1 
+        page = pn * 2 - 1
+        # 不固定请求参数 s,大概相差 60
+        s = pn * 60 - random.randint(50, 60)
+        search_item(keyword,page,s)
+
 def search_item(keyword='充气娃娃',page=1,s=1):
     '''
     根据关键字搜索京东商品
@@ -182,7 +193,7 @@ def visit_item_detail(url):
         }
         response = requests.get(url=url, headers=headers)
         response.raise_for_status()
-        response.encoding = 'utf-8'
+        response.encoding = 'gbk'
         response_text = response.text
 
         # 解析商品页面
@@ -196,21 +207,25 @@ def parse_item_detail(url,html):
     '''
     try:
         # 保存原始网页数据
-        with open('./html/parse_item_detail.html', "w", encoding="utf-8") as wf:
+        detail_item_html_name = os.path.basename(url)
+        with open('./html/parse_item_detail_%s' % detail_item_html_name, "w", encoding="utf-8") as wf:
             wf.write(html)
 
-        # 解析商品列表页面结构
-        soup = bs4.BeautifulSoup(html, 'html.parser')
-        print(soup.prettify('utf-8'))
-
-        # 解析商品详情
-        '''
-        
-        '''
-        
+        # 批量获取商品评价
+        detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
+        batch_get_comment(detail_item_product_id)
     except Exception as e:
         print('解析商品详情异常',e)
 
+def batch_get_comment(productId):
+    '''
+    批量分页搜索京东商品
+    '''
+    comment_txt_name = './comment/%s.txt' % productId
+    if os.path.exists(comment_txt_name):
+        os.remove(comment_txt_name)
+    for i in range(100):
+        get_comment(productId,page=i)
 
 def get_comment(productId,page=0):
     '''
@@ -237,13 +252,11 @@ def get_comment(productId,page=0):
         response_json = response.json()
 
         # 保留原始评论数据
-        with open('./comment/%s.json' % productId, 'w') as wf:
+        with open('./comment/%s_%d.json' % (productId,page), 'w') as wf:
             wf.write(json.dumps(response_json, indent=4, ensure_ascii=False))
 
-        # 遍历评论对象列表
+        # 遍历追加评论内容
         comment_txt_name = './comment/%s.txt' % productId
-        if os.path.exists(comment_txt_name):
-            os.remove(comment_txt_name)
         for comments in response_json.get('comments'):
             with open(comment_txt_name, 'a') as af:
                 af.write(comments.get('content') + '\n')
@@ -265,14 +278,9 @@ def download_cover(url):
     except Exception as e:
         print('下载商品异常')
 
+
 def main():
-    get_comment('1070129528')
-    # for pn in range(1,2):
-    #     # page 是 2pn-1 
-    #     page = pn * 2 - 1
-    #     # 不固定请求参数 s,大概相差 60
-    #     s = pn * 60 - random.randint(50, 60)
-    #     search_item('充气娃娃',page,s)
+    batch_search_item('充气娃娃')
 
 if __name__ == '__main__':
     main()
