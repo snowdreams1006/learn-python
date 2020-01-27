@@ -4,6 +4,7 @@ import bs4
 import os
 import random
 import json
+import jieba
 
 def batch_search_item(keyword='充气娃娃'):
     '''
@@ -278,6 +279,16 @@ def download_cover(url):
     except Exception as e:
         print('下载商品异常')
 
+def cut_word(filename):
+    '''
+    对评论数据进行分词
+    '''
+    with open(filename,'r') as rf:
+        comment_txt = rf.read()
+        wordlist = jieba.cut(comment_txt, cut_all=True)
+        wl = ''.join(wordlist)
+        print(wl)
+        return wl
 
 def main():
     batch_search_item('充气娃娃')
