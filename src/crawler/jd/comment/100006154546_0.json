@@ -3,11 +3,11 @@
     "productCommentSummary": {
         "skuId": 100006154546,
         "averageScore": 5,
-        "defaultGoodCount": 25210,
+        "defaultGoodCount": 25209,
         "defaultGoodCountStr": "2.5万+",
-        "commentCount": 35516,
+        "commentCount": 35519,
         "commentCountStr": "3.5万+",
-        "goodCount": 10664,
+        "goodCount": 10668,
         "goodCountStr": "1万+",
         "goodRate": 0.92,
         "goodRateShow": 92,
@@ -40,7 +40,7 @@
         "score2Count": 138,
         "score3Count": 250,
         "score4Count": 206,
-        "score5Count": 9269
+        "score5Count": 9273
     },
     "hotCommentTagStatistics": [
         {
@@ -217,7 +217,7 @@
             "replyCount": 49,
             "score": 5,
             "title": "",
-            "usefulVoteCount": 130,
+            "usefulVoteCount": 131,
             "userClient": 4,
             "anonymousFlag": 1,
             "plusAvailable": 201,
@@ -428,8 +428,8 @@
                 "content": "天天用",
                 "commentId": 13259732948,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "天天用",
                     "id": 49232187

@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -181,8 +181,8 @@
                 "content": "666",
                 "commentId": 13285449327,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 49692151
@@ -236,8 +236,8 @@
                 "content": "不错，真的挺好",
                 "commentId": 11773280048,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "不错，真的挺好",
                     "id": 30627003
@@ -292,8 +292,8 @@
                 "content": "第一次用，还是很不错的?",
                 "commentId": 13264612172,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "第一次用，还是很不错的?",
                     "id": 49315546
@@ -347,8 +347,8 @@
                 "content": "还行，感觉不错。",
                 "commentId": 13226272069,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "还行，感觉不错。",
                     "id": 48684722
@@ -403,8 +403,8 @@
                 "content": "差别太大，伤心购买！",
                 "commentId": 13223669930,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "差别太大，伤心购买！",
                     "id": 48646623
@@ -458,8 +458,8 @@
                 "content": "666",
                 "commentId": 13211636872,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 48457962
@@ -514,8 +514,8 @@
                 "content": "棒棒哒",
                 "commentId": 13210004504,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "棒棒哒",
                     "id": 48429212
@@ -570,8 +570,8 @@
                 "content": "666",
                 "commentId": 13111149817,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46860741
@@ -625,8 +625,8 @@
                 "content": "宝贝收到了包装的很严实，感觉很真实，里面软软的滑滑的，没有异味，充气很方便，清洗也特别方便质量很好。速度很快，私密包装，送的东西好多，没有异味，质量挺好的，。用起来感觉很好！",
                 "commentId": 13058234908,
                 "clientType": 1,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "宝贝收到了包装的很严实，感觉很真实，里面软软的滑滑的，没有异味，充气很方便，清洗也特别方便质量很好。速度很快，私密包装，送的东西好多，没有异味，质量挺好的，。用起来感觉很好！",
                     "id": 46011383
@@ -680,8 +680,8 @@
                 "content": "不错不错 下次买个贵点的",
                 "commentId": 13009047122,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "不错不错 下次买个贵点的",
                     "id": 45252732

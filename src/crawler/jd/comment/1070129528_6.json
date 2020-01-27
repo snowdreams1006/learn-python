@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -209,8 +209,8 @@
                 "content": "充气后是个洋妞。",
                 "commentId": 11798058637,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "充气后是个洋妞。",
                     "id": 30878832
@@ -263,8 +263,8 @@
                 "content": "很好，不错的购物体验",
                 "commentId": 12279271338,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好，不错的购物体验",
                     "id": 35650632
@@ -319,8 +319,8 @@
                 "content": "666",
                 "commentId": 13310055868,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 50145225
@@ -372,8 +372,8 @@
                 "content": "娃娃真的很好使用 商品没有异味  和卖家描述的一模一样 很逼真 很有肉感 挺棒的 欢迎大家购买 666",
                 "commentId": 12966467710,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "娃娃真的很好使用 商品没有异味  和卖家描述的一模一样 很逼真 很有肉感 挺棒的 欢迎大家购买 666",
                     "id": 44601803
@@ -427,8 +427,8 @@
                 "content": "用了一次，真的很好用",
                 "commentId": 12631440464,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "用了一次，真的很好用",
                     "id": 39664164
@@ -482,8 +482,8 @@
                 "content": "很满意",
                 "commentId": 12307864610,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很满意",
                     "id": 35904894
@@ -537,8 +537,8 @@
                 "content": "赠送的东西非常齐全，下次还会光顾",
                 "commentId": 13702554329,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "赠送的东西非常齐全，下次还会光顾",
                     "id": 58321586
@@ -589,8 +589,8 @@
                 "content": "这个手感真的没话说，脸看起来也很漂亮，谁买谁知道啊 ?",
                 "commentId": 13160420858,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "这个手感真的没话说，脸看起来也很漂亮，谁买谁知道啊 ?",
                     "id": 47675111
@@ -629,14 +629,12 @@
             "replies": [],
             "replyCount": 1,
             "score": 5,
-            "title": "",
             "usefulVoteCount": 1,
             "userClient": 4,
             "anonymousFlag": 1,
             "plusAvailable": 103,
             "mobileVersion": "",
             "productColor": "小美-任意姿+智能感应互动+真人体温+初用设计",
-            "productSize": "",
             "textIntegral": 20,
             "afterUserComment": {
                 "id": 57420714,
@@ -644,8 +642,8 @@
                 "content": "66666",
                 "commentId": 13654114263,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "66666",
                     "id": 57420714
@@ -699,8 +697,8 @@
                 "content": "不错不错  值得信赖",
                 "commentId": 13136712163,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "不错不错  值得信赖",
                     "id": 47275047

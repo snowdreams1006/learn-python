@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -209,8 +209,8 @@
                 "content": "刚买回就试了试非常好",
                 "commentId": 12823744728,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "刚买回就试了试非常好",
                     "id": 42521767
@@ -263,8 +263,8 @@
                 "content": "充气了的一刹那，我 靠，这娃娃真??逼，太好了，回头试试效果～",
                 "commentId": 12818743361,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "充气了的一刹那，我 靠，这娃娃真??逼，太好了，回头试试效果～",
                     "id": 42455890
@@ -315,8 +315,8 @@
                 "content": "使用了跟真人一样，很棒！",
                 "commentId": 12813248719,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "使用了跟真人一样，很棒！",
                     "id": 42378522
@@ -369,8 +369,8 @@
                 "content": "很好，，正在试用阶段，看看再说",
                 "commentId": 12801936709,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好，，正在试用阶段，看看再说",
                     "id": 42219340
@@ -423,8 +423,8 @@
                 "content": "试了语音效果，感觉非常不错。",
                 "commentId": 12788480626,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "试了语音效果，感觉非常不错。",
                     "id": 42013281
@@ -477,8 +477,8 @@
                 "content": "东西好，物流快，价格实惠",
                 "commentId": 12784217687,
                 "clientType": 1,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "东西好，物流快，价格实惠",
                     "id": 41942811
@@ -529,8 +529,8 @@
                 "content": "特别还用手感也好",
                 "commentId": 12779458904,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "特别还用手感也好",
                     "id": 41874458
@@ -583,8 +583,8 @@
                 "content": "非常不错的。很有感觉哦",
                 "commentId": 12779270335,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "非常不错的。很有感觉哦",
                     "id": 41871098
@@ -637,8 +637,8 @@
                 "content": "人物与真人一样，超有手感，非常好，真心物超所值",
                 "commentId": 12774277160,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "人物与真人一样，超有手感，非常好，真心物超所值",
                     "id": 41801043
@@ -691,8 +691,8 @@
                 "content": "用起来带感，让人冲动",
                 "commentId": 12773951046,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "用起来带感，让人冲动",
                     "id": 41794165

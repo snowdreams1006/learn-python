@@ -5,17 +5,10 @@ import os
 import random
 import json
 import jieba
-
-def batch_search_item(keyword='充气娃娃'):
-    '''
-    批量分页搜索京东商品
-    '''
-    for pn in range(1,101):
-        # page 是 2pn-1 
-        page = pn * 2 - 1
-        # 不固定请求参数 s,大概相差 60
-        s = pn * 60 - random.randint(50, 60)
-        search_item(keyword,page,s)
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
 
 def search_item(keyword='充气娃娃',page=1,s=1):
     '''
@@ -63,99 +56,6 @@ def parse_item(url,html):
         soup = bs4.BeautifulSoup(html, 'html.parser')
 
         # 解析商品列表
-        '''
-        <div class="goods-list-v2 gl-type-1 J-goods-list" id="J_goodsList">
-         <ul class="gl-warp clearfix" data-tpl="1">
-          <li class="gl-item" data-sku="3521615">
-           <div class="gl-i-wrap">
-            <div class="p-img">
-             <a href="//item.jd.com/3521615.html" onclick="searchlog(1,3521615,0,2,'','flagsClk=1614811784')" target="_blank" title="【杜杜春节不打烊！】新春特惠，限时低价！戳入会场享更多优惠！">
-              <img class="" data-img="1" data-lazy-img="done" height="220" source-data-lazy-img="" src="//img10.360buyimg.com/n7/jfs/t1/90763/31/10918/278051/5e240f0fE3309a556/3c72ea48e9cf8ea0.jpg" width="220"/>
-             </a>
-             <div class="picon" data-catid="1502" data-done="1" data-lease="" data-presale="" data-venid="1000001462" style="background:url(//img30.360buyimg.com/jgsq-productsoa/jfs/t1/108472/40/3021/3997/5e0c7527Ea65f0ceb/64344882b9a8d89b.png) no-repeat 0 0;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='//img30.360buyimg.com/jgsq-productsoa/jfs/t1/108472/40/3021/3997/5e0c7527Ea65f0ceb/64344882b9a8d89b.png',sizingMethod='noscale');">
-             </div>
-            </div>
-            <div class="p-price">
-             <strong class="J_3521615" data-done="1">
-              <em>
-               ￥
-              </em>
-              <i>
-               59.00
-              </i>
-             </strong>
-             <span class="price-plus-1" title="PLUS会员专享价">
-              <em>
-               ￥56.90
-              </em>
-              <i>
-              </i>
-             </span>
-            </div>
-            <div class="p-name p-name-type-2">
-             <a href="//item.jd.com/3521615.html" onclick="searchlog(1,3521615,0,1,'','flagsClk=1614811784')" target="_blank" title="【杜杜春节不打烊！】新春特惠，限时低价！戳入会场享更多优惠！">
-              <em>
-               <img class="p-tag3" src="//img14.360buyimg.com/uba/jfs/t6919/268/501386350/1257/92e5fb39/5976fcf9Nd915775f.png"/>
-               杜蕾斯
-               <font class="skcolor_ljg">
-                避孕套
-               </font>
-               安全套 超薄尊享三合一18 超薄润滑 成人用品 男用套套(超薄10＋倍滑超薄4+紧型超薄4) Durex
-              </em>
-              <i class="promo-words" id="J_AD_3521615">
-               【杜杜春节不打烊！】新春特惠，限时低价！戳入会场享更多优惠！
-              </i>
-             </a>
-            </div>
-            <div class="p-commit" data-done="1">
-             <strong>
-              <a href="//item.jd.com/3521615.html#comment" id="J_comment_3521615" onclick="searchlog(1,3521615,0,3,'','flagsClk=1614811784')" target="_blank">
-               470万+
-              </a>
-              条评价
-             </strong>
-            </div>
-            <div class="p-shop" data-done="1" data-dongdong="" data-reputation="99" data-score="5" data-selfware="1">
-             <span class="J_im_icon">
-              <a class="curr-shop hd-shopname" href="//mall.jd.com/index-1000001462.html" onclick="searchlog(1,1000001462,0,58)" target="_blank" title="durex杜蕾斯京东自营官方旗舰店">
-               durex杜蕾斯京东自营官方旗舰店
-              </a>
-              <b class="im-02" onclick="searchlog(1,1000001462,0,61)" style="background:url(//img14.360buyimg.com/uba/jfs/t26764/156/1205787445/713/9f715eaa/5bc4255bN0776eea6.png) no-repeat;" title="联系客服">
-              </b>
-             </span>
-            </div>
-            <div class="p-icons" data-done="1" id="J_pro_3521615">
-             <i class="goods-icons J-picon-tips J-picon-fix" data-idx="1" data-tips="京东自营，品质保障">
-              自营
-             </i>
-             <i class="goods-icons4 J-picon-tips" data-tips="购买本商品送赠品">
-              赠
-             </i>
-            </div>
-            <div class="p-operate">
-             <a class="p-o-btn contrast J_contrast" data-sku="3521615" href="javascript:;" onclick="searchlog(1,3521615,0,6,'','flagsClk=1614811784')">
-              <i>
-              </i>
-              对比
-             </a>
-             <a class="p-o-btn focus J_focus" data-sku="3521615" href="javascript:;" onclick="searchlog(1,3521615,0,5,'','flagsClk=1614811784')">
-              <i>
-              </i>
-              关注
-             </a>
-             <a class="p-o-btn addcart" data-limit="0" href="//cart.jd.com/gate.action?pid=3521615&amp;pcount=1&amp;ptype=1" onclick="searchlog(1,3521615,0,4,'','flagsClk=1614811784')" target="_blank">
-              <i>
-              </i>
-              加入购物车
-             </a>
-            </div>
-           </div>
-          </li>
-         </ul>
-         <span class="clr">
-         </span>
-        </div>
-        '''
         for item_li in soup.find_all('li',class_='gl-item'):
             # 详情链接
             item_detail = item_li.find('a')
@@ -174,7 +74,7 @@ def parse_item(url,html):
             item_title_text = item_title.get_text()
 
             # 下载图片
-            download_cover(item_img_url)
+            download_cover(item_detail_url,item_img_url)
 
             # 访问商品详情
             visit_item_detail(item_detail_url)
@@ -218,16 +118,6 @@ def parse_item_detail(url,html):
     except Exception as e:
         print('解析商品详情异常',e)
 
-def batch_get_comment(productId):
-    '''
-    批量分页搜索京东商品
-    '''
-    comment_txt_name = './comment/%s.txt' % productId
-    if os.path.exists(comment_txt_name):
-        os.remove(comment_txt_name)
-    for i in range(100):
-        get_comment(productId,page=i)
-
 def get_comment(productId,page=0):
     '''
     分页获取商品评论数据
@@ -264,16 +154,18 @@ def get_comment(productId,page=0):
     except Exception as e:
         print('获取商品评价异常',e)
 
-def download_cover(url):
+def download_cover(item_detail_url,item_cover_url):
     '''
     下载商品封面图
     '''
     try:
         # 下载图片
-        img_name = os.path.basename(url)
-        img_name = './cover/%s' % img_name
+        detail_item_html_name = os.path.basename(item_detail_url)
+        detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
+        img_name = os.path.basename(item_cover_url)
+        img_name = './cover/%s_%s' % (detail_item_product_id,img_name)
         if not os.path.exists(img_name):
-          response = requests.get(url)
+          response = requests.get(item_cover_url)
           response.raise_for_status()
           response_content = response.content
           with open(img_name, 'wb') as wbf:
@@ -281,19 +173,75 @@ def download_cover(url):
     except Exception as e:
         print('下载商品异常')
 
-def cut_word(filename):
+def cut_word(productId):
     '''
     对评论数据进行分词
     '''
-    with open(filename,'r') as rf:
-        comment_txt = rf.read()
-        wordlist = jieba.cut(comment_txt, cut_all=True)
-        wl = ''.join(wordlist)
-        print(wl)
-        return wl
+    comment_txt_name = './comment/%s.txt' % productId
+    if os.path.exists(comment_txt_name):
+      with open(comment_txt_name,'r') as rf:
+          comment_txt = rf.read()
+          wordlist = jieba.cut(comment_txt, cut_all=True)
+          wl = ' '.join(wordlist)
+          # 保存原始分词结果
+          jieba_txt_name = './jieba/%s.txt' % productId
+          if not os.path.exists(jieba_txt_name):
+            with open(jieba_txt_name, 'w') as wf:
+              wf.write(wl)
+
+def create_word_cloud(productId):
+    '''
+    生成词云
+    '''
+    # 设置词云形状图片
+    wc_mask = np.array(Image.open('./cover/3958b11408cc3e88.jpg'))
+    # 设置词云的一些配置，如：字体，背景色，词云形状，大小
+    wc = WordCloud(background_color="white", max_words=2000, mask=wc_mask, scale=4,
+                   max_font_size=50, random_state=42, font_path='/System/Library/Fonts/STHeiti Medium.ttc')
+    # 生成词云
+    jieba_txt_name = './jieba/%s.txt' % productId
+    if os.path.exists(jieba_txt_name):
+      with open(jieba_txt_name,'r') as rf:
+          jieba_txt = rf.read()
+          wc.generate(text=jieba_txt)
+
+          # 在只设置mask的情况下,你将会得到一个拥有图片形状的词云
+          plt.imshow(wc, interpolation="bilinear")
+          plt.axis("off")
+          plt.figure()
+          plt.show()
+
+          # 保存到文件
+          wc.to_file('./wordcloud/%s.png' % productId)
+
+def batch_search_item(keyword='充气娃娃'):
+    '''
+    批量分页搜索京东商品
+    '''
+    for pn in range(1, 4):
+        # page 是 2pn-1 
+        page = pn * 2 - 1
+        # 不固定请求参数 s,大概相差 60
+        s = pn * 60 - random.randint(50, 60)
+        search_item(keyword,page,s)
+
+def batch_get_comment(productId):
+    '''
+    批量分页搜索京东商品
+    '''
+    comment_txt_name = './comment/%s.txt' % productId
+    if os.path.exists(comment_txt_name):
+        os.remove(comment_txt_name)
+    for i in range(3):
+        get_comment(productId,page=i)
+    # 生成词云
+    create_word_cloud(productId)
 
 def main():
-    batch_search_item('充气娃娃')
+    # batch_search_item('安全套')
+    create_word_cloud('100000284457')
+    # test_wordcloud()
+    # cut_word('100003449259')
 
 if __name__ == '__main__':
     main()

@@ -3,11 +3,11 @@
     "productCommentSummary": {
         "skuId": 2900873,
         "averageScore": 5,
-        "defaultGoodCount": 35466,
+        "defaultGoodCount": 35464,
         "defaultGoodCountStr": "3.5万+",
-        "commentCount": 52992,
+        "commentCount": 52994,
         "commentCountStr": "5.2万+",
-        "goodCount": 22669,
+        "goodCount": 22673,
         "goodCountStr": "2.2万+",
         "goodRate": 0.92,
         "goodRateShow": 92,
@@ -40,7 +40,7 @@
         "score2Count": 302,
         "score3Count": 608,
         "score4Count": 549,
-        "score5Count": 15192
+        "score5Count": 15196
     },
     "hotCommentTagStatistics": [
         {
@@ -365,7 +365,7 @@
             "replyCount": 30,
             "score": 5,
             "title": "",
-            "usefulVoteCount": 2612,
+            "usefulVoteCount": 2616,
             "userClient": 4,
             "anonymousFlag": 1,
             "plusAvailable": 0,
@@ -404,7 +404,7 @@
             "replyCount": 16,
             "score": 5,
             "title": "",
-            "usefulVoteCount": 564,
+            "usefulVoteCount": 566,
             "userClient": 2,
             "anonymousFlag": 1,
             "plusAvailable": 103,
@@ -498,7 +498,7 @@
             "replyCount": 1,
             "score": 5,
             "title": "",
-            "usefulVoteCount": 85,
+            "usefulVoteCount": 86,
             "userClient": 0,
             "anonymousFlag": 1,
             "plusAvailable": 103,

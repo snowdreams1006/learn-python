@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -178,8 +178,8 @@
                 "content": "666好用",
                 "commentId": 13444210163,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666好用",
                     "id": 56409472
@@ -234,8 +234,8 @@
                 "content": "太舒服了，忍不住用了再用。。。。",
                 "commentId": 13441898929,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "太舒服了，忍不住用了再用。。。。",
                     "id": 53196043
@@ -287,8 +287,8 @@
                 "content": "一次满意的购物",
                 "commentId": 13431342170,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "一次满意的购物",
                     "id": 53003905
@@ -343,8 +343,8 @@
                 "content": "666",
                 "commentId": 13426668467,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 52916561
@@ -399,8 +399,8 @@
                 "content": "可以啊，",
                 "commentId": 13428158548,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "可以啊，",
                     "id": 52943349
@@ -455,8 +455,8 @@
                 "content": "东西很好，一分价钱一分货。",
                 "commentId": 13394075136,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "东西很好，一分价钱一分货。",
                     "id": 52264567
@@ -510,8 +510,8 @@
                 "content": "加水充气后用着很爽",
                 "commentId": 13388732163,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "加水充气后用着很爽",
                     "id": 52154364
@@ -566,8 +566,8 @@
                 "content": "666",
                 "commentId": 13375985694,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 51884976
@@ -622,8 +622,8 @@
                 "content": "可以呦",
                 "commentId": 13365164029,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "可以呦",
                     "id": 51657804
@@ -678,8 +678,8 @@
                 "content": "就很nice",
                 "commentId": 13357452936,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "就很nice",
                     "id": 51488613

@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -177,8 +177,8 @@
                 "content": "用着很舒服，过年一个人就靠她了，再也不用五指姑娘了??",
                 "commentId": 13750721278,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "用着很舒服，过年一个人就靠她了，再也不用五指姑娘了??",
                     "id": 59116026
@@ -231,8 +231,8 @@
                 "content": "666",
                 "commentId": 13750224892,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 59110160
@@ -285,8 +285,8 @@
                 "content": "干净材质很好，手感很好， 质量没得说，没有异味，用着很舒服外观很精美，用起来既舒服又方便，视觉、触觉全方位的刺激体验！",
                 "commentId": 13691607721,
                 "clientType": 1,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "干净材质很好，手感很好， 质量没得说，没有异味，用着很舒服外观很精美，用起来既舒服又方便，视觉、触觉全方位的刺激体验！",
                     "id": 58122678
@@ -339,8 +339,8 @@
                 "content": "漂亮大方，抚媚，材质柔软，模起来手感特别好，几乎和真人一样，刺激舒服，这一套起来正品特别的多，很满意。有螺纹，有小凸点，在那里夹吸着你的小弟弟，跟女人一样，很棒的工艺！我就看好你们的产品了！果然是一分价钱一分货啊，这个钱没有白花",
                 "commentId": 12312280182,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "漂亮大方，抚媚，材质柔软，模起来手感特别好，几乎和真人一样，刺激舒服，这一套起来正品特别的多，很满意。有螺纹，有小凸点，在那里夹吸着你的小弟弟，跟女人一样，很棒的工艺！我就看好你们的产品了！果然是一分价钱一分货啊，这个钱没有白花",
                     "id": 35944537
@@ -434,8 +434,8 @@
                 "content": "很好用",
                 "commentId": 13409198996,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好用",
                     "id": 52566116
@@ -487,8 +487,8 @@
                 "content": "666",
                 "commentId": 12075927797,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 33691833
@@ -543,8 +543,8 @@
                 "content": "很舒服",
                 "commentId": 13536957376,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很舒服",
                     "id": 55141440
@@ -599,8 +599,8 @@
                 "content": "用着很爽值得拥有",
                 "commentId": 13537798925,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "用着很爽值得拥有",
                     "id": 55159132
@@ -655,8 +655,8 @@
                 "content": "666",
                 "commentId": 13332016447,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 50903891

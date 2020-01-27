@@ -3,11 +3,11 @@
     "productCommentSummary": {
         "skuId": 100006154546,
         "averageScore": 5,
-        "defaultGoodCount": 25210,
+        "defaultGoodCount": 25209,
         "defaultGoodCountStr": "2.5万+",
-        "commentCount": 35516,
+        "commentCount": 35519,
         "commentCountStr": "3.5万+",
-        "goodCount": 10664,
+        "goodCount": 10668,
         "goodCountStr": "1万+",
         "goodRate": 0.92,
         "goodRateShow": 92,
@@ -40,7 +40,7 @@
         "score2Count": 138,
         "score3Count": 250,
         "score4Count": 206,
-        "score5Count": 9269
+        "score5Count": 9273
     },
     "hotCommentTagStatistics": [
         {
@@ -310,8 +310,8 @@
                 "content": "体验舒服，达到想要的效果，是男人的第二美梦。多介绍给朋友，放心购买。就是物体小了点，过段时间买个全身的体验。",
                 "commentId": 13402497491,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "体验舒服，达到想要的效果，是男人的第二美梦。多介绍给朋友，放心购买。就是物体小了点，过段时间买个全身的体验。",
                     "id": 52433651
@@ -342,7 +342,6 @@
             "id": 13227166400,
             "guid": "94d49be8-e4f5-452d-8f0e-79f7bda5d588",
             "content": "后庭真的很紧很舒服，触感不错，没有味道，一下子爽了好几次。就是有点重难把握，压在枕头上骑位搞很舒服",
-            "vcontent": "",
             "creationTime": "2019-09-15 15:40:37",
             "isDelete": false,
             "isTop": false,
@@ -351,14 +350,12 @@
             "replies": [],
             "replyCount": 5,
             "score": 5,
-            "title": "",
             "usefulVoteCount": 51,
             "userClient": 4,
             "anonymousFlag": 1,
             "plusAvailable": 0,
             "mobileVersion": "8.2.4",
             "productColor": "馒头外型",
-            "productSize": "",
             "textIntegral": 20,
             "status": 1,
             "referenceId": "100006154546",
@@ -520,8 +517,8 @@
                 "content": "好",
                 "commentId": 13340219946,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "好",
                     "id": 51111690
@@ -576,8 +573,8 @@
                 "content": "好",
                 "commentId": 13566135156,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "好",
                     "id": 55797569

@@ -3,11 +3,11 @@
     "productCommentSummary": {
         "skuId": 2900873,
         "averageScore": 5,
-        "defaultGoodCount": 35466,
+        "defaultGoodCount": 35464,
         "defaultGoodCountStr": "3.5万+",
-        "commentCount": 52992,
+        "commentCount": 52994,
         "commentCountStr": "5.2万+",
-        "goodCount": 22669,
+        "goodCount": 22673,
         "goodCountStr": "2.2万+",
         "goodRate": 0.92,
         "goodRateShow": 92,
@@ -40,7 +40,7 @@
         "score2Count": 302,
         "score3Count": 608,
         "score4Count": 549,
-        "score5Count": 15192
+        "score5Count": 15196
     },
     "hotCommentTagStatistics": [
         {
@@ -408,7 +408,6 @@
             "id": 13609155989,
             "guid": "9d2762e5-f2f8-4b6a-8ad7-d579825ca9b9",
             "content": "产品可以，分量足，好用，质量很好。",
-            "vcontent": "",
             "creationTime": "2019-12-16 15:37:47",
             "isDelete": false,
             "isTop": false,
@@ -416,14 +415,12 @@
             "topped": 0,
             "replyCount": 0,
             "score": 5,
-            "title": "",
             "usefulVoteCount": 1,
             "userClient": 4,
             "anonymousFlag": 1,
             "plusAvailable": 101,
             "mobileVersion": "8.4.1",
             "productColor": "逼真倒模5斤",
-            "productSize": "",
             "textIntegral": 20,
             "status": 1,
             "referenceId": "100004559041",

@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -180,8 +180,8 @@
                 "content": "666",
                 "commentId": 13118019259,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46973736
@@ -235,8 +235,8 @@
                 "content": "66666",
                 "commentId": 13112991051,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "66666",
                     "id": 46882053
@@ -290,8 +290,8 @@
                 "content": "上面下面做的跟真人一样，还会聊天说话。真的很不错",
                 "commentId": 13109317789,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "上面下面做的跟真人一样，还会聊天说话。真的很不错",
                     "id": 46826469
@@ -345,8 +345,8 @@
                 "content": "666",
                 "commentId": 13107754499,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46803850
@@ -400,8 +400,8 @@
                 "content": "666",
                 "commentId": 13106395736,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46808734
@@ -455,8 +455,8 @@
                 "content": "很舒服可以",
                 "commentId": 13102635564,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "很舒服可以",
                     "id": 46723255
@@ -510,8 +510,8 @@
                 "content": "用起来真的特别舒服啊?",
                 "commentId": 13103615691,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用起来真的特别舒服啊?",
                     "id": 46742923
@@ -565,8 +565,8 @@
                 "content": "666",
                 "commentId": 13102026191,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46715716
@@ -620,8 +620,8 @@
                 "content": "666",
                 "commentId": 13101964341,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46715534
@@ -672,8 +672,8 @@
                 "content": "用起来十分舒服，客服，服务十分到位",
                 "commentId": 13095871162,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用起来十分舒服，客服，服务十分到位",
                     "id": 46611773

@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -210,8 +210,8 @@
                 "content": "今天偷闲又使用两次，配上赠送的衣服更有韵味",
                 "commentId": 12332706491,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "今天偷闲又使用两次，配上赠送的衣服更有韵味",
                     "id": 36116295
@@ -265,8 +265,8 @@
                 "content": "很好，很满意，单身人士必备",
                 "commentId": 12319228784,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好，很满意，单身人士必备",
                     "id": 36003002
@@ -320,8 +320,8 @@
                 "content": "很好，非常不错",
                 "commentId": 12308547360,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好，非常不错",
                     "id": 35931560
@@ -375,8 +375,8 @@
                 "content": "好用",
                 "commentId": 12282670767,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "好用",
                     "id": 35678364
@@ -430,8 +430,8 @@
                 "content": "第一次买仿真的娃娃，真得搞得和真人一样，没有气味，容易清洗，做工又仔细，有肉感，非常喜欢，，",
                 "commentId": 12279644855,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "第一次买仿真的娃娃，真得搞得和真人一样，没有气味，容易清洗，做工又仔细，有肉感，非常喜欢，，",
                     "id": 35654000
@@ -485,8 +485,8 @@
                 "content": "娃娃很棒，和客服发的图片差不多，质量相当可靠用着很放心，非常满 意，很棒的宝贝哦，有了她，总算是解决了一件事。没啥的。很棒，就 不多说了。反正是爽到了。每个细节处理都很到位，试了试好舒服的， 效果很好，很软很有感觉，感觉 很软很真实",
                 "commentId": 12278254619,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "娃娃很棒，和客服发的图片差不多，质量相当可靠用着很放心，非常满 意，很棒的宝贝哦，有了她，总算是解决了一件事。没啥的。很棒，就 不多说了。反正是爽到了。每个细节处理都很到位，试了试好舒服的， 效果很好，很软很有感觉，感觉 很软很真实",
                     "id": 35641693
@@ -540,8 +540,8 @@
                 "content": "娃面盆和我家的台面很搭配，非常喜欢，谢谢店家的推荐娃是仿真人设 计的，没有让我失望，真心不错。颜值很高，按摩的我的大非常的舒服 ，非常的有感觉，玩起来很有真是的感觉，非常棒的效果，玩得没多久 就@了，*的好深，好多，全身心都很满足。质量非常的可靠，品质感觉 都挺好，客服态度很好，材质柔软，值得购买。",
                 "commentId": 12279384072,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "娃面盆和我家的台面很搭配，非常喜欢，谢谢店家的推荐娃是仿真人设 计的，没有让我失望，真心不错。颜值很高，按摩的我的大非常的舒服 ，非常的有感觉，玩起来很有真是的感觉，非常棒的效果，玩得没多久 就@了，*的好深，好多，全身心都很满足。质量非常的可靠，品质感觉 都挺好，客服态度很好，材质柔软，值得购买。",
                     "id": 35650023
@@ -594,8 +594,8 @@
                 "content": "66666",
                 "commentId": 13751131333,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "66666",
                     "id": 59123245
@@ -648,8 +648,8 @@
                 "content": "666",
                 "commentId": 13749867673,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 59104258
@@ -702,8 +702,8 @@
                 "content": "666",
                 "commentId": 13750378334,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 59111846

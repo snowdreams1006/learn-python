@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -178,8 +178,8 @@
                 "content": "做工不错，手感不错，还没来得及试用，晚上再试用",
                 "commentId": 13341889049,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "做工不错，手感不错，还没来得及试用，晚上再试用",
                     "id": 51153287
@@ -234,8 +234,8 @@
                 "content": "666",
                 "commentId": 13332970467,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 50925884
@@ -290,8 +290,8 @@
                 "content": "666真的不错",
                 "commentId": 13325293676,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666真的不错",
                     "id": 50667656
@@ -345,8 +345,8 @@
                 "content": "666",
                 "commentId": 13317189092,
                 "clientType": 1,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 50421379
@@ -401,8 +401,8 @@
                 "content": "666！！",
                 "commentId": 13310509059,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666！！",
                     "id": 50152026
@@ -457,8 +457,8 @@
                 "content": "666",
                 "commentId": 13309760320,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 50136358
@@ -510,8 +510,8 @@
                 "content": "非常的好  用的也舒服",
                 "commentId": 11805681033,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "非常的好  用的也舒服",
                     "id": 30953078
@@ -566,8 +566,8 @@
                 "content": "好！",
                 "commentId": 13292387854,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "好！",
                     "id": 49807251
@@ -622,8 +622,8 @@
                 "content": "第一次购买这种商品，心里斗争了很久，看了很多评价，心里一直再打鼓，鼓舞勇气就打算扔掉的心态，没想到啊这商品这么好，真是高兴，有需要的朋友们就尽快下手吧，快乐属于你。@就在你眼前，不要错过哦。",
                 "commentId": 13289701920,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "第一次购买这种商品，心里斗争了很久，看了很多评价，心里一直再打鼓，鼓舞勇气就打算扔掉的心态，没想到啊这商品这么好，真是高兴，有需要的朋友们就尽快下手吧，快乐属于你。@就在你眼前，不要错过哦。",
                     "id": 49756179
@@ -678,8 +678,8 @@
                 "content": "很好用  很舒服  送的东西很多  喜欢极了",
                 "commentId": 13288588791,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好用  很舒服  送的东西很多  喜欢极了",
                     "id": 49738404

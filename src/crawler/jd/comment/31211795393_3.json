@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -178,8 +178,8 @@
                 "content": "昨晚又试了一下，非常棒，很喜欢！",
                 "commentId": 11910527253,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "昨晚又试了一下，非常棒，很喜欢！",
                     "id": 32063172
@@ -233,8 +233,8 @@
                 "content": "送的资源没用",
                 "commentId": 11620672697,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "送的资源没用",
                     "id": 29023344
@@ -288,8 +288,8 @@
                 "content": "很逼真，nice",
                 "commentId": 12466175180,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "很逼真，nice",
                     "id": 37377549
@@ -343,8 +343,8 @@
                 "content": "今天追加一下。非常好用的一次。感谢厂商的制作。下次还会在买。",
                 "commentId": 12307988000,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "今天追加一下。非常好用的一次。感谢厂商的制作。下次还会在买。",
                     "id": 35918233
@@ -398,8 +398,8 @@
                 "content": "太好了",
                 "commentId": 12452427414,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "太好了",
                     "id": 37205910
@@ -453,8 +453,8 @@
                 "content": "商家想得真周到！服务态度也挺好！一般问题客服马上帮我回答！我觉得京东购物挺放心的！包装商家也是够用心的了，里三层外三层的，根本看不出来里面是什么，客服和快递员服务态度都很棒，客服有问必答，态度也很好。资源很过瘾，老铁们有需要的抓紧@。赠品超多，光衣服就好多套，超值。",
                 "commentId": 11933252286,
                 "clientType": 1,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "商家想得真周到！服务态度也挺好！一般问题客服马上帮我回答！我觉得京东购物挺放心的！包装商家也是够用心的了，里三层外三层的，根本看不出来里面是什么，客服和快递员服务态度都很棒，客服有问必答，态度也很好。资源很过瘾，老铁们有需要的抓紧@。赠品超多，光衣服就好多套，超值。",
                     "id": 32284782
@@ -508,8 +508,8 @@
                 "content": "用后真的很爽，非常满意..客服还送了很多实用的东西",
                 "commentId": 12769798034,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用后真的很爽，非常满意..客服还送了很多实用的东西",
                     "id": 41733971
@@ -563,8 +563,8 @@
                 "content": "不错，很逼真，逼真狠",
                 "commentId": 12293973175,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "不错，很逼真，逼真狠",
                     "id": 35780828
@@ -617,8 +617,8 @@
                 "content": "服务态度特别好，随时问随时答！就是有一点不好姿势不能调整",
                 "commentId": 12013959794,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "服务态度特别好，随时问随时答！就是有一点不好姿势不能调整",
                     "id": 33078699
@@ -672,8 +672,8 @@
                 "content": "娃娃很好用",
                 "commentId": 12248980433,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "娃娃很好用",
                     "id": 35389245

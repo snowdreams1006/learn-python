@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -599,14 +599,12 @@
             "replies": [],
             "replyCount": 1,
             "score": 5,
-            "title": "",
             "usefulVoteCount": 1,
             "userClient": 4,
             "anonymousFlag": 1,
             "plusAvailable": 103,
             "mobileVersion": "",
             "productColor": "小美-任意姿+智能感应互动+真人体温+初用设计",
-            "productSize": "",
             "textIntegral": 20,
             "afterUserComment": {
                 "id": 57420714,

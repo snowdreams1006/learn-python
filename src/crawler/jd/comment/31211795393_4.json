@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -180,8 +180,8 @@
                 "content": "挺好的666",
                 "commentId": 13115241501,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "挺好的666",
                     "id": 46931141
@@ -234,8 +234,8 @@
                 "content": "第一次买娃娃，前天一收到货就爽快了下。简单爽歪歪。",
                 "commentId": 12721936067,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "第一次买娃娃，前天一收到货就爽快了下。简单爽歪歪。",
                     "id": 41024419
@@ -288,8 +288,8 @@
                 "content": "舒服的不要不要的，下次还买",
                 "commentId": 12638881351,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "舒服的不要不要的，下次还买",
                     "id": 39772535
@@ -343,8 +343,8 @@
                 "content": "真的很不错，已经试过了，感觉很好，很好用！",
                 "commentId": 11923248412,
                 "clientType": 1,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "真的很不错，已经试过了，感觉很好，很好用！",
                     "id": 32180059
@@ -398,8 +398,8 @@
                 "content": "666",
                 "commentId": 11870529768,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 31650912
@@ -454,8 +454,8 @@
                 "content": "666",
                 "commentId": 13189175968,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 48102753
@@ -510,8 +510,8 @@
                 "content": "使用感觉很好，挺真实的，脸部挺精致",
                 "commentId": 13106541424,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "使用感觉很好，挺真实的，脸部挺精致",
                     "id": 46786375
@@ -565,8 +565,8 @@
                 "content": "体验一下，非常舒服",
                 "commentId": 12780924095,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "体验一下，非常舒服",
                     "id": 41901131
@@ -620,8 +620,8 @@
                 "content": "娃娃不错物流也很快一天就到",
                 "commentId": 13146779490,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "娃娃不错物流也很快一天就到",
                     "id": 47443622
@@ -674,8 +674,8 @@
                 "content": "娃娃很好",
                 "commentId": 13013253708,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "娃娃很好",
                     "id": 45306542

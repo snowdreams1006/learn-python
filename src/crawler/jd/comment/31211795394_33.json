@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -210,8 +210,8 @@
                 "content": "刚刚使用过过，体验还不错，任你处置，简直酣畅淋漓。哈哈哈",
                 "commentId": 13003102645,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "刚刚使用过过，体验还不错，任你处置，简直酣畅淋漓。哈哈哈",
                     "id": 45154924
@@ -265,8 +265,8 @@
                 "content": "娃娃真爽，一用就干了三次，很满足，！",
                 "commentId": 12976024536,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "娃娃真爽，一用就干了三次，很满足，！",
                     "id": 44738010
@@ -320,8 +320,8 @@
                 "content": "666",
                 "commentId": 12912741492,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 43791486
@@ -375,8 +375,8 @@
                 "content": "666",
                 "commentId": 12869697223,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 43184384
@@ -430,8 +430,8 @@
                 "content": "东西真的很舒服，强力推荐，性价比很高",
                 "commentId": 12789006369,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "东西真的很舒服，强力推荐，性价比很高",
                     "id": 42020909
@@ -485,8 +485,8 @@
                 "content": "6",
                 "commentId": 12775181847,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "6",
                     "id": 41814417
@@ -540,8 +540,8 @@
                 "content": "没有对比就没有伤害，非常好",
                 "commentId": 12648614781,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "没有对比就没有伤害，非常好",
                     "id": 39920437
@@ -595,8 +595,8 @@
                 "content": "店家服务真是周到，又费心告诉了操作规程，注意事项，还是东西好",
                 "commentId": 12638457830,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "店家服务真是周到，又费心告诉了操作规程，注意事项，还是东西好",
                     "id": 39767549
@@ -648,8 +648,8 @@
                 "content": "很好，赠品也多",
                 "commentId": 12622392870,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好，赠品也多",
                     "id": 39533983
@@ -701,8 +701,8 @@
                 "content": "666",
                 "commentId": 12622246384,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 39532854

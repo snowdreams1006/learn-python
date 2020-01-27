@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -209,8 +209,8 @@
                 "content": "质量很好，还跟卫生，送货速度也很快",
                 "commentId": 12720811443,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "质量很好，还跟卫生，送货速度也很快",
                     "id": 41003863
@@ -263,8 +263,8 @@
                 "content": "用过之后很满意。",
                 "commentId": 12682812768,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用过之后很满意。",
                     "id": 40444452
@@ -317,8 +317,8 @@
                 "content": "娃娃很好，物流快，服务态度好！值得信赖！",
                 "commentId": 12675211914,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "娃娃很好，物流快，服务态度好！值得信赖！",
                     "id": 40333396
@@ -371,8 +371,8 @@
                 "content": "666",
                 "commentId": 12618933771,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 39486491
@@ -425,8 +425,8 @@
                 "content": "6666",
                 "commentId": 12613054327,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "6666",
                     "id": 39419836
@@ -479,8 +479,8 @@
                 "content": "很真实，用着还不错。给你们个赞。",
                 "commentId": 12585407443,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "很真实，用着还不错。给你们个赞。",
                     "id": 39003900
@@ -533,8 +533,8 @@
                 "content": "真的不错很舒服很爽，很不错的购物体验！",
                 "commentId": 12577000516,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "真的不错很舒服很爽，很不错的购物体验！",
                     "id": 38949924
@@ -587,8 +587,8 @@
                 "content": "用了一次，感觉和真人一样，不过这个可以为所欲为，各种姿势换着来",
                 "commentId": 12535308532,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用了一次，感觉和真人一样，不过这个可以为所欲为，各种姿势换着来",
                     "id": 38313662
@@ -641,8 +641,8 @@
                 "content": "特别爽，比五姑娘舒服多了。????",
                 "commentId": 12533182386,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "特别爽，比五姑娘舒服多了。????",
                     "id": 38340597
@@ -695,8 +695,8 @@
                 "content": "商家服务态度好，物留快",
                 "commentId": 12514833671,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "商家服务态度好，物留快",
                     "id": 38039193

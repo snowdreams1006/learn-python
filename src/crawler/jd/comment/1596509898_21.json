@@ -120,8 +120,8 @@
                 "content": "建议大家试试",
                 "commentId": 13389170872,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "建议大家试试",
                     "id": 52166922
@@ -159,12 +159,14 @@
             "topped": 0,
             "replyCount": 0,
             "score": 5,
+            "title": "",
             "usefulVoteCount": 0,
             "userClient": 2,
             "anonymousFlag": 1,
             "plusAvailable": 203,
             "mobileVersion": "7.5.2",
             "productColor": "升级VR豪华款全功能五交自动夹吸任意姿真人呻吟",
+            "productSize": "",
             "textIntegral": 0,
             "afterUserComment": {
                 "id": 41628824,
@@ -172,8 +174,8 @@
                 "content": "还不错，质量好",
                 "commentId": 12763078076,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "还不错，质量好",
                     "id": 41628824
@@ -229,8 +231,8 @@
                 "content": "除了送的东西不能用除外，其他都还好。",
                 "commentId": 10616301266,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "除了送的东西不能用除外，其他都还好。",
                     "id": 17063192
@@ -268,6 +270,7 @@
             "topped": -1,
             "replyCount": 0,
             "score": 5,
+            "title": "",
             "usefulVoteCount": 2,
             "userClient": 4,
             "discussionId": 127665625,
@@ -276,6 +279,7 @@
             "mobileVersion": "",
             "mergeOrderStatus": -2,
             "productColor": "款式一销魂口交站姿",
+            "productSize": "",
             "textIntegral": 20,
             "status": 1,
             "referenceId": "1574234346",

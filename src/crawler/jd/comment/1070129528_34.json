@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -210,8 +210,8 @@
                 "content": "买回来就用了，还是很自由了，爱不释手啊",
                 "commentId": 12561794773,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "买回来就用了，还是很自由了，爱不释手啊",
                     "id": 38688917
@@ -265,8 +265,8 @@
                 "content": "用了，真的是特别的刺激，超级爽，满足",
                 "commentId": 12554277244,
                 "clientType": 1,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用了，真的是特别的刺激，超级爽，满足",
                     "id": 38579355
@@ -320,8 +320,8 @@
                 "content": "用几天来个追评，相当不错，商家良心。",
                 "commentId": 12531121638,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用几天来个追评，相当不错，商家良心。",
                     "id": 38254356
@@ -375,8 +375,8 @@
                 "content": "物超所值，经济实惠",
                 "commentId": 12499396393,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "物超所值，经济实惠",
                     "id": 37840320
@@ -430,8 +430,8 @@
                 "content": "简直是太棒了~感觉很不错~",
                 "commentId": 12483104205,
                 "clientType": 1,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "简直是太棒了~感觉很不错~",
                     "id": 37620734
@@ -483,8 +483,8 @@
                 "content": "摸着手感真舒服，像真人一样的",
                 "commentId": 12480052778,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "摸着手感真舒服，像真人一样的",
                     "id": 37583988
@@ -538,8 +538,8 @@
                 "content": "娃娃做得像真人一样，送的东西也很不错",
                 "commentId": 12459844156,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "娃娃做得像真人一样，送的东西也很不错",
                     "id": 37298638
@@ -593,8 +593,8 @@
                 "content": "舒服质量杠杠的",
                 "commentId": 12425304828,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "舒服质量杠杠的",
                     "id": 36946405
@@ -648,8 +648,8 @@
                 "content": "是真的非常好用啊，前所未有的快感。",
                 "commentId": 12423198669,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "是真的非常好用啊，前所未有的快感。",
                     "id": 36932571
@@ -703,8 +703,8 @@
                 "content": "很不错吆",
                 "commentId": 12402688286,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "很不错吆",
                     "id": 36744385

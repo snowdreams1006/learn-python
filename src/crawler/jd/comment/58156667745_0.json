@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 140,
         "defaultGoodCountStr": "100+",
-        "commentCount": 431,
+        "commentCount": 432,
         "commentCountStr": "400+",
-        "goodCount": 285,
+        "goodCount": 286,
         "goodCountStr": "200+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -40,7 +40,7 @@
         "score2Count": 1,
         "score3Count": 2,
         "score4Count": 0,
-        "score5Count": 285
+        "score5Count": 286
     },
     "hotCommentTagStatistics": [
         {
@@ -170,8 +170,8 @@
                 "content": "宝贝跟图片看起来一样很漂亮,看过视频 ，做工精致,质量真的很好,材质也是很棒,没有什么特别的异味，很精致，价格特实惠，隐私保护工作做的很好",
                 "commentId": 13633283146,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "宝贝跟图片看起来一样很漂亮,看过视频 ，做工精致,质量真的很好,材质也是很棒,没有什么特别的异味，很精致，价格特实惠，隐私保护工作做的很好",
                     "id": 57013001
@@ -224,8 +224,8 @@
                 "content": "这个很好，结构肉感还算跟的上女人，舒服和女人差不多，特别是刚插入的感觉 皮肤细腻，做工也挺精致的，很真，不错 质量可以，里面是金属框架，材料也扎实",
                 "commentId": 13660215241,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "这个很好，结构肉感还算跟的上女人，舒服和女人差不多，特别是刚插入的感觉 皮肤细腻，做工也挺精致的，很真，不错 质量可以，里面是金属框架，材料也扎实",
                     "id": 57761484

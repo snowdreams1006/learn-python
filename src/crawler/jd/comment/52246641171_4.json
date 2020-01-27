@@ -3,12 +3,12 @@
     "productCommentSummary": {
         "skuId": 52246641171,
         "averageScore": 5,
-        "defaultGoodCount": 3232,
+        "defaultGoodCount": 3228,
         "defaultGoodCountStr": "3200+",
-        "commentCount": 9458,
+        "commentCount": 9473,
         "commentCountStr": "9400+",
-        "goodCount": 6186,
-        "goodCountStr": "6100+",
+        "goodCount": 6205,
+        "goodCountStr": "6200+",
         "goodRate": 0.99,
         "goodRateShow": 99,
         "generalCount": 21,
@@ -40,7 +40,7 @@
         "score2Count": 4,
         "score3Count": 17,
         "score4Count": 36,
-        "score5Count": 6150
+        "score5Count": 6169
     },
     "hotCommentTagStatistics": [
         {
@@ -189,8 +189,8 @@
                 "content": "很好很好很好很好很好很好很好很好很好很好很好很好很好很好很好很好",
                 "commentId": 13260468188,
                 "clientType": 1,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "很好很好很好很好很好很好很好很好很好很好很好很好很好很好很好很好",
                     "id": 49240122
@@ -244,8 +244,8 @@
                 "content": "这个太好玩了呀！以后离不开她了，插在里面真的刺激，感觉包裹的弟弟真的很紧很舒，特别享受，超级舒服，性价比也挺高的，包裹不错，避免了签收快递的尴尬了满意。",
                 "commentId": 13228024741,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "这个太好玩了呀！以后离不开她了，插在里面真的刺激，感觉包裹的弟弟真的很紧很舒，特别享受，超级舒服，性价比也挺高的，包裹不错，避免了签收快递的尴尬了满意。",
                     "id": 48713364
@@ -299,8 +299,8 @@
                 "content": "爽歪歪&hellip;&hellip;",
                 "commentId": 13141362447,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "爽歪歪&hellip;&hellip;",
                     "id": 47357325
@@ -354,8 +354,8 @@
                 "content": "下单时还挺期待的，收到快递有点小激动，马上拿出来试了试，好舒服，材质也不错，做工也很好，玩起来很舒服，很有感觉，非常享受。",
                 "commentId": 13093746084,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "下单时还挺期待的，收到快递有点小激动，马上拿出来试了试，好舒服，材质也不错，做工也很好，玩起来很舒服，很有感觉，非常享受。",
                     "id": 49701631

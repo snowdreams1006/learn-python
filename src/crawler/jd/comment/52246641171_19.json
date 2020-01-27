@@ -3,12 +3,12 @@
     "productCommentSummary": {
         "skuId": 52246641171,
         "averageScore": 5,
-        "defaultGoodCount": 3232,
+        "defaultGoodCount": 3228,
         "defaultGoodCountStr": "3200+",
-        "commentCount": 9458,
+        "commentCount": 9473,
         "commentCountStr": "9400+",
-        "goodCount": 6186,
-        "goodCountStr": "6100+",
+        "goodCount": 6205,
+        "goodCountStr": "6200+",
         "goodRate": 0.99,
         "goodRateShow": 99,
         "generalCount": 21,
@@ -40,7 +40,7 @@
         "score2Count": 4,
         "score3Count": 17,
         "score4Count": 36,
-        "score5Count": 6150
+        "score5Count": 6169
     },
     "hotCommentTagStatistics": [
         {

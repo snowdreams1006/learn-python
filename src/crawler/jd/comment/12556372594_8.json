@@ -476,8 +476,8 @@
                 "content": "还可以",
                 "commentId": 11964102117,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "还可以",
                     "id": 32592362
@@ -515,14 +515,12 @@
             "topped": 0,
             "replyCount": 0,
             "score": 5,
-            "title": "",
             "usefulVoteCount": 9,
             "userClient": 2,
             "anonymousFlag": 1,
             "plusAvailable": 201,
             "mobileVersion": "7.1.2",
             "productColor": "基础版中号翘臀玉女",
-            "productSize": "",
             "textIntegral": 10,
             "status": 1,
             "referenceId": "12556372594",
@@ -568,8 +566,8 @@
                 "content": "昨晚特意试了一下，可以模拟真实人体温，很舒服",
                 "commentId": 11678310806,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "昨晚特意试了一下，可以模拟真实人体温，很舒服",
                     "id": 29624736

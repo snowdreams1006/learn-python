@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -209,8 +209,8 @@
                 "content": "体验很舒服，大赞",
                 "commentId": 12478413917,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "体验很舒服，大赞",
                     "id": 37561653
@@ -265,8 +265,8 @@
                 "content": "非常差，差点让人难以置信，客服也差，物品漏水，灰尘，我都怀疑是别人用过的，骗我评分最高分，说我给全额退款，结果只反二十购物券",
                 "commentId": 13506444630,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "非常差，差点让人难以置信，客服也差，物品漏水，灰尘，我都怀疑是别人用过的，骗我评分最高分，说我给全额退款，结果只反二十购物券",
                     "id": 54534041
@@ -321,8 +321,8 @@
                 "content": "666",
                 "commentId": 13494964252,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 54218581
@@ -377,8 +377,8 @@
                 "content": "666",
                 "commentId": 13473807829,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 53782612
@@ -431,8 +431,8 @@
                 "content": "用过之后，流连忘返，",
                 "commentId": 12342394639,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "用过之后，流连忘返，",
                     "id": 36195400
@@ -485,8 +485,8 @@
                 "content": "宝贝很好，充好气挺软挺大手感也不错",
                 "commentId": 12315886301,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "宝贝很好，充好气挺软挺大手感也不错",
                     "id": 35978600
@@ -541,8 +541,8 @@
                 "content": "很不错值得入手",
                 "commentId": 13355913270,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很不错值得入手",
                     "id": 51458497
@@ -596,8 +596,8 @@
                 "content": "好用",
                 "commentId": 11867613608,
                 "clientType": 1,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "好用",
                     "id": 31623803
@@ -651,8 +651,8 @@
                 "content": "666",
                 "commentId": 13264641936,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 49317317
@@ -706,8 +706,8 @@
                 "content": "做工非常好没有瑕疵",
                 "commentId": 12736951633,
                 "clientType": 1,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "做工非常好没有瑕疵",
                     "id": 41241590

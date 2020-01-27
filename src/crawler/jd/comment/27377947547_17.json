@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -180,8 +180,8 @@
                 "content": "666",
                 "commentId": 13096313513,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46618225
@@ -235,8 +235,8 @@
                 "content": "666",
                 "commentId": 13094579931,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46589590
@@ -290,8 +290,8 @@
                 "content": "体验真实，值得购买",
                 "commentId": 13094923108,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "体验真实，值得购买",
                     "id": 46598092
@@ -345,8 +345,8 @@
                 "content": "值得拥有哦，适合单身男青年",
                 "commentId": 13089627291,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "值得拥有哦，适合单身男青年",
                     "id": 46510809
@@ -400,8 +400,8 @@
                 "content": "东西很好用，手感不错，大力推荐，下次还在这里买，比心",
                 "commentId": 13086296698,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "东西很好用，手感不错，大力推荐，下次还在这里买，比心",
                     "id": 46463328
@@ -455,8 +455,8 @@
                 "content": "非常好，用用着非常爽。",
                 "commentId": 13087150162,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "非常好，用用着非常爽。",
                     "id": 46477134
@@ -510,8 +510,8 @@
                 "content": "使用的起来很有feel，想再次购买，换个风格",
                 "commentId": 13083730070,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "使用的起来很有feel，想再次购买，换个风格",
                     "id": 46426186
@@ -565,8 +565,8 @@
                 "content": "把娃娃穿上性感的衣服，马上就有想干一炮的冲动了，足足干了半个多小时，起满足，心灵得到了释放！",
                 "commentId": 13083174414,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "把娃娃穿上性感的衣服，马上就有想干一炮的冲动了，足足干了半个多小时，起满足，心灵得到了释放！",
                     "id": 46415514
@@ -617,8 +617,8 @@
                 "content": "很真实",
                 "commentId": 13083842063,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "很真实",
                     "id": 46426819
@@ -672,8 +672,8 @@
                 "content": "舒服",
                 "commentId": 13079528356,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "舒服",
                     "id": 46356267

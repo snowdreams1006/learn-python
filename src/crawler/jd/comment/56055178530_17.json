@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 16811,
         "defaultGoodCountStr": "1.6万+",
-        "commentCount": 39417,
+        "commentCount": 39419,
         "commentCountStr": "3.9万+",
-        "goodCount": 27572,
+        "goodCount": 27574,
         "goodCountStr": "2.7万+",
         "goodRate": 0.94,
         "goodRateShow": 94,
@@ -40,7 +40,7 @@
         "score2Count": 251,
         "score3Count": 404,
         "score4Count": 311,
-        "score5Count": 20715
+        "score5Count": 20717
     },
     "hotCommentTagStatistics": [
         {
@@ -218,8 +218,8 @@
                 "content": "东西不错下次继续合作愉快",
                 "commentId": 12206002760,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "东西不错下次继续合作愉快",
                     "id": 34975659
@@ -272,8 +272,8 @@
                 "content": "娃娃很不错，比我想象的要好看，特别喜欢，客服态度很好，支持",
                 "commentId": 12071375867,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "娃娃很不错，比我想象的要好看，特别喜欢，客服态度很好，支持",
                     "id": 33682185
@@ -326,8 +326,8 @@
                 "content": "哼哼唧唧哈哈哈好很好",
                 "commentId": 11965650848,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "哼哼唧唧哈哈哈好很好",
                     "id": 32608704
@@ -380,8 +380,8 @@
                 "content": "很赞",
                 "commentId": 11726368495,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很赞",
                     "id": 30117227

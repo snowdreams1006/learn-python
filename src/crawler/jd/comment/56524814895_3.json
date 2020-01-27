@@ -3,11 +3,11 @@
     "productCommentSummary": {
         "skuId": 56524814895,
         "averageScore": 5,
-        "defaultGoodCount": 1970,
+        "defaultGoodCount": 1969,
         "defaultGoodCountStr": "1900+",
-        "commentCount": 3381,
+        "commentCount": 3383,
         "commentCountStr": "3300+",
-        "goodCount": 1327,
+        "goodCount": 1330,
         "goodCountStr": "1300+",
         "goodRate": 0.94,
         "goodRateShow": 94,
@@ -40,7 +40,7 @@
         "score2Count": 15,
         "score3Count": 22,
         "score4Count": 14,
-        "score5Count": 1313
+        "score5Count": 1316
     },
     "hotCommentTagStatistics": [
         {
@@ -442,7 +442,6 @@
             "id": 13472995542,
             "guid": "9baacdbd-8bd1-4967-a974-a4d8fe1d5100",
             "content": "质量好，好用，真舒服像真的一样，以后不用总是回家找老婆了",
-            "vcontent": "",
             "creationTime": "2019-11-15 18:34:02",
             "isDelete": false,
             "isTop": false,
@@ -450,14 +449,12 @@
             "topped": 0,
             "replyCount": 0,
             "score": 5,
-            "title": "",
             "usefulVoteCount": 0,
             "userClient": 4,
             "anonymousFlag": 1,
             "plusAvailable": 0,
             "mobileVersion": "7.4.4",
             "productColor": "（促销价）小情人 +润滑油*5+避孕套*5",
-            "productSize": "",
             "textIntegral": 0,
             "afterUserComment": {
                 "id": 53768426,

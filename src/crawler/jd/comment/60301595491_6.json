@@ -178,8 +178,8 @@
                 "content": "&hellip;&hellip;&hellip;&hellip;",
                 "commentId": 12161730811,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "&hellip;&hellip;&hellip;&hellip;",
                     "id": 34540525
@@ -233,8 +233,8 @@
                 "content": "客服是小仙女哟",
                 "commentId": 11783001954,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "客服是小仙女哟",
                     "id": 30705928
@@ -518,8 +518,8 @@
                 "content": "给资料保密点个赞。隐私做得很好。",
                 "commentId": 12163026967,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "给资料保密点个赞。隐私做得很好。",
                     "id": 34548154

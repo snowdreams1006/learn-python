@@ -3,11 +3,11 @@
     "productCommentSummary": {
         "skuId": 12520305481,
         "averageScore": 5,
-        "defaultGoodCount": 1974,
+        "defaultGoodCount": 1972,
         "defaultGoodCountStr": "1900+",
         "commentCount": 9229,
         "commentCountStr": "9200+",
-        "goodCount": 8295,
+        "goodCount": 8297,
         "goodCountStr": "8200+",
         "goodRate": 0.99,
         "goodRateShow": 99,
@@ -40,7 +40,7 @@
         "score2Count": 1,
         "score3Count": 7,
         "score4Count": 45,
-        "score5Count": 7191
+        "score5Count": 7193
     },
     "hotCommentTagStatistics": [
         {

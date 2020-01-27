@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 16811,
         "defaultGoodCountStr": "1.6万+",
-        "commentCount": 39417,
+        "commentCount": 39419,
         "commentCountStr": "3.9万+",
-        "goodCount": 27572,
+        "goodCount": 27574,
         "goodCountStr": "2.7万+",
         "goodRate": 0.94,
         "goodRateShow": 94,
@@ -40,7 +40,7 @@
         "score2Count": 251,
         "score3Count": 404,
         "score4Count": 311,
-        "score5Count": 20715
+        "score5Count": 20717
     },
     "hotCommentTagStatistics": [
         {
@@ -209,8 +209,8 @@
                 "content": "智能款娃娃非常好，久爱说这个是他们最新研发出来的，介绍的时候说还能连接VR眼镜，智能对话也试了一下，真的还可以聊天说话，还是声控，我说一句命令，她就回答互动的非常完美，太真！",
                 "commentId": 12625636294,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "智能款娃娃非常好，久爱说这个是他们最新研发出来的，介绍的时候说还能连接VR眼镜，智能对话也试了一下，真的还可以聊天说话，还是声控，我说一句命令，她就回答互动的非常完美，太真！",
                     "id": 39586230
@@ -263,8 +263,8 @@
                 "content": "前凸后翘的太性感了，是硅胶做的胸部很柔软手感很好，服务很好，也送了一大堆礼包，发货快保密做的很到位，真实评价，可以放心购买",
                 "commentId": 12622889514,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "前凸后翘的太性感了，是硅胶做的胸部很柔软手感很好，服务很好，也送了一大堆礼包，发货快保密做的很到位，真实评价，可以放心购买",
                     "id": 39540807
@@ -317,8 +317,8 @@
                 "content": "掌柜的很给力，早上下了订单，下午就收到了，质量非常好，摸的有质感!",
                 "commentId": 12450425058,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "掌柜的很给力，早上下了订单，下午就收到了，质量非常好，摸的有质感!",
                     "id": 37177316

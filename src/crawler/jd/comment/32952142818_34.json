@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 3560,
         "defaultGoodCountStr": "3500+",
-        "commentCount": 6136,
+        "commentCount": 6137,
         "commentCountStr": "6100+",
-        "goodCount": 3344,
+        "goodCount": 3345,
         "goodCountStr": "3300+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -40,7 +40,7 @@
         "score2Count": 11,
         "score3Count": 34,
         "score4Count": 24,
-        "score5Count": 2479
+        "score5Count": 2480
     },
     "hotCommentTagStatistics": [
         {
@@ -443,6 +443,7 @@
             "id": 13644936182,
             "guid": "31f9b2b0-c7b3-4fd1-b50c-03107f7dbe20",
             "content": "好用，舒服，你懂",
+            "vcontent": "",
             "creationTime": "2019-12-25 14:55:18",
             "isDelete": false,
             "isTop": false,
@@ -450,12 +451,14 @@
             "topped": 0,
             "replyCount": 0,
             "score": 5,
+            "title": "",
             "usefulVoteCount": 0,
             "userClient": 2,
             "anonymousFlag": 1,
             "plusAvailable": 0,
             "mobileVersion": "8.2.6",
             "productColor": "温柔姐姐（舌舔+口/阴双通+加热+双震）",
+            "productSize": "",
             "textIntegral": 0,
             "status": 1,
             "referenceId": "32952142818",

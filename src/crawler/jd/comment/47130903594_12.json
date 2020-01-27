@@ -318,8 +318,8 @@
                 "content": "11111",
                 "commentId": 12775667334,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "11111",
                     "id": 42054758

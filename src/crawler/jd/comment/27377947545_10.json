@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -180,8 +180,8 @@
                 "content": "666非常喜欢，值得拥有！",
                 "commentId": 12678065597,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666非常喜欢，值得拥有！",
                     "id": 40372941
@@ -235,8 +235,8 @@
                 "content": "关于vr的资源我想说的是，真差",
                 "commentId": 11528542962,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "关于vr的资源我想说的是，真差",
                     "id": 27968788
@@ -287,8 +287,8 @@
                 "content": "用过之后感觉很好，忒别是语音，非常好！！！！",
                 "commentId": 12057584324,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用过之后感觉很好，忒别是语音，非常好！！！！",
                     "id": 33520216
@@ -342,8 +342,8 @@
                 "content": "很好用",
                 "commentId": 12430941147,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "很好用",
                     "id": 36998658
@@ -397,8 +397,8 @@
                 "content": "物有所值太棒了！值得信赖",
                 "commentId": 12286423901,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "物有所值太棒了！值得信赖",
                     "id": 35716918
@@ -452,8 +452,8 @@
                 "content": "非常棒的一次购物",
                 "commentId": 11827921420,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "非常棒的一次购物",
                     "id": 31232728
@@ -506,8 +506,8 @@
                 "content": "外观颜色都没有色差还，店家服务好，",
                 "commentId": 13753807504,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "外观颜色都没有色差还，店家服务好，",
                     "id": 59166521
@@ -560,8 +560,8 @@
                 "content": "666",
                 "commentId": 13738534129,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 58926111
@@ -614,8 +614,8 @@
                 "content": "666",
                 "commentId": 13735296484,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 58873739
@@ -669,8 +669,8 @@
                 "content": "666",
                 "commentId": 13628783567,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 56920799

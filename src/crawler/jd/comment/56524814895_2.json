@@ -3,11 +3,11 @@
     "productCommentSummary": {
         "skuId": 56524814895,
         "averageScore": 5,
-        "defaultGoodCount": 1970,
+        "defaultGoodCount": 1969,
         "defaultGoodCountStr": "1900+",
-        "commentCount": 3381,
+        "commentCount": 3383,
         "commentCountStr": "3300+",
-        "goodCount": 1327,
+        "goodCount": 1330,
         "goodCountStr": "1300+",
         "goodRate": 0.94,
         "goodRateShow": 94,
@@ -40,7 +40,7 @@
         "score2Count": 15,
         "score3Count": 22,
         "score4Count": 14,
-        "score5Count": 1313
+        "score5Count": 1316
     },
     "hotCommentTagStatistics": [
         {
@@ -189,8 +189,8 @@
                 "content": "这个店家良心卖家。宝贝正，很舒服。很逼真，拿在手里软软的。关键送的东西还很多。客服专业！",
                 "commentId": 13653491824,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "这个店家良心卖家。宝贝正，很舒服。很逼真，拿在手里软软的。关键送的东西还很多。客服专业！",
                     "id": 57450097
@@ -244,8 +244,8 @@
                 "content": "非常好太喜欢了",
                 "commentId": 13629595974,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "非常好太喜欢了",
                     "id": 56936766
@@ -299,8 +299,8 @@
                 "content": "第一次用这么好的，又便宜又实惠，买到即是赚到，太好了！谢谢商家！",
                 "commentId": 13600274466,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "第一次用这么好的，又便宜又实惠，买到即是赚到，太好了！谢谢商家！",
                     "id": 56353563
@@ -354,8 +354,8 @@
                 "content": "一买回来马上试用了一下，很软刺激度偏低，份量很足，一只手都握不住，使用完后清洗也挺方便的，还送了很多名器清洗护理的配件，总之很棒，以后可以告别我的五指姑娘了。",
                 "commentId": 13579989674,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "一买回来马上试用了一下，很软刺激度偏低，份量很足，一只手都握不住，使用完后清洗也挺方便的，还送了很多名器清洗护理的配件，总之很棒，以后可以告别我的五指姑娘了。",
                     "id": 55985290
@@ -406,8 +406,8 @@
                 "content": "爽就完事了",
                 "commentId": 13578712163,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "爽就完事了",
                     "id": 55961491
@@ -461,8 +461,8 @@
                 "content": "使用过程很爽，两个洞洞可以满足不同需求。客服态度很好。下次会继续回购",
                 "commentId": 13571865142,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "使用过程很爽，两个洞洞可以满足不同需求。客服态度很好。下次会继续回购",
                     "id": 55839602
@@ -516,8 +516,8 @@
                 "content": "用了几天了，感觉还不错，看见就想做，，那个洞挺紧的，加点润滑油又紧又滑。",
                 "commentId": 13572657987,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "用了几天了，感觉还不错，看见就想做，，那个洞挺紧的，加点润滑油又紧又滑。",
                     "id": 55847678
@@ -571,8 +571,8 @@
                 "content": "&nbsp;很有心的店家，以后常光顾 ，发货很快，商品质量好而价低廉，我太感谢你了！！",
                 "commentId": 13561410907,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "&nbsp;很有心的店家，以后常光顾 ，发货很快，商品质量好而价低廉，我太感谢你了！！",
                     "id": 55639181
@@ -626,8 +626,8 @@
                 "content": "这个商品太好用了 ，简直就是真的，推荐大家用一下，非常好用????",
                 "commentId": 13557430218,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "这个商品太好用了 ，简直就是真的，推荐大家用一下，非常好用????",
                     "id": 55561128
@@ -681,8 +681,8 @@
                 "content": "太棒了，真实体验，以后还会来买",
                 "commentId": 13548812677,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "太棒了，真实体验，以后还会来买",
                     "id": 55384779

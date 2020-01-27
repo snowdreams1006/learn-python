@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -180,8 +180,8 @@
                 "content": "很好的东西，赠品也很好，很人性化的设置，这个价位差不多了，要啥自行车啊。",
                 "commentId": 13132631525,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好的东西，赠品也很好，很人性化的设置，这个价位差不多了，要啥自行车啊。",
                     "id": 47210935
@@ -235,8 +235,8 @@
                 "content": "66666",
                 "commentId": 13133699703,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "66666",
                     "id": 47230220
@@ -290,8 +290,8 @@
                 "content": "非常不错",
                 "commentId": 13134390791,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "非常不错",
                     "id": 47240428
@@ -345,8 +345,8 @@
                 "content": "送了好多东西，物有所值啊！",
                 "commentId": 13130325765,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "送了好多东西，物有所值啊！",
                     "id": 47175665
@@ -400,8 +400,8 @@
                 "content": "666",
                 "commentId": 13127614119,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 47138502
@@ -455,8 +455,8 @@
                 "content": "66666",
                 "commentId": 13125052182,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "66666",
                     "id": 47092347
@@ -510,8 +510,8 @@
                 "content": "好用的一批 推荐了",
                 "commentId": 13122358505,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "好用的一批 推荐了",
                     "id": 47047908
@@ -565,8 +565,8 @@
                 "content": "好用好用手感特别棒",
                 "commentId": 13120577267,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "好用好用手感特别棒",
                     "id": 47068707
@@ -620,8 +620,8 @@
                 "content": "超级好用，价格可以，",
                 "commentId": 13120180644,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "超级好用，价格可以，",
                     "id": 47005580
@@ -672,8 +672,8 @@
                 "content": "666",
                 "commentId": 13116860560,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 46949431

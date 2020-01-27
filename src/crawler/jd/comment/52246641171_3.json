@@ -3,12 +3,12 @@
     "productCommentSummary": {
         "skuId": 52246641171,
         "averageScore": 5,
-        "defaultGoodCount": 3232,
+        "defaultGoodCount": 3228,
         "defaultGoodCountStr": "3200+",
-        "commentCount": 9458,
+        "commentCount": 9473,
         "commentCountStr": "9400+",
-        "goodCount": 6186,
-        "goodCountStr": "6100+",
+        "goodCount": 6205,
+        "goodCountStr": "6200+",
         "goodRate": 0.99,
         "goodRateShow": 99,
         "generalCount": 21,
@@ -40,7 +40,7 @@
         "score2Count": 4,
         "score3Count": 17,
         "score4Count": 36,
-        "score5Count": 6150
+        "score5Count": 6169
     },
     "hotCommentTagStatistics": [
         {
@@ -190,8 +190,8 @@
                 "content": "做工很精致，里面的通道非常逼真！用着效果不错。",
                 "commentId": 13618437938,
                 "clientType": 1,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "做工很精致，里面的通道非常逼真！用着效果不错。",
                     "id": 56778315
@@ -245,8 +245,8 @@
                 "content": "做工细腻，没色差无异味，硅胶材质很不错手感摸起来很真实",
                 "commentId": 13609065240,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "做工细腻，没色差无异味，硅胶材质很不错手感摸起来很真实",
                     "id": 56608855
@@ -300,8 +300,8 @@
                 "content": "质量好好，摸上去有质感，值得购买",
                 "commentId": 13602915253,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "质量好好，摸上去有质感，值得购买",
                     "id": 56521075
@@ -355,8 +355,8 @@
                 "content": "用起来很舒服，材质真实不油腻，柔软度刚好合适",
                 "commentId": 13589803661,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "用起来很舒服，材质真实不油腻，柔软度刚好合适",
                     "id": 56160997
@@ -410,8 +410,8 @@
                 "content": "不错，非常满意！",
                 "commentId": 13569577752,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "不错，非常满意！",
                     "id": 55861112
@@ -462,8 +462,8 @@
                 "content": "效果很不错，手感很好，很带劲。",
                 "commentId": 13569579416,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "效果很不错，手感很好，很带劲。",
                     "id": 55862616
@@ -517,8 +517,8 @@
                 "content": "挺好用的反正",
                 "commentId": 13364580165,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "挺好用的反正",
                     "id": 51645955
@@ -572,8 +572,8 @@
                 "content": "可以非常安逸 没有异味 大小合适 手感安逸 居家必备 媳妇不在家 或者没女朋友 的 强烈推荐",
                 "commentId": 13329295166,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "可以非常安逸 没有异味 大小合适 手感安逸 居家必备 媳妇不在家 或者没女朋友 的 强烈推荐",
                     "id": 52328199
@@ -627,8 +627,8 @@
                 "content": "值得推荐的一款宝贝，让我告别了性爱干涩疼痛的烦恼，现在和老公的啪趴趴很和谐，感情都比以前更加牢固了",
                 "commentId": 13300783520,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "值得推荐的一款宝贝，让我告别了性爱干涩疼痛的烦恼，现在和老公的啪趴趴很和谐，感情都比以前更加牢固了",
                     "id": 50034921
@@ -682,8 +682,8 @@
                 "content": "特舒服，谁用谁知道啊可以推存的产品",
                 "commentId": 13261981446,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "特舒服，谁用谁知道啊可以推存的产品",
                     "id": 49267167

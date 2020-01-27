@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 140,
         "defaultGoodCountStr": "100+",
-        "commentCount": 431,
+        "commentCount": 432,
         "commentCountStr": "400+",
-        "goodCount": 285,
+        "goodCount": 286,
         "goodCountStr": "200+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -40,7 +40,7 @@
         "score2Count": 1,
         "score3Count": 2,
         "score4Count": 0,
-        "score5Count": 285
+        "score5Count": 286
     },
     "hotCommentTagStatistics": [
         {
@@ -340,6 +340,7 @@
             "id": 13610339209,
             "guid": "7d70c68c-e9cc-478e-b77c-acd982838830",
             "content": "好评，做工完美，手感舒适。宝贝材质摸上去滑滑的。东西无味触感软软的。真的很喜欢。而且包裹也很隐私没有泄漏一点信息，服务很好",
+            "vcontent": "",
             "creationTime": "2019-12-16 19:57:04",
             "isDelete": false,
             "isTop": false,
@@ -347,12 +348,14 @@
             "topped": 0,
             "replyCount": 0,
             "score": 5,
+            "title": "",
             "usefulVoteCount": 2,
             "userClient": 2,
             "anonymousFlag": 1,
             "plusAvailable": 0,
             "mobileVersion": "8.4.0",
             "productColor": "翘臀公主2斤+体验礼包",
+            "productSize": "",
             "textIntegral": 0,
             "status": 1,
             "referenceId": "58156667744",

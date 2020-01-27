@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 16811,
         "defaultGoodCountStr": "1.6万+",
-        "commentCount": 39417,
+        "commentCount": 39419,
         "commentCountStr": "3.9万+",
-        "goodCount": 27572,
+        "goodCount": 27574,
         "goodCountStr": "2.7万+",
         "goodRate": 0.94,
         "goodRateShow": 94,
@@ -40,7 +40,7 @@
         "score2Count": 251,
         "score3Count": 404,
         "score4Count": 311,
-        "score5Count": 20715
+        "score5Count": 20717
     },
     "hotCommentTagStatistics": [
         {
@@ -247,8 +247,8 @@
                 "content": "质量差，没有用几天就爆了，赠送很多没有用的东西，联系客服电话始终不接，真是一次非常遗憾的购买！",
                 "commentId": 12594288682,
                 "clientType": 1,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "质量差，没有用几天就爆了，赠送很多没有用的东西，联系客服电话始终不接，真是一次非常遗憾的购买！",
                     "id": 46763570

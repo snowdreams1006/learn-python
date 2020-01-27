@@ -5,9 +5,9 @@
         "averageScore": 5,
         "defaultGoodCount": 30965,
         "defaultGoodCountStr": "3万+",
-        "commentCount": 86282,
+        "commentCount": 86283,
         "commentCountStr": "8.6万+",
-        "goodCount": 68783,
+        "goodCount": 68784,
         "goodCountStr": "6.8万+",
         "goodRate": 0.97,
         "goodRateShow": 97,
@@ -21,7 +21,7 @@
         "poorRateShow": 2,
         "videoCount": 1,
         "videoCountStr": "1",
-        "afterCount": 10063,
+        "afterCount": 10064,
         "afterCountStr": "1万+",
         "showCount": 180,
         "showCountStr": "100+",
@@ -40,7 +40,7 @@
         "score2Count": 292,
         "score3Count": 483,
         "score4Count": 875,
-        "score5Count": 52881
+        "score5Count": 52882
     },
     "hotCommentTagStatistics": [
         {
@@ -180,8 +180,8 @@
                 "content": "太棒了吧，和女朋友异地，有娃娃，不用愁啦，逼真又精致，还有智能语音，体验很好",
                 "commentId": 13148832540,
                 "clientType": 2,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "太棒了吧，和女朋友异地，有娃娃，不用愁啦，逼真又精致，还有智能语音，体验很好",
                     "id": 47485119
@@ -235,8 +235,8 @@
                 "content": "666",
                 "commentId": 13148560895,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 47481179
@@ -290,8 +290,8 @@
                 "content": "非常喜欢，用起来很舒服，没有瑕疵。",
                 "commentId": 13147159891,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "非常喜欢，用起来很舒服，没有瑕疵。",
                     "id": 47454662
@@ -345,8 +345,8 @@
                 "content": "666",
                 "commentId": 13142386356,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666",
                     "id": 47371824
@@ -400,8 +400,8 @@
                 "content": "使用感不错，值得购买",
                 "commentId": 13142909643,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "使用感不错，值得购买",
                     "id": 47380636
@@ -455,8 +455,8 @@
                 "content": "666666",
                 "commentId": 13141515782,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "666666",
                     "id": 47352850
@@ -510,8 +510,8 @@
                 "content": "体验还不错值得拥有",
                 "commentId": 13136852342,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "体验还不错值得拥有",
                     "id": 47282711
@@ -562,8 +562,8 @@
                 "content": "反响很好   比较真实",
                 "commentId": 13132557785,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "反响很好   比较真实",
                     "id": 47206686
@@ -617,8 +617,8 @@
                 "content": "6666666666",
                 "commentId": 13133053174,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "6666666666",
                     "id": 47220705
@@ -672,8 +672,8 @@
                 "content": "东西很干净，简单上手",
                 "commentId": 13133357140,
                 "clientType": 4,
-                "top": false,
                 "delete": false,
+                "top": false,
                 "hAfterUserComment": {
                     "content": "东西很干净，简单上手",
                     "id": 47225384

@@ -3,11 +3,11 @@
     "productCommentSummary": {
         "skuId": 56524814895,
         "averageScore": 5,
-        "defaultGoodCount": 1970,
+        "defaultGoodCount": 1969,
         "defaultGoodCountStr": "1900+",
-        "commentCount": 3381,
+        "commentCount": 3383,
         "commentCountStr": "3300+",
-        "goodCount": 1327,
+        "goodCount": 1330,
         "goodCountStr": "1300+",
         "goodRate": 0.94,
         "goodRateShow": 94,
@@ -40,7 +40,7 @@
         "score2Count": 15,
         "score3Count": 22,
         "score4Count": 14,
-        "score5Count": 1313
+        "score5Count": 1316
     },
     "hotCommentTagStatistics": [
         {
@@ -190,8 +190,8 @@
                 "content": "用起来真的很爽，上点油，和真人的感觉一样",
                 "commentId": 13367692120,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "用起来真的很爽，上点油，和真人的感觉一样",
                     "id": 51706118
@@ -245,8 +245,8 @@
                 "content": "这家店没得说、物流快、宝贝好、很隐私",
                 "commentId": 13365473305,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "这家店没得说、物流快、宝贝好、很隐私",
                     "id": 51717906
@@ -300,8 +300,8 @@
                 "content": "感觉很好，爽的一批",
                 "commentId": 13348990159,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "感觉很好，爽的一批",
                     "id": 51306908
@@ -355,8 +355,8 @@
                 "content": "朋友用后觉得很不错，感觉比女朋友还舒服?，下次再来买。",
                 "commentId": 13297808016,
                 "clientType": 2,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "朋友用后觉得很不错，感觉比女朋友还舒服?，下次再来买。",
                     "id": 49904280
@@ -410,8 +410,8 @@
                 "content": "很好",
                 "commentId": 13297956618,
                 "clientType": 4,
-                "delete": false,
                 "top": false,
+                "delete": false,
                 "hAfterUserComment": {
                     "content": "很好",
                     "id": 49909098
