@@ -39,9 +39,10 @@ def search_item(keyword='充气娃娃',page=1,s=1):
         response_text = response.text
 
         # 解析商品页面
+        url = response.url
         parse_item(url,response_text)
     except Exception as e:
-        print('搜索商品异常')
+        print('搜索商品异常',e)
 
 def parse_item(url,html):
     '''
@@ -49,7 +50,10 @@ def parse_item(url,html):
     '''
     try:
         # 保存原始网页数据
-        with open('./html/parse_item.html', "w", encoding="utf-8") as wf:
+        parse_item_path = './html/parse_item.html'
+        if not os.path.exists(parse_item_path):
+          os.mkdir(os.path.dirname(parse_item_path))
+        with open(parse_item_path, "w", encoding="utf-8") as wf:
             wf.write(html)
 
         # 解析商品列表页面结构
@@ -65,10 +69,6 @@ def parse_item(url,html):
             item_img = item_li.find('img')
             item_img_url = 'https:%s' % item_img['source-data-lazy-img']
 
-            # 普通价格
-            item_normal_price = item_li.find('strong')
-            item_normal_price_text = item_normal_price.get_text()
-
             # 标题描述
             item_title = item_li.find('div',class_='p-name p-name-type-2').find('em')
             item_title_text = item_title.get_text()
@@ -79,7 +79,7 @@ def parse_item(url,html):
             # 访问商品详情
             visit_item_detail(item_detail_url)
 
-            print(f'商品详情: {item_detail_url} 商品图片: {item_img_url} 普通价格: {item_normal_price_text} 标题描述: {item_title_text}')
+            print(f'标题: {item_title_text} 图片: {item_img_url} 详情: {item_detail_url}')
     except Exception as e:
         print('解析商品异常',e)
 
@@ -238,10 +238,9 @@ def batch_get_comment(productId):
     create_word_cloud(productId)
 
 def main():
-    # batch_search_item('安全套')
-    create_word_cloud('100000284457')
-    # test_wordcloud()
-    # cut_word('100003449259')
+    # batch_search_item('充气娃娃')
+    search_item('充气娃娃')
+
 
 if __name__ == '__main__':
     main()
