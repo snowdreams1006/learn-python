@@ -3,6 +3,7 @@ import requests
 import bs4
 import os
 import random
+import json
 
 def search_item(keyword='充气娃娃',page=1,s=1):
     '''
@@ -163,9 +164,91 @@ def parse_item(url,html):
             # 下载图片
             download_cover(item_img_url)
 
+            # 访问商品详情
+            visit_item_detail(item_detail_url)
+
             print(f'商品详情: {item_detail_url} 商品图片: {item_img_url} 普通价格: {item_normal_price_text} 标题描述: {item_title_text}')
     except Exception as e:
         print('解析商品异常',e)
+
+def visit_item_detail(url):
+    '''
+    访问京东商品详情页面
+    '''
+    try:
+        # 搜索商品
+        headers = {
+            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+        }
+        response = requests.get(url=url, headers=headers)
+        response.raise_for_status()
+        response.encoding = 'utf-8'
+        response_text = response.text
+
+        # 解析商品页面
+        parse_item_detail(url,response_text)
+    except Exception as e:
+        print('访问商品详情异常')
+
+def parse_item_detail(url,html):
+    '''
+    解析商品详情页面结构
+    '''
+    try:
+        # 保存原始网页数据
+        with open('./html/parse_item_detail.html', "w", encoding="utf-8") as wf:
+            wf.write(html)
+
+        # 解析商品列表页面结构
+        soup = bs4.BeautifulSoup(html, 'html.parser')
+        print(soup.prettify('utf-8'))
+
+        # 解析商品详情
+        '''
+        
+        '''
+        
+    except Exception as e:
+        print('解析商品详情异常',e)
+
+
+def get_comment(productId,page=0):
+    '''
+    分页获取商品评论数据
+    '''
+    try:
+        # 评价商品
+        url = 'https://club.jd.com/comment/productPageComments.action'
+        params = {
+            'productId': productId,
+            'score': 0,
+            'sortType': 5,
+            'page':page,
+            'pageSize':10,
+            'isShadowSku':0,
+            'fold':1
+        }
+        headers = {
+            'referer': 'https://item.jd.com/%s.html' % productId,
+            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+        }
+        response = requests.get(url=url, params=params, headers=headers)
+        response.raise_for_status()
+        response_json = response.json()
+
+        # 保留原始评论数据
+        with open('./comment/%s.json' % productId, 'w') as wf:
+            wf.write(json.dumps(response_json, indent=4, ensure_ascii=False))
+
+        # 遍历评论对象列表
+        comment_txt_name = './comment/%s.txt' % productId
+        if os.path.exists(comment_txt_name):
+            os.remove(comment_txt_name)
+        for comments in response_json.get('comments'):
+            with open(comment_txt_name, 'a') as af:
+                af.write(comments.get('content') + '\n')
+    except Exception as e:
+        print('获取商品评价异常',e)
 
 def download_cover(url):
     '''
@@ -183,12 +266,13 @@ def download_cover(url):
         print('下载商品异常')
 
 def main():
-    for pn in range(1,100):
-        # page 是 2pn-1 
-        page = pn * 2 - 1
-        # 不固定请求参数 s,大概相差 60
-        s = pn * 60 - random.randint(50, 60)
-        search_item('充气娃娃',page,s)
+    get_comment('1070129528')
+    # for pn in range(1,2):
+    #     # page 是 2pn-1 
+    #     page = pn * 2 - 1
+    #     # 不固定请求参数 s,大概相差 60
+    #     s = pn * 60 - random.randint(50, 60)
+    #     search_item('充气娃娃',page,s)
 
 if __name__ == '__main__':
     main()
