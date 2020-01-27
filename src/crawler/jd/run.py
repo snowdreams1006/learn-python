@@ -14,7 +14,7 @@ def batch_search_item(keyword='充气娃娃'):
     '''
     批量分页搜索京东商品
     '''
-    for pn in range(1, 4):
+    for pn in range(1, 10):
         # page 是 2pn-1 
         page = pn * 2 - 1
         # 不固定请求参数 s,大概相差 60
@@ -93,41 +93,6 @@ def parse_item(url,html_origin):
             batch_get_comment(item_detail_url)
     except Exception as e:
         print('解析商品列表异常',e)
-
-def visit_item_detail(url):
-    '''
-    访问京东商品详情页面
-    '''
-    try:
-        # 搜索商品
-        headers = {
-            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
-        }
-        response = requests.get(url=url, headers=headers)
-        response.raise_for_status()
-        response.encoding = 'gbk'
-        response_text = response.text
-
-        # 解析商品页面
-        parse_item_detail(url,response_text)
-    except Exception as e:
-        print('访问商品详情异常')
-
-def parse_item_detail(url,html):
-    '''
-    解析商品详情页面结构
-    '''
-    try:
-        # 保存原始网页数据
-        detail_item_html_name = os.path.basename(url)
-        with open('./html/parse_item_detail_%s' % detail_item_html_name, "w", encoding="utf-8") as wf:
-            wf.write(html)
-
-        # 批量获取商品评价
-        detail_item_product_id = detail_item_html_name[:detail_item_html_name.rindex('.html')]
-        batch_get_comment(detail_item_product_id)
-    except Exception as e:
-        print('解析商品详情异常',e)
 
 def download_image(item_detail_url,item_img_url):
     '''
