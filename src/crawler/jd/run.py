@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import requests
+import urllib
 import bs4
 import os
 import random
+import time
 import json
 import jieba
 import numpy as np
@@ -20,6 +22,7 @@ def batch_search_item(keyword='充气娃娃'):
         # 不固定请求参数 s,大概相差 60
         s = pn * 60 - random.randint(50, 60)
         search_item(keyword,page,s)
+        time.sleep(random.randint(5, 60))
 
 def search_item(keyword='充气娃娃',page=1,s=1):
     '''
@@ -65,8 +68,12 @@ def parse_item(url,html_origin):
         html_prettify = soup.prettify('utf-8')
 
         # 先提前创建 html 目录,再保存原始网页和美化后网页
-        parse_item_origin_path = './html/parse_item_origin.html'
-        parse_item_prettify_path = './html/parse_item_prettify.html'
+        url_result = urllib.parse.urlsplit(url)
+        query = dict(urllib.parse.parse_qsl(url_result.query))
+        page = query.get('page')
+        pn = int((int(page)+1)/2)
+        parse_item_origin_path = './html/parse_item_origin_%d.html' % pn
+        parse_item_prettify_path = './html/parse_item_prettify_%d.html' % pn
         if not os.path.exists(os.path.dirname(parse_item_origin_path)):
           os.mkdir(os.path.dirname(parse_item_origin_path))
         with open(parse_item_origin_path, 'w', encoding='utf-8') as wf:
@@ -130,8 +137,9 @@ def batch_get_comment(item_detail_url):
     if os.path.exists(batch_get_comment_txt_path):
       os.remove(batch_get_comment_txt_path)
     # 批量获取评论数据
-    for i in range(3):
+    for i in range(10):
         get_comment(item_detail_url,page=i)
+        time.sleep(random.randint(5, 60))
 
     # 中文分词处理
     if os.path.exists(batch_get_comment_txt_path):
@@ -236,7 +244,7 @@ def create_wordcloud(item_detail_url,word):
           break 
 
 def main():
-    search_item('充气娃娃')
+    batch_search_item('充气娃娃')
 
 if __name__ == '__main__':
     main()
