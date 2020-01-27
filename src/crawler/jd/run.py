@@ -244,7 +244,7 @@ def create_wordcloud(item_detail_url,word):
           break 
 
 def main():
-    batch_search_item('充气娃娃')
+    batch_search_item('胸罩')
 
 if __name__ == '__main__':
     main()

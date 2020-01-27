@@ -1,0 +1,4 @@
+chi_sim Chinese - Simplified chi_sim.traineddata
+
+chi_tra Chinese - Traditional chi_tra.traineddata
+

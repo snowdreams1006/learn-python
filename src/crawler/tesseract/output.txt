@@ -1,0 +1,2 @@
+tesseract test.png output_1 —l eng
+
