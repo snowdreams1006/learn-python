@@ -270,12 +270,14 @@ def download_cover(url):
     '''
     try:
         # 下载图片
-        response = requests.get(url)
-        response.raise_for_status()
-        response_content = response.content
         img_name = os.path.basename(url)
-        with open('./cover/%s' % img_name, 'wb') as wbf:
-            wbf.write(response_content)
+        img_name = './cover/%s' % img_name
+        if not os.path.exists(img_name):
+          response = requests.get(url)
+          response.raise_for_status()
+          response_content = response.content
+          with open(img_name, 'wb') as wbf:
+              wbf.write(response_content)
     except Exception as e:
         print('下载商品异常')
 
