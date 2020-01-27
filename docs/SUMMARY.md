@@ -20,6 +20,6 @@
     * [内容提取神器](htmlparse/beautifulsoup/about.md)
         * [快速上手](htmlparse/beautifulsoup/quickstart.md)
 * [爬虫实例](crawler/about.md)
-    * [百科 python 词条](crawler/baike/about.md)
-    * [京东充气娃娃体验](crawler/jd/about.md)
-
+    * [爬取百科python词条](crawler/baike/about.md)
+    * [玩玩京东充气娃娃](crawler/jd/about.md)
+    * [不再怕简单验证码](crawler/verifycode/about.md)
