@@ -1,6 +1,6 @@
 # Summary
 
-* [简介](README.md)
+* [爬虫简介](README.md)
 * [环境准备](env/about.md)
     * [下载安装](env/download.md)
     * [开发工具](env/ide.md)
@@ -13,13 +13,18 @@
         * [基于urlopen实现网页下载器](url/urllib/teaching-urllib2-urlopen.md)
         * [实例练习](url/urllib/exercise.md)
         * [实例练习之一键爬取 github 全部表情](url/urllib/exercise-github-emoji.md)
-    * [第三方请求](url/requests/about.md)
+    * [常用请求](url/requests/about.md)
         * [范例教学](url/requests/teaching.md)
         * [实例练习](url/requests/exercise.md)
+    * [模拟请求](url/selenium/about.md)
 * [网页提取](htmlparse/about.md)
     * [内容提取神器](htmlparse/beautifulsoup/about.md)
         * [快速上手](htmlparse/beautifulsoup/quickstart.md)
+* [数据展现](datashow/about.md)
+    * [高频词可视化](datashow/wordcloud/about.md)
+        * [快速上手](datashow/wordcloud/quickstart.md)
 * [爬虫实例](crawler/about.md)
     * [爬取百科python词条](crawler/baike/about.md)
     * [玩玩京东充气娃娃](crawler/jd/about.md)
     * [不再怕简单验证码](crawler/verifycode/about.md)
+
