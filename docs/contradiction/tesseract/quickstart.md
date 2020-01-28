@@ -86,6 +86,15 @@ tesseract sina-code.png sina-code
 
 > tesseract zhihu-code.jpeg zhihu-code
 
+```bash
+tesseract --list-langs
+```
+
+```bash
+tesseract snowdreams1006.png snowdreams1006 -l eng
+```
+
+> tesseract 雪之梦技术驿站.png 雪之梦技术驿站 -l chi_sim
 
 ---
 
