@@ -2,11 +2,14 @@
 import pytesseract
 from PIL import Image
 import os
+import re
 
 def use_simple_text_image(image_name,lang='eng'):
-    image = Image.open(image_name)
-    image = image.convert("1")
+    preprocess_image_name = preprocess_image(image_name)
+    image = Image.open(preprocess_image_name)
     result = pytesseract.image_to_string(image,lang=lang)
+    print(result)
+    result = postprocess_result(result)
     print(result)
     return result
 
@@ -41,18 +44,8 @@ def convert_binarization_image(image_name,threshold=127):
     # 保存二值图
     binarization_image.save(binarization_image_name)
 
-    # 修改原图
-    pixdata = image.load()
-    w, h = image.size
-    for y in range(h):
-        for x in range(w):
-            if pixdata[x, y] < threshold:
-                pixdata[x, y] = 0
-            else:
-                pixdata[x, y] = 255
-
     # 返回二值图名称
-    return binarization_image
+    return binarization_image_name
 
 def preprocess_image(image_name):
     '''
@@ -61,8 +54,16 @@ def preprocess_image(image_name):
     # 灰度化
     gray_image_name = convert_gray_image(image_name)
     # 二值化
-    binarization_image = convert_binarization_image(gray_image_name,threshold=160)
-    return binarization_image
+    binarization_image_name = convert_binarization_image(gray_image_name,threshold=160)
+    # 返回预处理图名称
+    return binarization_image_name
+
+def postprocess_result(result):
+    '''
+    剔除无效字符
+    '''
+    post_result = re.sub('\W', '', result)
+    return post_result
 
 def get_covert_image(image_name,covert_prefix):
     '''
@@ -86,10 +87,7 @@ def get_covert_image(image_name,covert_prefix):
     return binarization_image_name
 
 def main():
-    # /Users/snowdreams1006/Downloads/zui56-code.jpeg
-    # convert_binarization_image('/Users/snowdreams1006/Downloads/zui56-code.jpeg')
-
-    preprocess_image('zhihu-code.jpeg')
+    use_simple_text_image('zhihu-code.jpeg')
 
     # use_simple_text_image('snowdreams1006.png')
     # use_simple_text_image('雪之梦技术驿站.png',lang='chi_sim')
