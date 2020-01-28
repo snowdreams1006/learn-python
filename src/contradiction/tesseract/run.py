@@ -47,6 +47,49 @@ def convert_binarization_image(image_name,threshold=127):
     # 返回二值图名称
     return binarization_image_name
 
+def convert_gray_image(image_name):
+    '''
+    灰度化处理图片
+    '''
+    image = Image.open(image_name)
+    # 转灰度
+    gray_image = image.convert('L')
+    gray_image_name = get_covert_image(image_name,'gray-')
+    # 保存灰度图
+    gray_image.save(gray_image_name)
+    # 返回灰度图名称
+    return gray_image_name
+
+def delete_spot_image(image_name):
+    image = Image.open(image_name)
+    data = image.getdata()
+    w, h = image.size
+    black_point = 0
+    for x in range(1, w - 1):
+        for y in range(1, h - 1):
+            mid_pixel = data[w * y + x]  # 中央像素点像素值
+            if mid_pixel < 50:  # 找出上下左右四个方向像素点像素值
+                top_pixel = data[w * (y - 1) + x]
+                left_pixel = data[w * y + (x - 1)]
+                down_pixel = data[w * (y + 1) + x]
+                right_pixel = data[w * y + (x + 1)]
+                # 判断上下左右的黑色像素点总个数
+                if top_pixel < 10:
+                    black_point += 1
+                if left_pixel < 10:
+                    black_point += 1
+                if down_pixel < 10:
+                    black_point += 1
+                if right_pixel < 10:
+                    black_point += 1
+                if black_point < 1:
+                    image.putpixel((x, y), 255)
+                black_point = 0
+
+    spot_image_name = get_covert_image(image_name,'spot-')
+    image.save(spot_image_name)
+    return spot_image_name
+
 def preprocess_image(image_name):
     '''
     预处理图片,先灰度化再二值化处理图片
@@ -55,8 +98,10 @@ def preprocess_image(image_name):
     gray_image_name = convert_gray_image(image_name)
     # 二值化
     binarization_image_name = convert_binarization_image(gray_image_name,threshold=160)
+    # 删除噪点像素
+    spot_image_name = delete_spot_image(binarization_image_name)
     # 返回预处理图名称
-    return binarization_image_name
+    return spot_image_name
 
 def postprocess_result(result):
     '''
@@ -87,7 +132,9 @@ def get_covert_image(image_name,covert_prefix):
     return binarization_image_name
 
 def main():
-    use_simple_text_image('zhihu-code.jpeg')
+    use_simple_text_image('sina-code.png')
+    # delete_spot_image('sina-code.png')
+
 
     # use_simple_text_image('snowdreams1006.png')
     # use_simple_text_image('雪之梦技术驿站.png',lang='chi_sim')
