@@ -24,7 +24,7 @@
     * [高频词可视化](datashow/wordcloud/about.md)
         * [快速上手](datashow/wordcloud/quickstart.md)
 * [爬虫攻防](contradiction/about.md)
-    * [ocr识别验证码](contradiction/tesseract/about.md)
+    * [识别验证码](contradiction/tesseract/about.md)
         * [快速上手](contradiction/tesseract/quickstart.md)
 * [爬虫实例](crawler/about.md)
     * [爬取百科python词条](crawler/baike/about.md)

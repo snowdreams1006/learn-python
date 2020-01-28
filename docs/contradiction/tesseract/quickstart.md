@@ -86,6 +86,10 @@ tesseract sina-code.png sina-code
 
 > tesseract zhihu-code.jpeg zhihu-code
 
+## 查看已安装语言包
+
+> [https://github.com/tesseract-ocr/tessdata](https://github.com/tesseract-ocr/tessdata)
+
 ```bash
 tesseract --list-langs
 ```
@@ -96,29 +100,155 @@ tesseract snowdreams1006.png snowdreams1006 -l eng
 
 > tesseract 雪之梦技术驿站.png 雪之梦技术驿站 -l chi_sim
 
+## 检测是否已安装 pytesseract 包
+
+> pip freeze | grep pytesseract
+
+```python
+import pytesseract
+```
+
+> pip install pytesseract : 默认还会安装依赖 Pillow,也可以手动安装 pip install Pillow
+
+## 快速上手 pytesseract 识别验证码
+
+> [https://github.com/madmaze/pytesseract](https://github.com/madmaze/pytesseract)
+
+```python
+# -*- coding: utf-8 -*-
+import pytesseract
+from PIL import Image
+
+def use_simple_text_image(image_name,lang='eng'):
+    image = Image.open(image_name)
+    code = pytesseract.image_to_string(image,lang=lang)
+    print(code)
+
+def main():
+    use_simple_text_image('snowdreams1006.png')
+
+if __name__ == '__main__':
+    main()
+```
+
+> 默认识别语言为英语,如果待识别图像内容是其他语言,需要指定语言,如简体中文则是: chi_sim
+>
+> print(pytesseract.image_to_string(Image.open('雪之梦技术驿站.png'), lang='chi_sim'))
+>
+> 如果 tesseract 不在PATH环境变量中,需要指定可执行路径,如 win 一般为: C:\Program Files (x86)\Tesseract-OCR\tesseract
+>
+> pytesseract.pytesseract.tesseract_cmd = r'full_path_to_your_tesseract_executable'
+>
+> r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
+
+## 图片预处理
+
+### 转灰度
+
+> image.convert('L')
+
+```python
+from PIL import Image
+
+def convert_gray_image(image_name):
+    image = Image.open(image_name)
+    # 转灰度
+    gray_image = image.convert('L')
+    # 显示图片,方便及时查看效果
+    gray_image.show()
+```
+
+### 二值化
+
+> image.convert('1')
+
+```python
+from PIL import Image
+
+def convert_binarization_image(image_name):
+    image = Image.open(image_name)
+    # 二值化
+    binarization_image = image.convert('1')
+    # 显示图片,方便及时查看效果
+    binarization_image.show()
+```
+
+一般不会直接转换原图,先将原图转化成灰度图,再指定阈值进行二值化处理.
+
+> image.point(table,'1')
+
+```python
+from PIL import Image
+
+def convert_binarization_image(image_name):
+    image = Image.open(image_name)
+    # 二值化,默认阈值 127
+    table = []
+    threshold = 160
+    for i in  range(256):
+        if i < threshold:
+            table.append(0)
+        else:
+            table.append(1)
+    binarization_image = image.point(table,'1')
+    # 显示图片,方便及时查看效果
+    binarization_image.show()
+```
+
+> image.load() image.size
+
+```python
+from PIL import Image
+
+def convert_binarization_image(image_name):
+    image = Image.open(image_name)
+    # 二值化,默认阈值 127
+    threshold = 160
+    pixels = image.load()
+    for x in range(image.width):
+        for y in range(image.height):
+            if pixels[x, y] < standard:
+                pixels[x, y] = 0
+            else:
+                pixels[x, y] = 255
+    # 显示图片,方便及时查看效果
+    image.show()
+```
+
+### 剔除无关字符
+
+> re.sub("\W", "", code)
+
+```python
+# -*- coding: utf-8 -*-
+import pytesseract
+from PIL import Image
+import re
+
+def use_simple_text_image(image_name,lang='eng'):
+    image = Image.open(image_name)
+    code = pytesseract.image_to_string(image,lang=lang)
+    print(code)
+    code = re.sub("\W", "", code)
+    print(code)
+
+def main():
+    use_simple_text_image('zhihu.jpeg')
+
+if __name__ == '__main__':
+    main()
+```
+
+
 ---
 
-> 下载地址: [https://digi.bib.uni-mannheim.de/tesseract/](https://digi.bib.uni-mannheim.de/tesseract/)
-
-单独使用
-
-```bash
-tesseract --help
-
-tesseract --version
-
-tesseract --list-langs
-```
-
-```bash
-tesseract test.png result
-```
 
 ```python
 # -*- coding: utf-8 -*-
 
 import pytesseract
 from PIL import Image
+import re
 
 def clear_image(image):
     image = image.convert('RGB')
@@ -154,97 +284,6 @@ with open("code.txt", "w") as f:
     f.write(str(code))
 ```
 
-
-## 图像处理库 Pillow
-
-> Pillow
-
-```bash
-pip install Pillow
-```
-
-> pip3 install Pillow
-
-## OCR 识别库 Tesseract-OCR
-
-> pytesseract
-
-```bash
-pip install pytesseract
-```
-
-> pip3 install pytesseract
-
-## 快速体验
-
-```python
-from PIL import Image
-'''
-获取图片
-'''
-def getImage():
-    fileName = '16.jpg'
-    img = Image.open()
-    # 打印当前图片的模式以及格式
-    print('未转化前的: ', img.mode, img.format)
-    # 使用系统默认工具打开图片
-    # img.show()
-    return img
-```
-
-### 预处理
-
-```python
-'''
-1) 将图片进行降噪处理, 通过二值化去掉后面的背景色并加深文字对比度
-'''
-def convert_Image(img, standard=127.5):
-    '''
-    【灰度转换】
-    '''
-    image = img.convert('L')
-
-    '''
-    【二值化】
-    根据阈值 standard , 将所有像素都置为 0(黑色) 或 255(白色), 便于接下来的分割
-    '''
-    pixels = image.load()
-    for x in range(image.width):
-        for y in range(image.height):
-            if pixels[x, y] > standard:
-                pixels[x, y] = 255
-            else:
-                pixels[x, y] = 0
-    return image
-```
-
-### 识别
-
-```python
-import pytesseract
-'''
-使用 pytesseract 库来识别图片中的字符
-'''
-def change_Image_to_text(img):
-    '''
-    如果出现找不到训练库的位置, 需要我们手动自动
-    语法: tessdata_dir_config = '--tessdata-dir "<replace_with_your_tessdata_dir_path>"'
-    '''
-    testdata_dir_config = '--tessdata-dir "C:\\Program Files (x86)\\Tesseract-OCR\\tessdata"'
-    textCode = pytesseract.image_to_string(img, lang='eng', config=testdata_dir_config)
-    # 去掉非法字符，只保留字母数字
-    textCode = re.sub("\W", "", textCode)
-    return textCode
-```
-
-```
-def main():
-    img = convert_Image(getImage(fileName))
-    print('识别的结果：', change_Image_to_text(img))
-
-if __name__ == '__main__':
-    main()
-```
 
 ## 参考文档
 
