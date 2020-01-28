@@ -38,3 +38,7 @@ node['href']
 # 获取查找到a节点的链接文字
 node.get_text()
 ```
+
+## 参考文档
+
+- [内容提取神器 beautiful Soup 的用法](https://www.jianshu.com/p/865d73b70ec7)
