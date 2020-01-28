@@ -5,6 +5,16 @@
 单独使用
 
 ```bash
+tesseract --help
+
+tesseract --version
+
+tesseract --list-langs
+
+
+```
+
+```bash
 tesseract test.png result
 ```
 
@@ -145,3 +155,5 @@ if __name__ == '__main__':
 - [Python 实现识别弱图片验证码](https://www.jianshu.com/p/bc6774723003)
 - [Python之验证码识别](https://my.oschina.net/moluyingxing/blog/2996786)
 - [selenium自动化测试+获取验证码图片](https://my.oschina.net/moluyingxing/blog/2997353)
+- [Selenium+验证码打码时的特殊情况](http://www.51testing.com/html/90/n-3726590.html)
+- [【Mac + Python + Selenium】之获取验证码图片code并进行登录](https://www.cnblogs.com/Owen-ET/p/12206857.html)
