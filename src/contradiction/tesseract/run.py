@@ -132,12 +132,7 @@ def get_covert_image(image_name,covert_prefix):
     return binarization_image_name
 
 def main():
-    use_simple_text_image('sina-code.png')
-    # delete_spot_image('sina-code.png')
-
-
-    # use_simple_text_image('snowdreams1006.png')
-    # use_simple_text_image('雪之梦技术驿站.png',lang='chi_sim')
+    use_simple_text_image('dianxin-code.png')
 
 if __name__ == '__main__':
     main()

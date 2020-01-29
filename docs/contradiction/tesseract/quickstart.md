@@ -1,6 +1,6 @@
 # 快速上手
 
-## 获取简单验证码(以知乎和新浪为例)
+## 获取简单验证码
 
 > [https://www.zhihu.com/signin](https://www.zhihu.com/signin)
 
@@ -71,6 +71,14 @@ XNjwYcSJFS9m3NjxY8hrAwIAOw== 'zhihu-code.jpeg')
 > [https://login.sina.com.cn/cgi/pin.php](https://login.sina.com.cn/cgi/pin.php)
 
 ![sina-code.png](https://login.sina.com.cn/cgi/pin.php 'sina-code.png')
+
+> [https://login.189.cn/web/captcha](https://login.189.cn/web/captcha)
+
+![dianxin-code.png](https://login.189.cn/web/captcha 'dianxin-code.png')
+
+> [https://login.10086.cn/captchazh.htm?type=05](https://login.10086.cn/captchazh.htm?type=05)
+
+![yidong-code.png](https://login.10086.cn/captchazh.htm?type=05 'yidong-code.png')
 
 ## 检测是否已安装独立 tesseract 软件
 
@@ -215,7 +223,39 @@ def convert_binarization_image(image_name):
     image.show()
 ```
 
-### 剔除无关字符
+### 剔除噪点像素
+
+```python
+def delete_spot(self):
+    images = self.processing_image()
+    data = images.getdata()
+    w, h = images.size
+    black_point = 0
+    for x in range(1, w - 1):
+        for y in range(1, h - 1):
+            mid_pixel = data[w * y + x]  # 中央像素点像素值
+            if mid_pixel < 50:  # 找出上下左右四个方向像素点像素值
+                top_pixel = data[w * (y - 1) + x]
+                left_pixel = data[w * y + (x - 1)]
+                down_pixel = data[w * (y + 1) + x]
+                right_pixel = data[w * y + (x + 1)]
+                # 判断上下左右的黑色像素点总个数
+                if top_pixel < 10:
+                    black_point += 1
+                if left_pixel < 10:
+                    black_point += 1
+                if down_pixel < 10:
+                    black_point += 1
+                if right_pixel < 10:
+                    black_point += 1
+                if black_point < 1:
+                    images.putpixel((x, y), 255)
+                black_point = 0
+    # images.show()
+    return images
+```
+
+## 修正识别结果
 
 > re.sub("\W", "", code)
 
@@ -239,51 +279,7 @@ if __name__ == '__main__':
     main()
 ```
 
-
----
-
-
-```python
-# -*- coding: utf-8 -*-
-
-import pytesseract
-from PIL import Image
-import re
-
-def clear_image(image):
-    image = image.convert('RGB')
-    width = image.size[0]
-    height = image.size[1]
-    noise_color = get_noise_color(image)
-    
-    for x in range(width):
-        for y in  range(height):
-            #清除边框和干扰色
-            rgb = image.getpixel((x, y))
-            if (x == 0 or y == 0 or x == width - 1 or y == height - 1 
-                or rgb == noise_color or rgb[1]>100):
-                image.putpixel((x, y), (255, 255, 255))
-    return image
-
-def get_noise_color(image):
-    for y in range(1, image.size[1] - 1):
-        # 获取第2列非白的颜色
-        (r, g, b) = image.getpixel((2, y))
-        if r < 255 and g < 255 and b < 255:
-            return (r, g, b)
-
-image = Image.open('code4.png')
-image = clear_image(image)
-#转化为灰度图
-imgry = image.convert('L')
-code = pytesseract.image_to_string(imgry)
-
-imgry.save("imgry1.png")
-with open("code.txt", "w") as f:
-    print(code)
-    f.write(str(code))
-```
-
+> re.sub(u"([^\u4e00-\u9fa5\u0030-\u0039\u0041-\u005a\u0061-\u007a])", "", result)
 
 ## 参考文档
 
