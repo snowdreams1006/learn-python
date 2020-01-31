@@ -5,6 +5,9 @@ import os
 import re
 
 def use_simple_text_image(image_name,lang='eng'):
+    '''
+    识别简单图形验证码,先预处理原图后再识别,并将识别结果剔除掉无关中文字符(数字加字母类型验证码)
+    '''
     preprocess_image_name = preprocess_image(image_name)
     image = Image.open(preprocess_image_name)
     result = pytesseract.image_to_string(image,lang=lang)
@@ -61,6 +64,9 @@ def convert_gray_image(image_name):
     return gray_image_name
 
 def delete_spot_image(image_name):
+    '''
+    删除无关噪点
+    '''
     image = Image.open(image_name)
     data = image.getdata()
     w, h = image.size
@@ -107,7 +113,7 @@ def postprocess_result(result):
     '''
     剔除无效字符
     '''
-    post_result = re.sub('\W', '', result)
+    post_result = re.sub(u'([^\u4e00-\u9fa5\u0030-\u0039\u0041-\u005a\u0061-\u007a])', '', result)
     return post_result
 
 def get_covert_image(image_name,covert_prefix):

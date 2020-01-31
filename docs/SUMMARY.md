@@ -6,6 +6,7 @@
     * [开发工具](env/ide.md)
 * [快速入门](quickstart/about.md)
     * [数据类型](quickstart/type.md)
+    * [图像处理](quickstart/image.md)
 * [网络请求](url/about.md)
     * [原生请求](url/urllib/about.md)
         * [认识urlopen发送网络请求](url/urllib/teaching.md)
