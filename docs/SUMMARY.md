@@ -24,6 +24,7 @@
 * [数据展现](datashow/about.md)
     * [高频词可视化](datashow/wordcloud/about.md)
         * [快速上手](datashow/wordcloud/quickstart.md)
+    * [表格美化展示](datashow/prettytable/about.md)
 * [爬虫攻防](contradiction/about.md)
     * [识别验证码](contradiction/tesseract/about.md)
         * [快速上手](contradiction/tesseract/quickstart.md)

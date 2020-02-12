@@ -42,3 +42,4 @@ node.get_text()
 ## 参考文档
 
 - [内容提取神器 beautiful Soup 的用法](https://www.jianshu.com/p/865d73b70ec7)
+- [Python中BeautifulSoup库的用法](https://blog.csdn.net/qq_21933615/article/details/81171951)
