@@ -35,3 +35,4 @@ if __name__ == '__main__':
 
 - [github:prettytable](https://github.com/jazzband/prettytable)
 - [python prettytable 打印表格](https://www.jianshu.com/p/82689c1e3247)
+- [Python PrettyTable 模块(美化库）](https://blog.csdn.net/u013630675/article/details/78773356)
