@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from urllib.parse import urlparse, parse_qs, parse_qsl
 from prettytable import PrettyTable
+import numpy as np 
 
 def simple_table_demo():
     ''''
@@ -108,32 +109,42 @@ def parse_urls_with_query_params(urls):
     if not valid_urls or len(valid_urls) == 0:
         return None
 
-    # 查询参数名称列表,其中以第一个链接为准设置表格标题
-    query_names_list = []
-    query_names_url = valid_urls[0]
-    query = urlparse(query_names_url).query
-    query_list = parse_qsl(query)
-    for query_item in query_list:
-        query_names_list.append(query_item[0])
-
-    # 解析全部请求设置表格数据
-    query_values_list = []
-    for valid_url in valid_urls:
-        # 美化表格参数列表
-        query_values_item_list = []
-
-        # 查询参数
+    # 全部url 查询参数列表
+    origin_query_param_list = []
+    for valid_url in valid_urls: 
+        # url 查询参数可能不完全相同
         query = urlparse(valid_url).query
         query_list = parse_qsl(query)
-        for query_item in query_list:
-            query_values_item_list.append(query_item[1])
-        # 参数不足时以参数标题为准补齐数据
-        while len(query_values_item_list) < len(query_names_list):
-            query_values_item_list.append('')
+        # 不论解析结果,直接添加到原始解析列表
+        origin_query_param_list.append(query_list)
 
-        query_values_list.append(query_values_item_list)
+    # 查询参数标题,即提取出最长查询参数列表
+    query_param_list = []
+    longest_query_param_set = set()
+    for origin_query_param_item in origin_query_param_list: 
+        for origin_query_param_detail_item in origin_query_param_item: 
+            longest_query_param_set.add(origin_query_param_detail_item[0])
+    query_param_list = list(longest_query_param_set)
 
-    return query_names_list,query_values_list
+    # 查询参数数据,注意顺序保持一致!
+    query_value_list = []
+    for origin_query_param_item in origin_query_param_list:
+        query_value_item = []
+        for query_param_item in query_param_list: 
+            has_find_valid_param_value_flag = False
+            for origin_query_param_detail_item in origin_query_param_item: 
+                name = origin_query_param_detail_item[0]
+                value = origin_query_param_detail_item[1]
+                if query_param_item == name:
+                    has_find_valid_param_value_flag = True
+                    query_value_item.append(value)
+                    break
+            # 参数不足时补齐""
+            if not has_find_valid_param_value_flag:
+                query_value_item.append('')
+        query_value_list.append(query_value_item)
+
+    return query_param_list,query_value_list
 
 def show_with_prettytable(table_names_list,table_values_list):
     '''
@@ -147,7 +158,110 @@ def show_with_prettytable(table_names_list,table_values_list):
 
     return table
 
-def show_urls_with_query_params():
+def show_urls_with_query_params(urls):
+    '''
+    表格化展示url查询参数
+    '''
+    # 表头和数据
+    query_names_list,query_values_list = parse_urls_with_query_params(urls)
+
+    # 美化展示请求参数
+    table = show_with_prettytable(query_names_list,query_values_list)
+
+    print('>>>表格化展示查询参数<<<')
+    print(table)
+    print()
+
+def show_diff_urls_with_query_params(urls):
+    '''
+    表格化展示差异性查询参数
+    '''
+    # 表头和数据
+    query_names_list,query_values_list = parse_urls_with_query_params(urls)
+
+    # 美化展示请求参数
+    table = show_with_prettytable(query_names_list,query_values_list)
+
+    print('>>>表格化展示全部查询参数<<<')
+    print(table)
+    print()
+
+    # 按列提取出相同类型的数据
+    query_param_dict = {}
+    for query_name_index, query_name in enumerate(query_names_list):
+        query_name_values = []
+        for query_value in query_values_list:
+            query_name_values.append(query_value[query_name_index])
+        query_param_dict[query_name] = query_name_values
+
+    # 字段字典转set集合去重得到差异性字段
+    exclude_query_names_list = ['timestamp']
+    diff_query_names_list = []
+    for query_param_name in query_param_dict:
+        diff_param_value_set = set(query_param_dict.get(query_param_name))
+        if len(diff_param_value_set) > 1 and (query_param_name not in exclude_query_names_list):
+            diff_query_names_list.append(query_param_name)
+
+    # 展示筛选字段列表
+    selected_table = table.get_string(fields=diff_query_names_list)
+
+    print('>>>仅展示差异性查询表格<<<')
+    print(selected_table)
+    print()
+
+def filter_diff_urls_with_query_params(urls,code_name_relation_map={}):
+    '''
+    先过滤差异性数据再表格化展示查询参数
+    '''
+    # 表头和数据
+    query_names_list,query_values_list = parse_urls_with_query_params(urls)
+
+    # 按列提取出相同类型的数据
+    query_param_dict = {}
+    for query_name_index, query_name in enumerate(query_names_list):
+        query_name_values = []
+        for query_value in query_values_list:
+            query_name_values.append(query_value[query_name_index])
+        query_param_dict[query_name] = query_name_values
+
+    # 字段字典转set集合去重得到差异性字段
+    diff_query_names_list = []
+    exclude_query_names_list = ['timestamp']
+    for query_param_name in query_param_dict:
+        diff_param_value_set = set(query_param_dict.get(query_param_name))
+        if len(diff_param_value_set) > 1 and (query_param_name not in exclude_query_names_list):
+            diff_query_names_list.append(query_param_name)
+
+    # 查找差异性字段在原标题中的顺序
+    diff_query_names_index_list = []
+    for diff_query_name in diff_query_names_list:
+        for query_name_index, query_name in enumerate(query_names_list):
+            if diff_query_name == query_name:
+                diff_query_names_index_list.append(query_name_index)
+                break
+
+    # 翻译差异性标题
+    diff_query_names_title_list = []
+    for diff_query_names in diff_query_names_list:
+        diff_query_names_title = code_name_relation_map.get(diff_query_names) or diff_query_names
+        diff_query_names_title_list.append(diff_query_names_title) 
+
+    # 查找差异性数据
+    diff_query_names_data_list = []
+    for query_value in query_values_list:
+        diff_query_names_data_item_list = []
+        for diff_query_names_index in diff_query_names_index_list:
+            diff_query_names_data_item_list.append(query_value[diff_query_names_index])
+        diff_query_names_data_list.append(diff_query_names_data_item_list)
+
+    # 美化展示请求参数
+    table = show_with_prettytable(diff_query_names_title_list,diff_query_names_data_list)
+
+    print('>>>表格化展示差异性参数<<<')
+    print(table)
+    print()
+
+def main():
     # 原始 get 参数 url 链接
     urls = '''
     https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=1vWFUu6c8X&hashCode=dDNClw4tBKGU7hAZx-XpOBq5DoWF5WJ2TK8edBMLq4o&FMQw=0&q4f3=zh-CN&VySQ=FGEMmxz6TAvkuerBSuVfLd-w01fSfGxM&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_2)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/80.0.3987.87%20Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581465946282
@@ -159,23 +273,61 @@ def show_urls_with_query_params():
     https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=1vWFUu6c8X&hashCode=dDNClw4tBKGU7hAZx-XpOBq5DoWF5WJ2TK8edBMLq4o&FMQw=0&q4f3=zh-CN&VySQ=FGEMmxz6TAvkuerBSuVfLd-w01fSfGxM&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_2)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/80.0.3987.87%20Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581473766043
     https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=1vWFUu6c8X&hashCode=z2EaI5kkCkW-jslnKmsffnYfiBdVG-JaQA6zDzT4lAU&FMQw=0&q4f3=zh-CN&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_2)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/80.0.3987.87%20Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581473820005
     https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=1vWFUu6c8X&hashCode=z2EaI5kkCkW-jslnKmsffnYfiBdVG-JaQA6zDzT4lAU&FMQw=0&q4f3=zh-CN&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_2)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/80.0.3987.87%20Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581474320091
-    
+    https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=1vWFUu6c8X&hashCode=z2EaI5kkCkW-jslnKmsffnYfiBdVG-JaQA6zDzT4lAU&FMQw=0&q4f3=zh-CN&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_2)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/80.0.3987.87%20Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581501834959
+    https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=1vWFUu6c8X&hashCode=z2EaI5kkCkW-jslnKmsffnYfiBdVG-JaQA6zDzT4lAU&FMQw=0&q4f3=zh-CN&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_2)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/80.0.3987.87%20Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581501961805
+    https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=1vWFUu6c8X&hashCode=t8mrq_YnAbyQUU7lmiJFNOysQGlKAykjpl6Kp_R4PXw&FMQw=0&q4f3=zh-CN&VySQ=FGHCXcWAgMnEuDfL881oOTbrF1iJfANK&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_2)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/80.0.3987.87%20Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581508561749
+    https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=1vWFUu6c8X&hashCode=z2EaI5kkCkW-jslnKmsffnYfiBdVG-JaQA6zDzT4lAU&FMQw=0&q4f3=zh-CN&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_2)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/80.0.3987.87%20Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581508957149
+    https://kyfw.12306.cn/otn/HttpZF/logdevice?algID=MFjuxmgU5M&hashCode=Obi2jdJnLWjGFx-xg8YrzljCaNGizhOypETrKR_L1JM&FMQw=0&q4f3=zh-CN&VPIf=1&custID=133&VEek=unknown&dzuS=0&yD16=0&EOQP=c227b88b01f5c513710d4b9f16a5ce52&jp76=52d67b2a5aa5e031084733d5006cc664&hAqN=MacIntel&platform=WEB&ks0Q=d22ca0b81584fbea62237b14bd04c866&TeRS=777x1280&tOHY=24xx800x1280&Fvje=i1l1o1s1&q5aJ=-8&wNLf=99115dfb07133750ba677d055874de87&0aew=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36&E3gR=9f7fa43e794048f6193187756181b3b9&timestamp=1581509113202
+
+
     '''
 
-    # 表头和数据
-    query_names_list,query_values_list = parse_urls_with_query_params(urls)
+    code_name_relation_map = {
+            "FMQw": "adblock",
+            "TeRS": "scrAvailSize",
+            "qBVW": "appMinorVersion",
+            "qmyu": "scrColorDepth",
+            "hLzX": "userLanguage",
+            "j5po": "hasLiedLanguages",
+            "e6OK": "systemLanguage",
+            "5Jwy": "scrHeight",
+            "ks0Q": "plugins",
+            "kU5z": "historyList",
+            "Fvje": "storeDb",
+            "q5aJ": "timeZone",
+            "qT7b": "appcodeName",
+            "3neK": "hasLiedResolution",
+            "2xC5": "hasLiedBrowser",
+            "VEek": "doNotTrack",
+            "3sw-": "indexedDb",
+            "jp76": "mimeTypes",
+            "VPIf": "cookieEnabled",
+            "9vyE": "online",
+            "-UVA": "browserName",
+            "88tV": "scrAvailHeight",
+            "E-lJ": "scrAvailWidth",
+            "VySQ": "cookieCode",
+            "ci5c": "hasLiedOs",
+            "0aew": "userAgent",
+            "3jCe": "scrDeviceXDPI",
+            "E3gR": "webSmartID",
+            "Md7A": "cpuClass",
+            "XM7l": "localStorage",
+            "ssI5": "scrWidth",
+            "EOQP": "jsFonts",
+            "d435": "browserVersion",
+            "lEnu": "localCode",
+            "hAqN": "os",
+            "V8vl": "openDatabase",
+            "q4f3": "browserLanguage",
+            "dzuS": "flashVersion",
+            "tOHY": "srcScreenSize",
+            "yD16": "javaEnabled",
+            "wNLf": "touchSupport",
+            "HVia": "sessionStorage"
+        }
 
-    # 美化展示请求参数
-    table = show_with_prettytable(query_names_list,query_values_list)
-
-    # 筛选指定标题
-    selected_table = table.get_string(fields=['algID','hashCode','VySQ'])
-
-    print('>>>展示美化查询参数表格<<<')
-    print(selected_table)
-
-def main():
-    show_urls_with_query_params()
+    filter_diff_urls_with_query_params(urls,code_name_relation_map=code_name_relation_map)
 
 if __name__ == '__main__':
     main()
