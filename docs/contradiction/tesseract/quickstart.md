@@ -480,7 +480,8 @@ with open("code.txt", "w") as f:
     f.write(str(code))
 ```
 
-
+- [https://segmentfault.com/user/captcha?w=240&h=50](https://segmentfault.com/user/captcha?w=240&h=50)
+- [https://www.oschina.net/action/user/captcha?t=0.17229547947139956](https://www.oschina.net/action/user/captcha?t=0.17229547947139956)
 
 ## 参考文档
 
